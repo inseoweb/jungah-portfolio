@@ -1,12 +1,13 @@
 export default function Page2015() {
     return (
-      <main className="px-6 py-12 max-w-6xl mx-auto">
+      <main className="px-2 sm:px-6 py-8 sm:py-12 max-w-6xl mx-auto">
+
         {/* 제목 */}
         <h1 className="text-[14px] font-semibold text-center text-[#666666] mb-1">[ 2015~ ]<br /></h1>
         <h1 className="text-xl font-bold text-center mb-3">남겨진 것들로부터의 위로</h1>
   
         {/* 본문 서문 */}
-        <p className="text-center leading-relaxed mb-12 text-[#666666] max-w-2xl mx-auto">
+        <p className="text-center leading-relaxed mb-12 text-[#666666] max-w-full sm:max-w-2xl mx-auto px-2 sm:px-0">
           오랫동안 내가 주목해온 것은 시간과 공간속에 빛을 잃고 남겨진 것. 관심 받지 못한 장소, 그리고 감정들이다.<br />
           사물은 실용성 혹은 관계성을 탈피해 소외되었을 때 비로소 독립자재한다.<br />
           숲과 들판, 낡은 건물과 인적 없는 풍경의 평면 작업과 일상적으로 버리고 외면한 것에 대한 작업은<br />
@@ -19,7 +20,7 @@ export default function Page2015() {
             src="/images/2015/hidden-flowers.jpeg"
             alt="숨어있던 꽃"
             className="artwork-img mb-[20px]"          />
-          <div className="flex justify-center items-center space-x-[3px]">
+          <div className="flex justify-center items-center space-x-[15px]">
             <span className="text-[16px] font-bold text-[#111827]">숨어있던 꽃</span>
             <span className="text-[16px] font-normal text-[#4B5563]">
               80×232(cm), 캔버스에 아크릴릭, 2018, 2023
