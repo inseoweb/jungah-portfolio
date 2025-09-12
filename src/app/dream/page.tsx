@@ -40,7 +40,7 @@ export default function Pagedream() {
       <h3 className="text-m font-medium text-center text-[#4B5563] mb-5">
       69x58x4(cm), 한지 캐스팅에 아크릴
       </h3>
-      <p className="font-regular text-center leading-relaxed mb-12 text-[#909090] max-w-2xl mx-auto">
+      <p className="text-center leading-relaxed mb-12 text-[#909090] text-sm sm:text-base max-w-full sm:max-w-2xl mx-auto px-2 sm:px-0">
         환했던 그 시간이 꿈같아<br/>
         또 다시 꽃이 되는 꿈을 꾸어본다 
       </p>

@@ -6,7 +6,7 @@ export default function Page19901999() {
       {/*<h1 className="text-xl font-bold text-center mb-3">-</h1>*/}
 
       {/* 본문 서문 */}
-      {/*<p className="text-center leading-relaxed mb-12 text-[#666666] max-w-2xl mx-auto">
+      {/*<p className="text-center leading-relaxed mb-12 text-[#666666] text-sm sm:text-base max-w-full sm:max-w-2xl mx-auto px-2 sm:px-0">
         어쩌구슨
       </p>*/}
       <div className="h-10" />
@@ -17,8 +17,8 @@ export default function Page19901999() {
           alt="소리없는(부분)"
           className="artwork-img mb-[20px]"        />
         <div className="flex justify-center items-center space-x-[15px]">
-          <span className="text-[16px] font-bold text-[#111827]">소리없는(부분)</span>
-          <span className="text-[16px] font-normal text-[#4B5563]">
+          <span className="text-[14px] sm:text-[16px] font-bold text-[#111827]">소리없는(부분)</span>
+          <span className="text-[14px] sm:text-[16px] font-normal text-[#4B5563]">
             900x900x300(cm), 한지캐스팅, 1999
           </span>
         </div>
@@ -31,8 +31,8 @@ export default function Page19901999() {
           alt="소리없는(부분)"
           className="artwork-img mb-[20px]"        />
         <div className="flex justify-center items-center space-x-[15px]">
-          <span className="text-[16px] font-bold text-[#111827]">소리없는(부분)</span>
-          <span className="text-[16px] font-normal text-[#4B5563]">
+          <span className="text-[14px] sm:text-[16px] font-bold text-[#111827]">소리없는(부분)</span>
+          <span className="text-[14px] sm:text-[16px] font-normal text-[#4B5563]">
             900x900x300(cm), 한지캐스팅, 1999
           </span>
         </div>
@@ -45,8 +45,8 @@ export default function Page19901999() {
           alt="간판책"
           className="artwork-img mb-[20px]"        />
         <div className="flex justify-center items-center space-x-[15px]">
-          <span className="text-[16px] font-bold text-[#111827]">간판책</span>
-          <span className="text-[16px] font-normal text-[#4B5563]">
+          <span className="text-[14px] sm:text-[16px] font-bold text-[#111827]">간판책</span>
+          <span className="text-[14px] sm:text-[16px] font-normal text-[#4B5563]">
             68x142(cm), 동판에 엠보싱, 경첩, 2000
           </span>
         </div>
@@ -59,8 +59,8 @@ export default function Page19901999() {
           alt="신림동"
           className="artwork-img mb-[20px]"        />
         <div className="flex justify-center items-center space-x-[15px]">
-          <span className="text-[16px] font-bold text-[#111827]">신림동</span>
-          <span className="text-[16px] font-normal text-[#4B5563]">
+          <span className="text-[14px] sm:text-[16px] font-bold text-[#111827]">신림동</span>
+          <span className="text-[14px] sm:text-[16px] font-normal text-[#4B5563]">
           28x36(cm), 사진 꼴라쥬, 1998
           </span>
         </div>
@@ -73,8 +73,8 @@ export default function Page19901999() {
           alt="신림동"
           className="artwork-img mb-[20px]"        />
         <div className="flex justify-center items-center space-x-[15px]">
-          <span className="text-[16px] font-bold text-[#111827]">신림동</span>
-          <span className="text-[16px] font-normal text-[#4B5563]">
+          <span className="text-[14px] sm:text-[16px] font-bold text-[#111827]">신림동</span>
+          <span className="text-[14px] sm:text-[16px] font-normal text-[#4B5563]">
           28x36(cm), 사진 꼴라쥬, 1998
           </span>
         </div>
@@ -88,8 +88,8 @@ export default function Page19901999() {
           alt="신림동"
           className="artwork-img mb-[20px]"        />
         <div className="flex justify-center items-center space-x-[15px]">
-          <span className="text-[16px] font-bold text-[#111827]">신림동</span>
-          <span className="text-[16px] font-normal text-[#4B5563]">
+          <span className="text-[14px] sm:text-[16px] font-bold text-[#111827]">신림동</span>
+          <span className="text-[14px] sm:text-[16px] font-normal text-[#4B5563]">
           28x36(cm), 사진 꼴라쥬, 1998
           </span>
         </div>
@@ -102,8 +102,8 @@ export default function Page19901999() {
           alt="신림동"
           className="artwork-img mb-[20px]"        />
         <div className="flex justify-center items-center space-x-[15px]">
-          <span className="text-[16px] font-bold text-[#111827]">신림동</span>
-          <span className="text-[16px] font-normal text-[#4B5563]">
+          <span className="text-[14px] sm:text-[16px] font-bold text-[#111827]">신림동</span>
+          <span className="text-[14px] sm:text-[16px] font-normal text-[#4B5563]">
           28x36(cm), 사진 꼴라쥬, 1998
           </span>
         </div>
@@ -116,8 +116,8 @@ export default function Page19901999() {
           alt="틀"
           className="artwork-img mb-[20px]"        />
         <div className="flex justify-center items-center space-x-[15px]">
-          <span className="text-[16px] font-bold text-[#111827]">틀</span>
-          <span className="text-[16px] font-normal text-[#4B5563]">
+          <span className="text-[14px] sm:text-[16px] font-bold text-[#111827]">틀</span>
+          <span className="text-[14px] sm:text-[16px] font-normal text-[#4B5563]">
             60x160(cm), 목판, 실크스크린, 꼴라그래피, 1999
           </span>
         </div>
@@ -131,8 +131,8 @@ export default function Page19901999() {
           alt="신림동 바다"
           className="artwork-img mb-[20px]"        />
         <div className="flex justify-center items-center space-x-[15px]">
-          <span className="text-[16px] font-bold text-[#111827]">신림동 바다</span>
-          <span className="text-[16px] font-normal text-[#4B5563]">
+          <span className="text-[14px] sm:text-[16px] font-bold text-[#111827]">신림동 바다</span>
+          <span className="text-[14px] sm:text-[16px] font-normal text-[#4B5563]">
             60x160(cm), 스핏바이트, 모노프린트, 꼴라쥬, 1998
           </span>
         </div>
@@ -145,8 +145,8 @@ export default function Page19901999() {
           alt="과자로 만든 궁전"
           className="artwork-img mb-[20px]"        />
         <div className="flex justify-center items-center space-x-[15px]">
-          <span className="text-[16px] font-bold text-[#111827]">과자로 만든 궁전</span>
-          <span className="text-[16px] font-normal text-[#4B5563]">
+          <span className="text-[14px] sm:text-[16px] font-bold text-[#111827]">과자로 만든 궁전</span>
+          <span className="text-[14px] sm:text-[16px] font-normal text-[#4B5563]">
             70x162(cm), 목판, 실크스크린, 꼴라그래피, 1999
           </span>
         </div>
@@ -159,8 +159,8 @@ export default function Page19901999() {
           alt="시간이 멈춘"
           className="artwork-img mb-[20px]"        />
         <div className="flex justify-center items-center space-x-[15px]">
-          <span className="text-[16px] font-bold text-[#111827]">시간이 멈춘</span>
-          <span className="text-[16px] font-normal text-[#4B5563]">
+          <span className="text-[14px] sm:text-[16px] font-bold text-[#111827]">시간이 멈춘</span>
+          <span className="text-[14px] sm:text-[16px] font-normal text-[#4B5563]">
           50x102cm 수성 목판,에칭, 실크스크린,꼴라그래피 1999
           </span>
         </div>
@@ -173,8 +173,8 @@ export default function Page19901999() {
           alt="얇은 약국"
           className="artwork-img mb-[20px]"        />
         <div className="flex justify-center items-center space-x-[15px]">
-          <span className="text-[16px] font-bold text-[#111827]">얇은 약국</span>
-          <span className="text-[16px] font-normal text-[#4B5563]">
+          <span className="text-[14px] sm:text-[16px] font-bold text-[#111827]">얇은 약국</span>
+          <span className="text-[14px] sm:text-[16px] font-normal text-[#4B5563]">
           28x36(cm), 꼴라그래피, 아퀴틴트, 실크스크린, 1998
           </span>
         </div>
@@ -187,8 +187,8 @@ export default function Page19901999() {
           alt="일상"
           className="artwork-img mb-[20px]"        />
         <div className="flex justify-center items-center space-x-[15px]">
-          <span className="text-[16px] font-bold text-[#111827]">일상</span>
-          <span className="text-[16px] font-normal text-[#4B5563]">
+          <span className="text-[14px] sm:text-[16px] font-bold text-[#111827]">일상</span>
+          <span className="text-[14px] sm:text-[16px] font-normal text-[#4B5563]">
           30x54(cm), 장판지에 아크릴, 사진꼴라쥬, 1997
           </span>
         </div>
@@ -201,8 +201,8 @@ export default function Page19901999() {
           alt="자화상"
           className="artwork-img mb-[20px]"        />
         <div className="flex justify-center items-center space-x-[15px]">
-          <span className="text-[16px] font-bold text-[#111827]">자화상</span>
-          <span className="text-[16px] font-normal text-[#4B5563]">
+          <span className="text-[14px] sm:text-[16px] font-bold text-[#111827]">자화상</span>
+          <span className="text-[14px] sm:text-[16px] font-normal text-[#4B5563]">
           54x77(cm), 실크스크린, 색안경, 1998
           </span>
         </div>
@@ -215,8 +215,8 @@ export default function Page19901999() {
           alt="즐거운 오늘"
           className="artwork-img mb-[20px]"        />
         <div className="flex justify-center items-center space-x-[15px]">
-          <span className="text-[16px] font-bold text-[#111827]">즐거운 오늘</span>
-          <span className="text-[16px] font-normal text-[#4B5563]">
+          <span className="text-[14px] sm:text-[16px] font-bold text-[#111827]">즐거운 오늘</span>
+          <span className="text-[14px] sm:text-[16px] font-normal text-[#4B5563]">
           54x77(cm), 실크스크린, 색안경, 1998
           </span>
         </div>
@@ -229,8 +229,8 @@ export default function Page19901999() {
           alt="나"
           className="artwork-img mb-[20px]"        />
         <div className="flex justify-center items-center space-x-[15px]">
-          <span className="text-[16px] font-bold text-[#111827]">나</span>
-          <span className="text-[16px] font-normal text-[#4B5563]">
+          <span className="text-[14px] sm:text-[16px] font-bold text-[#111827]">나</span>
+          <span className="text-[14px] sm:text-[16px] font-normal text-[#4B5563]">
           70x67(cm), 수성목판, 수제한지에 딮 에칭, 실크스크린 1999
           </span>
         </div>
@@ -243,8 +243,8 @@ export default function Page19901999() {
           alt="별명2"
           className="artwork-img mb-[20px]"        />
         <div className="flex justify-center items-center space-x-[15px]">
-          <span className="text-[16px] font-bold text-[#111827]">별명2</span>
-          <span className="text-[16px] font-normal text-[#4B5563]">
+          <span className="text-[14px] sm:text-[16px] font-bold text-[#111827]">별명2</span>
+          <span className="text-[14px] sm:text-[16px] font-normal text-[#4B5563]">
           60x87(cm), 수성목판, 수제한지에 딮 에칭, 실크스크린, 실, 1999
           </span>
         </div>
@@ -257,8 +257,8 @@ export default function Page19901999() {
           alt="별명"
           className="artwork-img mb-[20px]"        />
         <div className="flex justify-center items-center space-x-[15px]">
-          <span className="text-[16px] font-bold text-[#111827]">별명</span>
-          <span className="text-[16px] font-normal text-[#4B5563]">
+          <span className="text-[14px] sm:text-[16px] font-bold text-[#111827]">별명</span>
+          <span className="text-[14px] sm:text-[16px] font-normal text-[#4B5563]">
           30x42(cm), 사진에 아크릴, 1999
           </span>
         </div>
@@ -271,8 +271,8 @@ export default function Page19901999() {
           alt="별명"
           className="artwork-img mb-[20px]"        />
         <div className="flex justify-center items-center space-x-[15px]">
-          <span className="text-[16px] font-bold text-[#111827]">별명</span>
-          <span className="text-[16px] font-normal text-[#4B5563]">
+          <span className="text-[14px] sm:text-[16px] font-bold text-[#111827]">별명</span>
+          <span className="text-[14px] sm:text-[16px] font-normal text-[#4B5563]">
           30x42(cm), 사진에 아크릴, 1999
           </span>
         </div>
@@ -285,8 +285,8 @@ export default function Page19901999() {
           alt="풍경"
           className="artwork-img mb-[20px]"        />
         <div className="flex justify-center items-center space-x-[15px]">
-          <span className="text-[16px] font-bold text-[#111827]">풍경</span>
-          <span className="text-[16px] font-normal text-[#4B5563]">
+          <span className="text-[14px] sm:text-[16px] font-bold text-[#111827]">풍경</span>
+          <span className="text-[14px] sm:text-[16px] font-normal text-[#4B5563]">
           50X35(cm), 종이에 아크릴, 콘테, 베니어판, 1998
           </span>
         </div>
@@ -299,8 +299,8 @@ export default function Page19901999() {
           alt="컵 (일화용컵 도자기로 만들기) "
           className="artwork-img mb-[20px]"        />
         <div className="flex justify-center items-center space-x-[15px]">
-          <span className="text-[16px] font-bold text-[#111827]">컵 (일화용컵 도자기로 만들기) </span>
-          <span className="text-[16px] font-normal text-[#4B5563]">
+          <span className="text-[14px] sm:text-[16px] font-bold text-[#111827]">컵 (일화용컵 도자기로 만들기) </span>
+          <span className="text-[14px] sm:text-[16px] font-normal text-[#4B5563]">
           도자, 전사, 1999
           </span>
         </div>
@@ -314,8 +314,8 @@ export default function Page19901999() {
           alt="일화용컵 도자기로 만들기"
           className="artwork-img mb-[20px]"        />
         <div className="flex justify-center items-center space-x-[15px]">
-          <span className="text-[16px] font-bold text-[#111827]">일화용컵 도자기로 만들기</span>
-          <span className="text-[16px] font-normal text-[#4B5563]">
+          <span className="text-[14px] sm:text-[16px] font-bold text-[#111827]">일화용컵 도자기로 만들기</span>
+          <span className="text-[14px] sm:text-[16px] font-normal text-[#4B5563]">
           도자, 전사, 1999
           </span>
         </div>
@@ -329,8 +329,8 @@ export default function Page19901999() {
           alt="불안한 안주"
           className="artwork-img mb-[20px]"        />
         <div className="flex justify-center items-center space-x-[15px]">
-          <span className="text-[16px] font-bold text-[#111827]">불안한 안주</span>
-          <span className="text-[16px] font-normal text-[#4B5563]">
+          <span className="text-[14px] sm:text-[16px] font-bold text-[#111827]">불안한 안주</span>
+          <span className="text-[14px] sm:text-[16px] font-normal text-[#4B5563]">
           **(cm), 캔버스에 아크릴릭, 목탄, 테잎, 1995
           </span>
         </div>
