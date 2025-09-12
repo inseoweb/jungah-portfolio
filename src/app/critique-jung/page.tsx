@@ -14,7 +14,7 @@ export default function SimJungTaekReview() {
         <img
           src="/images/critique-jung/1.jpeg"
           alt="빈 자리"
-          className="w-[90%] h-auto mx-auto mb-[20px]"        />
+          className="artwork-img mb-[20px]"        />
         <div className="flex justify-center items-center space-x-[15px]">
           <span className="text-[14px] font-bold text-[#111827]">빈 자리</span>
           <span className="text-[14px] font-normal text-[#4B5563]">
@@ -38,7 +38,7 @@ export default function SimJungTaekReview() {
         <img
           src="/images/critique-jung/2.jpeg"
           alt="인공파도2"
-          className="w-[90%] h-auto mx-auto mb-[20px]"        />
+          className="artwork-img mb-[20px]"        />
         <div className="flex justify-center items-center space-x-[15px]">
           <span className="text-[14px] font-bold text-[#111827]">인공파도2</span>
           <span className="text-[14px] font-normal text-[#4B5563]">
@@ -66,7 +66,7 @@ export default function SimJungTaekReview() {
         <img
           src="/images/critique-jung/3.jpg"
           alt="picturesque"
-          className="w-[90%] h-auto mx-auto mb-[20px]"        />
+          className="artwork-img mb-[20px]"        />
         <div className="flex justify-center items-center space-x-[15px]">
           <span className="text-[14px] font-bold text-[#111827]">picturesque</span>
           <span className="text-[14px] font-normal text-[#4B5563]">
@@ -84,7 +84,7 @@ export default function SimJungTaekReview() {
         <img
           src="/images/critique-jung/4.jpg"
           alt="밤의 숲"
-          className="w-[90%] h-auto mx-auto mb-[20px]"        />
+          className="artwork-img mb-[20px]"        />
         <div className="flex justify-center items-center space-x-[15px]">
           <span className="text-[14px] font-bold text-[#111827]">밤의 숲</span>
           <span className="text-[14px] font-normal text-[#4B5563]">
@@ -99,7 +99,7 @@ export default function SimJungTaekReview() {
         <img
           src="/images/critique-jung/5.jpeg"
           alt="숨어있던 꽃"
-          className="w-[90%] h-auto mx-auto mb-[20px]"/>
+          className="artwork-img mb-[20px]"/>
           <div className="flex justify-center items-center space-x-[15px]">
           <span className="text-[14px] font-bold text-[#111827]">숨어있던 꽃</span>
           <span className="text-[14px] font-normal text-[#4B5563]">
@@ -119,7 +119,7 @@ export default function SimJungTaekReview() {
         <img
           src="/images/critique-jung/6.png"
           alt="없는 듯 있다"
-          className="w-[90%] h-auto mx-auto mb-[20px]"/>
+          className="artwork-img mb-[20px]"/>
           <div className="flex justify-center items-center space-x-[15px]">
           <span className="text-[14px] font-bold text-[#111827]">없는 듯 있다</span>
           <span className="text-[14px] font-normal text-[#4B5563]">
@@ -134,7 +134,7 @@ export default function SimJungTaekReview() {
         <img
           src="/images/critique-jung/7.jpg"
           alt="푸른 골목의 안쪽"
-          className="w-[90%] h-auto mx-auto mb-[20px]"/>
+          className="artwork-img mb-[20px]"/>
           <div className="flex justify-center items-center space-x-[15px]">
           <span className="text-[14px] font-bold text-[#111827]">없는 듯 있다</span>
           <span className="text-[14px] font-normal text-[#4B5563]">
@@ -161,7 +161,7 @@ export default function SimJungTaekReview() {
         <img
           src="/images/critique-jung/8.jpg"
           alt="꽃보다 아름답다"
-          className="w-[90%] h-auto mx-auto mb-[20px]"/>
+          className="artwork-img mb-[20px]"/>
           <div className="flex justify-center items-center space-x-[15px]">
           <span className="text-[14px] font-bold text-[#111827]">꽃보다 아름답다</span>
           <span className="text-[14px] font-normal text-[#4B5563]">
@@ -175,7 +175,7 @@ export default function SimJungTaekReview() {
         <img
           src="/images/critique-jung/9.jpeg"
           alt="시내버스 승차권 판매소"
-          className="w-[90%] h-auto mx-auto mb-[20px]"/>
+          className="artwork-img mb-[20px]"/>
           <div className="flex justify-center items-center space-x-[15px]">
           <span className="text-[14px] font-bold text-[#111827]">시내버스 승차권 판매소</span>
           <span className="text-[14px] font-normal text-[#4B5563]">
@@ -194,7 +194,7 @@ export default function SimJungTaekReview() {
         <img
           src="/images/critique-jung/10.jpeg"
           alt="꿈과 이제 오후"
-          className="w-[90%] h-auto mx-auto mb-[20px]"/>
+          className="artwork-img mb-[20px]"/>
           <div className="flex justify-center items-center space-x-[15px]">
           <span className="text-[14px] font-bold text-[#111827]">꿈과 이제 오후</span>
           <span className="text-[14px] font-normal text-[#4B5563]">

@@ -15,7 +15,7 @@ export default function Page19901999() {
         <img
           src="/images/1990/1.jpeg"
           alt="소리없는(부분)"
-          className="w-[90%] h-auto mx-auto mb-[20px]"        />
+          className="artwork-img mb-[20px]"        />
         <div className="flex justify-center items-center space-x-[15px]">
           <span className="text-[16px] font-bold text-[#111827]">소리없는(부분)</span>
           <span className="text-[16px] font-normal text-[#4B5563]">
@@ -29,7 +29,7 @@ export default function Page19901999() {
         <img
           src="/images/1990/2.jpeg"
           alt="소리없는(부분)"
-          className="w-[90%] h-auto mx-auto mb-[20px]"        />
+          className="artwork-img mb-[20px]"        />
         <div className="flex justify-center items-center space-x-[15px]">
           <span className="text-[16px] font-bold text-[#111827]">소리없는(부분)</span>
           <span className="text-[16px] font-normal text-[#4B5563]">
@@ -43,7 +43,7 @@ export default function Page19901999() {
       <img
           src="/images/1990/3.jpeg"
           alt="간판책"
-          className="w-[90%] h-auto mx-auto mb-[20px]"        />
+          className="artwork-img mb-[20px]"        />
         <div className="flex justify-center items-center space-x-[15px]">
           <span className="text-[16px] font-bold text-[#111827]">간판책</span>
           <span className="text-[16px] font-normal text-[#4B5563]">
@@ -57,7 +57,7 @@ export default function Page19901999() {
         <img
           src="/images/1990/4.jpg"
           alt="신림동"
-          className="w-[90%] h-auto mx-auto mb-[20px]"        />
+          className="artwork-img mb-[20px]"        />
         <div className="flex justify-center items-center space-x-[15px]">
           <span className="text-[16px] font-bold text-[#111827]">신림동</span>
           <span className="text-[16px] font-normal text-[#4B5563]">
@@ -71,7 +71,7 @@ export default function Page19901999() {
         <img
           src="/images/1990/5.jpeg"
           alt="신림동"
-          className="w-[90%] h-auto mx-auto mb-[20px]"        />
+          className="artwork-img mb-[20px]"        />
         <div className="flex justify-center items-center space-x-[15px]">
           <span className="text-[16px] font-bold text-[#111827]">신림동</span>
           <span className="text-[16px] font-normal text-[#4B5563]">
@@ -86,7 +86,7 @@ export default function Page19901999() {
        <img
           src="/images/1990/6.jpeg"
           alt="신림동"
-          className="w-[90%] h-auto mx-auto mb-[20px]"        />
+          className="artwork-img mb-[20px]"        />
         <div className="flex justify-center items-center space-x-[15px]">
           <span className="text-[16px] font-bold text-[#111827]">신림동</span>
           <span className="text-[16px] font-normal text-[#4B5563]">
@@ -100,7 +100,7 @@ export default function Page19901999() {
       <img
           src="/images/1990/7.jpeg"
           alt="신림동"
-          className="w-[90%] h-auto mx-auto mb-[20px]"        />
+          className="artwork-img mb-[20px]"        />
         <div className="flex justify-center items-center space-x-[15px]">
           <span className="text-[16px] font-bold text-[#111827]">신림동</span>
           <span className="text-[16px] font-normal text-[#4B5563]">
@@ -114,7 +114,7 @@ export default function Page19901999() {
         <img
           src="/images/1990/8.jpg"
           alt="틀"
-          className="w-[90%] h-auto mx-auto mb-[20px]"        />
+          className="artwork-img mb-[20px]"        />
         <div className="flex justify-center items-center space-x-[15px]">
           <span className="text-[16px] font-bold text-[#111827]">틀</span>
           <span className="text-[16px] font-normal text-[#4B5563]">
@@ -129,7 +129,7 @@ export default function Page19901999() {
         <img
           src="/images/1990/9.jpg"
           alt="신림동 바다"
-          className="w-[90%] h-auto mx-auto mb-[20px]"        />
+          className="artwork-img mb-[20px]"        />
         <div className="flex justify-center items-center space-x-[15px]">
           <span className="text-[16px] font-bold text-[#111827]">신림동 바다</span>
           <span className="text-[16px] font-normal text-[#4B5563]">
@@ -143,7 +143,7 @@ export default function Page19901999() {
         <img
           src="/images/1990/10.jpeg"
           alt="과자로 만든 궁전"
-          className="w-[90%] h-auto mx-auto mb-[20px]"        />
+          className="artwork-img mb-[20px]"        />
         <div className="flex justify-center items-center space-x-[15px]">
           <span className="text-[16px] font-bold text-[#111827]">과자로 만든 궁전</span>
           <span className="text-[16px] font-normal text-[#4B5563]">
@@ -157,7 +157,7 @@ export default function Page19901999() {
         <img
           src="/images/1990/11.jpeg"
           alt="시간이 멈춘"
-          className="w-[90%] h-auto mx-auto mb-[20px]"        />
+          className="artwork-img mb-[20px]"        />
         <div className="flex justify-center items-center space-x-[15px]">
           <span className="text-[16px] font-bold text-[#111827]">시간이 멈춘</span>
           <span className="text-[16px] font-normal text-[#4B5563]">
@@ -171,7 +171,7 @@ export default function Page19901999() {
         <img
           src="/images/1990/12.jpeg"
           alt="얇은 약국"
-          className="w-[90%] h-auto mx-auto mb-[20px]"        />
+          className="artwork-img mb-[20px]"        />
         <div className="flex justify-center items-center space-x-[15px]">
           <span className="text-[16px] font-bold text-[#111827]">얇은 약국</span>
           <span className="text-[16px] font-normal text-[#4B5563]">
@@ -185,7 +185,7 @@ export default function Page19901999() {
         <img
           src="/images/1990/13.jpeg"
           alt="일상"
-          className="w-[90%] h-auto mx-auto mb-[20px]"        />
+          className="artwork-img mb-[20px]"        />
         <div className="flex justify-center items-center space-x-[15px]">
           <span className="text-[16px] font-bold text-[#111827]">일상</span>
           <span className="text-[16px] font-normal text-[#4B5563]">
@@ -199,7 +199,7 @@ export default function Page19901999() {
         <img
           src="/images/1990/14.jpeg"
           alt="자화상"
-          className="w-[90%] h-auto mx-auto mb-[20px]"        />
+          className="artwork-img mb-[20px]"        />
         <div className="flex justify-center items-center space-x-[15px]">
           <span className="text-[16px] font-bold text-[#111827]">자화상</span>
           <span className="text-[16px] font-normal text-[#4B5563]">
@@ -213,7 +213,7 @@ export default function Page19901999() {
         <img
           src="/images/1990/15.jpeg"
           alt="즐거운 오늘"
-          className="w-[90%] h-auto mx-auto mb-[20px]"        />
+          className="artwork-img mb-[20px]"        />
         <div className="flex justify-center items-center space-x-[15px]">
           <span className="text-[16px] font-bold text-[#111827]">즐거운 오늘</span>
           <span className="text-[16px] font-normal text-[#4B5563]">
@@ -227,7 +227,7 @@ export default function Page19901999() {
         <img
           src="/images/1990/16.jpeg"
           alt="나"
-          className="w-[90%] h-auto mx-auto mb-[20px]"        />
+          className="artwork-img mb-[20px]"        />
         <div className="flex justify-center items-center space-x-[15px]">
           <span className="text-[16px] font-bold text-[#111827]">나</span>
           <span className="text-[16px] font-normal text-[#4B5563]">
@@ -241,7 +241,7 @@ export default function Page19901999() {
         <img
           src="/images/1990/17.jpeg"
           alt="별명2"
-          className="w-[90%] h-auto mx-auto mb-[20px]"        />
+          className="artwork-img mb-[20px]"        />
         <div className="flex justify-center items-center space-x-[15px]">
           <span className="text-[16px] font-bold text-[#111827]">별명2</span>
           <span className="text-[16px] font-normal text-[#4B5563]">
@@ -255,7 +255,7 @@ export default function Page19901999() {
         <img
           src="/images/1990/18.jpeg"
           alt="별명"
-          className="w-[90%] h-auto mx-auto mb-[20px]"        />
+          className="artwork-img mb-[20px]"        />
         <div className="flex justify-center items-center space-x-[15px]">
           <span className="text-[16px] font-bold text-[#111827]">별명</span>
           <span className="text-[16px] font-normal text-[#4B5563]">
@@ -269,7 +269,7 @@ export default function Page19901999() {
         <img
           src="/images/1990/19.jpeg"
           alt="별명"
-          className="w-[90%] h-auto mx-auto mb-[20px]"        />
+          className="artwork-img mb-[20px]"        />
         <div className="flex justify-center items-center space-x-[15px]">
           <span className="text-[16px] font-bold text-[#111827]">별명</span>
           <span className="text-[16px] font-normal text-[#4B5563]">
@@ -283,7 +283,7 @@ export default function Page19901999() {
         <img
           src="/images/1990/20.jpeg"
           alt="풍경"
-          className="w-[90%] h-auto mx-auto mb-[20px]"        />
+          className="artwork-img mb-[20px]"        />
         <div className="flex justify-center items-center space-x-[15px]">
           <span className="text-[16px] font-bold text-[#111827]">풍경</span>
           <span className="text-[16px] font-normal text-[#4B5563]">
@@ -297,7 +297,7 @@ export default function Page19901999() {
         <img
           src="/images/1990/21.jpeg"
           alt="컵 (일화용컵 도자기로 만들기) "
-          className="w-[90%] h-auto mx-auto mb-[20px]"        />
+          className="artwork-img mb-[20px]"        />
         <div className="flex justify-center items-center space-x-[15px]">
           <span className="text-[16px] font-bold text-[#111827]">컵 (일화용컵 도자기로 만들기) </span>
           <span className="text-[16px] font-normal text-[#4B5563]">
@@ -312,7 +312,7 @@ export default function Page19901999() {
         <img
           src="/images/1990/22.jpeg"
           alt="일화용컵 도자기로 만들기"
-          className="w-[90%] h-auto mx-auto mb-[20px]"        />
+          className="artwork-img mb-[20px]"        />
         <div className="flex justify-center items-center space-x-[15px]">
           <span className="text-[16px] font-bold text-[#111827]">일화용컵 도자기로 만들기</span>
           <span className="text-[16px] font-normal text-[#4B5563]">
@@ -327,7 +327,7 @@ export default function Page19901999() {
         <img
           src="/images/1990/23.jpeg"
           alt="불안한 안주"
-          className="w-[90%] h-auto mx-auto mb-[20px]"        />
+          className="artwork-img mb-[20px]"        />
         <div className="flex justify-center items-center space-x-[15px]">
           <span className="text-[16px] font-bold text-[#111827]">불안한 안주</span>
           <span className="text-[16px] font-normal text-[#4B5563]">
