@@ -32,7 +32,7 @@ export default function marine() {
             src="/images/marine/2.jpg"
             alt="빈자리"
             className="artwork-img mb-[20px]"        />
-          <div className="flex justify-center items-center space-x-[15px]">
+          <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
             <span className="text-[14px] sm:text-[16px] font-bold text-[#111827]">빈자리</span>
             <span className="text-[14px] sm:text-[16px] font-normal text-[#4B5563]">
               73x190(cm), 캔버스에 아크릴릭,바다쓰레기,거울, 2011, 2017
