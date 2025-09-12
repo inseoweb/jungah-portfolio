@@ -17,7 +17,7 @@ export default function marine() {
           <img
             src="/images/marine/1.jpg"
             alt="Dinner 2011"
-            className="w-[90%] h-auto mx-auto mb-[20px]"        />
+            className="artwork-img mb-[20px]"        />
           <div className="flex justify-center items-center space-x-[15px]">
             <span className="text-[16px] font-bold text-[#111827]">Dinner 2011</span>
             <span className="text-[16px] font-normal text-[#4B5563]">
@@ -31,7 +31,7 @@ export default function marine() {
           <img
             src="/images/marine/2.jpg"
             alt="빈자리"
-            className="w-[90%] h-auto mx-auto mb-[20px]"        />
+            className="artwork-img mb-[20px]"        />
           <div className="flex justify-center items-center space-x-[15px]">
             <span className="text-[16px] font-bold text-[#111827]">빈자리</span>
             <span className="text-[16px] font-normal text-[#4B5563]">
@@ -45,7 +45,7 @@ export default function marine() {
         <img
             src="/images/marine/3.jpg"
             alt="Hug me - 돌아온 탕아"
-            className="w-[90%] h-auto mx-auto mb-[0px]"        />
+            className="artwork-img mb-[20px]"      />
         </div>
 
         {/* 작품 4 */}
@@ -53,7 +53,7 @@ export default function marine() {
           <img
             src="/images/marine/4.jpg"
             alt="Hug me - 돌아온 탕아"
-            className="w-[90%] h-auto mx-auto mb-[20px]"        />
+            className="artwork-img mb-[20px]"        />
           <div className="flex justify-center items-center space-x-[15px]">
             <span className="text-[16px] font-bold text-[#111827]">Hug me - 돌아온 탕아</span>
             <span className="text-[16px] font-normal text-[#4B5563]">
