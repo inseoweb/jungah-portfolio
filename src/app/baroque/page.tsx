@@ -7,29 +7,36 @@ export default function Pagebaroque() {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
   const handlePrev = () => {
-    if (selectedIndex !== null) {
-      setSelectedIndex((selectedIndex - 1 + totalImages) % totalImages);
-    }
+    setSelectedIndex((i) => (i === null ? 0 : (i - 1 + totalImages) % totalImages));
   };
 
   const handleNext = () => {
-    if (selectedIndex !== null) {
-      setSelectedIndex((selectedIndex + 1) % totalImages);
-    }
+    setSelectedIndex((i) => (i === null ? 0 : (i + 1) % totalImages));
   };
 
   // 🔑 키보드 이벤트 (←, →, Esc)
   useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (selectedIndex !== null) {
-        if (e.key === 'ArrowLeft') handlePrev();
-        if (e.key === 'ArrowRight') handleNext();
-        if (e.key === 'Escape') setSelectedIndex(null);
-      }
+    if (selectedIndex === null) return;
+
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowLeft') handlePrev();
+      if (e.key === 'ArrowRight') handleNext();
+      if (e.key === 'Escape') setSelectedIndex(null);
     };
 
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [selectedIndex]);
+
+  // 🔒 모달 열렸을 때 배경 스크롤 잠금
+  useEffect(() => {
+    if (selectedIndex !== null) {
+      const prev = document.body.style.overflow;
+      document.body.style.overflow = 'hidden';
+      return () => {
+        document.body.style.overflow = prev;
+      };
+    }
   }, [selectedIndex]);
 
   return (
@@ -37,10 +44,10 @@ export default function Pagebaroque() {
       {/* 제목 및 본문 */}
       <h2 className="text-[14px] font-semibold text-center text-[#666666] mb-1">[ 2025- ]</h2>
       <h1 className="text-2xl font-bold text-center mb-2">바로크 요정들</h1>
-      <h3 className="text-m font-medium text-center text-[#4B5563] mb-5">
-        20x30(cm), 캔버스에 유화
+      <h3 className="text-base font-medium text-center text-[#4B5563] mb-5">
+        캔버스에 유화
       </h3>
-      <p className="font-regular text-center leading-relaxed mb-12 text-[#909090] max-w-2xl mx-auto">
+      <p className="font-normal text-center leading-relaxed mb-12 text-[#909090] max-w-2xl mx-auto">
         -
       </p>
 
@@ -68,13 +75,17 @@ export default function Pagebaroque() {
 
       {/* 모달 팝업 */}
       {selectedIndex !== null && (
-        <div className="fixed inset-0 z-50 bg-black bg-opacity-80 flex items-center justify-center">
+        <div
+          className="fixed inset-0 z-50 bg-black bg-opacity-80 flex items-center justify-center"
+          role="dialog"
+          aria-modal="true"
+        >
           <div className="flex flex-col items-center justify-center w-[70vw] max-h-[90vh]">
             {/* 이미지 wrapper */}
             <div className="relative w-[60%]">
-              {/* X 버튼 - 이미지 우측 위에서 50px */}
+              {/* X 버튼 - 반응형 위치 */}
               <button
-                className="absolute top-0 right-[-50px] text-white text-3xl z-50"
+                className="absolute top-2 right-2 sm:top-0 sm:right-[-50px] text-white text-3xl z-50"
                 onClick={() => setSelectedIndex(null)}
               >
                 ×
@@ -90,9 +101,15 @@ export default function Pagebaroque() {
 
             {/* 번호 및 화살표 */}
             <div className="flex items-center justify-center mt-[30px] text-white text-sm">
-              <button onClick={handlePrev} className="mr-[40px] text-2xl">&lt;</button>
-              <span>{selectedIndex + 1} / {totalImages}</span>
-              <button onClick={handleNext} className="ml-[40px] text-2xl">&gt;</button>
+              <button onClick={handlePrev} className="mr-[40px] text-2xl">
+                &lt;
+              </button>
+              <span>
+                {selectedIndex + 1} / {totalImages}
+              </span>
+              <button onClick={handleNext} className="ml-[40px] text-2xl">
+                &gt;
+              </button>
             </div>
           </div>
         </div>
