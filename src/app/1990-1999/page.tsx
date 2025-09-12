@@ -6,7 +6,7 @@ export default function Page19901999() {
       {/*<h1 className="text-xl font-bold text-center mb-3">-</h1>*/}
 
       {/* 본문 서문 */}
-      {/*<p className="text-center leading-relaxed mb-12 text-[#666666] text-sm sm:text-base max-w-full sm:max-w-2xl mx-auto px-0 sm:px-0">
+      {/*<p className="text-center leading-relaxed mb-12 text-[#666666] text-[15px] sm:text-base max-w-full sm:max-w-2xl mx-auto px-0 sm:px-0">
         어쩌구슨
       </p>*/}
       <div className="h-10" />

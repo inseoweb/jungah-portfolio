@@ -7,7 +7,7 @@ export default function Page2015() {
         <h1 className="text-xl font-bold text-center mb-3">남겨진 것들로부터의 위로</h1>
   
         {/* 본문 서문 */}
-        <p className="text-center leading-relaxed mb-12 text-[#666666] text-sm sm:text-base max-w-full sm:max-w-2xl mx-auto px-0 sm:px-0">
+        <p className="text-center leading-relaxed mb-12 text-[#666666] text-[15px] sm:text-base max-w-full sm:max-w-2xl mx-auto px-0 sm:px-0">
           오랫동안 내가 주목해온 것은 시간과 공간속에 빛을 잃고 남겨진 것. 관심 받지 못한 장소, 그리고 감정들이다.<br />
           사물은 실용성 혹은 관계성을 탈피해 소외되었을 때 비로소 독립자재한다.<br /><br />
           숲과 들판, 낡은 건물과 인적 없는 풍경의 평면 작업과 일상적으로 버리고 외면한 것에 대한 작업은<br />

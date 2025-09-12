@@ -37,7 +37,8 @@ export default function Pagefairy() {
       <h2 className="text-[14px] font-semibold text-center text-[#666666] mb-1">[ 2023- ]</h2>
       <h1 className="text-2xl font-bold text-center mb-2">요정들</h1>
       <h3 className="text-m font-medium text-center text-[#4B5563] mb-5">각 91x73(cm), 2023</h3>
-      <p className="font-regular text-center leading-relaxed mb-12 text-[#909090] max-w-2xl mx-auto">
+      <p className="text-center leading-relaxed mb-12 text-[#909090] text-[15px] sm:text-base max-w-full sm:max-w-2xl mx-auto px-0 sm:px-0
+">
         바다에서 주운 플라스틱 쓰레기들. <br />
         인간의 소중한 시간과 노력으로 가질 수 있었던 요정들. <br />
         이제는 물도 육지도 이들의 자리가 아니다. <br />
