@@ -18,9 +18,9 @@ export default function marine() {
             src="/images/marine/1.jpg"
             alt="Dinner 2011"
             className="artwork-img mb-[20px]"        />
-          <div className="flex justify-center items-center space-x-[15px]">
-            <span className="text-[14px] sm:text-[16px] font-bold text-[#111827]">Dinner 2011</span>
-            <span className="text-[14px] sm:text-[16px] font-normal text-[#4B5563]">
+          <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
+            <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">Dinner 2011</span>
+            <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563]">
               63x63x16(cm), 한지캐스팅,수채,바다쓰레기, 2011
             </span>
           </div>
@@ -33,8 +33,8 @@ export default function marine() {
             alt="빈자리"
             className="artwork-img mb-[20px]"        />
           <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
-            <span className="text-[14px] sm:text-[16px] font-bold text-[#111827]">빈자리</span>
-            <span className="text-[14px] sm:text-[16px] font-normal text-[#4B5563]">
+            <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">빈자리</span>
+            <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563]">
               73x190(cm), 캔버스에 아크릴릭,바다쓰레기,거울, 2011, 2017
             </span>
           </div>
@@ -54,9 +54,9 @@ export default function marine() {
             src="/images/marine/4.jpg"
             alt="Hug me - 돌아온 탕아"
             className="artwork-img mb-[20px]"        />
-          <div className="flex justify-center items-center space-x-[15px]">
-            <span className="text-[14px] sm:text-[16px] font-bold text-[#111827]">Hug me - 돌아온 탕아</span>
-            <span className="text-[14px] sm:text-[16px] font-normal text-[#4B5563]">
+          <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
+            <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">Hug me - 돌아온 탕아</span>
+            <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563]">
             가변설치, fdm 출력, 바다쓰레기, 2022
             </span>
           </div>
@@ -77,9 +77,9 @@ export default function marine() {
             src="/images/marine/6.jpg"
             alt="신십장생도"
             className="artwork-img mb-[20px]"        />
-          <div className="flex justify-center items-center space-x-[15px]">
-            <span className="text-[14px] sm:text-[16px] font-bold text-[#111827]">신림동</span>
-            <span className="text-[14px] sm:text-[16px] font-normal text-[#4B5563]">
+          <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
+            <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">신림동</span>
+            <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563]">
             178x336(cm), 병풍에 아크릴릭, 바다쓰레기 꼴라쥬, 2021
             </span>
           </div>
@@ -99,9 +99,9 @@ export default function marine() {
             src="/images/marine/8.jpg"
             alt="Under the Sea"
             className="artwork-img mb-[20px]"        />
-          <div className="flex justify-center items-center space-x-[15px]">
-            <span className="text-[14px] sm:text-[16px] font-bold text-[#111827]">Under the Sea</span>
-            <span className="text-[14px] sm:text-[16px] font-normal text-[#4B5563]">
+          <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
+            <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">Under the Sea</span>
+            <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563]">
               162x264(cm), 패널에 아크릴릭, 바다쓰레기, 2022
             </span>
           </div>
@@ -114,9 +114,9 @@ export default function marine() {
             src="/images/marine/9.jpg"
             alt="아름다운 강산"
             className="artwork-img mb-[20px]"        />
-          <div className="flex justify-center items-center space-x-[15px]">
-            <span className="text-[14px] sm:text-[16px] font-bold text-[#111827]">아름다운 강산</span>
-            <span className="text-[14px] sm:text-[16px] font-normal text-[#4B5563]">
+          <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
+            <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">아름다운 강산</span>
+            <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563]">
               --(cm), --, 2022
             </span>
           </div>
@@ -128,9 +128,9 @@ export default function marine() {
             src="/images/marine/10.jpg"
             alt="바다 귀 귀울여봐요"
             className="artwork-img mb-[20px]"        />
-          <div className="flex justify-center items-center space-x-[15px]">
-            <span className="text-[14px] sm:text-[16px] font-bold text-[#111827]">바다 귀 귀울여봐요</span>
-            <span className="text-[14px] sm:text-[16px] font-normal text-[#4B5563]">
+          <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
+            <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">바다 귀 귀울여봐요</span>
+            <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563]">
               30x50(cm), 종이에 수채, 2011
             </span>
           </div>
@@ -142,9 +142,9 @@ export default function marine() {
             src="/images/marine/11.jpg"
             alt="인공파도"
             className="artwork-img mb-[20px]"        />
-          <div className="flex justify-center items-center space-x-[15px]">
-            <span className="text-[14px] sm:text-[16px] font-bold text-[#111827]">인공파도</span>
-            <span className="text-[14px] sm:text-[16px] font-normal text-[#4B5563]">
+          <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
+            <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">인공파도</span>
+            <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563]">
             66x100(cm), 패널에 바다쓰레기, 2012
             </span>
           </div>
@@ -156,9 +156,9 @@ export default function marine() {
             src="/images/marine/12.jpg"
             alt="인공파도 2"
             className="artwork-img mb-[20px]"        />
-          <div className="flex justify-center items-center space-x-[15px]">
-            <span className="text-[14px] sm:text-[16px] font-bold text-[#111827]">인공파도 2</span>
-            <span className="text-[14px] sm:text-[16px] font-normal text-[#4B5563]">
+          <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
+            <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">인공파도 2</span>
+            <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563]">
             80.3x365(cm), 패널에 바다쓰레기, 2012
             </span>
           </div>
@@ -170,9 +170,9 @@ export default function marine() {
             src="/images/marine/13.jpg"
             alt="Picturesque"
             className="artwork-img mb-[20px]"        />
-          <div className="flex justify-center items-center space-x-[15px]">
-            <span className="text-[14px] sm:text-[16px] font-bold text-[#111827]">Picturesque</span>
-            <span className="text-[14px] sm:text-[16px] font-normal text-[#4B5563]">
+          <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
+            <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">Picturesque</span>
+            <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563]">
             71x81(cm), 패널에 유화, 액자, 바다쓰레기, 2018
             </span>
           </div>
@@ -184,9 +184,9 @@ export default function marine() {
             src="/images/marine/14.jpg"
             alt="Picturesque"
             className="artwork-img mb-[20px]"        />
-          <div className="flex justify-center items-center space-x-[15px]">
-            <span className="text-[14px] sm:text-[16px] font-bold text-[#111827]">Picturesque</span>
-            <span className="text-[14px] sm:text-[16px] font-normal text-[#4B5563]">
+          <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
+            <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">Picturesque</span>
+            <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563]">
             71x81(cm), 패널에 유화, 액자, 바다쓰레기, 2018
             </span>
           </div>
@@ -198,9 +198,9 @@ export default function marine() {
             src="/images/marine/15.jpg"
             alt="빈자리"
             className="artwork-img mb-[20px]"        />
-          <div className="flex justify-center items-center space-x-[15px]">
-            <span className="text-[14px] sm:text-[16px] font-bold text-[#111827]">빈자리</span>
-            <span className="text-[14px] sm:text-[16px] font-normal text-[#4B5563]">
+          <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
+            <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">빈자리</span>
+            <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563]">
             가변설치, 해운대, 2017
             </span>
           </div>
@@ -220,9 +220,9 @@ export default function marine() {
             src="/images/marine/17.jpg"
             alt="한없이 무거운"
             className="artwork-img mb-[20px]"        />
-          <div className="flex justify-center items-center space-x-[15px]">
-            <span className="text-[14px] sm:text-[16px] font-bold text-[#111827]">한없이 무거운</span>
-            <span className="text-[14px] sm:text-[16px] font-normal text-[#4B5563]">
+          <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
+            <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">한없이 무거운</span>
+            <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563]">
             110x210x80(cm), 납(낚시 납추, 납 지지대), 스테인리스 스틸, 2019
             </span>
           </div>
@@ -234,9 +234,9 @@ export default function marine() {
             src="/images/marine/18.jpg"
             alt="9시 46분"
             className="artwork-img mb-[20px]"        />
-          <div className="flex justify-center items-center space-x-[15px]">
-            <span className="text-[14px] sm:text-[16px] font-bold text-[#111827]">9시 46분</span>
-            <span className="text-[14px] sm:text-[16px] font-normal text-[#4B5563]">
+          <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
+            <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">9시 46분</span>
+            <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563]">
             87x87(cm), 패널에 아크릴릭, 서해 바다쓰레기, 2020
             </span>
           </div>
@@ -249,9 +249,9 @@ export default function marine() {
             src="/images/marine/21.jpg"
             alt="한걸음 다가서면 바꿀 수 있어요"
             className="artwork-img mb-[20px]"        />
-          <div className="flex justify-center items-center space-x-[15px]">
-            <span className="text-[14px] sm:text-[16px] font-bold text-[#111827]">한걸음 다가서면 바꿀 수 있어요</span>
-            <span className="text-[14px] sm:text-[16px] font-normal text-[#4B5563]">
+          <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
+            <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">한걸음 다가서면 바꿀 수 있어요</span>
+            <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563]">
             60x110(cm), 렌티큘러, 2020
             </span>
           </div>
@@ -263,9 +263,9 @@ export default function marine() {
             src="/images/marine/20.jpg"
             alt="한걸음 다가서면 바꿀 수 있어요"
             className="artwork-img mb-[20px]"        />
-          <div className="flex justify-center items-center space-x-[15px]">
-            <span className="text-[14px] sm:text-[16px] font-bold text-[#111827]">가까이 다가가 바뀐 이미지</span>
-            <span className="text-[14px] sm:text-[16px] font-normal text-[#4B5563]">
+          <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
+            <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">가까이 다가가 바뀐 이미지</span>
+            <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563]">
             </span>
           </div>
         </div> 
@@ -277,9 +277,9 @@ export default function marine() {
             src="/images/marine/22.jpg"
             alt="바다 빼기 바다"
             className="artwork-img mb-[20px]"        />
-          <div className="flex justify-center items-center space-x-[15px]">
-            <span className="text-[14px] sm:text-[16px] font-bold text-[#111827]">바다 빼기 바다</span>
-            <span className="text-[14px] sm:text-[16px] font-normal text-[#4B5563]">
+          <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
+            <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">바다 빼기 바다</span>
+            <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563]">
             나무에 아크릴릭, 레진, 바다쓰레기, 2021
             </span>
           </div>
@@ -292,9 +292,9 @@ export default function marine() {
             src="/images/marine/23.jpg"
             alt="자승자박"
             className="artwork-img mb-[20px]"        />
-          <div className="flex justify-center items-center space-x-[15px]">
-            <span className="text-[14px] sm:text-[16px] font-bold text-[#111827]">자승자박</span>
-            <span className="text-[14px] sm:text-[16px] font-normal text-[#4B5563]">
+          <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
+            <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">자승자박</span>
+            <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563]">
             120x80(cm), 패널에 낚시 쓰레기, 2021
             </span>
           </div>
@@ -331,9 +331,9 @@ export default function marine() {
             src="/images/marine/19.jpg"
             alt="궤도 이탈"
             className="artwork-img mb-[20px]"        />
-          <div className="flex justify-center items-center space-x-[15px]">
-            <span className="text-[14px] sm:text-[16px] font-bold text-[#111827]">궤도 이탈</span>
-            <span className="text-[14px] sm:text-[16px] font-normal text-[#4B5563]">
+          <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
+            <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">궤도 이탈</span>
+            <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563]">
             가변설치, 유리 부이, 아크릴릭, 바다쓰레기, 2013
             </span>
           </div>
@@ -347,9 +347,9 @@ export default function marine() {
             src="/images/marine/27.jpg"
             alt="바다 귀 기울여봐요"
             className="artwork-img mb-[20px]"        />
-          <div className="flex justify-center items-center space-x-[15px]">
-            <span className="text-[14px] sm:text-[16px] font-bold text-[#111827]">바다 귀 기울여봐요</span>
-            <span className="text-[14px] sm:text-[16px] font-normal text-[#4B5563]">
+          <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
+            <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">바다 귀 기울여봐요</span>
+            <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563]">
             바다쓰레기 체험 학습지, 2012
             </span>
           </div>
@@ -361,9 +361,9 @@ export default function marine() {
             src="/images/marine/28.jpg"
             alt="해변에 나타난 별자리"
             className="artwork-img mb-[20px]"        />
-          <div className="flex justify-center items-center space-x-[15px]">
-            <span className="text-[14px] sm:text-[16px] font-bold text-[#111827]">해변에 나타난 별자리</span>
-            <span className="text-[14px] sm:text-[16px] font-normal text-[#4B5563]">
+          <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
+            <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">해변에 나타난 별자리</span>
+            <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563]">
             거제 사곡해수욕장, 2023
             </span>
           </div>
@@ -375,9 +375,9 @@ export default function marine() {
             src="/images/marine/29.jpg"
             alt="즐거운 추억"
             className="artwork-img mb-[20px]"        />
-          <div className="flex justify-center items-center space-x-[15px]">
-            <span className="text-[14px] sm:text-[16px] font-bold text-[#111827]">즐거운 추억</span>
-            <span className="text-[14px] sm:text-[16px] font-normal text-[#4B5563]">
+          <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
+            <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">즐거운 추억</span>
+            <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563]">
             162x130(cm), 패널에 바다쓰레기, 2021
             </span>
           </div>

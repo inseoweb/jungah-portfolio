@@ -15,7 +15,7 @@ export default function SimJungTaekReview() {
           src="/images/critique-jung/1.jpeg"
           alt="빈 자리"
           className="artwork-img mb-[20px]"        />
-        <div className="flex justify-center items-center space-x-[15px]">
+        <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
           <span className="text-[14px] font-bold text-[#111827]">빈 자리</span>
           <span className="text-[14px] font-normal text-[#4B5563]">
             194x130(cm), 패널에 아크릴릭, 바다쓰레기, 거울, 2011~2021
@@ -39,7 +39,7 @@ export default function SimJungTaekReview() {
           src="/images/critique-jung/2.jpeg"
           alt="인공파도2"
           className="artwork-img mb-[20px]"        />
-        <div className="flex justify-center items-center space-x-[15px]">
+        <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
           <span className="text-[14px] font-bold text-[#111827]">인공파도2</span>
           <span className="text-[14px] font-normal text-[#4B5563]">
             365x80.3(cm), 패널에 아크릴릭, 바다쓰레기, 2018
@@ -67,7 +67,7 @@ export default function SimJungTaekReview() {
           src="/images/critique-jung/3.jpg"
           alt="picturesque"
           className="artwork-img mb-[20px]"        />
-        <div className="flex justify-center items-center space-x-[15px]">
+        <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
           <span className="text-[14px] font-bold text-[#111827]">picturesque</span>
           <span className="text-[14px] font-normal text-[#4B5563]">
             81x71(cm), 액자, 패널에 유화, 바다쓰레기, 2018
@@ -85,7 +85,7 @@ export default function SimJungTaekReview() {
           src="/images/critique-jung/4.jpg"
           alt="밤의 숲"
           className="artwork-img mb-[20px]"        />
-        <div className="flex justify-center items-center space-x-[15px]">
+        <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
           <span className="text-[14px] font-bold text-[#111827]">밤의 숲</span>
           <span className="text-[14px] font-normal text-[#4B5563]">
             194x72(cm), 캔버스에 아크릴릭, 2020
@@ -100,7 +100,7 @@ export default function SimJungTaekReview() {
           src="/images/critique-jung/5.jpeg"
           alt="숨어있던 꽃"
           className="artwork-img mb-[20px]"/>
-          <div className="flex justify-center items-center space-x-[15px]">
+          <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
           <span className="text-[14px] font-bold text-[#111827]">숨어있던 꽃</span>
           <span className="text-[14px] font-normal text-[#4B5563]">
             90x37(cm), 캔버스에 아크릴릭, 2018
@@ -120,7 +120,7 @@ export default function SimJungTaekReview() {
           src="/images/critique-jung/6.png"
           alt="없는 듯 있다"
           className="artwork-img mb-[20px]"/>
-          <div className="flex justify-center items-center space-x-[15px]">
+          <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
           <span className="text-[14px] font-bold text-[#111827]">없는 듯 있다</span>
           <span className="text-[14px] font-normal text-[#4B5563]">
             169x60(cm), 캔버스에 아크릴릭, 2018
@@ -135,7 +135,7 @@ export default function SimJungTaekReview() {
           src="/images/critique-jung/7.jpg"
           alt="푸른 골목의 안쪽"
           className="artwork-img mb-[20px]"/>
-          <div className="flex justify-center items-center space-x-[15px]">
+          <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
           <span className="text-[14px] font-bold text-[#111827]">없는 듯 있다</span>
           <span className="text-[14px] font-normal text-[#4B5563]">
             155x95(cm), 캔버스에 아크릴릭, 2021
@@ -162,7 +162,7 @@ export default function SimJungTaekReview() {
           src="/images/critique-jung/8.jpg"
           alt="꽃보다 아름답다"
           className="artwork-img mb-[20px]"/>
-          <div className="flex justify-center items-center space-x-[15px]">
+          <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
           <span className="text-[14px] font-bold text-[#111827]">꽃보다 아름답다</span>
           <span className="text-[14px] font-normal text-[#4B5563]">
             63x63x4(cm), 한지 캐스팅에 수채, 2003
@@ -176,7 +176,7 @@ export default function SimJungTaekReview() {
           src="/images/critique-jung/9.jpeg"
           alt="시내버스 승차권 판매소"
           className="artwork-img mb-[20px]"/>
-          <div className="flex justify-center items-center space-x-[15px]">
+          <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
           <span className="text-[14px] font-bold text-[#111827]">시내버스 승차권 판매소</span>
           <span className="text-[14px] font-normal text-[#4B5563]">
             90x37(cm), 종이에 아크릴릭, 2003
@@ -195,7 +195,7 @@ export default function SimJungTaekReview() {
           src="/images/critique-jung/10.jpeg"
           alt="꿈과 이제 오후"
           className="artwork-img mb-[20px]"/>
-          <div className="flex justify-center items-center space-x-[15px]">
+          <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
           <span className="text-[14px] font-bold text-[#111827]">꿈과 이제 오후</span>
           <span className="text-[14px] font-normal text-[#4B5563]">
             53x40(cm), 캔버스에 아크릴릭, 2013

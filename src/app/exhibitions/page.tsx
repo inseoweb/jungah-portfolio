@@ -4,7 +4,7 @@ export default function ExhibitionsPage() {
   return (
     <main className="px-6 py-12 max-w-6xl mx-auto">
       {/* 상단: 제목 및 서문 */}
-      <h1 className="text-[14px] sm:text-[16px] font-semibold text-center text-[#666666] mb-1">
+      <h1 className="text-[15px] sm:text-[16px] font-semibold text-center text-[#666666] mb-1">
         최근 전시회<br />
       </h1>
 
