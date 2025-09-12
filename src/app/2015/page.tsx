@@ -19,7 +19,7 @@ export default function Page2015() {
             src="/images/2015/hidden-flowers.jpeg"
             alt="숨어있던 꽃"
             className="artwork-img mb-[20px]"          />
-          <div className="flex justify-center items-center space-x-[15px]">
+          <div className="flex justify-center items-center space-x-[3px]">
             <span className="text-[16px] font-bold text-[#111827]">숨어있던 꽃</span>
             <span className="text-[16px] font-normal text-[#4B5563]">
               80×232(cm), 캔버스에 아크릴릭, 2018, 2023
