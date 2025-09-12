@@ -6,7 +6,7 @@ export default function Page20002014() {
      {/*<h1 className="text-xl font-bold text-center mb-3">-</h1>*/}
   
         {/* 본문 서문 */}
-        {/*<p className="text-center leading-relaxed mb-12 text-[#666666] text-sm sm:text-base max-w-full sm:max-w-2xl mx-auto px-2 sm:px-0">
+        {/*<p className="text-center leading-relaxed mb-12 text-[#666666] text-sm sm:text-base max-w-full sm:max-w-2xl mx-auto px-0 sm:px-0">
           어쩌구슨
         </p>*/}
         <div className="h-10" />
@@ -19,7 +19,7 @@ export default function Page20002014() {
           className="artwork-img mb-[20px]"        />
         <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
           <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">시내버스 승차권 판매소</span>
-          <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563]">
+          <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563] text-center">
             90x37(cm), 종이에 아크릴릭, 2003
           </span>
         </div>
@@ -33,7 +33,7 @@ export default function Page20002014() {
           className="artwork-img mb-[20px]"        />
         <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
           <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">시민목공소</span>
-          <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563]">
+          <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563] text-center">
             90x37(cm), 종이에 아크릴릭, 2003
           </span>
         </div>
@@ -47,7 +47,7 @@ export default function Page20002014() {
           className="artwork-img mb-[20px]"        />
         <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
           <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">금호상회</span>
-          <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563]">
+          <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563] text-center">
             162×336(cm), 캔버스에 아크릴릭, 2022
           </span>
         </div>
@@ -61,7 +61,7 @@ export default function Page20002014() {
           className="artwork-img mb-[20px]"        />
         <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
           <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">몽유신림도</span>
-          <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563]">
+          <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563] text-center">
             98x39(cm), 베니어판에 먹, 아크릴, 2013
           </span>
         </div>
@@ -75,7 +75,7 @@ export default function Page20002014() {
           className="artwork-img mb-[20px]"        />
         <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
           <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">이제오후</span>
-          <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563]">
+          <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563] text-center">
             162×336(cm), 캔버스에 아크릴릭, 2022
           </span>
         </div>
@@ -89,7 +89,7 @@ export default function Page20002014() {
           className="artwork-img mb-[20px]"        />
         <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
           <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">꿈과 이제 오후</span>
-          <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563]">
+          <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563] text-center">
           90x193.9(cm), 캔버스에 아크릴릭, 2013
           </span>
         </div>
@@ -103,7 +103,7 @@ export default function Page20002014() {
           className="artwork-img mb-[20px]"        />
         <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
           <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">오후</span>
-          <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563]">
+          <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563] text-center">
             40x53(cm), 캔버스에 아크릴릭, 2014
           </span>
         </div>
@@ -117,7 +117,7 @@ export default function Page20002014() {
           className="artwork-img mb-[20px]"        />
         <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
           <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">검은 바다</span>
-          <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563]">
+          <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563] text-center">
             25x35(cm), charcoal on paper, 2021
           </span>
         </div>
@@ -132,7 +132,7 @@ export default function Page20002014() {
           className="artwork-img mb-[20px]"        />
         <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
           <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">파랑토끼</span>
-          <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563]">
+          <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563] text-center">
             162x112(cm), acrylic on canvas, 2022
           </span>
         </div>
@@ -146,7 +146,7 @@ export default function Page20002014() {
           className="artwork-img mb-[20px]"        />
         <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
           <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">시간의 무게</span>
-          <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563]">
+          <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563] text-center">
             89x195(cm), 캔버스에 아크릴릭, 2020
           </span>
         </div>
@@ -160,7 +160,7 @@ export default function Page20002014() {
           className="artwork-img mb-[20px]"        />
         <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
           <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">Serendipity</span>
-          <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563]">
+          <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563] text-center">
           45x109(cm), 캔버스에 아크릴릭, 2022
           </span>
         </div>
@@ -174,7 +174,7 @@ export default function Page20002014() {
           className="artwork-img mb-[20px]"        />
         <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
           <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">Serendipity</span>
-          <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563]">
+          <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563] text-center">
           24.2x40.9(cm), 캔버스에 아크릴릭, 2022  
           </span>
         </div>
@@ -188,7 +188,7 @@ export default function Page20002014() {
           className="artwork-img mb-[20px]"        />
         <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
           <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">바람의 시간</span>
-          <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563]">
+          <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563] text-center">
           79x118(cm), 캔버스에 아크릴릭, 2022
           </span>
         </div>
@@ -202,7 +202,7 @@ export default function Page20002014() {
           className="artwork-img mb-[20px]"        />
         <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
           <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">내 숲에 작은 새도 쉬고</span>
-          <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563]">
+          <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563] text-center">
           **(cm), 캔버스에 아크릴릭, 2023
           </span>
         </div>
@@ -216,7 +216,7 @@ export default function Page20002014() {
           className="artwork-img mb-[20px]"        />
         <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
           <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">남겨진 것</span>
-          <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563]">
+          <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563] text-center">
           106x213(cm), 캔버스에 아크릴릭, 2014, 2022
           </span>
         </div>
@@ -230,7 +230,7 @@ export default function Page20002014() {
           className="artwork-img mb-[20px]"        />
         <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
           <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">몽유철암도</span>
-          <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563]">
+          <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563] text-center">
           **(cm), 캔버스에 아크릴릭, 2022
           </span>
         </div>
@@ -244,7 +244,7 @@ export default function Page20002014() {
           className="artwork-img mb-[20px]"        />
         <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
           <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">숨어있던 꽃</span>
-          <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563]">
+          <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563] text-center">
           **(cm), 캔버스에 아크릴릭, 2016
           </span>
         </div>
@@ -258,7 +258,7 @@ export default function Page20002014() {
           className="artwork-img mb-[20px]"        />
         <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
           <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">신전</span>
-          <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563]">
+          <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563] text-center">
           37x90(cm), 캔버스에 아크릴릭, 2023
           </span>
         </div>
@@ -272,7 +272,7 @@ export default function Page20002014() {
           className="artwork-img mb-[20px]"        />
         <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
           <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">시간의 정경</span>
-          <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563]">
+          <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563] text-center">
           **(cm), 캔버스, 패널에 아크릴릭, 2024
           </span>
         </div>
@@ -286,7 +286,7 @@ export default function Page20002014() {
           className="artwork-img mb-[20px]"        />
         <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
           <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">시간의 정경</span>
-          <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563]">
+          <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563] text-center">
           **(cm), 캔버스, 패널에 아크릴릭, 2024
           </span>
         </div>
@@ -300,7 +300,7 @@ export default function Page20002014() {
           className="artwork-img mb-[20px]"        />
         <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
           <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">시간의 정경</span>
-          <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563]">
+          <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563] text-center">
           **(cm), 캔버스, 패널에 아크릴릭, 2024
           </span>
         </div>
@@ -315,7 +315,7 @@ export default function Page20002014() {
           className="artwork-img mb-[20px]"        />
         <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
           <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">시간의 정경</span>
-          <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563]">
+          <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563] text-center">
           **(cm), 캔버스, 패널에 아크릴릭, 2024
           </span>
         </div>
@@ -330,7 +330,7 @@ export default function Page20002014() {
           className="artwork-img mb-[20px]"        />
         <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
           <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">시간의 정경</span>
-          <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563]">
+          <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563] text-center">
           **(cm), 캔버스, 패널에 아크릴릭, 2024
           </span>
         </div>
@@ -344,7 +344,7 @@ export default function Page20002014() {
           className="artwork-img mb-[20px]"        />
         <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
           <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">시간의 정경</span>
-          <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563]">
+          <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563] text-center">
           도자, 2010
           </span>
         </div>
@@ -358,7 +358,7 @@ export default function Page20002014() {
           className="artwork-img mb-[20px]"        />
         <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
           <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">마흔</span>
-          <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563]">
+          <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563] text-center">
           도자, 2010
           </span>
         </div>
@@ -372,7 +372,7 @@ export default function Page20002014() {
           className="artwork-img mb-[20px]"        />
         <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
           <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">7년만의 외출</span>
-          <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563]">
+          <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563] text-center">
           scotch brite 수세미 바느질, 2005
           </span>
         </div>

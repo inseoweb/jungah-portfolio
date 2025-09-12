@@ -7,7 +7,7 @@ export default function Page2015() {
         <h1 className="text-xl font-bold text-center mb-3">남겨진 것들로부터의 위로</h1>
   
         {/* 본문 서문 */}
-        <p className="text-center leading-relaxed mb-12 text-[#666666] text-sm sm:text-base max-w-full sm:max-w-2xl mx-auto px-2 sm:px-0">
+        <p className="text-center leading-relaxed mb-12 text-[#666666] text-sm sm:text-base max-w-full sm:max-w-2xl mx-auto px-0 sm:px-0">
           오랫동안 내가 주목해온 것은 시간과 공간속에 빛을 잃고 남겨진 것. 관심 받지 못한 장소, 그리고 감정들이다.<br />
           사물은 실용성 혹은 관계성을 탈피해 소외되었을 때 비로소 독립자재한다.<br /><br />
           숲과 들판, 낡은 건물과 인적 없는 풍경의 평면 작업과 일상적으로 버리고 외면한 것에 대한 작업은<br />
@@ -22,7 +22,7 @@ export default function Page2015() {
             className="artwork-img mb-[20px]"          />
           <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
             <span className="text-[14px] sm:text-[15px] sm:text-[16px] font-bold text-[#111827]">숨어있던 꽃</span>
-            <span className="text-[14px] sm:text-[15px] sm:text-[16px] font-normal text-[#4B5563]">
+            <span className="text-[14px] sm:text-[15px] sm:text-[16px] font-normal text-[#4B5563] text-center">
               80×232(cm), 캔버스에 아크릴릭, 2018, 2023
             </span>
           </div>
@@ -36,7 +36,7 @@ export default function Page2015() {
             className="artwork-img mb-[20px]"          />
           <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
             <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">밤의 숲</span>
-            <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563]">
+            <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563] text-center">
               194×72(cm), 캔버스에 아크릴릭, 2020
             </span>
           </div>
@@ -50,7 +50,7 @@ export default function Page2015() {
             className="artwork-img mb-[20px]"          />
           <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
             <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">사려깊은 위로</span>
-            <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563]">
+            <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563] text-center">
               162×336(cm), 캔버스에 아크릴릭, 2022
             </span>
           </div>
@@ -64,7 +64,7 @@ export default function Page2015() {
             className="artwork-img mb-[20px]"          />
           <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
             <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">없는 듯 있다</span>
-            <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563]">
+            <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563] text-center">
               60x169cm, 캔버스에 아크릴릭, 2018
             </span>
           </div>
@@ -78,7 +78,7 @@ export default function Page2015() {
             className="artwork-img mb-[20px]"          />
           <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
             <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">동네</span>
-            <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563]">
+            <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563] text-center">
               162×336(cm), 캔버스에 아크릴릭, 2022
             </span>
           </div>
@@ -92,7 +92,7 @@ export default function Page2015() {
             className="artwork-img mb-[20px]"          />
           <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
             <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">푸른 골목의 안쪽</span>
-            <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563]">
+            <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563] text-center">
               155x95(cm), 캔버스에 아크릴릭, 2021
             </span>
           </div>
@@ -106,7 +106,7 @@ export default function Page2015() {
             className="artwork-img mb-[20px]"          />
           <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
             <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">검은 바다</span>
-            <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563]">
+            <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563] text-center">
               25x35(cm), charcoal on paper, 2021
             </span>
           </div>
@@ -120,7 +120,7 @@ export default function Page2015() {
             className="artwork-img mb-[20px]"          />
           <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
             <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">검은 바다</span>
-            <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563]">
+            <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563] text-center">
               25x35(cm), charcoal on paper, 2021
             </span>
           </div>
@@ -135,7 +135,7 @@ export default function Page2015() {
             className="artwork-img mb-[20px]"          />
           <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
             <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">파랑토끼</span>
-            <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563]">
+            <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563] text-center">
               162x112(cm), acrylic on canvas, 2022
             </span>
           </div>
@@ -149,7 +149,7 @@ export default function Page2015() {
             className="artwork-img mb-[20px]"          />
           <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
             <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">시간의 무게</span>
-            <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563]">
+            <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563] text-center">
               89x195(cm), 캔버스에 아크릴릭, 2020
             </span>
           </div>
@@ -163,7 +163,7 @@ export default function Page2015() {
             className="artwork-img mb-[20px]"          />
           <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
             <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">Serendipity</span>
-            <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563]">
+            <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563] text-center">
             45x109(cm), 캔버스에 아크릴릭, 2022
             </span>
           </div>
@@ -177,7 +177,7 @@ export default function Page2015() {
             className="artwork-img mb-[20px]"          />
           <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
             <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">Serendipity</span>
-            <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563]">
+            <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563] text-center">
             24.2x40.9(cm), 캔버스에 아크릴릭, 2022  
             </span>
           </div>
@@ -191,7 +191,7 @@ export default function Page2015() {
             className="artwork-img mb-[20px]"          />
           <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
             <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">바람의 시간</span>
-            <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563]">
+            <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563] text-center">
             79x118(cm), 캔버스에 아크릴릭, 2022
             </span>
           </div>
@@ -205,7 +205,7 @@ export default function Page2015() {
             className="artwork-img mb-[20px]"          />
           <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
             <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">내 숲에 작은 새도 쉬고</span>
-            <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563]">
+            <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563] text-center">
             **(cm), 캔버스에 아크릴릭, 2023
             </span>
           </div>
@@ -219,7 +219,7 @@ export default function Page2015() {
             className="artwork-img mb-[20px]"          />
           <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
             <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">남겨진 것</span>
-            <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563]">
+            <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563] text-center">
             106x213(cm), 캔버스에 아크릴릭, 2014, 2022
             </span>
           </div>
@@ -233,7 +233,7 @@ export default function Page2015() {
             className="artwork-img mb-[20px]"          />
           <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
             <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">몽유철암도</span>
-            <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563]">
+            <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563] text-center">
             **(cm), 캔버스에 아크릴릭, 2022
             </span>
           </div>
@@ -247,7 +247,7 @@ export default function Page2015() {
             className="artwork-img mb-[20px]"          />
           <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
             <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">숨어있던 꽃</span>
-            <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563]">
+            <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563] text-center">
             **(cm), 캔버스에 아크릴릭, 2016
             </span>
           </div>
@@ -261,7 +261,7 @@ export default function Page2015() {
             className="artwork-img mb-[20px]"          />
           <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
             <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">신전</span>
-            <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563]">
+            <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563] text-center">
             37x90(cm), 캔버스에 아크릴릭, 2023
             </span>
           </div>
@@ -275,7 +275,7 @@ export default function Page2015() {
             className="artwork-img mb-[20px]"          />
           <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
             <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">시간의 정경</span>
-            <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563]">
+            <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563] text-center">
             **(cm), 캔버스, 패널에 아크릴릭, 2024
             </span>
           </div>

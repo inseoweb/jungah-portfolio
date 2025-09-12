@@ -40,7 +40,7 @@ export default function Pageflower() {
       <h3 className="text-m font-medium text-center text-[#4B5563] mb-5">
         63x63x4(cm), 한지 캐스팅에 수채
       </h3>
-      <p className="text-center leading-relaxed mb-12 text-[#909090] text-sm sm:text-base max-w-full sm:max-w-2xl mx-auto px-2 sm:px-0">
+      <p className="text-center leading-relaxed mb-12 text-[#909090] text-sm sm:text-base max-w-full sm:max-w-2xl mx-auto px-0 sm:px-0">
         바다에서 주운 플라스틱 쓰레기들. <br />
         인간의 소중한 시간과 노력으로 가질 수 있었던 요정들. <br />
         이제는 물도 육지도 이들의 자리가 아니다.
