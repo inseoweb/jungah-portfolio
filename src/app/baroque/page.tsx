@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 
 export default function Pagebaroque() {
-  const totalImages = 2;
+  const totalImages = 12;
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
   const handlePrev = () => {
