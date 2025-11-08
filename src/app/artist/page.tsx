@@ -44,6 +44,8 @@ export default function ArtistPage() {
       <section className="mb-12">
       <h4 className="text-lg font-semibold text-[#111827] mb-4">개인전</h4>
       <ul className="space-y-1 text-sm leading-normal">
+        <li>2025 "꽃보다 아름답다- 남겨진 것들의 미학", 아트살롱 드 아씨, 서울</li>
+        <li>2025 "한걸음 다가서면 바꿀 수 있어요", 두손갤러리, 서울</li>
         <li>2023 "내 숲에 작은 새도 쉬고" 초대전, 우주의 바다갤러리, 부산</li>
         <li>2023 "프로젝트 공 "초대전, 탑골 미술관, 서울</li>
         <li>2023 "시간의 시각" 삼자미술관.초대전,남해</li>
@@ -64,8 +66,9 @@ export default function ArtistPage() {
       <section className="mb-12">
         <h4 className="text-lg font-semibold text-[#111827] mb-4">그룹전</h4>
         <ul className="space-y-1 text-sm leading-normal">
-            <li>2024 CHARMing 전, 쿄토시 국제교류회관, 일본</li>
-            <li>2024 촉각적 풍경, 갤러리 0'c, 서울</li>
+            <li>2025 "촉각적 풍경-touching",갤러리 0℃, 서울</li>
+            <li>2024 "CHARMing 전", 쿄토시 국제교류회관, 일본</li>
+            <li>2024 "촉각적 풍경", 갤러리 0'c, 서울</li>
             <li>2024 "Visual Voices:예술로 평화를 말하다", 로프트 드라운드, 서울</li>
             <li>2024 "아트부산", 벡스코, 부산</li>
             <li>2023 "잊혀진 습관-한국 프랑스작가 교류전" 마산 현대 미술관, 창원</li>
@@ -117,10 +120,11 @@ export default function ArtistPage() {
       <section>
       <h4 className="text-lg font-semibold text-[#111827] mb-4">해양환경 전시</h4>
       <ul className="space-y-1 text-sm leading-normal">
-        <li>2024 세계환경교육 컨퍼런스 전시, 고려대학교 SK미래관</li>
-        <li>2023 "바다의 바람" KT&G 해양생태계 보호 프로젝트 환경전시회, KT&G상상마당·KT&G타워, 서울</li>
-        <li>2023 "각자의 바다" 은평문화재단, 서울</li>
-        <li>2023 "업사이클 놀이터" 광명 리사이클센터, 광명</li>
+        <li>2025 "바다숨", 해운대 플랫폼, 부산</li>
+        <li>2024 "세계환경교육 컨퍼런스 전시", 고려대학교 SK미래관</li>
+        <li>2023 "바다의 바람", KT&G 해양생태계 보호 프로젝트 환경전시회, KT&G상상마당·KT&G타워, 서울</li>
+        <li>2023 "각자의 바다", 은평문화재단, 서울</li>
+        <li>2023 "업사이클 놀이터", 광명 리사이클센터, 광명</li>
         <li>2022 "세계시민 교육 포럼 전시", 우양미술관, 경주</li>
         <li>2022 "7차 국제 해양폐기물 컨퍼런스 기념 환경전시", 벡스코, 부산</li>
         <li>2022 "플라스틱의 두 얼굴 전", 국립광주과학관, 광주</li>

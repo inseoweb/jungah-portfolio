@@ -43,7 +43,7 @@ export default function Pagebaroque() {
     <main className="px-6 py-12 max-w-6xl mx-auto relative">
       {/* 제목 및 본문 */}
       <h2 className="text-[14px] font-semibold text-center text-[#666666] mb-1">[ 2025- ]</h2>
-      <h1 className="text-2xl font-bold text-center mb-2">바로크 요정들</h1>
+      <h1 className="text-2xl font-bold text-center mb-2">요정의 초상</h1>
       <h3 className="text-base font-medium text-center text-[#4B5563] mb-5">
         캔버스에 유화
       </h3>

@@ -8,8 +8,53 @@ export default function ExhibitionsPage() {
         최근 전시회<br />
       </h1>
 
+
+      {/* 전시 0 */}
+      <div className="h-10" />
+          <div className="flex flex-col md:flex-row gap-10 items-stretch">
+          <div className="w-full md:w-1/2 flex justify-center">
+            <img
+              src="/images/posters/0.jpg"
+              alt="전시 포스터"
+              className="w-full h-auto object-contain"
+            />
+          </div>
+          <div className="w-full md:w-1/2 flex items-center">
+            <div>
+              <h2 className="text-xl font-medium mb-2">2025. 11. 11(화) - 11. 25(화)</h2>
+              <h1 className="text-2xl font-bold mb-1">김정아 개인전 :<br />제10회 메디치상 수상 기념전</h1>
+              <h1 className="text-2xl font-medium mb-4">-영원을 꿈꾸는 일회용</h1>
+              <h2 className="text-l font-semibold mb-0">학고재 아트센터</h2>
+              <p className="text-sm mb-4">서울특별시 종로구 삼청로 48-4</p>
+            </div>
+          </div>
+        </div>
       {/* 전시 1 */}
       <div className="h-10" />
+          <div className="flex flex-col md:flex-row gap-10 items-stretch">
+          <div className="w-full md:w-1/2 flex justify-center">
+            <img
+              src="/images/posters/2.png"
+              alt="전시 포스터"
+              className="w-full h-auto object-contain"
+            />
+          </div>
+          <div className="w-full md:w-1/2 flex items-center">
+            <div>
+              <h2 className="text-xl font-medium mb-2">2025. 8. 23(토) - 9. 27(토)</h2>
+              <h1 className="text-2xl font-bold mb-4">김정아 개인전:<br />꽃보다 아름답다- 남겨진 것들의 미학</h1>
+              <h2 className="text-l font-semibold mb-0">아트살롱 드 아씨</h2>
+              <p className="text-sm mb-4">서울시 영등포구 국제금융로8길16 신영증권BD B128호</p>
+              <p className="text-sm leading-relaxed text-gray-700">
+                나는 화려한 이면에 숨겨진 자화상을 통해<br />‘진정한 아름다움’이 무엇인지 질문을 던지고자 한다.
+              </p>
+            </div>
+          </div>
+        </div>
+      
+
+      {/* 전시 2 */}
+      <div className="h-20" />
       <div className="flex flex-col md:flex-row gap-10 items-stretch">
         <div className="w-full md:w-1/2 flex justify-center">
           <img
@@ -32,30 +77,10 @@ export default function ExhibitionsPage() {
           </div>
         </div>
       </div>
+        
 
-      {/* 전시 2 */}
-      <div className="h-14" />
-
-      <div className="flex flex-col md:flex-row gap-10 items-stretch">
-        <div className="w-full md:w-1/2 flex justify-center">
-          <img
-            src="/images/posters/2.jpeg"
-            alt="전시 포스터"
-            className="w-full h-auto object-contain"
-          />
-        </div>
-        <div className="w-full md:w-1/2 flex items-center">
-          <div>
-            <h2 className="text-xl font-medium mb-2">2025. 6. 12(목) - 7. 9(수)</h2>
-            <h1 className="text-2xl font-bold mb-4">갤러리0도씨 그룹전:<br />Touching 촉각적 풍경 2025</h1>
-            <h2 className="text-l font-semibold mb-0">갤러리0°C</h2>
-            <p className="text-sm mb-4">서울 서대문구 홍제천로 180 1층</p>
-            <p className="text-sm leading-relaxed text-gray-700">
-            2025 전시는 촉각의 신체적, 감성적 영역에 집중하여<br />마치 엄마의 살을 느끼고 싶어 이불을 두르고 다니는 아이에서부터<br />할머니의 거친 손과 같은 우리의 마음을 움직이고 우리 삶을<br />살아가게 만드는 정서적 힘의 영역을 시각화하여 해석하고<br />접근하고자 한다.
-            </p>
-          </div>
-        </div>
-      </div>
+        
+     
     </main>
   );
 }

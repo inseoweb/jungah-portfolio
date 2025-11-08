@@ -130,7 +130,7 @@ function HomeCarousel({
         <ChevronRight size={28} />
       </button>
 
-      <nav className="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2">
+      <nav className="absolute bottom-10 md:bottom-3 left-1/2 -translate-x-1/2">
         <ol className="flex gap-1.5" aria-label="슬라이드 인디케이터">
           {slides.map((_, i) => (
             <li key={i}>
