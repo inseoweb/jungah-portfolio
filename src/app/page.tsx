@@ -184,8 +184,8 @@ function ChevronRight({ size = 20 }: { size?: number }) {
 
 export default function Page() {
   const slides: Slide[] = [
-    { title: "바로크 요정", img: "/images/home/baroque.jpg", href: "/baroque" },
-    { title: "요정의 초상", img: "/images/home/fairy-portrait.jpg", href: "/portrait" },
+    { title: "요정의 초상", img: "/images/home/baroque.jpg", href: "/baroque" },
+    { title: "요정들", img: "/images/home/fairy-portrait.jpg", href: "/portrait" },
     { title: "꽃보다 아름답다", img: "/images/home/beautiful-than-flower.jpg", href: "/flower" },
     { title: "꽃꿈", img: "/images/home/flower-dream.jpg", href: "/dream" },
     { title: "해양환경작품", img: "/images/home/marine.jpg", href: "/marine" },
