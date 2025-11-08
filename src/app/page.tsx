@@ -187,7 +187,7 @@ export default function Page() {
     { title: "바로크 요정", img: "/images/home/baroque.jpg", href: "/baroque" },
     { title: "요정의 초상", img: "/images/home/fairy-portrait.jpg", href: "/portrait" },
     { title: "꽃보다 아름답다", img: "/images/home/beautiful-than-flower.jpg", href: "/flower" },
-    { title: "꽃꿈", img: "/images/home/flower-dream.jpg", href: "/flower-dream" },
+    { title: "꽃꿈", img: "/images/home/flower-dream.jpg", href: "/dream" },
     { title: "해양환경작품", img: "/images/home/marine.jpg", href: "/marine" },
     { title: "도시·숲 1990~1999", img: "/images/home/city-90.jpg", href: "/1990-1999" },
     { title: "도시·숲 2000~2014", img: "/images/home/city-00.jpg", href: "/2000-2014" },
