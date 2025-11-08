@@ -86,7 +86,7 @@ function HomeCarousel({
       ref={containerRef}
       aria-roledescription="carousel"
       aria-label="Featured works"
-      className="relative w-full h-[78vh] min-h-[520px] max-h-[920px] overflow-hidden transition-colors duration-700"
+      className="relative w-full h-[70svh] md:h-[78vh] min-h-[420px] max-h-[920px] overflow-hidden transition-colors duration-700"
       style={{ backgroundColor }}
     >
       <AnimatePresence custom={direction} initial={false} mode="popLayout">
@@ -116,21 +116,21 @@ function HomeCarousel({
       </AnimatePresence>
 
       <button
-        className="absolute left-4 top-1/2 -translate-y-1/2 p-2 text-neutral-700/70 hover:text-neutral-900 focus:outline-none"
+        className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 p-2 text-neutral-700/70 hover:text-neutral-900 focus:outline-none"
         aria-label="이전 작품"
         onClick={() => paginate(-1)}
       >
         <ChevronLeft size={28} />
       </button>
       <button
-        className="absolute right-4 top-1/2 -translate-y-1/2 p-2 text-neutral-700/70 hover:text-neutral-900 focus:outline-none"
+        className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 p-2 text-neutral-700/70 hover:text-neutral-900 focus:outline-none"
         aria-label="다음 작품"
         onClick={() => paginate(1)}
       >
         <ChevronRight size={28} />
       </button>
 
-      <nav className="absolute bottom-10 left-1/2 -translate-x-1/2">
+      <nav className="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2">
         <ol className="flex gap-1.5" aria-label="슬라이드 인디케이터">
           {slides.map((_, i) => (
             <li key={i}>
@@ -151,13 +151,13 @@ function HomeCarousel({
 
 function SlideImage({ slide }: { slide: Slide }) {
   return (
-    <div className="relative mx-auto max-h-[39vh] w-[45vw] md:w-[33vw] select-none">
-      <div className="relative mx-auto w-full" style={{ aspectRatio: "4/3" }}>
+    <div className="relative mx-auto max-h-[60svh] w-[86vw] sm:w-[80vw] md:w-[60vw] lg:w-[45vw] select-none">
+      <div className="relative mx-auto w-full" style={{ aspectRatio: '4/3' }}>
         <Image
           src={slide.img}
           alt={slide.title}
           fill
-          priority
+          priority={slide.title === '바로크 요정'}
           sizes="(max-width: 768px) 90vw, (max-width: 1280px) 66vw, 60vw"
           className="object-contain"
         />
