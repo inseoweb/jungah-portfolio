@@ -8,7 +8,7 @@ export default function ArtistPage() {
       {/* 제목 영역 */}
       <h2 className="text-[14px] font-semibold text-center text-[#666666] mb-2">[ 작가 소개 ]</h2>
       <h1 className="text-2xl font-bold text-center mb-2">김정아 Kim JungAh</h1>
-      <h3 className="text-base font-medium text-center text-[#4B5563] mb-10">서양화가, 바다환경작업</h3>
+      <h3 className="text-base font-medium text-center text-[#4B5563] mb-10">서양화가</h3>
 
       {/* 여백 */}
       <div className="h-6" />
@@ -66,6 +66,9 @@ export default function ArtistPage() {
       <section className="mb-12">
         <h4 className="text-lg font-semibold text-[#111827] mb-4">그룹전</h4>
         <ul className="space-y-1 text-sm leading-normal">
+            <li>2025 "여산 양달석을 오마주하다", 섬집2000갤러리, 거제</li>
+            <li>2025 "아이부키 스윙 스페이스 오픈 스튜디오", 서울</li>
+            <li>2025 "2025 K-ART IN YEON", 연아트오브갤러리, 창원</li>
             <li>2025 "촉각적 풍경-touching",갤러리 0℃, 서울</li>
             <li>2024 "CHARMing 전", 쿄토시 국제교류회관, 일본</li>
             <li>2024 "촉각적 풍경", 갤러리 0'c, 서울</li>
@@ -120,6 +123,7 @@ export default function ArtistPage() {
       <section>
       <h4 className="text-lg font-semibold text-[#111827] mb-4">해양환경 전시</h4>
       <ul className="space-y-1 text-sm leading-normal">
+        <li>2025 "아트사이언스 전", 국립광주과학관, 광주</li>
         <li>2025 "바다숨", 해운대 플랫폼, 부산</li>
         <li>2024 "세계환경교육 컨퍼런스 전시", 고려대학교 SK미래관</li>
         <li>2023 "바다의 바람", KT&G 해양생태계 보호 프로젝트 환경전시회, KT&G상상마당·KT&G타워, 서울</li>
