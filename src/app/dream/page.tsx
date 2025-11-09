@@ -67,37 +67,6 @@ export default function Pagedream() {
         </div>
       ))}
 
-      {/* 모달 팝업 */}
-      {selectedIndex !== null && (
-        <div className="fixed inset-0 z-50 bg-black bg-opacity-80 flex items-center justify-center">
-          <div className="flex flex-col items-center justify-center w-[70vw] max-h-[90vh]">
-            {/* 이미지 wrapper */}
-            <div className="relative w-[60%]">
-              {/* X 버튼 - 이미지 우측 위에서 50px */}
-              <button
-                className="absolute top-0 right-[-50px] text-white text-3xl z-50"
-                onClick={() => setSelectedIndex(null)}
-              >
-                ×
-              </button>
-
-              {/* 이미지 */}
-              <img
-                src={`/images/dream/${selectedIndex + 1}.jpg`}
-                alt={`팝업 이미지 ${selectedIndex + 1}`}
-                className="w-full h-auto object-contain block mx-auto"
-              />
-            </div>
-
-            {/* 번호 및 화살표 */}
-            <div className="flex items-center justify-center mt-[30px] text-white text-sm">
-              <button onClick={handlePrev} className="mr-[40px] text-2xl">&lt;</button>
-              <span>{selectedIndex + 1} / {totalImages}</span>
-              <button onClick={handleNext} className="ml-[40px] text-2xl">&gt;</button>
-            </div>
-          </div>
-        </div>
-      )}
     </main>
   );
 }
