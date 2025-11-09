@@ -30,6 +30,7 @@ function HomeCarousel({
   const wrap = (i: number) => (i % total + total) % total;
   const paginate = (dir: 1 | -1) => setIndex(([i]) => [wrap(i + dir), dir]);
 
+  // 키보드 ← →
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "ArrowRight") paginate(1);
@@ -39,6 +40,7 @@ function HomeCarousel({
     return () => window.removeEventListener("keydown", onKey);
   }, []);
 
+  // 자동재생
   useEffect(() => {
     if (!autoPlay || prefersReducedMotion) return;
     const el = containerRef.current;
@@ -59,6 +61,7 @@ function HomeCarousel({
     };
   }, [autoPlay, autoPlayMs, prefersReducedMotion]);
 
+  // 프레이머 모션
   const variants = {
     enter: (dir: 1 | -1) => ({ x: dir > 0 ? "100%" : "-100%", opacity: 1 }),
     center: { x: 0, opacity: 1 },
@@ -76,7 +79,7 @@ function HomeCarousel({
     },
   };
 
-  // ✅ 바로크 요정 배경 처리
+  // “바로크 요정” 배경색
   const currentTitle = slides[index]?.title;
   const isBaroque = currentTitle === "바로크 요정";
   const backgroundColor = isBaroque ? "#EBE8DF" : "#FFFFFF";
@@ -109,12 +112,14 @@ function HomeCarousel({
             <SlideImage slide={slides[index]} />
           )}
 
+          {/* 작품 제목 배지 */}
           <figcaption className="absolute bottom-10 right-6 rounded-md bg-white/70 px-3 py-1.5 text-[13px] font-medium text-neutral-800 shadow-sm">
             {slides[index].title}
           </figcaption>
         </motion.figure>
       </AnimatePresence>
 
+      {/* 좌우 버튼 */}
       <button
         className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 p-2 text-neutral-700/70 hover:text-neutral-900 focus:outline-none"
         aria-label="이전 작품"
@@ -130,7 +135,8 @@ function HomeCarousel({
         <ChevronRight size={28} />
       </button>
 
-      <nav className="absolute bottom-12 md:bottom-10 left-1/2 -translate-x-1/2">
+      {/* ✅ 인디케이터 ‘점’만 더 아래로 내림 (모바일: 14px, 데스크탑: bottom-8) */}
+      <nav className="absolute left-1/2 -translate-x-1/2 bottom-[14px] md:bottom-8">
         <ol className="flex gap-1.5" aria-label="슬라이드 인디케이터">
           {slides.map((_, i) => (
             <li key={i}>
@@ -152,12 +158,12 @@ function HomeCarousel({
 function SlideImage({ slide }: { slide: Slide }) {
   return (
     <div className="relative mx-auto max-h-[60svh] w-[86vw] sm:w-[80vw] md:w-[60vw] lg:w-[45vw] select-none">
-      <div className="relative mx-auto w-full" style={{ aspectRatio: '4/3' }}>
+      <div className="relative mx-auto w-full" style={{ aspectRatio: "4/3" }}>
         <Image
           src={slide.img}
           alt={slide.title}
           fill
-          priority={slide.title === '바로크 요정'}
+          priority={slide.title === "바로크 요정"}
           sizes="(max-width: 768px) 90vw, (max-width: 1280px) 66vw, 60vw"
           className="object-contain"
         />
