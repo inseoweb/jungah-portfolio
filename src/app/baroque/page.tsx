@@ -21,12 +21,13 @@ export default function PageBaroque() {
             <img
               src={`/images/baroque/${index}.jpg`}
               alt={`요정의 초상 ${index}`}
-              className="w-full h-auto object-contain mb-4 mx-auto"
+              className="w-full sm:w-[80%] md:w-[65%] h-auto object-contain mb-4 mx-auto"
+
             />
             {/* 캡션(선택): 필요 없으면 <div> 통째로 지워도 됨 */}
             <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
               <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">
-                요정의 초상 {index}
+                요정의 초상
               </span>
               <span className="text-[14px] sm:text-[16px] font-normal text-[#4B5563] text-center">
                 {/* 예시 메타데이터 — 필요 시 수정/삭제 */}
