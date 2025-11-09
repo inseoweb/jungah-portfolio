@@ -42,9 +42,7 @@ export default function Pageflower() {
       </h3>
       <p className="text-center leading-relaxed mb-12 text-[#909090] text-[15px] sm:text-base max-w-full sm:max-w-2xl mx-auto px-0 sm:px-0
 ">
-        바다에서 주운 플라스틱 쓰레기들. <br />
-        인간의 소중한 시간과 노력으로 가질 수 있었던 요정들. <br />
-        이제는 물도 육지도 이들의 자리가 아니다.
+        -
       </p>
 
       {/* 이미지 그리드 */}

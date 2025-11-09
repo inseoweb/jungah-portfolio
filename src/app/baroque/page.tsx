@@ -9,7 +9,7 @@ export default function PageBaroque() {
       {/* 제목 영역 */}
       <h2 className="text-[14px] font-semibold text-center text-[#666666] mb-1">[ 2025- ]</h2>
       <h1 className="text-xl sm:text-2xl font-bold text-center mb-3">요정의 초상</h1>
-      <p className="text-center leading-relaxed mb-10 text-[#666666] text-[15px] sm:text-base max-w-full sm:max-w-2xl mx-auto">
+      <p className="text-m font-medium text-center text-[#4B5563] mb-5">
         캔버스에 유화
       </p>
 
