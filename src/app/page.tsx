@@ -92,7 +92,7 @@ function HomeCarousel({
       <AnimatePresence custom={direction} initial={false} mode="popLayout">
         <motion.figure
           key={index}
-          className="absolute inset-0 flex justify-center items-start pt-4 md:items-center md:pt-0"
+          className="absolute inset-0 flex items-center justify-center"
           custom={direction}
           variants={variants}
           initial="enter"
