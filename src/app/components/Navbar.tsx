@@ -73,7 +73,8 @@ export default function Navbar() {
         }`}
       >
         <div className="relative flex items-center justify-between h-[64px]">
-        <Link href="/" className="text-2xl sm:text-xl font-bold">JungAh</Link>
+        <Link href="/" className="text-xl font-bold">JungAh</Link>
+
 
 
           {!isMobile && (
