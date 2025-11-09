@@ -1,82 +1,41 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-
-export default function Pagebaroque() {
-  const totalImages = 12;            // 이미지 개수
-  const [index, setIndex] = useState(0); // 현재 표시 중인 인덱스(0부터)
-
-  const prev = () => setIndex(i => (i - 1 + totalImages) % totalImages);
-  const next = () => setIndex(i => (i + 1) % totalImages);
-
-  // 키보드 ← → 로 이동
-  useEffect(() => {
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'ArrowLeft') prev();
-      if (e.key === 'ArrowRight') next();
-    };
-    window.addEventListener('keydown', onKey);
-    return () => window.removeEventListener('keydown', onKey);
-  }, []);
+export default function PageBaroque() {
+  // 파일명: /public/images/baroque/1.jpg ~ 12.jpg 기준
+  const totalImages = 12;
 
   return (
-    <main className="px-6 py-12 max-w-4xl mx-auto">
-      {/* 제목/메타 */}
-      <h2 className="text-[14px] font-semibold text-center text-[#666] mb-1">[ 2025- ]</h2>
-      <h1 className="text-2xl font-bold text-center mb-2">요정의 초상</h1>
-      <h3 className="text-base font-medium text-center text-[#4B5563] mb-5">캔버스에 유화</h3>
-      <p className="font-normal text-center leading-relaxed mb-8 text-[#909090] max-w-2xl mx-auto">-</p>
+    <main className="px-2 sm:px-6 py-8 sm:py-12 max-w-6xl mx-auto">
+      {/* 제목 영역 */}
+      <h2 className="text-[14px] font-semibold text-center text-[#666666] mb-1">[ 2025- ]</h2>
+      <h1 className="text-xl sm:text-2xl font-bold text-center mb-3">요정의 초상</h1>
+      <p className="text-center leading-relaxed mb-10 text-[#666666] text-[15px] sm:text-base max-w-full sm:max-w-2xl mx-auto">
+        캔버스에 유화
+      </p>
 
-      {/* 단일 이미지 뷰어 */}
-      <section className="relative">
-        {/* 이미지 */}
-        <div className="w-full flex justify-center">
-          <div className="w-full sm:w-[520px] md:w-[640px] lg:w-[720px]">
+      {/* 이미지 섹션: 한 장씩 세로로 나열 */}
+      {Array.from({ length: totalImages }).map((_, i) => {
+        const index = i + 1;
+        return (
+          <section key={index} className="pb-[70px]">
             <img
-              src={`/images/baroque/${index + 1}.jpg`}
-              alt={`작품 ${index + 1}`}
-              className="w-full h-auto object-contain select-none"
-              onClick={next} // 이미지 탭하면 다음으로
+              src={`/images/baroque/${index}.jpg`}
+              alt={`요정의 초상 ${index}`}
+              className="w-full h-auto object-contain mb-4 mx-auto"
             />
-          </div>
-        </div>
-
-        {/* 좌/우 버튼 */}
-        <button
-          aria-label="이전"
-          onClick={prev}
-          className="absolute left-0 top-1/2 -translate-y-1/2 px-3 py-2 text-neutral-700/70 hover:text-neutral-900"
-        >
-          ‹
-        </button>
-        <button
-          aria-label="다음"
-          onClick={next}
-          className="absolute right-0 top-1/2 -translate-y-1/2 px-3 py-2 text-neutral-700/70 hover:text-neutral-900"
-        >
-          ›
-        </button>
-
-        {/* 인덱스/도트 */}
-        <div className="mt-4 flex flex-col items-center gap-2">
-          <span className="text-sm text-neutral-600">
-            {index + 1} / {totalImages}
-          </span>
-          <ol className="flex gap-1.5" aria-label="슬라이드 인디케이터">
-            {Array.from({ length: totalImages }).map((_, i) => (
-              <li key={i}>
-                <button
-                  aria-label={`${i + 1}번 이미지로 이동`}
-                  className={`h-2 w-2 rounded-full transition ${
-                    i === index ? 'bg-neutral-800' : 'bg-neutral-300 hover:bg-neutral-400'
-                  }`}
-                  onClick={() => setIndex(i)}
-                />
-              </li>
-            ))}
-          </ol>
-        </div>
-      </section>
+            {/* 캡션(선택): 필요 없으면 <div> 통째로 지워도 됨 */}
+            <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
+              <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">
+                요정의 초상 {index}
+              </span>
+              <span className="text-[14px] sm:text-[16px] font-normal text-[#4B5563] text-center">
+                {/* 예시 메타데이터 — 필요 시 수정/삭제 */}
+                oil on canvas
+              </span>
+            </div>
+          </section>
+        );
+      })}
     </main>
   );
 }

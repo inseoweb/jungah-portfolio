@@ -3,7 +3,7 @@ import './globals.css';
 import Navbar from './components/Navbar'; // 클라이언트 컴포넌트
 
 export const metadata = {
-  title: 'JungAh Archive',
+  title: '김정아 JungAh',
   description: '김정아 작가의 작품 아카이브',
 };
 
