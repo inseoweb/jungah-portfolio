@@ -105,7 +105,7 @@ export default function Navbar() {
 
       {/* 📱 모바일 메뉴 (폰트 한 단계 업) */}
       {isMobile && isOpen && (
-        <div className="px-6 pt-4 pb-8 bg-white border-b text-lg font-medium text-left flex flex-col gap-7">
+        <div className="px-6 pt-4 pb-8 bg-white border-b text-lg font-medium text-left flex flex-col gap-4">
           <SingleMobileLink href="/artist" onNavigate={closeMenu}>
             김정아
           </SingleMobileLink>
@@ -212,10 +212,9 @@ function MobileGroup({
   onNavigate: () => void;
 }) {
   return (
-    <div className="flex flex-col space-y-3">
-      {/* 레이블도 한 단계 업: text-lg → 유지, 굵기만 강조 */}
+    <div className="flex flex-col space-y-2">
       <span className="font-semibold">{label}</span>
-      <div className="pl-4 flex flex-col space-y-3 text-base text-[#4B5563]">
+      <div className="pl-4 flex flex-col space-y-2 text-base text-[#4B5563]">
         {items.map((item) => (
           <Link
             key={item.href}
