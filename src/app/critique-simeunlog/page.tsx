@@ -18,7 +18,6 @@ export default function SimeunlogReview() {
           심은록 (Sim Eunlog, 미술평론가, AI영화감독)
         </h3>
       </header>
-햐
       <div className="h-5" />
       
       <p className="mb-6 text-gray-700 leading-relaxed">
@@ -225,7 +224,7 @@ export default function SimeunlogReview() {
         <img
           src="/images/critique-simeunlog/7.png"
           alt="꽃꿈"
-          className="artwork-img"        />
+          className="artwork-img mb-[20px] max-w-[80%] mx-auto"        />
         <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
           <span className="text-[14px] font-bold text-[#111827]">꽃꿈 quiet dream</span>
           <span className="text-[14px] font-normal text-[#4B5563]">
