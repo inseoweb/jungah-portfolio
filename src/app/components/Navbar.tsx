@@ -51,6 +51,7 @@ export default function Navbar() {
     {
       label: '평론',
       children: [
+        { href: '/critique-simeunlog', label: '심은록 평론' },
         { href: '/critique-shim', label: '심상용 평론' },
         { href: '/critique-jung', label: '정석도 평론' },
       ],
@@ -148,6 +149,7 @@ export default function Navbar() {
           <MobileGroup
             label="평론"
             items={[
+              { href: '/critique-simeunlog', label: '심은록 평론' },
               { href: '/critique-shim', label: '심상용 평론' },
               { href: '/critique-jung', label: '정석도 평론' },
             ]}
