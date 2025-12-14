@@ -4,6 +4,10 @@ import { useState, useEffect } from 'react';
 
 export default function Pageflower() {
   const totalImages = 26;
+
+  // 전시 전경 이미지: /public/images/flower/exhibition/1.jpg ~ 2.jpg
+  const exhibitionImages = [1, 2];
+
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
   const handlePrev = () => {
@@ -30,7 +34,7 @@ export default function Pageflower() {
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [selectedIndex]);
+  }, [selectedIndex]); // (원래 코드 유지)
 
   return (
     <main className="px-6 py-12 max-w-6xl mx-auto relative">
@@ -40,10 +44,21 @@ export default function Pageflower() {
       <h3 className="text-m font-medium text-center text-[#4B5563] mb-5">
         63x63x4(cm), 한지 캐스팅에 수채
       </h3>
-      <p className="text-center leading-relaxed mb-12 text-[#909090] text-[15px] sm:text-base max-w-full sm:max-w-2xl mx-auto px-0 sm:px-0
-">
+      <p className="text-center leading-relaxed mb-12 text-[#909090] text-[15px] sm:text-base max-w-full sm:max-w-2xl mx-auto px-0 sm:px-0">
         -
       </p>
+
+      {/* ✅ 전시 전경 이미지 2장 (캡션 없음) */}
+      <section className="flex flex-col items-center space-y-6 mb-[90px]">
+        {exhibitionImages.map((index) => (
+          <img
+            key={index}
+            src={`/images/flower/exhibition/${index}.jpg`}
+            alt={`꽃보다 아름답다 전시 전경 ${index}`}
+            className="w-full sm:w-[85%] md:w-[70%] h-auto object-contain"
+          />
+        ))}
+      </section>
 
       {/* 이미지 그리드 */}
       {Array.from({ length: Math.ceil(totalImages / 2) }).map((_, rowIdx) => (
