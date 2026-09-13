@@ -43,7 +43,7 @@ function Hero({ projects }: { projects: Project[] }) {
     const onLeave = () => (paused = false);
     el?.addEventListener('mouseenter', onEnter);
     el?.addEventListener('mouseleave', onLeave);
-    const id = setInterval(() => !paused && paginate(1), 2000);
+    const id = setInterval(() => !paused && paginate(1), 4000);
     return () => {
       clearInterval(id);
       el?.removeEventListener('mouseenter', onEnter);
@@ -58,31 +58,37 @@ function Hero({ projects }: { projects: Project[] }) {
       ref={containerRef}
       aria-roledescription="carousel"
       aria-label="작가 소개"
-      className="relative -mx-6 -mt-6 h-[38svh] md:h-[46vh] min-h-[280px] max-h-[480px] overflow-hidden bg-[#EDEAE3]"
+      className="relative -mx-6 -mt-6 h-[44svh] md:h-[52vh] min-h-[320px] max-h-[540px] overflow-hidden bg-white"
     >
-      <AnimatePresence initial={false} mode="sync">
-        <motion.div
-          key={index}
-          className="absolute inset-0"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.9, ease: 'easeInOut' }}
-        >
-          <Image
-            src={current.img}
-            alt={current.titleKo}
-            fill
-            priority={index === 0}
-            sizes="100vw"
-            className="object-cover"
-          />
-        </motion.div>
-      </AnimatePresence>
+      <Link
+        href={current.href}
+        aria-label={`${current.titleKo} 작품 보기`}
+        className="group absolute inset-0 block"
+      >
+        <AnimatePresence initial={false} mode="sync">
+          <motion.div
+            key={index}
+            className="absolute inset-0"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.9, ease: 'easeInOut' }}
+          >
+            <Image
+              src={current.img}
+              alt={current.titleKo}
+              fill
+              priority={index === 0}
+              sizes="100vw"
+              className="object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+            />
+          </motion.div>
+        </AnimatePresence>
+      </Link>
 
-      <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/55 to-transparent" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-white/85 via-white/35 to-transparent" />
 
-      <div className="relative z-10 flex h-full items-center px-6 md:px-16">
+      <div className="pointer-events-none relative z-10 flex h-full items-center px-6 md:px-16">
         <div className="max-w-md">
           <p className="mb-3 text-xl md:text-2xl font-bold leading-snug text-neutral-900">
             관심 밖으로 밀려난
@@ -98,7 +104,7 @@ function Hero({ projects }: { projects: Project[] }) {
           </p>
           <a
             href="#projects"
-            className="inline-flex items-center gap-2 border-b border-neutral-900 pb-1 text-xs md:text-sm font-semibold tracking-widest text-neutral-900"
+            className="pointer-events-auto inline-flex items-center gap-2 border-b border-neutral-900 pb-1 text-xs md:text-sm font-semibold tracking-widest text-neutral-900"
           >
             VIEW WORKS
             <span aria-hidden>→</span>
