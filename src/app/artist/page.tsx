@@ -40,6 +40,10 @@ export default function ArtistPage() {
       <section className="mb-12">
       <h4 className="text-lg font-semibold text-[#111827] mb-4">개인전</h4>
       <ul className="space-y-1 text-sm leading-normal">
+        <li>2026 &quot;푸른 골목의 안쪽&quot;, 기획초대전, 토포하우스, 서울</li>
+        <li>2026 &quot;다시돌아온 요정의 시간&quot;, 이마도국제창작레지던시, 갤러리 금요일의 섬, 해남</li>
+        <li>2026 &quot;텅빈 무릉도원- 허무를 떠내다, 아름다움의 이름으로&quot;, 기획초대전, 바이브 아트스페이스, 서울</li>
+        <li>2025 &quot;영원을 꿈꾸는 일회용&quot;, 메디치상 수상기념 초대 개인전, 학고재아트센터, 서울</li>
         <li>2025 &quot;꽃보다 아름답다- 남겨진 것들의 미학&quot;, 아트살롱 드 아씨, 서울</li>
         <li>2025 &quot;한걸음 다가서면 바꿀 수 있어요&quot;, 두손갤러리, 서울</li>
         <li>2023 &quot;내 숲에 작은 새도 쉬고&quot; 초대전, 우주의 바다갤러리, 부산</li>
@@ -61,6 +65,13 @@ export default function ArtistPage() {
       <section className="mb-12">
         <h4 className="text-lg font-semibold text-[#111827] mb-4">그룹전</h4>
         <ul className="space-y-1 text-sm leading-normal">
+            <li>2026 &quot;한일작가8인전&quot;, 키타노갤러리, 교토</li>
+            <li>2026 &quot;행촌미술관 재개관 기념전&quot;, 행촌미술관, 해남</li>
+            <li>2026 &quot;Objects, Materials and Composed Space - 형태의 장면&quot;, 스페이스 수퍼노말, 서울</li>
+            <li>2026 &quot;art6- The Layers of Perception&quot;, 다이아몬드G, 서울</li>
+            <li>2026 &quot;RSS 16th International Creative Arts Workshop and Exhibition&quot;, 라자망갈라대학, 방콕</li>
+            <li>2026 &quot;Art capital-comparaison 2026&quot;, 그랑팔레, 파리</li>
+            <li>2025 &quot;wave25 한일작가교류전&quot;, 한벽원미술관, 서울</li>
             <li>2025 &quot;여산 양달석을 오마주하다&quot;, 섬집2000갤러리, 거제</li>
             <li>2025 &quot;아이부키 스윙 스페이스 오픈 스튜디오&quot;, 서울</li>
             <li>2025 &quot;2025 K-ART IN YEON&quot;, 연아트오브갤러리, 창원</li>
