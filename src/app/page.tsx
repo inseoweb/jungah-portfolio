@@ -1,150 +1,127 @@
-"use client";
+'use client';
 
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import Image from "next/image";
-import { AnimatePresence, motion, type PanInfo } from "framer-motion";
+import { useCallback, useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { AnimatePresence, motion } from 'framer-motion';
 
-type Slide = { img: string; title: string; href?: string };
+type Project = {
+  titleKo: string;
+  year: string;
+  category: string;
+  img: string;
+  href: string;
+};
 
-function HomeCarousel({
-  slides = [],
-  autoPlay = true,
-  autoPlayMs = 5000,
-}: {
-  slides?: Slide[];
-  autoPlay?: boolean;
-  autoPlayMs?: number;
-}) {
-  const [[index, direction], setIndex] = useState<[number, 1 | -1]>([0, 1]);
-  const total = Array.isArray(slides) ? slides.length : 0;
+const PROJECTS: Project[] = [
+  { titleKo: '요정의 초상', year: '2025-', category: '요정', img: '/images/home/baroque.jpg', href: '/baroque' },
+  { titleKo: '컵 (일화용컵 도자기로 만들기)', year: '1999', category: '도시·숲', img: '/images/1990/21.jpeg', href: '/1990-1999' },
+  { titleKo: '꽃보다 아름답다', year: '2003-', category: '요정', img: '/images/home/beautiful-than-flower.jpg', href: '/flower' },
+  { titleKo: '꽃꿈', year: '2024-', category: '요정', img: '/images/home/flower-dream.jpg', href: '/dream' },
+  { titleKo: '신림동', year: '2021', category: '해양환경작품', img: '/images/marine/6.jpg', href: '/marine' },
+  { titleKo: '소리없는', year: '1999', category: '도시·숲', img: '/images/1990/1.jpeg', href: '/1990-1999' },
+  { titleKo: '꿈과 이제 오후', year: '2013', category: '도시·숲', img: '/images/2000/6.jpg', href: '/2000-2014' },
+  { titleKo: '밤의 숲', year: '2020', category: '도시·숲', img: '/images/2015/forest-night.png', href: '/2015' },
+];
+
+function Hero({ projects }: { projects: Project[] }) {
+  const [index, setIndex] = useState(0);
+  const total = projects.length;
   const containerRef = useRef<HTMLDivElement>(null);
-
-  const prefersReducedMotion = useMemo(
-    () =>
-      typeof window !== "undefined" &&
-      window.matchMedia?.("(prefers-reduced-motion: reduce)").matches,
-    []
-  );
 
   const paginate = useCallback(
     (dir: 1 | -1) => {
-      if (total === 0) return;
-      setIndex(([i]) => [((i + dir) % total + total) % total, dir]);
+      setIndex((i) => ((i + dir) % total + total) % total);
     },
     [total]
   );
 
   useEffect(() => {
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "ArrowRight") paginate(1);
-      else if (e.key === "ArrowLeft") paginate(-1);
-    };
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, [paginate]);
-
-  useEffect(() => {
-    if (!autoPlay || prefersReducedMotion || total === 0) return;
     const el = containerRef.current;
     let paused = false;
     const onEnter = () => (paused = true);
     const onLeave = () => (paused = false);
-    el?.addEventListener("mouseenter", onEnter);
-    el?.addEventListener("mouseleave", onLeave);
-    el?.addEventListener("focusin", onEnter);
-    el?.addEventListener("focusout", onLeave);
-    const id = setInterval(() => !paused && paginate(1), autoPlayMs);
+    el?.addEventListener('mouseenter', onEnter);
+    el?.addEventListener('mouseleave', onLeave);
+    const id = setInterval(() => !paused && paginate(1), 4000);
     return () => {
       clearInterval(id);
-      el?.removeEventListener("mouseenter", onEnter);
-      el?.removeEventListener("mouseleave", onLeave);
-      el?.removeEventListener("focusin", onEnter);
-      el?.removeEventListener("focusout", onLeave);
+      el?.removeEventListener('mouseenter', onEnter);
+      el?.removeEventListener('mouseleave', onLeave);
     };
-  }, [autoPlay, autoPlayMs, prefersReducedMotion, total, paginate]);
+  }, [paginate]);
 
-  if (total === 0) return null;
-
-  const variants = {
-    enter: (dir: 1 | -1) => ({ x: dir > 0 ? "100%" : "-100%", opacity: 1 }),
-    center: { x: 0, opacity: 1 },
-    exit: (dir: 1 | -1) => ({ x: dir > 0 ? "-100%" : "100%", opacity: 1 }),
-  } as const;
-
-  const dragProps = {
-    drag: "x" as const,
-    dragConstraints: { left: 0, right: 0 },
-    dragElastic: 0.8,
-    onDragEnd: (_: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
-      const swipePower = Math.abs(info.offset.x) * info.velocity.x;
-      if (swipePower < -500) paginate(1);
-      else if (swipePower > 500) paginate(-1);
-    },
-  };
-
-  const currentTitle = slides[index]?.title;
-  const isBaroque = currentTitle === "바로크 요정";
-  const backgroundColor = isBaroque ? "#EBE8DF" : "#FFFFFF";
+  const current = projects[index];
 
   return (
     <section
       ref={containerRef}
       aria-roledescription="carousel"
-      aria-label="Featured works"
-      className="relative w-full h-[70svh] md:h-[78vh] min-h-[420px] max-h-[920px] overflow-hidden transition-colors duration-700 mt-3 md:mt-0"
-      style={{ backgroundColor }}
+      aria-label="작가 소개"
+      className="relative -mx-6 -mt-6 h-[44svh] md:h-[52vh] min-h-[320px] max-h-[540px] overflow-hidden bg-white"
     >
-      <AnimatePresence custom={direction} initial={false} mode="popLayout">
-        <motion.figure
-          key={index}
-          className="absolute inset-0 flex items-center justify-center"
-          custom={direction}
-          variants={variants}
-          initial="enter"
-          animate="center"
-          exit="exit"
-          transition={{ type: "tween", ease: "easeInOut", duration: 0.55 }}
-          {...dragProps}
-        >
-          {slides[index]?.href ? (
-            <a href={slides[index].href!} aria-label={slides[index].title}>
-              <SlideImage slide={slides[index]} />
-            </a>
-          ) : (
-            <SlideImage slide={slides[index]} />
-          )}
-
-          <figcaption className="absolute bottom-10 right-6 rounded-md bg-white/70 px-3 py-1.5 text-[13px] font-medium text-neutral-800 shadow-sm">
-            {slides[index].title}
-          </figcaption>
-        </motion.figure>
-      </AnimatePresence>
-
-      <button
-        className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 p-2 text-neutral-700/70 hover:text-neutral-900 focus:outline-none"
-        aria-label="이전 작품"
-        onClick={() => paginate(-1)}
+      <Link
+        href={current.href}
+        aria-label={`${current.titleKo} 작품 보기`}
+        className="group absolute inset-0 block"
       >
-        <ChevronLeft size={28} />
-      </button>
-      <button
-        className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 p-2 text-neutral-700/70 hover:text-neutral-900 focus:outline-none"
-        aria-label="다음 작품"
-        onClick={() => paginate(1)}
-      >
-        <ChevronRight size={28} />
-      </button>
+        <AnimatePresence initial={false} mode="sync">
+          <motion.div
+            key={index}
+            className="absolute inset-0"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.9, ease: 'easeInOut' }}
+          >
+            <Image
+              src={current.img}
+              alt={current.titleKo}
+              fill
+              priority={index === 0}
+              sizes="100vw"
+              className="object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+            />
+          </motion.div>
+        </AnimatePresence>
+      </Link>
 
-      <nav className="absolute left-1/2 -translate-x-1/2 bottom-[14px] md:bottom-8">
-        <ol className="flex gap-1.5" aria-label="슬라이드 인디케이터">
-          {slides.map((_, i) => (
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-white/85 via-white/35 to-transparent" />
+
+      <div className="pointer-events-none relative z-10 flex h-full items-center px-6 md:px-16">
+        <div className="max-w-md">
+          <p className="mb-3 text-xl md:text-2xl font-bold leading-snug text-neutral-900">
+            관심 밖으로 밀려난
+            <br />
+            존재와 그 안에 남겨진
+            <br />
+            시간을 바라봅니다.
+          </p>
+          <p className="mb-4 text-xs md:text-sm text-neutral-600">
+            I look at what remains after
+            <br />
+            attention has moved elsewhere.
+          </p>
+          <a
+            href="#projects"
+            className="pointer-events-auto inline-flex items-center gap-2 border-b border-neutral-900 pb-1 text-xs md:text-sm font-semibold tracking-widest text-neutral-900"
+          >
+            VIEW WORKS
+            <span aria-hidden>→</span>
+          </a>
+        </div>
+      </div>
+
+      <nav className="absolute right-4 top-1/2 z-10 -translate-y-1/2 md:right-8">
+        <ol className="flex flex-col gap-2" aria-label="배경 이미지 인디케이터">
+          {projects.map((_, i) => (
             <li key={i}>
               <button
-                aria-label={`${i + 1}번 슬라이드로 이동`}
-                className={`h-2 w-2 rounded-full transition ${
-                  i === index ? "bg-neutral-800" : "bg-neutral-300 hover:bg-neutral-400"
+                aria-label={`${i + 1}번 이미지로 이동`}
+                onClick={() => setIndex(i)}
+                className={`block h-2 w-2 rounded-full transition ${
+                  i === index ? 'bg-neutral-900' : 'bg-neutral-400/60 hover:bg-neutral-600'
                 }`}
-                onClick={() => setIndex([i, i > index ? 1 : -1])}
               />
             </li>
           ))}
@@ -154,54 +131,45 @@ function HomeCarousel({
   );
 }
 
-function SlideImage({ slide }: { slide: Slide }) {
+function ProjectsSection({ projects }: { projects: Project[] }) {
   return (
-    <div className="relative mx-auto max-h-[60svh] w-[86vw] sm:w-[80vw] md:w-[60vw] lg:w-[45vw] select-none">
-      <div className="relative mx-auto w-full" style={{ aspectRatio: "4/3" }}>
-        <Image
-          src={slide.img}
-          alt={slide.title}
-          fill
-          priority={slide.title === "바로크 요정"}
-          sizes="(max-width: 768px) 90vw, (max-width: 1280px) 66vw, 60vw"
-          className="object-contain"
-        />
+    <section id="projects" className="mx-auto max-w-[1400px] px-0 py-10 md:py-14">
+      <h2 className="mb-6 text-xs md:text-sm font-semibold tracking-[0.25em] text-neutral-500">
+        PROJECTS
+      </h2>
+      <div className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-4 md:gap-6">
+        {projects.map((project) => (
+          <Link
+            key={project.img}
+            href={project.href}
+            className="group block w-[42vw] shrink-0 snap-start sm:w-[200px]"
+          >
+            <div className="relative aspect-square w-full overflow-hidden bg-neutral-100">
+              <Image
+                src={project.img}
+                alt={project.titleKo}
+                fill
+                sizes="(max-width: 640px) 42vw, 200px"
+                className="object-cover transition-transform duration-300 group-hover:scale-105"
+              />
+            </div>
+            <div className="mt-3 space-y-0.5">
+              <p className="text-sm font-semibold text-neutral-900">{project.titleKo}</p>
+              <p className="text-xs text-neutral-500">{project.year}</p>
+              <p className="text-xs text-neutral-400">{project.category}</p>
+            </div>
+          </Link>
+        ))}
       </div>
-    </div>
-  );
-}
-
-function ChevronLeft({ size = 20 }: { size?: number }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" aria-hidden>
-      <path d="M15 6l-6 6 6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
-
-function ChevronRight({ size = 20 }: { size?: number }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" aria-hidden>
-      <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
+    </section>
   );
 }
 
 export default function Page() {
-  const slides: Slide[] = [
-    { title: "요정의 초상", img: "/images/home/baroque.jpg", href: "/baroque" },
-    { title: "요정들", img: "/images/home/fairy-portrait.jpg", href: "/fairy" },
-    { title: "꽃보다 아름답다", img: "/images/home/beautiful-than-flower.jpg", href: "/flower" },
-    { title: "꽃꿈", img: "/images/home/flower-dream.jpg", href: "/dream" },
-    { title: "해양환경작품", img: "/images/home/marine.jpg", href: "/marine" },
-    { title: "도시·숲 1990~1999", img: "/images/home/city-90.jpg", href: "/1990-1999" },
-    { title: "도시·숲 2000~2014", img: "/images/home/city-00.jpg", href: "/2000-2014" },
-    { title: "도시·숲 2015~", img: "/images/home/city-15.jpg", href: "/2015" },
-  ];
-
   return (
     <main className="min-h-screen">
-      <HomeCarousel slides={slides} autoPlay autoPlayMs={5000} />
+      <Hero projects={PROJECTS} />
+      <ProjectsSection projects={PROJECTS} />
     </main>
   );
 }
