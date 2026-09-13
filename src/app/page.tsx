@@ -3,7 +3,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { AnimatePresence, motion } from 'framer-motion';
 
 type Project = {
   titleKo: string;
@@ -14,7 +13,7 @@ type Project = {
 };
 
 const PROJECTS: Project[] = [
-  { titleKo: '요정의 초상', year: '2025-', category: '요정', img: '/images/home/baroque.jpg', href: '/baroque' },
+  { titleKo: '요정의 초상', year: '2025-', category: '요정', img: '/images/home/daepyo.jpeg', href: '/baroque' },
   { titleKo: '컵 (일화용컵 도자기로 만들기)', year: '1999', category: '도시·숲', img: '/images/1990/21.jpeg', href: '/1990-1999' },
   { titleKo: '꽃보다 아름답다', year: '2003-', category: '요정', img: '/images/home/beautiful-than-flower.jpg', href: '/flower' },
   { titleKo: '꽃꿈', year: '2024-', category: '요정', img: '/images/home/flower-dream.jpg', href: '/dream' },
@@ -65,25 +64,19 @@ function Hero({ projects }: { projects: Project[] }) {
         aria-label={`${current.titleKo} 작품 보기`}
         className="group absolute inset-0 block"
       >
-        <AnimatePresence initial={false} mode="sync">
-          <motion.div
-            key={index}
-            className="absolute inset-0"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.9, ease: 'easeInOut' }}
-          >
-            <Image
-              src={current.img}
-              alt={current.titleKo}
-              fill
-              priority={index === 0}
-              sizes="100vw"
-              className="object-contain transition-transform duration-500 group-hover:scale-[1.02]"
-            />
-          </motion.div>
-        </AnimatePresence>
+        {projects.map((project, i) => (
+          <Image
+            key={project.img}
+            src={project.img}
+            alt={project.titleKo}
+            fill
+            priority={i === 0}
+            sizes="100vw"
+            className={`object-contain transition-[opacity,transform] duration-[900ms] ease-in-out group-hover:scale-[1.02] ${
+              i === index ? 'opacity-100' : 'opacity-0'
+            }`}
+          />
+        ))}
       </Link>
 
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-white/85 via-white/35 to-transparent" />
@@ -134,7 +127,7 @@ function Hero({ projects }: { projects: Project[] }) {
 function ProjectsSection({ projects }: { projects: Project[] }) {
   return (
     <section id="projects" className="mx-auto max-w-[1400px] px-0 py-10 md:py-14">
-      <h2 className="mb-6 text-xs md:text-sm font-semibold tracking-[0.25em] text-neutral-500">
+      <h2 className="mb-6 text-xs md:text-sm font-semibold text-neutral-500">
         PROJECTS
       </h2>
       <div className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-4 md:gap-6">
