@@ -15,7 +15,7 @@ type Project = {
 
 const PROJECTS: Project[] = [
   { titleEn: 'Portrait of a Fairy', titleKo: '요정의 초상', year: '2025-', img: '/images/home/baroque.jpg', href: '/baroque' },
-  { titleEn: 'Fairies', titleKo: '요정들', year: '2023-', img: '/images/home/fairy-portrait.jpg', href: '/fairy' },
+  { titleEn: 'Cup (Made from a Disposable Cup)', titleKo: '컵 (일화용컵 도자기로 만들기)', year: '1999', img: '/images/1990/21.jpeg', href: '/1990-1999' },
   { titleEn: 'More Beautiful than Flowers', titleKo: '꽃보다 아름답다', year: '2003-', img: '/images/home/beautiful-than-flower.jpg', href: '/flower' },
   { titleEn: 'Flower Dream', titleKo: '꽃꿈', year: '2024-', img: '/images/home/flower-dream.jpg', href: '/dream' },
   { titleEn: 'Marine Environment', titleKo: '해양환경작품', year: '2011~', img: '/images/home/marine.jpg', href: '/marine' },
