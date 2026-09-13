@@ -6,22 +6,22 @@ import Link from 'next/link';
 import { AnimatePresence, motion } from 'framer-motion';
 
 type Project = {
-  titleEn: string;
   titleKo: string;
   year: string;
+  category: string;
   img: string;
   href: string;
 };
 
 const PROJECTS: Project[] = [
-  { titleEn: 'Portrait of a Fairy', titleKo: '요정의 초상', year: '2025-', img: '/images/home/baroque.jpg', href: '/baroque' },
-  { titleEn: 'Cup (Made from a Disposable Cup)', titleKo: '컵 (일화용컵 도자기로 만들기)', year: '1999', img: '/images/1990/21.jpeg', href: '/1990-1999' },
-  { titleEn: 'More Beautiful than Flowers', titleKo: '꽃보다 아름답다', year: '2003-', img: '/images/home/beautiful-than-flower.jpg', href: '/flower' },
-  { titleEn: 'Flower Dream', titleKo: '꽃꿈', year: '2024-', img: '/images/home/flower-dream.jpg', href: '/dream' },
-  { titleEn: 'Marine Environment', titleKo: '해양환경작품', year: '2011~', img: '/images/home/marine.jpg', href: '/marine' },
-  { titleEn: 'City & Forest', titleKo: '도시·숲', year: '1990-1999', img: '/images/home/city-90.jpg', href: '/1990-1999' },
-  { titleEn: 'City & Forest', titleKo: '도시·숲', year: '2000-2014', img: '/images/home/city-00.jpg', href: '/2000-2014' },
-  { titleEn: 'City & Forest', titleKo: '도시·숲', year: '2015~', img: '/images/home/city-15.jpg', href: '/2015' },
+  { titleKo: '요정의 초상', year: '2025-', category: '요정', img: '/images/home/baroque.jpg', href: '/baroque' },
+  { titleKo: '컵 (일화용컵 도자기로 만들기)', year: '1999', category: '도시·숲', img: '/images/1990/21.jpeg', href: '/1990-1999' },
+  { titleKo: '꽃보다 아름답다', year: '2003-', category: '요정', img: '/images/home/beautiful-than-flower.jpg', href: '/flower' },
+  { titleKo: '꽃꿈', year: '2024-', category: '요정', img: '/images/home/flower-dream.jpg', href: '/dream' },
+  { titleKo: '신림동', year: '2021', category: '해양환경작품', img: '/images/marine/6.jpg', href: '/marine' },
+  { titleKo: '소리없는', year: '1999', category: '도시·숲', img: '/images/1990/1.jpeg', href: '/1990-1999' },
+  { titleKo: '꿈과 이제 오후', year: '2013', category: '도시·숲', img: '/images/2000/6.jpg', href: '/2000-2014' },
+  { titleKo: '밤의 숲', year: '2020', category: '도시·숲', img: '/images/2015/forest-night.png', href: '/2015' },
 ];
 
 function Hero({ projects }: { projects: Project[] }) {
@@ -140,7 +140,7 @@ function ProjectsSection({ projects }: { projects: Project[] }) {
       <div className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-4 md:gap-6">
         {projects.map((project) => (
           <Link
-            key={`${project.href}-${project.year}`}
+            key={project.img}
             href={project.href}
             className="group block w-[42vw] shrink-0 snap-start sm:w-[200px]"
           >
@@ -154,9 +154,9 @@ function ProjectsSection({ projects }: { projects: Project[] }) {
               />
             </div>
             <div className="mt-3 space-y-0.5">
-              <p className="text-sm font-semibold text-neutral-900">{project.titleEn}</p>
-              <p className="text-xs text-neutral-500">{project.titleKo}</p>
-              <p className="text-xs text-neutral-400">{project.year}</p>
+              <p className="text-sm font-semibold text-neutral-900">{project.titleKo}</p>
+              <p className="text-xs text-neutral-500">{project.year}</p>
+              <p className="text-xs text-neutral-400">{project.category}</p>
             </div>
           </Link>
         ))}
