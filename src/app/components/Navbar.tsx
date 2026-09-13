@@ -169,10 +169,10 @@ function NavGroup({
 
       {hasChildren && (
         <div
-          className={`absolute top-[50px] flex flex-col items-center text-[12px] xl:text-sm font-normal text-[#4B5563] space-y-1 bg-white z-40 whitespace-nowrap w-max transition-all duration-300 ${
+          className={`absolute top-[50px] flex flex-col items-center text-[12px] xl:text-sm font-normal text-[#4B5563] space-y-1 bg-white z-40 whitespace-nowrap w-max transition-all ${
             showGrouped
-              ? 'opacity-100 translate-y-0 pointer-events-auto'
-              : 'pointer-events-none -translate-y-2 opacity-0'
+              ? 'opacity-100 translate-y-0 pointer-events-auto duration-300 delay-75'
+              : 'pointer-events-none -translate-y-2 opacity-0 duration-100 delay-0'
           }`}
         >
           {subItems!.map((item) => (
