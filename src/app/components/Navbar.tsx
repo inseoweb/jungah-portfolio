@@ -167,8 +167,14 @@ function NavGroup({
         </span>
       )}
 
-      {hasChildren && showGrouped && (
-        <div className="absolute top-[50px] flex flex-col items-center text-[12px] xl:text-sm font-normal text-[#4B5563] space-y-1 bg-white z-40 whitespace-nowrap w-max">
+      {hasChildren && (
+        <div
+          className={`absolute top-[50px] flex flex-col items-center text-[12px] xl:text-sm font-normal text-[#4B5563] space-y-1 bg-white z-40 whitespace-nowrap w-max transition-all duration-300 ${
+            showGrouped
+              ? 'opacity-100 translate-y-0 pointer-events-auto'
+              : 'pointer-events-none -translate-y-2 opacity-0'
+          }`}
+        >
           {subItems!.map((item) => (
             <Link key={item.href} href={item.href} className="hover:underline whitespace-nowrap">
               {item.label}
