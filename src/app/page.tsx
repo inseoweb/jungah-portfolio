@@ -83,17 +83,12 @@ function Hero({ projects }: { projects: Project[] }) {
 
       <div className="pointer-events-none relative z-10 flex h-full items-center px-6 md:px-16">
         <div className="max-w-md">
-          <p className="mb-3 text-xl md:text-2xl font-bold leading-snug text-neutral-900">
+          <p className="mb-4 text-xl md:text-2xl font-bold leading-snug text-[#282828]">
             관심 밖으로 밀려난
             <br />
             존재와 그 안에 남겨진
             <br />
             시간을 바라봅니다.
-          </p>
-          <p className="mb-4 text-xs md:text-sm text-neutral-600">
-            I look at what remains after
-            <br />
-            attention has moved elsewhere.
           </p>
           <a
             href="#projects"
