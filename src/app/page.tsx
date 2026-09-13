@@ -43,7 +43,7 @@ function Hero({ projects }: { projects: Project[] }) {
     const onLeave = () => (paused = false);
     el?.addEventListener('mouseenter', onEnter);
     el?.addEventListener('mouseleave', onLeave);
-    const id = setInterval(() => !paused && paginate(1), 5000);
+    const id = setInterval(() => !paused && paginate(1), 2000);
     return () => {
       clearInterval(id);
       el?.removeEventListener('mouseenter', onEnter);
@@ -58,7 +58,7 @@ function Hero({ projects }: { projects: Project[] }) {
       ref={containerRef}
       aria-roledescription="carousel"
       aria-label="작가 소개"
-      className="relative -mx-6 -mt-6 h-[62svh] md:h-[70vh] min-h-[440px] max-h-[760px] overflow-hidden bg-[#EDEAE3]"
+      className="relative -mx-6 -mt-6 h-[38svh] md:h-[46vh] min-h-[280px] max-h-[480px] overflow-hidden bg-[#EDEAE3]"
     >
       <AnimatePresence initial={false} mode="sync">
         <motion.div
@@ -84,14 +84,14 @@ function Hero({ projects }: { projects: Project[] }) {
 
       <div className="relative z-10 flex h-full items-center px-6 md:px-16">
         <div className="max-w-md">
-          <p className="mb-6 text-2xl md:text-3xl font-bold leading-snug text-neutral-900">
+          <p className="mb-3 text-xl md:text-2xl font-bold leading-snug text-neutral-900">
             관심 밖으로 밀려난
             <br />
             존재와 그 안에 남겨진
             <br />
             시간을 바라봅니다.
           </p>
-          <p className="mb-8 text-sm md:text-base text-neutral-600">
+          <p className="mb-4 text-xs md:text-sm text-neutral-600">
             I look at what remains after
             <br />
             attention has moved elsewhere.
