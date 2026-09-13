@@ -1,15 +1,14 @@
 'use client';
 
+import Image from 'next/image';
+
 export default function PageBaroque() {
-  // 작품 이미지: /public/images/baroque/1.jpg ~ 12.jpg
   const totalImages = 12;
 
-  // 전시 전경 이미지: /public/images/baroque/exhibition/1.jpg ~ 3.jpg
   const exhibitionImages = [1, 2, 3];
 
   return (
     <main className="px-2 sm:px-6 py-8 sm:py-12 max-w-6xl mx-auto">
-      {/* 제목 영역 */}
       <h2 className="text-[14px] font-semibold text-center text-[#666666] mb-1">
         [ 2025- ]
       </h2>
@@ -20,30 +19,33 @@ export default function PageBaroque() {
         캔버스에 유화
       </p>
 
-      {/* 전시 전경 이미지 3장 (캡션 없음) */}
       <section className="flex flex-col items-center space-y-6 mb-[90px]">
         {exhibitionImages.map((index) => (
-          <img
+          <Image
             key={index}
             src={`/images/baroque/exhibition/${index}.jpg`}
             alt={`요정의 초상 전시 전경 ${index}`}
             className="w-full sm:w-[85%] md:w-[70%] h-auto object-contain"
-          />
+          width={0}
+          height={0}
+          sizes="100vw"
+        />
         ))}
       </section>
 
-      {/* 작품 이미지 섹션: 한 장씩 세로로 나열 */}
       {Array.from({ length: totalImages }).map((_, i) => {
         const index = i + 1;
         return (
           <section key={index} className="pb-[70px]">
-            <img
+            <Image
               src={`/images/baroque/${index}.jpg`}
               alt={`요정의 초상 ${index}`}
               className="w-full sm:w-[80%] md:w-[65%] h-auto object-contain mb-4 mx-auto"
-            />
+          width={0}
+          height={0}
+          sizes="100vw"
+        />
 
-            {/* 캡션 */}
             <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
               <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">
                 요정의 초상

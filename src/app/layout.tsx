@@ -1,8 +1,8 @@
-// src/app/layout.tsx
+import type { Metadata, Viewport } from 'next';
 import './globals.css';
-import Navbar from './components/Navbar'; // 클라이언트 컴포넌트
+import Navbar from './components/Navbar';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: '김정아 JungAh',
   description: '김정아 작가의 작품 아카이브',
   icons: {
@@ -16,6 +16,9 @@ export const metadata = {
     ],
     shortcut: ['/apple-touch-icon.png'],
   },
+};
+
+export const viewport: Viewport = {
   themeColor: '#ffffff',
 };
 

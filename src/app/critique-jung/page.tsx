@@ -1,20 +1,24 @@
 'use client';
 
+import Image from 'next/image';
+
 export default function SimJungTaekReview() {
   return (
     <div className="px-4 py-8 max-w-4xl mx-auto">
-        {/* 제목 및 본문 */}
       <h2 className="text-[14px] font-semibold text-center text-[#666666] mb-2">[ 정석도 평론 ]</h2>
       <h1 className="text-2xl font-bold text-center mb-2">회화적 역설, 이질적 시간의 정경</h1>
       <h3 className="text-m font-medium text-center text-[#4B5563] mb-10">정석도(철학박사, 남해인문예술연구소장)</h3>
 
       <div className="h-5" />
-      {/* 작품 1 */}
       <div className="pb-[40px]">
-        <img
+        <Image
           src="/images/critique-jung/1.jpeg"
           alt="빈 자리"
-          className="artwork-img mb-[20px]"        />
+          className="artwork-img mb-[20px]"
+          width={0}
+          height={0}
+          sizes="100vw"
+        />
         <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
           <span className="text-[14px] font-bold text-[#111827]">빈 자리</span>
           <span className="text-[14px] font-normal text-[#4B5563]">
@@ -32,13 +36,16 @@ export default function SimJungTaekReview() {
       김정아 작가의 작업에서는 우선 상품적 가치의 가능성보다는 시각적 사유의 계기 가 돋보인다. 타인의 시선을 과도하게 의식하는 한국 사회의 특징처럼 그림 작업마저도 타인의 시선으로 허세와 보여주기에 골몰하는 경향이 흔한 데 반해 작가의 그림은 묘사와 표현의 진솔함과 더불어 인문적 해석이 가능한 자기 본연의 시점을 견지하고 있다. 작업의 외연적 면면은 두 가지로 드러난다. 대표적으로 바다에서 수집한 플라스틱 쓰레기를 이용한 오브제 작업과 숲과 건물의 벽체 등을 소재로 한 평면 회화 작업이 그것이다.
       </p>
 
-      {/* 작품 2 */}
       <div className="h-4" />
       <div className="pb-[40px]">
-        <img
+        <Image
           src="/images/critique-jung/2.jpeg"
           alt="인공파도2"
-          className="artwork-img mb-[20px]"        />
+          className="artwork-img mb-[20px]"
+          width={0}
+          height={0}
+          sizes="100vw"
+        />
         <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
           <span className="text-[14px] font-bold text-[#111827]">인공파도2</span>
           <span className="text-[14px] font-normal text-[#4B5563]">
@@ -48,25 +55,28 @@ export default function SimJungTaekReview() {
       </div>
 
       <p className="mb-6 text-gray-700 leading-relaxed">
-      바닷가에 떠밀려 온 각종 플라스틱 부유물들을 이용한 작업은 의도가 뚜렷하다. 표면적으로 그것은 환경오염을 고발하고 자연 생태의 복원을 일깨운다. 작가는 온갖 종류의 플라스틱 쓰레기 천지의 바닷가를 작업의 시발점으로 삼고 있다. 바다는 본래 생명의 원천이자 종착지로서 무한 포용성을 내포한 공간적 의미로 다가온다. 그것은 생물학적 우주이자 우리가 실제로 체험할 수 있는 지상의 우주다. 그런 바다가 지금은 용도를 다한 플라스틱 공산품과 생활용품 등의 일상적인 유입에 따라 돌이킬 수 없는 상태의 바다로 변해가기에, 작가는 작가로서 할 수 있는 시각적 표현 방식을 통해 생태환경의 문제를 제기하고 경각심을 일깨우는 독자적인 회화의 형식을 마련하고 있다. 심층적으로 볼 때 플라스틱 해양쓰레기 작업에서는 역설 혹은 이중성이 드러난다. 해양쓰레기를 청소하면서 동시에 작업의 재료를 확보하게 되는 작가의 작업은 생태적 계몽의 계기와 순수하고 독창적인 창작의 계기가 동시에 존재하는 것이다. 말하자면 작품으로 재구성된 무용지물의 플라스틱 조각은 이미 무용지용의 물체로서 '아름다운 쓰레기'다.
+      바닷가에 떠밀려 온 각종 플라스틱 부유물들을 이용한 작업은 의도가 뚜렷하다. 표면적으로 그것은 환경오염을 고발하고 자연 생태의 복원을 일깨운다. 작가는 온갖 종류의 플라스틱 쓰레기 천지의 바닷가를 작업의 시발점으로 삼고 있다. 바다는 본래 생명의 원천이자 종착지로서 무한 포용성을 내포한 공간적 의미로 다가온다. 그것은 생물학적 우주이자 우리가 실제로 체험할 수 있는 지상의 우주다. 그런 바다가 지금은 용도를 다한 플라스틱 공산품과 생활용품 등의 일상적인 유입에 따라 돌이킬 수 없는 상태의 바다로 변해가기에, 작가는 작가로서 할 수 있는 시각적 표현 방식을 통해 생태환경의 문제를 제기하고 경각심을 일깨우는 독자적인 회화의 형식을 마련하고 있다. 심층적으로 볼 때 플라스틱 해양쓰레기 작업에서는 역설 혹은 이중성이 드러난다. 해양쓰레기를 청소하면서 동시에 작업의 재료를 확보하게 되는 작가의 작업은 생태적 계몽의 계기와 순수하고 독창적인 창작의 계기가 동시에 존재하는 것이다. 말하자면 작품으로 재구성된 무용지물의 플라스틱 조각은 이미 무용지용의 물체로서 &apos;아름다운 쓰레기&apos;다.
       </p>
       <p className="mb-6 text-gray-700 leading-relaxed">
       작품에 깃든 계몽적 계기는 내용을 통해 직설적으로 드러나므로 굳이 많은 말이 필요 없다고 볼 때 여기서 우리가 해명해야 할 것은 아름다운 쓰레기로서 플라스틱 오브제 작업의 회화적 의미의 본질을 수반한 그 미학적 가치다. 주지하듯이 플라스틱은 자본주의의 기념비적 물질성이다. 우리가 지금 당면한 자연은 자연적 자연에 인공적 자연이 가미된 모양새다. 인공적 자연은 곧 부자연의 자연으로서 플라스틱 자연이라 말할 수 있다. 가볍고 견고하며 자유로운 성형과 복제가 장점인 플라스틱은 본래 자연 파괴를 막는 대체제의 역할을 했지만, 대량생산과 소비 외에 자기 본연의 항상성 때문에 되려 환경파괴의 근원이 된다. 자기 증식과 순환에 기초한 자연적 자연과 달리 플라스틱 자연은 원형 그대로 퇴적되고, 바다에서 부유하는 가운데 미세하게 분열됨으로써 환원 불가능한 오염을 초래한다.
       </p>
       <p className="mb-6 text-gray-700 leading-relaxed">
-      그러나, 당연하게도, 무심한 도구로서 자기 존재의 근거가 인간에게 있는 플라스틱 쓰레기는 아무런 죄가 없다. 궁극적으로 문제 삼아야 할 것은 인간의 의식이지 눈앞에 벌어진 무용한 플라스틱 형상이 아니다. 기존 인터뷰 등을 통해 우리는 작가가 무엇보다 각종 플라스틱 쓰레기의 형상과 색을 재미있게 바라보는 것을 알 수 있다. 그 재미, 즉 색다른 조형의 가능성은 다름 아닌 쓸모없음에서 나온 것이다. 쉽게 말해 그것들은 일상에서의 실용성을 상실함으로써 비로소 예술적 쓸모를 갖게 된 사물로서 우연히 노출되고 발견된 것이다. 여기서 실용성은 곧 관계성이다. 플라스틱 물건들이 더 이상 쓸모를 갖지 못한다는 것은 말하자면 인간과의 관계 속에서 제 용도와 의미를 담보했던 물건들이 인간으로부터 이탈된 것을 뜻하기 때문이다. 은유적 관점에서 보면 실용성의 소멸인 쓰레기는 관계적 생명이 끝난 물체이자 자기 시간의 단절이다. 같은 관점에서, 도구는 쓸모가 없으면 죽는 것이므로, 도구적 사물로서 실용성을 다한 플라스틱 물건들은 '버려진 시간' 혹은 '죽은 시간'이다.
+      그러나, 당연하게도, 무심한 도구로서 자기 존재의 근거가 인간에게 있는 플라스틱 쓰레기는 아무런 죄가 없다. 궁극적으로 문제 삼아야 할 것은 인간의 의식이지 눈앞에 벌어진 무용한 플라스틱 형상이 아니다. 기존 인터뷰 등을 통해 우리는 작가가 무엇보다 각종 플라스틱 쓰레기의 형상과 색을 재미있게 바라보는 것을 알 수 있다. 그 재미, 즉 색다른 조형의 가능성은 다름 아닌 쓸모없음에서 나온 것이다. 쉽게 말해 그것들은 일상에서의 실용성을 상실함으로써 비로소 예술적 쓸모를 갖게 된 사물로서 우연히 노출되고 발견된 것이다. 여기서 실용성은 곧 관계성이다. 플라스틱 물건들이 더 이상 쓸모를 갖지 못한다는 것은 말하자면 인간과의 관계 속에서 제 용도와 의미를 담보했던 물건들이 인간으로부터 이탈된 것을 뜻하기 때문이다. 은유적 관점에서 보면 실용성의 소멸인 쓰레기는 관계적 생명이 끝난 물체이자 자기 시간의 단절이다. 같은 관점에서, 도구는 쓸모가 없으면 죽는 것이므로, 도구적 사물로서 실용성을 다한 플라스틱 물건들은 &apos;버려진 시간&apos; 혹은 &apos;죽은 시간&apos;이다.
       </p>
       <p className="mb-6 text-gray-700 leading-relaxed">
-      인간과의 거리가 멀어짐으로써 자기 본연의 도구적 시간의 의미를 상실한 플라스틱 물건들은 본의 아니게 혹은 이제 비로소 '그것 자체'로서 자유롭고 독립된 사물이자 새로운 시간적 의미로서 부활한다. 그것은 무엇보다 실용성과 관계성에서 멀어짐으로써 생겨난 자기 시간의 환생이다. 작가가 포착한 조형적 재미는 바로 플라스틱 쓰레기에 수반된 독립된 시간과 파도와 공기와 빛에 저항하고 동화한 시간 및 퇴색한 시간으로부터 비롯한 것이다. 플라스틱 오브제 작업에서 외적 재료에 내포된 조형적 가능성으로서의 재미는 또한 내적 인문적 의미를 수반한다. 시간의 풍파를 거쳐 빛바랜 플라스틱의 색감은 그 자체로 인간의 삶의 단면에 유비될 수 있는 고독과 소외와 허무 같은 감정을 일깨운다. 우리가 작가의 플라스틱 오브제 작업의 미학적 가치를 해석하고자 할 때 그 근간은 바로 거기에 내포된 시각적 재미와 인문적 의미의 토대인 '시간성'이다.
+      인간과의 거리가 멀어짐으로써 자기 본연의 도구적 시간의 의미를 상실한 플라스틱 물건들은 본의 아니게 혹은 이제 비로소 &apos;그것 자체&apos;로서 자유롭고 독립된 사물이자 새로운 시간적 의미로서 부활한다. 그것은 무엇보다 실용성과 관계성에서 멀어짐으로써 생겨난 자기 시간의 환생이다. 작가가 포착한 조형적 재미는 바로 플라스틱 쓰레기에 수반된 독립된 시간과 파도와 공기와 빛에 저항하고 동화한 시간 및 퇴색한 시간으로부터 비롯한 것이다. 플라스틱 오브제 작업에서 외적 재료에 내포된 조형적 가능성으로서의 재미는 또한 내적 인문적 의미를 수반한다. 시간의 풍파를 거쳐 빛바랜 플라스틱의 색감은 그 자체로 인간의 삶의 단면에 유비될 수 있는 고독과 소외와 허무 같은 감정을 일깨운다. 우리가 작가의 플라스틱 오브제 작업의 미학적 가치를 해석하고자 할 때 그 근간은 바로 거기에 내포된 시각적 재미와 인문적 의미의 토대인 &apos;시간성&apos;이다.
       </p>
 
-      {/* 작품 3 */}
       <div className="h-4" />
       <div className="pb-[40px]">
-        <img
+        <Image
           src="/images/critique-jung/3.jpg"
           alt="picturesque"
-          className="artwork-img mb-[20px]"        />
+          className="artwork-img mb-[20px]"
+          width={0}
+          height={0}
+          sizes="100vw"
+        />
         <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
           <span className="text-[14px] font-bold text-[#111827]">picturesque</span>
           <span className="text-[14px] font-normal text-[#4B5563]">
@@ -78,13 +88,16 @@ export default function SimJungTaekReview() {
       플라스틱 오브제 작업은 개념적인 방식도 있지만 대체로 바다를 그린 배경에 파도의 형상 등을 은유적으로 재현하거나 혹은 구상적 배경에 배경과 직접적인 연관성 없이 바다 쓰레기를 얹는 등, 장식성과 무관한 강한 화면을 구성하는 방식으로 전개된다. 이처럼 회화적 재현을 소홀히 하지 않는 작가의 작업 방식은 오브제가 등장하지 않는 평면 회화 작업과 동떨어지지 않는 정감적 맥락을 형성하게 된다. 숲과 건물, 그 적막 가운데 간혹 등장하는 놀이공원의 플라스틱 말 등은 그 자체로 자연적 자연과 플라스틱 자연이 혼재된 우리의 현실 세계를 시제가 혼융된 비현실적 공간으로 인식하는 조형적 근거다.
       </p>
 
-      {/* 작품 4 */}
       <div className="h-4" />
       <div className="pb-[40px]">
-        <img
+        <Image
           src="/images/critique-jung/4.jpg"
           alt="밤의 숲"
-          className="artwork-img mb-[20px]"        />
+          className="artwork-img mb-[20px]"
+          width={0}
+          height={0}
+          sizes="100vw"
+        />
         <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
           <span className="text-[14px] font-bold text-[#111827]">밤의 숲</span>
           <span className="text-[14px] font-normal text-[#4B5563]">
@@ -93,13 +106,16 @@ export default function SimJungTaekReview() {
         </div>
       </div>
 
-        {/* 작품 5 */}
         <div className="h-4" />
         <div className="pb-[40px]">
-        <img
+        <Image
           src="/images/critique-jung/5.jpeg"
           alt="숨어있던 꽃"
-          className="artwork-img mb-[20px]"/>
+          className="artwork-img mb-[20px]"
+          width={0}
+          height={0}
+          sizes="100vw"
+        />
           <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
           <span className="text-[14px] font-bold text-[#111827]">숨어있던 꽃</span>
           <span className="text-[14px] font-normal text-[#4B5563]">
@@ -113,13 +129,16 @@ export default function SimJungTaekReview() {
       </p>
        
        
-        {/* 작품 6 */}
         <div className="h-4" />
         <div className="pb-[40px]">
-        <img
+        <Image
           src="/images/critique-jung/6.png"
           alt="없는 듯 있다"
-          className="artwork-img mb-[20px]"/>
+          className="artwork-img mb-[20px]"
+          width={0}
+          height={0}
+          sizes="100vw"
+        />
           <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
           <span className="text-[14px] font-bold text-[#111827]">없는 듯 있다</span>
           <span className="text-[14px] font-normal text-[#4B5563]">
@@ -128,13 +147,16 @@ export default function SimJungTaekReview() {
         </div>
       </div>
 
-      {/* 작품 7 */}
       <div className="h-4" />
         <div className="pb-[40px]">
-        <img
+        <Image
           src="/images/critique-jung/7.jpg"
           alt="푸른 골목의 안쪽"
-          className="artwork-img mb-[20px]"/>
+          className="artwork-img mb-[20px]"
+          width={0}
+          height={0}
+          sizes="100vw"
+        />
           <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
           <span className="text-[14px] font-bold text-[#111827]">없는 듯 있다</span>
           <span className="text-[14px] font-normal text-[#4B5563]">
@@ -155,13 +177,16 @@ export default function SimJungTaekReview() {
       바다에서건 숲에서건 빈 들판에서건 작가의 평면 회화의 색감은 울트라마린과 인디언 레드 계열의 색이 돋보이는 중국 돈황 석굴의 벽화가 연상되는 색 조합으로서 얼마간 생경한 느낌으로 다가온다. 그것은 우리의 눈에 처음부터 온화하게 들어오는 인상주의적 색감과 거리가 먼 것으로서 플라스틱 바다 쓰레기의 퇴색한 색감과 관념적으로 조응한다. 플라스틱 부유 쓰레기에서 노출되는 퇴색은 바로 자연의 본 색이다. 그것은 빛과 공기와 물에 의해 기존의 허세와 위선적 치장이 벗겨지고 자연적 자연에 동화된 이후에 발하는 본디의 색이다. 색감의 조응을 통해 플라스틱 오브제의 무용하고 이질적인 시간성은 이제 동질적인 자연 본색이자 복원된 자연으로서 제 의미를 되찾는다. 색의 정서는 소외와 고독과 일회적 관계와 허무와 공허 등 작가에 의해 미적으로 환원된 인간 내면의 정감을 대변한다.
       </p>
     
-    {/* 작품 8 */}
     <div className="h-4" />
         <div className="pb-[40px]">
-        <img
+        <Image
           src="/images/critique-jung/8.jpg"
           alt="꽃보다 아름답다"
-          className="artwork-img mb-[20px]"/>
+          className="artwork-img mb-[20px]"
+          width={0}
+          height={0}
+          sizes="100vw"
+        />
           <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
           <span className="text-[14px] font-bold text-[#111827]">꽃보다 아름답다</span>
           <span className="text-[14px] font-normal text-[#4B5563]">
@@ -169,13 +194,16 @@ export default function SimJungTaekReview() {
           </span>
         </div>
       </div>
-    {/* 작품 9 */}
     <div className="h-4" />
         <div className="pb-[40px]">
-        <img
+        <Image
           src="/images/critique-jung/9.jpeg"
           alt="시내버스 승차권 판매소"
-          className="artwork-img mb-[20px]"/>
+          className="artwork-img mb-[20px]"
+          width={0}
+          height={0}
+          sizes="100vw"
+        />
           <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
           <span className="text-[14px] font-bold text-[#111827]">시내버스 승차권 판매소</span>
           <span className="text-[14px] font-normal text-[#4B5563]">
@@ -185,16 +213,19 @@ export default function SimJungTaekReview() {
       </div>
 
       <p className="mb-6 text-gray-700 leading-relaxed">
-      플라스틱 오브제 작업과 숲 작업 외에도 일회용 컵과 종이 접시를 성형한 것을 비롯해, 먹고 남은 과일이나 음식 쓰레기를 그리거나 캐스팅한 것, 거리의 낡은 재래식 건물 등, 사실상 작가의 전체 작업은 동일한 맥락을 유지하고 있다고 본다. 즉 그것은 플라스틱 자연과 의미가 통하는 '가벼움', '일회성', '버려짐', '무용성', '비어있음'에서 나아가 인문적으로 '소외', '허무', '공허 등과 유비적 소통을 통해 정서와 정감의 생태를 포함한 자연적 자연의 복원을 꿈꾸는 것이다.
+      플라스틱 오브제 작업과 숲 작업 외에도 일회용 컵과 종이 접시를 성형한 것을 비롯해, 먹고 남은 과일이나 음식 쓰레기를 그리거나 캐스팅한 것, 거리의 낡은 재래식 건물 등, 사실상 작가의 전체 작업은 동일한 맥락을 유지하고 있다고 본다. 즉 그것은 플라스틱 자연과 의미가 통하는 &apos;가벼움&apos;, &apos;일회성&apos;, &apos;버려짐&apos;, &apos;무용성&apos;, &apos;비어있음&apos;에서 나아가 인문적으로 &apos;소외&apos;, &apos;허무&apos;, &apos;공허 등과 유비적 소통을 통해 정서와 정감의 생태를 포함한 자연적 자연의 복원을 꿈꾸는 것이다.
       </p>
     
-    {/* 작품 10 */}
     <div className="h-4" />
         <div className="pb-[40px]">
-        <img
+        <Image
           src="/images/critique-jung/10.jpeg"
           alt="꿈과 이제 오후"
-          className="artwork-img mb-[20px]"/>
+          className="artwork-img mb-[20px]"
+          width={0}
+          height={0}
+          sizes="100vw"
+        />
           <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
           <span className="text-[14px] font-bold text-[#111827]">꿈과 이제 오후</span>
           <span className="text-[14px] font-normal text-[#4B5563]">

@@ -1,24 +1,25 @@
 'use client';
 
+import Image from 'next/image';
+
 export default function ExhibitionsPage() {
   return (
     <main className="px-6 py-8 max-w-6xl mx-auto">
-      {/* 상단: 제목 및 서문 */}
       <h1 className="text-[15px] sm:text-[16px] font-semibold text-center text-[#666666] mb-1">
         진행 중인 전시회<br />
       </h1>
-      {/* 전시 0 — 가운데 정렬 카드 버전 */}
         <div className="h-10" />
 
         <div className="max-w-3xl mx-auto text-center">
-          {/* 포스터 */}
-          <img
+          <Image
             src="/images/posters/0.jpg"
             alt="전시 포스터"
             className="mx-auto w-full max-w-[720px] h-auto object-contain"
-          />
+          width={0}
+          height={0}
+          sizes="100vw"
+        />
           <div className="h-4" />
-          {/* 텍스트 정보 */}
           <div className="mt-6 space-y-2">
 
             <h1 className="text-[22px] font-semibold">
@@ -37,23 +38,23 @@ export default function ExhibitionsPage() {
         </div>
 
       
-      {/*  구분선 */}
       <hr className="my-12 border-t border-neutral-200" />
       <div className="h-4" />
-         {/* 상단: 제목 및 서문 */}
       <h1 className="text-[15px] sm:text-[16px] font-semibold text-center text-[#666666] mb-1">
         최근 전시회<br />
       </h1>
       <div className="h-4" />
-      {/* 전시 1 */}
       <div className="h-10" />
           <div className="flex flex-col md:flex-row gap-10 items-stretch">
           <div className="w-full md:w-1/2 flex justify-center">
-            <img
+            <Image
               src="/images/posters/2.png"
               alt="전시 포스터"
               className="w-full h-auto object-contain"
-            />
+          width={0}
+          height={0}
+          sizes="100vw"
+        />
           </div>
           <div className="w-full md:w-1/2 flex items-center">
             <div>
@@ -69,15 +70,17 @@ export default function ExhibitionsPage() {
         </div>
       
 
-      {/* 전시 2 */}
       <div className="h-20" />
       <div className="flex flex-col md:flex-row gap-10 items-stretch">
         <div className="w-full md:w-1/2 flex justify-center">
-          <img
+          <Image
             src="/images/posters/1.jpg"
             alt="전시 포스터"
             className="w-full h-auto object-contain"
-          />
+          width={0}
+          height={0}
+          sizes="100vw"
+        />
         </div>
         <div className="w-full md:w-1/2 flex items-center">
           <div>
