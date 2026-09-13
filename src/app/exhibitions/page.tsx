@@ -48,6 +48,28 @@ export default function ExhibitionsPage() {
           <div className="flex flex-col md:flex-row gap-10 items-stretch">
           <div className="w-full md:w-1/2 flex justify-center">
             <Image
+              src="/images/posters/0.jpg"
+              alt="전시 포스터"
+              className="w-full h-auto object-contain"
+          width={0}
+          height={0}
+          sizes="100vw"
+        />
+          </div>
+          <div className="w-full md:w-1/2 flex items-center">
+            <div>
+              <h2 className="text-xl font-medium mb-2">2025. 11. 11(화) - 11. 25(화)</h2>
+              <h1 className="text-2xl font-bold mb-4">김정아 개인전:<br />제10회 메디치상 수상 기념전 - 영원을 꿈꾸는 일회용</h1>
+              <h2 className="text-l font-semibold mb-0">학고재 아트센터</h2>
+              <p className="text-sm mb-4">서울특별시 종로구 삼청로 48-4</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="h-20" />
+          <div className="flex flex-col md:flex-row gap-10 items-stretch">
+          <div className="w-full md:w-1/2 flex justify-center">
+            <Image
               src="/images/posters/2.png"
               alt="전시 포스터"
               className="w-full h-auto object-contain"
