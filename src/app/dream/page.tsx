@@ -1,24 +1,21 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import Image from 'next/image';
+
+import { useState, useEffect, useCallback } from 'react';
 
 export default function Pagedream() {
   const totalImages = 7;
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
-  const handlePrev = () => {
-    if (selectedIndex !== null) {
-      setSelectedIndex((selectedIndex - 1 + totalImages) % totalImages);
-    }
-  };
+  const handlePrev = useCallback(() => {
+    setSelectedIndex((prev) => (prev === null ? prev : (prev - 1 + totalImages) % totalImages));
+  }, [totalImages]);
 
-  const handleNext = () => {
-    if (selectedIndex !== null) {
-      setSelectedIndex((selectedIndex + 1) % totalImages);
-    }
-  };
+  const handleNext = useCallback(() => {
+    setSelectedIndex((prev) => (prev === null ? prev : (prev + 1) % totalImages));
+  }, [totalImages]);
 
-  // 🔑 키보드 이벤트 (←, →, Esc)
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (selectedIndex !== null) {
@@ -30,11 +27,10 @@ export default function Pagedream() {
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [selectedIndex]);
+  }, [selectedIndex, handlePrev, handleNext]);
 
   return (
     <main className="px-6 py-12 max-w-6xl mx-auto relative">
-      {/* 제목 및 본문 */}
       <h2 className="text-[14px] font-semibold text-center text-[#666666] mb-1">[ 2024- ]</h2>
       <h1 className="text-2xl font-bold text-center mb-2">꽃꿈</h1>
       <h3 className="text-m font-medium text-center text-[#4B5563] mb-5">
@@ -45,7 +41,6 @@ export default function Pagedream() {
         또 다시 꽃이 되는 꿈을 꾸어본다 
       </p>
 
-      {/* 이미지 그리드: 한 행에 2개, 간격 50px */}
       {Array.from({ length: Math.ceil(totalImages / 2) }).map((_, rowIdx) => (
         <div
           key={rowIdx}
@@ -55,10 +50,13 @@ export default function Pagedream() {
             const index = rowIdx * 2 + colIdx + 1;
             if (index > totalImages) return null;
             return (
-              <img
+              <Image
                 key={index}
                 src={`/images/dream/${index}.jpg`}
                 alt={`작품${index}`}
+                width={0}
+                height={0}
+                sizes="100vw"
                 className="w-full h-auto cursor-pointer"
                 onClick={() => setSelectedIndex(index - 1)}
               />
@@ -67,6 +65,33 @@ export default function Pagedream() {
         </div>
       ))}
 
+      {selectedIndex !== null && (
+        <div className="fixed inset-0 z-50 bg-black bg-opacity-80 flex items-center justify-center">
+          <div className="flex flex-col items-center justify-center w-[70vw] max-h-[90vh]">
+            <div className="relative w-[60%]">
+              <button
+                className="absolute top-0 right-[-50px] text-white text-3xl z-50"
+                onClick={() => setSelectedIndex(null)}
+              >
+                ×
+              </button>
+              <Image
+                src={`/images/dream/${selectedIndex + 1}.jpg`}
+                alt={`작품${selectedIndex + 1}`}
+                className="w-full h-auto object-contain block mx-auto"
+          width={0}
+          height={0}
+          sizes="100vw"
+        />
+            </div>
+            <div className="flex items-center justify-center mt-[30px] text-white text-sm">
+              <button onClick={handlePrev} className="mr-[40px] text-2xl">&lt;</button>
+              <span>{selectedIndex + 1} / {totalImages}</span>
+              <button onClick={handleNext} className="ml-[40px] text-2xl">&gt;</button>
+            </div>
+          </div>
+        </div>
+      )}
     </main>
   );
 }

@@ -5,6 +5,44 @@ import { useEffect, useMemo, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { HiMenu, HiX } from 'react-icons/hi';
 
+type NavItem = {
+  label: string;
+  href?: string;
+  children?: { href: string; label: string }[];
+};
+
+const NAV_ITEMS: NavItem[] = [
+  { label: '김정아', href: '/artist' },
+  {
+    label: '요정',
+    children: [
+      { href: '/baroque', label: '요정의 초상' },
+      { href: '/fairy', label: '요정들' },
+      { href: '/flower', label: '꽃보다 아름답다' },
+      { href: '/dream', label: '꽃꿈' },
+    ],
+  },
+  {
+    label: '도시•숲',
+    children: [
+      { href: '/2015', label: '2015~' },
+      { href: '/2000-2014', label: '2000~2014' },
+      { href: '/1990-1999', label: '1990~1999' },
+    ],
+  },
+  { label: '해양환경작품', href: '/marine' },
+  { label: '전시', href: '/exhibitions' },
+  { label: '활동사진', href: '/photos' },
+  {
+    label: '평론',
+    children: [
+      { href: '/critique-simeunlog', label: '심은록 평론' },
+      { href: '/critique-shim', label: '심상용 평론' },
+      { href: '/critique-jung', label: '정석도 평론' },
+    ],
+  },
+];
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -18,7 +56,6 @@ export default function Navbar() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // 라우트가 바뀌면(=어떤 링크를 눌렀다면) 모바일 메뉴 자동 닫기
   useEffect(() => {
     if (isMobile) setIsOpen(false);
     setHoveredIndex(null);
@@ -26,41 +63,9 @@ export default function Navbar() {
 
   const closeMenu = () => setIsOpen(false);
 
-  const navItems = [
-    { label: '김정아', href: '/artist' },
-    {
-      label: '요정',
-      children: [
-        { href: '/baroque', label: '요정의 초상' },
-        { href: '/fairy', label: '요정들' },
-        { href: '/flower', label: '꽃보다 아름답다' },
-        { href: '/dream', label: '꽃꿈' },
-      ],
-    },
-    {
-      label: '도시•숲',
-      children: [
-        { href: '/2015', label: '2015~' },
-        { href: '/2000-2014', label: '2000~2014' },
-        { href: '/1990-1999', label: '1990~1999' },
-      ],
-    },
-    { label: '해양환경작품', href: '/marine' },
-    { label: '전시', href: '/exhibitions' },
-    { label: '활동사진', href: '/photos' },
-    {
-      label: '평론',
-      children: [
-        { href: '/critique-simeunlog', label: '심은록 평론' },
-        { href: '/critique-shim', label: '심상용 평론' },
-        { href: '/critique-jung', label: '정석도 평론' },
-      ],
-    },
-  ];
-
   const groupedHoverIndexes = useMemo(
-    () => navItems.map((it, idx) => (it.children ? idx : -1)).filter(i => i >= 0),
-    [navItems]
+    () => NAV_ITEMS.map((it, idx) => (it.children ? idx : -1)).filter((i) => i >= 0),
+    []
   );
   const hasHoveredItem =
     hoveredIndex !== null && groupedHoverIndexes.includes(hoveredIndex);
@@ -73,30 +78,19 @@ export default function Navbar() {
         }`}
       >
         <div className="relative flex items-center justify-between h-[64px]">
-          {/* 로고: 작은 데스크탑에선 살짝 작게, 큰 데스크탑은 기존 그대로 */}
           <Link href="/" className="font-bold text-lg xl:text-xl whitespace-nowrap">
             JungAh
           </Link>
 
-          {/* 데스크탑 메뉴 (모바일 아님) */}
           {!isMobile && (
-            <div
-              className="
-                absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
-                flex items-start
-                gap-[40px] xl:gap-[64px]        /* 작은 데스크탑에서 간격 살짝 축소 */
-                text-[16px] xl:text-[18px]       /* 작은 데스크탑에서 폰트 한 단계 축소 */
-                font-semibold
-              "
-            >
-              {navItems.map((item, idx) => (
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-start gap-[40px] xl:gap-[64px] text-[16px] xl:text-[18px] font-semibold">
+              {NAV_ITEMS.map((item, idx) => (
                 <NavGroup
                   key={item.label}
                   label={item.label}
-                  children={item.children}
+                  subItems={item.children}
                   href={item.href}
                   index={idx}
-                  hoveredIndex={hoveredIndex}
                   setHoveredIndex={setHoveredIndex}
                   showGrouped={
                     groupedHoverIndexes.includes(hoveredIndex ?? -1) &&
@@ -107,7 +101,6 @@ export default function Navbar() {
             </div>
           )}
 
-          {/* 모바일 햄버거 */}
           {isMobile && (
             <button className="text-2xl pr-2" onClick={() => setIsOpen(!isOpen)} aria-label="메뉴 열기">
               {isOpen ? <HiX /> : <HiMenu />}
@@ -116,45 +109,22 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* 모바일 메뉴 (폰트 한 단계 업) */}
       {isMobile && isOpen && (
         <div className="px-6 pt-4 pb-8 bg-white border-b text-lg font-medium text-left flex flex-col gap-4">
-          <SingleMobileLink href="/artist" onNavigate={closeMenu}>김정아</SingleMobileLink>
-
-          <MobileGroup
-            label="요정"
-            items={[
-              { href: '/baroque', label: '요정의 초상' },
-              { href: '/fairy', label: '요정들' },
-              { href: '/flower', label: '꽃보다 아름답다' },
-              { href: '/dream', label: '꽃꿈' },
-            ]}
-            onNavigate={closeMenu}
-          />
-
-          <MobileGroup
-            label="도시•숲"
-            items={[
-              { href: '/2015', label: '2015~' },
-              { href: '/2000-2014', label: '2000~2014' },
-              { href: '/1990-1999', label: '1990~1999' },
-            ]}
-            onNavigate={closeMenu}
-          />
-
-          <SingleMobileLink href="/marine" onNavigate={closeMenu}>해양환경작품</SingleMobileLink>
-          <SingleMobileLink href="/exhibitions" onNavigate={closeMenu}>전시</SingleMobileLink>
-          <SingleMobileLink href="/photos" onNavigate={closeMenu}>활동사진</SingleMobileLink>
-
-          <MobileGroup
-            label="평론"
-            items={[
-              { href: '/critique-simeunlog', label: '심은록 평론' },
-              { href: '/critique-shim', label: '심상용 평론' },
-              { href: '/critique-jung', label: '정석도 평론' },
-            ]}
-            onNavigate={closeMenu}
-          />
+          {NAV_ITEMS.map((item) =>
+            item.children ? (
+              <MobileGroup
+                key={item.label}
+                label={item.label}
+                items={item.children}
+                onNavigate={closeMenu}
+              />
+            ) : (
+              <SingleMobileLink key={item.label} href={item.href!} onNavigate={closeMenu}>
+                {item.label}
+              </SingleMobileLink>
+            )
+          )}
         </div>
       )}
     </>
@@ -163,22 +133,20 @@ export default function Navbar() {
 
 function NavGroup({
   label,
-  children,
+  subItems,
   href,
   index,
-  hoveredIndex,
   setHoveredIndex,
   showGrouped,
 }: {
   label: string;
-  children?: { href: string; label: string }[];
+  subItems?: { href: string; label: string }[];
   href?: string;
   index: number;
-  hoveredIndex: number | null;
   setHoveredIndex: (index: number | null) => void;
   showGrouped: boolean;
 }) {
-  const hasChildren = !!children;
+  const hasChildren = !!subItems;
 
   return (
     <div
@@ -200,16 +168,8 @@ function NavGroup({
       )}
 
       {hasChildren && showGrouped && (
-        <div
-          className="
-            absolute top-[50px]
-            flex flex-col items-center
-            text-[12px] xl:text-sm          /* 작은 데스크탑에선 드롭다운도 살짝 축소 */
-            font-normal text-[#4B5563]
-            space-y-1 bg-white z-40 whitespace-nowrap w-max
-          "
-        >
-          {children!.map((item) => (
+        <div className="absolute top-[50px] flex flex-col items-center text-[12px] xl:text-sm font-normal text-[#4B5563] space-y-1 bg-white z-40 whitespace-nowrap w-max">
+          {subItems!.map((item) => (
             <Link key={item.href} href={item.href} className="hover:underline whitespace-nowrap">
               {item.label}
             </Link>

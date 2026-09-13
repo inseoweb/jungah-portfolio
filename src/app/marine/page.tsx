@@ -1,20 +1,16 @@
+import Image from 'next/image';
+
 export default function Marine() {
-  // 데스크탑에서만 이미지 폭을 줄이는 공통 클래스
-  // - 모바일/태블릿: 그대로 꽉 차게
-  // - lg(≥1024px): 컨텐츠 폭의 70%
-  // - xl(≥1280px): 컨텐츠 폭의 60%
   const imgClass =
     "artwork-img mb-[20px] w-full h-auto object-contain mx-auto sm:max-w-full lg:max-w-[70%] xl:max-w-[60%]";
 
   return (
     <main className="px-6 py-12 max-w-6xl mx-auto">
-      {/* 제목 */}
       <h1 className="text-[14px] font-semibold text-center text-[#666666] mb-1">
         [ 2011~ ]<br />
       </h1>
       <h1 className="text-xl font-bold text-center mb-3">해양환경작품</h1>
 
-      {/* 본문 서문 */}
       <p className="text-center leading-relaxed mb-12 text-[#666666] text-[15px] sm:text-base max-w-full sm:max-w-2xl mx-auto px-0 sm:px-0">
         2011년 바다오염으로 고통받는 생물에 대한 연구를 접한 이후로 바다쓰레기를 줍고 조사, 분류하며
         <br />
@@ -33,9 +29,12 @@ export default function Marine() {
         관심을 가지고 활동하고 있다.
       </p>
 
-      {/* 작품 1 */}
       <div className="pb-[80px]">
-        <img src="/images/marine/1.jpg" alt="Dinner 2011" className={imgClass} />
+        <Image src="/images/marine/1.jpg" alt="Dinner 2011" className={imgClass}
+          width={0}
+          height={0}
+          sizes="100vw"
+        />
         <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
           <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">Dinner 2011</span>
           <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563] text-center">
@@ -44,9 +43,12 @@ export default function Marine() {
         </div>
       </div>
 
-      {/* 작품 2 */}
       <div className="pb-[80px]">
-        <img src="/images/marine/2.jpg" alt="빈자리" className={imgClass} />
+        <Image src="/images/marine/2.jpg" alt="빈자리" className={imgClass}
+          width={0}
+          height={0}
+          sizes="100vw"
+        />
         <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
           <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">빈자리</span>
           <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563] text-center">
@@ -55,28 +57,40 @@ export default function Marine() {
         </div>
       </div>
 
-      {/* 작품 3 */}
       <div className="pb-[40px]">
-        <img src="/images/marine/3.jpg" alt="Hug me - 돌아온 탕아" className={imgClass} />
+        <Image src="/images/marine/3.jpg" alt="Hug me - 돌아온 탕아" className={imgClass}
+          width={0}
+          height={0}
+          sizes="100vw"
+        />
       </div>
 
-      {/* 작품 4 */}
       <div className="pb-[80px]">
-        <img src="/images/marine/4.jpg" alt="Hug me - 돌아온 탕아" className={imgClass} />
+        <Image src="/images/marine/4.jpg" alt="Hug me - 돌아온 탕아" className={imgClass}
+          width={0}
+          height={0}
+          sizes="100vw"
+        />
         <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
           <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">Hug me - 돌아온 탕아</span>
           <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563] text-center">가변설치, fdm 출력, 바다쓰레기, 2022</span>
         </div>
       </div>
 
-      {/* 작품 5 */}
       <div className="pb-[40px]">
-        <img src="/images/marine/5.jpg" alt="Hug me - 돌아온 탕아" className={imgClass} />
+        <Image src="/images/marine/5.jpg" alt="Hug me - 돌아온 탕아" className={imgClass}
+          width={0}
+          height={0}
+          sizes="100vw"
+        />
       </div>
 
-      {/* 작품 6 */}
       <div className="pb-[80px]">
-        <img src="/images/marine/6.jpg" alt="신십장생도" className={imgClass} />
+        <Image src="/images/marine/6.jpg" alt="신십장생도" className={imgClass}
+          width={0}
+          height={0}
+          sizes="100vw"
+        />
         <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
           <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">신림동</span>
           <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563] text-center">
@@ -85,14 +99,20 @@ export default function Marine() {
         </div>
       </div>
 
-      {/* 작품 7 */}
       <div className="pb-[40px]">
-        <img src="/images/marine/7.jpg" alt="Under the Sea" className={imgClass} />
+        <Image src="/images/marine/7.jpg" alt="Under the Sea" className={imgClass}
+          width={0}
+          height={0}
+          sizes="100vw"
+        />
       </div>
 
-      {/* 작품 8 */}
       <div className="pb-[80px]">
-        <img src="/images/marine/8.jpg" alt="Under the Sea" className={imgClass} />
+        <Image src="/images/marine/8.jpg" alt="Under the Sea" className={imgClass}
+          width={0}
+          height={0}
+          sizes="100vw"
+        />
         <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
           <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">Under the Sea</span>
           <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563] text-center">
@@ -101,45 +121,60 @@ export default function Marine() {
         </div>
       </div>
 
-      {/* 작품 9 */}
       <div className="pb-[80px]">
-        <img src="/images/marine/9.jpg" alt="아름다운 강산" className={imgClass} />
+        <Image src="/images/marine/9.jpg" alt="아름다운 강산" className={imgClass}
+          width={0}
+          height={0}
+          sizes="100vw"
+        />
         <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
           <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">아름다운 강산</span>
           <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563] text-center">--(cm), --, 2022</span>
         </div>
       </div>
 
-      {/* 작품 10 */}
       <div className="pb-[80px]">
-        <img src="/images/marine/10.jpg" alt="바다 귀 귀울여봐요" className={imgClass} />
+        <Image src="/images/marine/10.jpg" alt="바다 귀 귀울여봐요" className={imgClass}
+          width={0}
+          height={0}
+          sizes="100vw"
+        />
         <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
           <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">바다 귀 귀울여봐요</span>
           <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563] text-center">30x50(cm), 종이에 수채, 2011</span>
         </div>
       </div>
 
-      {/* 작품 11 */}
       <div className="pb-[80px]">
-        <img src="/images/marine/11.jpg" alt="인공파도" className={imgClass} />
+        <Image src="/images/marine/11.jpg" alt="인공파도" className={imgClass}
+          width={0}
+          height={0}
+          sizes="100vw"
+        />
         <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
           <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">인공파도</span>
           <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563] text-center">66x100(cm), 패널에 바다쓰레기, 2012</span>
         </div>
       </div>
 
-      {/* 작품 12 */}
       <div className="pb-[80px]">
-        <img src="/images/marine/12.jpg" alt="인공파도 2" className={imgClass} />
+        <Image src="/images/marine/12.jpg" alt="인공파도 2" className={imgClass}
+          width={0}
+          height={0}
+          sizes="100vw"
+        />
         <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
           <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">인공파도 2</span>
           <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563] text-center">80.3x365(cm), 패널에 바다쓰레기, 2012</span>
         </div>
       </div>
 
-      {/* 작품 13 */}
       <div className="pb-[80px]">
-        <img src="/images/marine/13.jpg" alt="Picturesque" className={imgClass} />
+        <Image src="/images/marine/13.jpg" alt="Picturesque" className={imgClass}
+          width={0}
+          height={0}
+          sizes="100vw"
+        />
         <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
           <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">Picturesque</span>
           <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563] text-center">
@@ -148,9 +183,12 @@ export default function Marine() {
         </div>
       </div>
 
-      {/* 작품 14 */}
       <div className="pb-[80px]">
-        <img src="/images/marine/14.jpg" alt="Picturesque" className={imgClass} />
+        <Image src="/images/marine/14.jpg" alt="Picturesque" className={imgClass}
+          width={0}
+          height={0}
+          sizes="100vw"
+        />
         <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
           <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">Picturesque</span>
           <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563] text-center">
@@ -159,23 +197,32 @@ export default function Marine() {
         </div>
       </div>
 
-      {/* 작품 15 */}
       <div className="pb-[80px]">
-        <img src="/images/marine/15.jpg" alt="빈자리" className={imgClass} />
+        <Image src="/images/marine/15.jpg" alt="빈자리" className={imgClass}
+          width={0}
+          height={0}
+          sizes="100vw"
+        />
         <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
           <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">빈자리</span>
           <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563] text-center">가변설치, 해운대, 2017</span>
         </div>
       </div>
 
-      {/* 작품 16 */}
       <div className="pb-[40px]">
-        <img src="/images/marine/16.jpg" alt="한없이 무거운" className={imgClass} />
+        <Image src="/images/marine/16.jpg" alt="한없이 무거운" className={imgClass}
+          width={0}
+          height={0}
+          sizes="100vw"
+        />
       </div>
 
-      {/* 작품 17 */}
       <div className="pb-[80px]">
-        <img src="/images/marine/17.jpg" alt="한없이 무거운" className={imgClass} />
+        <Image src="/images/marine/17.jpg" alt="한없이 무거운" className={imgClass}
+          width={0}
+          height={0}
+          sizes="100vw"
+        />
         <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
           <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">한없이 무거운</span>
           <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563] text-center">
@@ -184,69 +231,96 @@ export default function Marine() {
         </div>
       </div>
 
-      {/* 작품 18 */}
       <div className="pb-[80px]">
-        <img src="/images/marine/18.jpg" alt="9시 46분" className={imgClass} />
+        <Image src="/images/marine/18.jpg" alt="9시 46분" className={imgClass}
+          width={0}
+          height={0}
+          sizes="100vw"
+        />
         <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
           <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">9시 46분</span>
           <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563] text-center">87x87(cm), 패널에 아크릴릭, 서해 바다쓰레기, 2020</span>
         </div>
       </div>
 
-      {/* 작품 20 */}
       <div className="pb-[40px]">
-        <img src="/images/marine/21.jpg" alt="한걸음 다가서면 바꿀 수 있어요" className={imgClass} />
+        <Image src="/images/marine/21.jpg" alt="한걸음 다가서면 바꿀 수 있어요" className={imgClass}
+          width={0}
+          height={0}
+          sizes="100vw"
+        />
         <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
           <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">한걸음 다가서면 바꿀 수 있어요</span>
           <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563] text-center">60x110(cm), 렌티큘러, 2020</span>
         </div>
       </div>
 
-      {/* 작품 21 */}
       <div className="pb-[80px]">
-        <img src="/images/marine/20.jpg" alt="한걸음 다가서면 바꿀 수 있어요" className={imgClass} />
+        <Image src="/images/marine/20.jpg" alt="한걸음 다가서면 바꿀 수 있어요" className={imgClass}
+          width={0}
+          height={0}
+          sizes="100vw"
+        />
         <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
           <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">가까이 다가가 바뀐 이미지</span>
           <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563] text-center"></span>
         </div>
       </div>
 
-      {/* 작품 22 */}
       <div className="pb-[80px]">
-        <img src="/images/marine/22.jpg" alt="바다 빼기 바다" className={imgClass} />
+        <Image src="/images/marine/22.jpg" alt="바다 빼기 바다" className={imgClass}
+          width={0}
+          height={0}
+          sizes="100vw"
+        />
         <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
           <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">바다 빼기 바다</span>
           <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563] text-center">나무에 아크릴릭, 레진, 바다쓰레기, 2021</span>
         </div>
       </div>
 
-      {/* 작품 23 */}
       <div className="pb-[80px]">
-        <img src="/images/marine/23.jpg" alt="자승자박" className={imgClass} />
+        <Image src="/images/marine/23.jpg" alt="자승자박" className={imgClass}
+          width={0}
+          height={0}
+          sizes="100vw"
+        />
         <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
           <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">자승자박</span>
           <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563] text-center">120x80(cm), 패널에 낚시 쓰레기, 2021</span>
         </div>
       </div>
 
-      {/* 작품 24 */}
       <div className="pb-[20px]">
-        <img src="/images/marine/24.jpg" alt="궤도 이탈" className={imgClass} />
+        <Image src="/images/marine/24.jpg" alt="궤도 이탈" className={imgClass}
+          width={0}
+          height={0}
+          sizes="100vw"
+        />
       </div>
 
-      {/* 작품 25 */}
       <div className="pb-[20px]">
-        <img src="/images/marine/25.jpg" alt="궤도 이탈" className={imgClass} />
+        <Image src="/images/marine/25.jpg" alt="궤도 이탈" className={imgClass}
+          width={0}
+          height={0}
+          sizes="100vw"
+        />
       </div>
 
-      {/* 작품 26 */}
       <div className="pb-[20px]">
-        <img src="/images/marine/26.jpg" alt="궤도 이탈" className={imgClass} />
+        <Image src="/images/marine/26.jpg" alt="궤도 이탈" className={imgClass}
+          width={0}
+          height={0}
+          sizes="100vw"
+        />
       </div>
 
-      {/* 작품 19 */}
       <div className="pb-[80px]">
-        <img src="/images/marine/19.jpg" alt="궤도 이탈" className={imgClass} />
+        <Image src="/images/marine/19.jpg" alt="궤도 이탈" className={imgClass}
+          width={0}
+          height={0}
+          sizes="100vw"
+        />
         <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
           <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">궤도 이탈</span>
           <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563] text-center">
@@ -255,27 +329,36 @@ export default function Marine() {
         </div>
       </div>
 
-      {/* 작품 27 */}
       <div className="pb-[80px]">
-        <img src="/images/marine/27.jpg" alt="바다 귀 기울여봐요" className={imgClass} />
+        <Image src="/images/marine/27.jpg" alt="바다 귀 기울여봐요" className={imgClass}
+          width={0}
+          height={0}
+          sizes="100vw"
+        />
         <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
           <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">바다 귀 기울여봐요</span>
           <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563] text-center">바다쓰레기 체험 학습지, 2012</span>
         </div>
       </div>
 
-      {/* 작품 28 */}
       <div className="pb-[80px]">
-        <img src="/images/marine/28.jpg" alt="해변에 나타난 별자리" className={imgClass} />
+        <Image src="/images/marine/28.jpg" alt="해변에 나타난 별자리" className={imgClass}
+          width={0}
+          height={0}
+          sizes="100vw"
+        />
         <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
           <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">해변에 나타난 별자리</span>
           <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563] text-center">거제 사곡해수욕장, 2023</span>
         </div>
       </div>
 
-      {/* 작품 29 */}
       <div className="pb-[80px]">
-        <img src="/images/marine/29.jpg" alt="즐거운 추억" className={imgClass} />
+        <Image src="/images/marine/29.jpg" alt="즐거운 추억" className={imgClass}
+          width={0}
+          height={0}
+          sizes="100vw"
+        />
         <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
           <span className="text-[15px] sm:text-[16px] font-bold text-[#111827]">즐거운 추억</span>
           <span className="text-[15px] sm:text-[16px] font-normal text-[#4B5563] text-center">162x130(cm), 패널에 바다쓰레기, 2021</span>
