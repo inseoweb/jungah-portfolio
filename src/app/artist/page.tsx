@@ -40,6 +40,10 @@ export default function ArtistPage() {
       <section className="mb-12">
       <h4 className="text-lg font-semibold text-[#111827] mb-4">개인전</h4>
       <ul className="space-y-1 text-sm leading-normal">
+        <li>2026 &quot;푸른 골목의 안쪽&quot;, 기획초대전, 토포하우스, 서울</li>
+        <li>2026 &quot;다시돌아온 요정의 시간&quot;, 이마도국제창작레지던시, 갤러리 금요일의 섬, 해남</li>
+        <li>2026 &quot;텅빈 무릉도원- 허무를 떠내다, 아름다움의 이름으로&quot;, 기획초대전, 바이브 아트스페이스, 서울</li>
+        <li>2025 &quot;영원을 꿈꾸는 일회용&quot;, 메디치상 수상기념 초대 개인전, 학고재아트센터, 서울</li>
         <li>2025 &quot;꽃보다 아름답다- 남겨진 것들의 미학&quot;, 아트살롱 드 아씨, 서울</li>
         <li>2025 &quot;한걸음 다가서면 바꿀 수 있어요&quot;, 두손갤러리, 서울</li>
         <li>2023 &quot;내 숲에 작은 새도 쉬고&quot; 초대전, 우주의 바다갤러리, 부산</li>
