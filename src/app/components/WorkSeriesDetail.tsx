@@ -1,4 +1,7 @@
+'use client';
+
 import type { ReactNode } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -36,7 +39,7 @@ function WorkImage({
         sizes="(max-width: 768px) 90vw, 60vw"
         priority={priority}
         className={`block h-auto w-auto max-w-full ${
-          hero ? 'max-h-[58vh] md:max-h-[76vh]' : 'max-h-[48vh] md:max-h-[62vh]'
+          hero ? 'max-h-[58vh] md:max-h-[76vh]' : 'max-h-[48vh] md:max-h-[56vh]'
         }`}
       />
       {image.caption && (
@@ -68,6 +71,41 @@ function ProjectGroup({ project }: { project: WorkProject }) {
   );
 }
 
+// One work per (near-)full viewport on desktop, so the previous/next
+// piece never bleeds into view while the current one is being looked
+// at. Mobile ignores all of this and keeps normal document flow.
+function WorkSection({ children }: { children: ReactNode }) {
+  const ref = useRef<HTMLElement>(null);
+  const [revealed, setRevealed] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setRevealed(true);
+          observer.unobserve(el);
+        }
+      },
+      { threshold: 0.25 },
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <section
+      ref={ref}
+      className={`flex w-full flex-col items-center py-12 md:min-h-screen md:snap-center md:justify-center md:py-16 md:transition-all md:duration-700 md:ease-out ${
+        revealed ? 'md:translate-y-0 md:opacity-100' : 'md:translate-y-3 md:opacity-0'
+      }`}
+    >
+      {children}
+    </section>
+  );
+}
+
 export default function WorkSeriesDetail({
   seriesTitleKo,
   period,
@@ -90,7 +128,7 @@ export default function WorkSeriesDetail({
   nextWork?: NextWork;
 }) {
   return (
-    <main className="px-6 py-10 md:px-16 md:py-16">
+    <main className="px-6 py-10 md:h-screen md:snap-y md:snap-proximity md:overflow-y-auto md:scroll-smooth md:px-16 md:py-16">
       <nav className="mb-10 text-xs text-neutral-400 md:mb-14" aria-label="이동 경로">
         <Link href="/baroque" className="hover:text-neutral-900">
           WORKS
@@ -113,17 +151,21 @@ export default function WorkSeriesDetail({
       </div>
 
       {images && images.length > 0 && (
-        <div className="flex flex-col items-center gap-24 md:gap-32">
+        <div className="flex flex-col items-center md:block">
           {images.map((img) => (
-            <WorkImage key={img.src} image={img} />
+            <WorkSection key={img.src}>
+              <WorkImage image={img} />
+            </WorkSection>
           ))}
         </div>
       )}
 
       {projects && projects.length > 0 && (
-        <div className="flex flex-col items-center gap-28 md:gap-36">
+        <div className="flex flex-col items-center md:block">
           {projects.map((project) => (
-            <ProjectGroup key={project.titleKo} project={project} />
+            <WorkSection key={project.titleKo}>
+              <ProjectGroup project={project} />
+            </WorkSection>
           ))}
         </div>
       )}
