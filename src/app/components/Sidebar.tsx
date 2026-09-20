@@ -60,15 +60,15 @@ export default function Sidebar() {
 
   return (
     <>
-      <aside className="hidden md:fixed md:inset-y-0 md:left-0 md:z-40 md:flex md:w-[260px] md:flex-col md:overflow-y-auto md:border-r md:border-neutral-200 md:px-8 md:py-10">
+      <aside className="hidden md:fixed md:inset-y-0 md:left-0 md:z-40 md:flex md:w-[260px] md:flex-col md:overflow-y-auto md:border-r md:border-neutral-200 md:px-8 md:pb-10 md:pt-20">
         <Link href="/" className="block">
           <span className="block text-lg font-bold tracking-tight text-neutral-900">JUNG AH KIM</span>
-          <span className="block text-sm text-neutral-500">김정아</span>
+          <span className="block text-[15px] text-neutral-500">김정아</span>
         </Link>
-        <p className="mt-4 text-xs leading-relaxed text-neutral-400">{INTRO}</p>
+        <p className="mt-4 text-[13px] leading-relaxed text-neutral-400">{INTRO}</p>
 
         <nav className="mt-10">
-          <ul className="space-y-1 text-sm">
+          <ul className="space-y-1.5 text-base">
             {NAV_ITEMS.map((item) => (
               <SidebarItem
                 key={item.label}

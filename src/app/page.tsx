@@ -52,7 +52,7 @@ function Hero({ works }: { works: Work[] }) {
           ))}
         </div>
 
-        <div className="mt-6 flex items-center justify-center gap-6">
+        <div className="mt-2 flex items-center justify-center gap-6">
           {total > 1 && (
             <button
               onClick={goPrev}
