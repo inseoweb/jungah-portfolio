@@ -11,10 +11,10 @@ type WorkSeries = {
 const WORK_SERIES: WorkSeries[] = [
   { titleKo: '요정의 초상', period: '2025-', img: '/images/home/daepyo.jpeg', href: '/baroque' },
   { titleKo: '작은 사물의 일기', period: '2023-', img: '/images/home/fairy-portrait.jpg', href: '/fairy' },
-  { titleKo: '영원을 꿈꾸는 일회용', period: '2025-', img: '/images/posters/0.jpg', href: '/exhibitions' },
+  { titleKo: '영원을 꿈꾸는 일회용', period: '2025-', img: '/images/posters/0.jpg', href: '/disposable' },
   { titleKo: '꽃보다 아름답다', period: '2003-', img: '/images/home/beautiful-than-flower.jpg', href: '/flower' },
   { titleKo: '꽃꿈', period: '2024-', img: '/images/home/flower-dream.jpg', href: '/dream' },
-  { titleKo: '푸른 골목의 안쪽', period: '2021-' },
+  { titleKo: '푸른 골목의 안쪽', period: '2021-', img: '/images/critique-jung/7.jpg', href: '/blue-alley' },
   { titleKo: '해양/해양폐기물 관련 장기 작업군', period: '2011~', img: '/images/home/marine.jpg', href: '/marine' },
   { titleKo: 'WHO WANTS TO LIVE FOREVER?', period: '2022–ongoing' },
 ];

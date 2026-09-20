@@ -1,18 +1,20 @@
+import type { ReactNode } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
 export type EditorialImage = {
   src: string;
   alt: string;
-  orientation: 'landscape' | 'portrait';
+  orientation: 'landscape' | 'portrait' | 'square';
   caption?: string;
 };
 
 export type NextWork = { titleKo: string; href: string };
 
-const WIDTH_CLASS: Record<'landscape' | 'portrait', string> = {
+const WIDTH_CLASS: Record<'landscape' | 'portrait' | 'square', string> = {
   landscape: 'w-full md:w-[82%]',
   portrait: 'w-full sm:w-[62%] md:w-[46%]',
+  square: 'w-full sm:w-[68%] md:w-[54%]',
 };
 
 function WorkImage({ image, priority }: { image: EditorialImage; priority?: boolean }) {
@@ -49,9 +51,9 @@ export default function WorkSeriesDetail({
   seriesTitleKo: string;
   period: string;
   medium?: string;
-  intro?: string;
+  intro?: ReactNode;
   heroImage: EditorialImage;
-  images: EditorialImage[];
+  images?: EditorialImage[];
   installationViews?: EditorialImage[];
   nextWork?: NextWork;
 }) {
@@ -78,11 +80,13 @@ export default function WorkSeriesDetail({
         {intro && <p className="mt-4 text-sm leading-relaxed text-neutral-600">{intro}</p>}
       </div>
 
-      <div className="flex flex-col items-center gap-24 md:gap-32">
-        {images.map((img) => (
-          <WorkImage key={img.src} image={img} />
-        ))}
-      </div>
+      {images && images.length > 0 && (
+        <div className="flex flex-col items-center gap-24 md:gap-32">
+          {images.map((img) => (
+            <WorkImage key={img.src} image={img} />
+          ))}
+        </div>
+      )}
 
       {installationViews && installationViews.length > 0 && (
         <section className="mt-28 md:mt-36">
