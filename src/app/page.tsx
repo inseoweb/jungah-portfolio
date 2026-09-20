@@ -107,6 +107,25 @@ function WorkCard({ work, onClick }: { work: Work; onClick?: (e: MouseEvent) => 
   );
 }
 
+function WorkThumb({ work, onClick }: { work: Work; onClick?: (e: MouseEvent) => void }) {
+  return (
+    <Link href={work.href} onClick={onClick} className="group inline-flex shrink-0 flex-col">
+      <Image
+        src={work.img}
+        alt={work.titleKo}
+        width={0}
+        height={0}
+        sizes="20vw"
+        className="block h-20 w-auto max-w-none md:h-24"
+      />
+      <p className="mt-1.5 w-full truncate text-xs text-neutral-700 group-hover:text-neutral-900">
+        {work.titleKo}
+      </p>
+      <p className="text-[11px] text-neutral-400">{work.year}</p>
+    </Link>
+  );
+}
+
 function SelectedWorksSection({ works }: { works: Work[] }) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const drag = useRef({ isDown: false, startX: 0, startScroll: 0, moved: false, pointerId: 0 });
@@ -114,7 +133,7 @@ function SelectedWorksSection({ works }: { works: Work[] }) {
   const scrollByCard = (dir: 1 | -1) => {
     const el = scrollRef.current;
     if (!el) return;
-    el.scrollBy({ left: dir * (el.clientWidth / 3.7), behavior: 'smooth' });
+    el.scrollBy({ left: dir * el.clientWidth * 0.45, behavior: 'smooth' });
   };
 
   const onPointerDown = (e: PointerEvent<HTMLDivElement>) => {
@@ -151,15 +170,18 @@ function SelectedWorksSection({ works }: { works: Work[] }) {
   };
 
   return (
-    <section id="selected-works" className="mx-auto max-w-[1400px] px-6 py-10 md:px-16 md:py-14">
-      <div className="mb-6 flex items-center justify-between">
+    <section
+      id="selected-works"
+      className="mx-auto max-w-[1400px] px-6 py-10 md:px-16 md:pb-14 md:pt-20"
+    >
+      <div className="mb-6 flex items-center justify-between md:mb-5">
         <h2 className="text-xs md:text-sm font-semibold text-neutral-500">SELECTED WORKS</h2>
-        <div className="hidden items-center gap-4 md:flex">
+        <div className="hidden items-center gap-3 md:flex">
           <button
             type="button"
             onClick={() => scrollByCard(-1)}
             aria-label="이전 작품"
-            className="text-sm text-neutral-400 transition-colors hover:text-neutral-900"
+            className="text-xs text-neutral-400 transition-colors hover:text-neutral-900"
           >
             ←
           </button>
@@ -167,7 +189,7 @@ function SelectedWorksSection({ works }: { works: Work[] }) {
             type="button"
             onClick={() => scrollByCard(1)}
             aria-label="다음 작품"
-            className="text-sm text-neutral-400 transition-colors hover:text-neutral-900"
+            className="text-xs text-neutral-400 transition-colors hover:text-neutral-900"
           >
             →
           </button>
@@ -181,7 +203,7 @@ function SelectedWorksSection({ works }: { works: Work[] }) {
         ))}
       </div>
 
-      {/* Desktop: horizontal drag/scroll slider */}
+      {/* Desktop: small thumbnail navigation strip */}
       <div
         ref={scrollRef}
         onPointerDown={onPointerDown}
@@ -191,9 +213,7 @@ function SelectedWorksSection({ works }: { works: Work[] }) {
         className="hidden cursor-grab gap-6 overflow-x-auto [-ms-overflow-style:none] [scrollbar-width:none] active:cursor-grabbing md:flex [&::-webkit-scrollbar]:hidden"
       >
         {works.map((work) => (
-          <div key={work.img} className="w-[27%] shrink-0">
-            <WorkCard work={work} onClick={onCardClick} />
-          </div>
+          <WorkThumb key={work.img} work={work} onClick={onCardClick} />
         ))}
       </div>
     </section>

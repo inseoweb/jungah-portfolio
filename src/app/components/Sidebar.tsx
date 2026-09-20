@@ -12,7 +12,7 @@ const NAV_ITEMS: NavItem[] = [
   { label: 'HOME', href: '/' },
   {
     label: 'WORKS',
-    href: '/works',
+    href: '/baroque',
     children: [
       { href: '/baroque', label: '요정의 초상' },
       { href: '/fairy', label: '요정들' },

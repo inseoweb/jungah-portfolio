@@ -92,7 +92,7 @@ export default function WorkSeriesDetail({
   return (
     <main className="px-6 py-10 md:px-16 md:py-16">
       <nav className="mb-10 text-xs text-neutral-400 md:mb-14" aria-label="이동 경로">
-        <Link href="/works" className="hover:text-neutral-900">
+        <Link href="/baroque" className="hover:text-neutral-900">
           WORKS
         </Link>
         <span className="mx-1.5">→</span>
