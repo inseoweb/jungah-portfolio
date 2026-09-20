@@ -17,15 +17,17 @@ export type WorkProject = {
   images: EditorialImage[];
 };
 
-const WIDTH_CLASS: Record<'landscape' | 'portrait' | 'square', string> = {
-  landscape: 'w-full md:w-[82%]',
-  portrait: 'w-full sm:w-[62%] md:w-[46%]',
-  square: 'w-full sm:w-[68%] md:w-[54%]',
-};
-
-function WorkImage({ image, priority }: { image: EditorialImage; priority?: boolean }) {
+function WorkImage({
+  image,
+  priority,
+  hero,
+}: {
+  image: EditorialImage;
+  priority?: boolean;
+  hero?: boolean;
+}) {
   return (
-    <figure className={`mx-auto ${WIDTH_CLASS[image.orientation]}`}>
+    <figure className={`mx-auto flex w-full flex-col items-center ${hero ? 'max-w-5xl' : 'max-w-2xl'}`}>
       <Image
         src={image.src}
         alt={image.alt}
@@ -33,7 +35,9 @@ function WorkImage({ image, priority }: { image: EditorialImage; priority?: bool
         height={0}
         sizes="(max-width: 768px) 90vw, 60vw"
         priority={priority}
-        className="block h-auto w-full"
+        className={`block h-auto w-auto max-w-full ${
+          hero ? 'max-h-[58vh] md:max-h-[76vh]' : 'max-h-[48vh] md:max-h-[62vh]'
+        }`}
       />
       {image.caption && (
         <figcaption className="mt-3 text-center text-xs text-neutral-400">
@@ -96,7 +100,7 @@ export default function WorkSeriesDetail({
       </nav>
 
       <div className="mb-14 md:mb-20">
-        <WorkImage image={heroImage} priority />
+        <WorkImage image={heroImage} priority hero />
       </div>
 
       <div className="mx-auto mb-20 max-w-xl text-center md:mb-28">
@@ -131,16 +135,7 @@ export default function WorkSeriesDetail({
           </h2>
           <div className="flex flex-col items-center gap-16">
             {installationViews.map((view) => (
-              <div key={view.src} className="w-full sm:w-[85%] md:w-[70%]">
-                <Image
-                  src={view.src}
-                  alt={view.alt}
-                  width={0}
-                  height={0}
-                  sizes="(max-width: 768px) 90vw, 70vw"
-                  className="block h-auto w-full"
-                />
-              </div>
+              <WorkImage key={view.src} image={view} />
             ))}
           </div>
         </section>
