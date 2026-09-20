@@ -35,8 +35,8 @@ function Hero({ works }: { works: Work[] }) {
 
   return (
     <section className="px-6 py-10 md:px-16 md:py-16" aria-label="대표 작품">
-      <div className="mx-auto flex max-w-4xl flex-col items-center">
-        <div className="relative h-[48svh] w-full md:h-[62vh]">
+      <div className="mx-auto flex max-w-[1050px] flex-col items-center">
+        <div className="relative h-[56svh] w-full md:h-[72vh]">
           {works.map((work, i) => (
             <Image
               key={work.img}
@@ -52,32 +52,35 @@ function Hero({ works }: { works: Work[] }) {
           ))}
         </div>
 
-        {total > 1 && (
-          <div className="mt-6 flex items-center gap-6 text-neutral-500">
+        <div className="mt-6 flex items-center justify-center gap-6">
+          {total > 1 && (
             <button
               onClick={goPrev}
               aria-label="이전 작품"
-              className="text-lg hover:text-neutral-900"
+              className="text-lg text-neutral-400 hover:text-neutral-900"
             >
               ←
             </button>
-            <span className="text-xs tabular-nums text-neutral-400">
-              {index + 1} / {total}
-            </span>
+          )}
+
+          <Link href={current.href} className="text-center">
+            <p className="text-sm font-medium text-neutral-900 hover:underline">{current.titleKo}</p>
+            <p className="text-xs text-neutral-400">
+              {current.year}
+              {total > 1 && <> · {index + 1} / {total}</>}
+            </p>
+          </Link>
+
+          {total > 1 && (
             <button
               onClick={goNext}
               aria-label="다음 작품"
-              className="text-lg hover:text-neutral-900"
+              className="text-lg text-neutral-400 hover:text-neutral-900"
             >
               →
             </button>
-          </div>
-        )}
-
-        <Link href={current.href} className="mt-4 text-center">
-          <p className="text-sm font-medium text-neutral-900 hover:underline">{current.titleKo}</p>
-          <p className="text-xs text-neutral-400">{current.year}</p>
-        </Link>
+          )}
+        </div>
       </div>
     </section>
   );
@@ -102,7 +105,6 @@ function SelectedWorksSection({ works }: { works: Work[] }) {
             <div className="mt-3 space-y-0.5">
               <p className="text-sm font-semibold text-neutral-900">{work.titleKo}</p>
               <p className="text-xs text-neutral-500">{work.year}</p>
-              <p className="text-xs text-neutral-400">{work.category}</p>
             </div>
           </Link>
         ))}
