@@ -12,6 +12,7 @@ const NAV_ITEMS: NavItem[] = [
   { label: 'HOME', href: '/' },
   {
     label: 'WORKS',
+    href: '/works',
     children: [
       { href: '/baroque', label: '요정의 초상' },
       { href: '/fairy', label: '요정들' },
@@ -156,20 +157,33 @@ function SidebarItem({
     );
   }
 
+  const labelClassName = `tracking-wide ${
+    isActive ? 'font-semibold text-neutral-900' : 'text-neutral-600 hover:text-neutral-900'
+  }`;
+
   return (
     <li>
-      <button
-        onClick={onToggle}
-        aria-expanded={isOpen}
-        className={`flex w-full items-center justify-between py-1 text-left tracking-wide ${
-          isActive ? 'font-semibold text-neutral-900' : 'text-neutral-600 hover:text-neutral-900'
-        }`}
-      >
-        {item.label}
-        <HiChevronDown
-          className={`ml-2 shrink-0 text-xs transition-transform ${isOpen ? 'rotate-180' : ''}`}
-        />
-      </button>
+      <div className="flex w-full items-center justify-between py-1">
+        {item.href ? (
+          <Link href={item.href} onClick={onNavigate} className={labelClassName}>
+            {item.label}
+          </Link>
+        ) : (
+          <button onClick={onToggle} aria-expanded={isOpen} className={`text-left ${labelClassName}`}>
+            {item.label}
+          </button>
+        )}
+        <button
+          onClick={onToggle}
+          aria-expanded={isOpen}
+          aria-label={`${item.label} 하위 메뉴 ${isOpen ? '접기' : '펼치기'}`}
+          className="p-1 text-neutral-400 hover:text-neutral-900"
+        >
+          <HiChevronDown
+            className={`shrink-0 text-xs transition-transform ${isOpen ? 'rotate-180' : ''}`}
+          />
+        </button>
+      </div>
       {isOpen && (
         <ul className="mb-2 mt-1 space-y-1 border-l border-neutral-200 pl-3 text-[13px] text-neutral-500">
           {item.children.map((c) => (
