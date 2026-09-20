@@ -138,6 +138,7 @@ export default function Marine() {
       }
       heroImage={{ src: '/images/marine/4.jpg', alt: 'Hug me - 돌아온 탕아', orientation: 'landscape' }}
       projects={PROJECTS}
+      nextWork={{ titleKo: '남겨진 것들로부터의 위로', href: '/2015' }}
     />
   );
 }
