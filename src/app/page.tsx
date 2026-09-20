@@ -1,10 +1,10 @@
 'use client';
 
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-type Project = {
+type Work = {
   titleKo: string;
   year: string;
   category: string;
@@ -12,7 +12,7 @@ type Project = {
   href: string;
 };
 
-const PROJECTS: Project[] = [
+const HOME_WORKS: Work[] = [
   { titleKo: '요정의 초상', year: '2025-', category: '요정', img: '/images/home/daepyo.jpeg', href: '/baroque' },
   { titleKo: '컵 (일화용컵 도자기로 만들기)', year: '1999', category: '도시·숲', img: '/images/1990/21.jpeg', href: '/1990-1999' },
   { titleKo: '꽃보다 아름답다', year: '2003-', category: '요정', img: '/images/home/beautiful-than-flower.jpg', href: '/flower' },
@@ -23,128 +23,86 @@ const PROJECTS: Project[] = [
   { titleKo: '밤의 숲', year: '2020', category: '도시·숲', img: '/images/2015/forest-night.png', href: '/2015' },
 ];
 
-function Hero({ projects }: { projects: Project[] }) {
+const SELECTED_WORKS = HOME_WORKS.slice(0, 6);
+
+function Hero({ works }: { works: Work[] }) {
   const [index, setIndex] = useState(0);
-  const total = projects.length;
-  const containerRef = useRef<HTMLDivElement>(null);
+  const total = works.length;
+  const current = works[index];
 
-  const paginate = useCallback(
-    (dir: 1 | -1) => {
-      setIndex((i) => ((i + dir) % total + total) % total);
-    },
-    [total]
-  );
-
-  useEffect(() => {
-    const el = containerRef.current;
-    let paused = false;
-    const onEnter = () => (paused = true);
-    const onLeave = () => (paused = false);
-    el?.addEventListener('mouseenter', onEnter);
-    el?.addEventListener('mouseleave', onLeave);
-    const id = setInterval(() => !paused && paginate(1), 4000);
-    return () => {
-      clearInterval(id);
-      el?.removeEventListener('mouseenter', onEnter);
-      el?.removeEventListener('mouseleave', onLeave);
-    };
-  }, [paginate]);
-
-  const current = projects[index];
+  const goPrev = () => setIndex((i) => (i - 1 + total) % total);
+  const goNext = () => setIndex((i) => (i + 1) % total);
 
   return (
-    <section
-      ref={containerRef}
-      aria-roledescription="carousel"
-      aria-label="작가 소개"
-      className="relative -mx-6 -mt-6 h-[44svh] md:h-[52vh] min-h-[320px] max-h-[540px] overflow-hidden bg-white"
-    >
-      <Link
-        href={current.href}
-        aria-label={`${current.titleKo} 작품 보기`}
-        className="group absolute inset-0 block"
-      >
-        {projects.map((project, i) => (
-          <Image
-            key={project.img}
-            src={project.img}
-            alt={project.titleKo}
-            fill
-            priority={i === 0}
-            sizes="100vw"
-            className={`object-contain transition-[opacity,transform] duration-[900ms] ease-in-out group-hover:scale-[1.02] ${
-              i === index ? 'opacity-100' : 'opacity-0'
-            }`}
-          />
-        ))}
-      </Link>
-
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-white/85 via-white/35 to-transparent" />
-
-      <div className="pointer-events-none relative z-10 flex h-full items-center px-6 md:px-16">
-        <div className="max-w-md">
-          <p className="mb-4 text-xl md:text-2xl font-bold leading-snug text-[#282828]">
-            관심 밖으로 밀려난
-            <br />
-            존재와 그 안에 남겨진
-            <br />
-            시간을 바라봅니다.
-          </p>
-          <a
-            href="#projects"
-            className="pointer-events-auto inline-flex items-center gap-2 border-b border-neutral-900 pb-1 text-xs md:text-sm font-semibold tracking-widest text-neutral-900"
-          >
-            VIEW WORKS
-            <span aria-hidden>→</span>
-          </a>
-        </div>
-      </div>
-
-      <nav className="absolute right-4 top-1/2 z-10 -translate-y-1/2 md:right-8">
-        <ol className="flex flex-col gap-2" aria-label="배경 이미지 인디케이터">
-          {projects.map((_, i) => (
-            <li key={i}>
-              <button
-                aria-label={`${i + 1}번 이미지로 이동`}
-                onClick={() => setIndex(i)}
-                className={`block h-2 w-2 rounded-full transition ${
-                  i === index ? 'bg-neutral-900' : 'bg-neutral-400/60 hover:bg-neutral-600'
-                }`}
-              />
-            </li>
+    <section className="px-6 py-10 md:px-16 md:py-16" aria-label="대표 작품">
+      <div className="mx-auto flex max-w-4xl flex-col items-center">
+        <div className="relative h-[48svh] w-full md:h-[62vh]">
+          {works.map((work, i) => (
+            <Image
+              key={work.img}
+              src={work.img}
+              alt={work.titleKo}
+              fill
+              priority={i === 0}
+              sizes="(max-width: 768px) 90vw, 70vw"
+              className={`object-contain transition-opacity duration-300 ${
+                i === index ? 'opacity-100' : 'pointer-events-none opacity-0'
+              }`}
+            />
           ))}
-        </ol>
-      </nav>
+        </div>
+
+        {total > 1 && (
+          <div className="mt-6 flex items-center gap-6 text-neutral-500">
+            <button
+              onClick={goPrev}
+              aria-label="이전 작품"
+              className="text-lg hover:text-neutral-900"
+            >
+              ←
+            </button>
+            <span className="text-xs tabular-nums text-neutral-400">
+              {index + 1} / {total}
+            </span>
+            <button
+              onClick={goNext}
+              aria-label="다음 작품"
+              className="text-lg hover:text-neutral-900"
+            >
+              →
+            </button>
+          </div>
+        )}
+
+        <Link href={current.href} className="mt-4 text-center">
+          <p className="text-sm font-medium text-neutral-900 hover:underline">{current.titleKo}</p>
+          <p className="text-xs text-neutral-400">{current.year}</p>
+        </Link>
+      </div>
     </section>
   );
 }
 
-function ProjectsSection({ projects }: { projects: Project[] }) {
+function SelectedWorksSection({ works }: { works: Work[] }) {
   return (
-    <section id="projects" className="mx-auto max-w-[1400px] px-0 py-10 md:py-14">
-      <h2 className="mb-6 text-xs md:text-sm font-semibold text-neutral-500">
-        PROJECTS
-      </h2>
-      <div className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-4 md:gap-6">
-        {projects.map((project) => (
-          <Link
-            key={project.img}
-            href={project.href}
-            className="group block w-[42vw] shrink-0 snap-start sm:w-[200px]"
-          >
+    <section id="selected-works" className="mx-auto max-w-[1400px] px-6 py-10 md:px-16 md:py-14">
+      <h2 className="mb-6 text-xs md:text-sm font-semibold text-neutral-500">SELECTED WORKS</h2>
+      <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:gap-6">
+        {works.map((work) => (
+          <Link key={work.img} href={work.href} className="group block">
             <div className="relative aspect-square w-full overflow-hidden bg-neutral-100">
               <Image
-                src={project.img}
-                alt={project.titleKo}
+                src={work.img}
+                alt={work.titleKo}
                 fill
-                sizes="(max-width: 640px) 42vw, 200px"
+                sizes="(max-width: 640px) 45vw, (max-width: 1024px) 30vw, 220px"
                 className="object-cover transition-transform duration-300 group-hover:scale-105"
               />
             </div>
             <div className="mt-3 space-y-0.5">
-              <p className="text-sm font-semibold text-neutral-900">{project.titleKo}</p>
-              <p className="text-xs text-neutral-500">{project.year}</p>
-              <p className="text-xs text-neutral-400">{project.category}</p>
+              <p className="text-sm font-semibold text-neutral-900">{work.titleKo}</p>
+              <p className="text-xs text-neutral-500">{work.year}</p>
+              <p className="text-xs text-neutral-400">{work.category}</p>
             </div>
           </Link>
         ))}
@@ -156,8 +114,8 @@ function ProjectsSection({ projects }: { projects: Project[] }) {
 export default function Page() {
   return (
     <main className="min-h-screen">
-      <Hero projects={PROJECTS} />
-      <ProjectsSection projects={PROJECTS} />
+      <Hero works={HOME_WORKS} />
+      <SelectedWorksSection works={SELECTED_WORKS} />
     </main>
   );
 }

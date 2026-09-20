@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import './globals.css';
-import Navbar from './components/Navbar';
+import Sidebar from './components/Sidebar';
 
 export const metadata: Metadata = {
   title: '김정아 JungAh',
@@ -30,8 +30,8 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body className="font-sans bg-white text-gray-900">
-        <Navbar />
-        <main className="p-6">{children}</main>
+        <Sidebar />
+        <div className="md:ml-[260px]">{children}</div>
       </body>
     </html>
   );
