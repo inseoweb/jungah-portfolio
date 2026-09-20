@@ -11,6 +11,12 @@ export type EditorialImage = {
 
 export type NextWork = { titleKo: string; href: string };
 
+export type WorkProject = {
+  titleKo: string;
+  caption?: string;
+  images: EditorialImage[];
+};
+
 const WIDTH_CLASS: Record<'landscape' | 'portrait' | 'square', string> = {
   landscape: 'w-full md:w-[82%]',
   portrait: 'w-full sm:w-[62%] md:w-[46%]',
@@ -38,6 +44,26 @@ function WorkImage({ image, priority }: { image: EditorialImage; priority?: bool
   );
 }
 
+function ProjectGroup({ project }: { project: WorkProject }) {
+  return (
+    <div className="flex flex-col items-center gap-16 md:gap-20">
+      {project.images.map((img, i) => (
+        <div key={img.src} className="flex flex-col items-center">
+          <WorkImage image={img} />
+          {i === 0 && (
+            <div className="mt-4 text-center">
+              <p className="text-sm font-semibold text-neutral-800">{project.titleKo}</p>
+              {project.caption && (
+                <p className="mt-1 text-xs text-neutral-400">{project.caption}</p>
+              )}
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  );
+}
+
 export default function WorkSeriesDetail({
   seriesTitleKo,
   period,
@@ -45,6 +71,7 @@ export default function WorkSeriesDetail({
   intro,
   heroImage,
   images,
+  projects,
   installationViews,
   nextWork,
 }: {
@@ -54,6 +81,7 @@ export default function WorkSeriesDetail({
   intro?: ReactNode;
   heroImage: EditorialImage;
   images?: EditorialImage[];
+  projects?: WorkProject[];
   installationViews?: EditorialImage[];
   nextWork?: NextWork;
 }) {
@@ -84,6 +112,14 @@ export default function WorkSeriesDetail({
         <div className="flex flex-col items-center gap-24 md:gap-32">
           {images.map((img) => (
             <WorkImage key={img.src} image={img} />
+          ))}
+        </div>
+      )}
+
+      {projects && projects.length > 0 && (
+        <div className="flex flex-col items-center gap-28 md:gap-36">
+          {projects.map((project) => (
+            <ProjectGroup key={project.titleKo} project={project} />
           ))}
         </div>
       )}
