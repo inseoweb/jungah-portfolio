@@ -14,12 +14,6 @@ export type EditorialImage = {
 
 export type NextWork = { titleKo: string; href: string };
 
-export type WorkProject = {
-  titleKo: string;
-  caption?: string;
-  images: EditorialImage[];
-};
-
 function WorkImage({
   image,
   priority,
@@ -51,30 +45,15 @@ function WorkImage({
   );
 }
 
-function ProjectGroup({ project }: { project: WorkProject }) {
-  return (
-    <div className="flex flex-col items-center gap-16 md:gap-20">
-      {project.images.map((img, i) => (
-        <div key={img.src} className="flex flex-col items-center">
-          <WorkImage image={img} />
-          {i === 0 && (
-            <div className="mt-4 text-center">
-              <p className="text-sm font-semibold text-neutral-800">{project.titleKo}</p>
-              {project.caption && (
-                <p className="mt-1 text-xs text-neutral-400">{project.caption}</p>
-              )}
-            </div>
-          )}
-        </div>
-      ))}
-    </div>
-  );
-}
-
 // One work per (near-)full viewport on desktop, so the previous/next
 // piece never bleeds into view while the current one is being looked
 // at. Mobile ignores all of this and keeps normal document flow.
-function WorkSection({ children }: { children: ReactNode }) {
+//
+// `snap` is disabled on the last section in the flow: with scroll-snap
+// active all the way to the end, proximity snapping keeps pulling the
+// view back to center the final image, which makes it hard to scroll
+// past it to reach INSTALLATION VIEWS / NEXT WORK below.
+function WorkSection({ children, snap = true }: { children: ReactNode; snap?: boolean }) {
   const ref = useRef<HTMLElement>(null);
   const [revealed, setRevealed] = useState(false);
 
@@ -97,7 +76,9 @@ function WorkSection({ children }: { children: ReactNode }) {
   return (
     <section
       ref={ref}
-      className={`flex w-full flex-col items-center py-12 md:min-h-screen md:snap-center md:justify-center md:py-16 md:transition-all md:duration-700 md:ease-out ${
+      className={`flex w-full flex-col items-center py-12 md:min-h-screen ${
+        snap ? 'md:snap-center' : ''
+      } md:justify-center md:py-16 md:transition-all md:duration-700 md:ease-out ${
         revealed ? 'md:translate-y-0 md:opacity-100' : 'md:translate-y-3 md:opacity-0'
       }`}
     >
@@ -113,8 +94,8 @@ export default function WorkSeriesDetail({
   intro,
   heroImage,
   images,
-  projects,
   installationViews,
+  installationViewsPosition = 'bottom',
   nextWork,
 }: {
   seriesTitleKo: string;
@@ -123,10 +104,23 @@ export default function WorkSeriesDetail({
   intro?: ReactNode;
   heroImage: EditorialImage;
   images?: EditorialImage[];
-  projects?: WorkProject[];
   installationViews?: EditorialImage[];
+  installationViewsPosition?: 'top' | 'bottom';
   nextWork?: NextWork;
 }) {
+  const installationSection = installationViews && installationViews.length > 0 && (
+    <section className={installationViewsPosition === 'top' ? 'mb-20 md:mb-28' : 'mt-28 md:mt-36'}>
+      <h2 className="mb-10 text-center text-xs font-semibold text-neutral-500 md:text-sm">
+        INSTALLATION VIEWS
+      </h2>
+      <div className="flex flex-col items-center gap-16">
+        {installationViews.map((view) => (
+          <WorkImage key={view.src} image={view} />
+        ))}
+      </div>
+    </section>
+  );
+
   return (
     <main className="px-6 py-10 md:h-screen md:snap-y md:snap-proximity md:overflow-y-auto md:scroll-smooth md:px-16 md:py-16">
       <nav className="mb-10 text-xs text-neutral-400 md:mb-14" aria-label="이동 경로">
@@ -150,38 +144,19 @@ export default function WorkSeriesDetail({
         {intro && <p className="mt-4 text-sm leading-relaxed text-neutral-600">{intro}</p>}
       </div>
 
+      {installationViewsPosition === 'top' && installationSection}
+
       {images && images.length > 0 && (
         <div className="flex flex-col items-center md:block">
-          {images.map((img) => (
-            <WorkSection key={img.src}>
+          {images.map((img, i) => (
+            <WorkSection key={img.src} snap={i < images.length - 1}>
               <WorkImage image={img} />
             </WorkSection>
           ))}
         </div>
       )}
 
-      {projects && projects.length > 0 && (
-        <div className="flex flex-col items-center md:block">
-          {projects.map((project) => (
-            <WorkSection key={project.titleKo}>
-              <ProjectGroup project={project} />
-            </WorkSection>
-          ))}
-        </div>
-      )}
-
-      {installationViews && installationViews.length > 0 && (
-        <section className="mt-28 md:mt-36">
-          <h2 className="mb-10 text-center text-xs font-semibold text-neutral-500 md:text-sm">
-            INSTALLATION VIEWS
-          </h2>
-          <div className="flex flex-col items-center gap-16">
-            {installationViews.map((view) => (
-              <WorkImage key={view.src} image={view} />
-            ))}
-          </div>
-        </section>
-      )}
+      {installationViewsPosition === 'bottom' && installationSection}
 
       {nextWork && (
         <div className="mt-28 border-t border-neutral-200 pt-8 text-center md:mt-36">

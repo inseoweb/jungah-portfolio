@@ -1,6 +1,16 @@
-import WorkSeriesDetail, { type WorkProject } from '../components/WorkSeriesDetail';
+import WorkSeriesDetail, { type EditorialImage } from '../components/WorkSeriesDetail';
 
-const PROJECTS: WorkProject[] = [
+type MarineWork = {
+  titleKo: string;
+  caption?: string;
+  images: Omit<EditorialImage, 'caption'>[];
+};
+
+// Grouped by work so every photo can inherit its work's title/info —
+// several works have more than one photo (install shot + detail, or a
+// multi-photo installation) with nothing distinguishing them on their
+// own, so each photo in a group repeats the same caption.
+const WORKS: MarineWork[] = [
   {
     titleKo: 'Dinner 2011',
     caption: '63x63x16(cm), 한지캐스팅,수채,바다쓰레기, 2011',
@@ -111,6 +121,13 @@ const PROJECTS: WorkProject[] = [
   },
 ];
 
+const IMAGES: EditorialImage[] = WORKS.flatMap((work) =>
+  work.images.map((img) => ({
+    ...img,
+    caption: work.caption ? `${work.titleKo} · ${work.caption}` : work.titleKo,
+  })),
+);
+
 export default function Marine() {
   return (
     <WorkSeriesDetail
@@ -137,7 +154,7 @@ export default function Marine() {
         </>
       }
       heroImage={{ src: '/images/marine/4.jpg', alt: 'Hug me - 돌아온 탕아', orientation: 'landscape' }}
-      projects={PROJECTS}
+      images={IMAGES}
       nextWork={{ titleKo: '남겨진 것들로부터의 위로', href: '/2015' }}
     />
   );
