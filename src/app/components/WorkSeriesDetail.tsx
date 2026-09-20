@@ -4,17 +4,37 @@ import Link from 'next/link';
 export type EditorialImage = {
   src: string;
   alt: string;
-  size?: 'lg' | 'md' | 'sm';
+  orientation: 'landscape' | 'portrait';
   caption?: string;
 };
 
 export type NextWork = { titleKo: string; href: string };
 
-const SIZE_CLASS: Record<'lg' | 'md' | 'sm', string> = {
-  lg: 'w-full sm:w-[72%] md:w-[58%]',
-  md: 'w-full sm:w-[48%] md:w-[38%]',
-  sm: 'w-full sm:w-[32%] md:w-[26%]',
+const WIDTH_CLASS: Record<'landscape' | 'portrait', string> = {
+  landscape: 'w-full md:w-[82%]',
+  portrait: 'w-full sm:w-[62%] md:w-[46%]',
 };
+
+function WorkImage({ image, priority }: { image: EditorialImage; priority?: boolean }) {
+  return (
+    <figure className={`mx-auto ${WIDTH_CLASS[image.orientation]}`}>
+      <Image
+        src={image.src}
+        alt={image.alt}
+        width={0}
+        height={0}
+        sizes="(max-width: 768px) 90vw, 60vw"
+        priority={priority}
+        className="block h-auto w-full"
+      />
+      {image.caption && (
+        <figcaption className="mt-3 text-center text-xs text-neutral-400">
+          {image.caption}
+        </figcaption>
+      )}
+    </figure>
+  );
+}
 
 export default function WorkSeriesDetail({
   seriesTitleKo,
@@ -45,24 +65,11 @@ export default function WorkSeriesDetail({
         <span className="text-neutral-600">{seriesTitleKo}</span>
       </nav>
 
-      <div className="mb-14 flex justify-center md:mb-20">
-        <div className={SIZE_CLASS.lg}>
-          <Image
-            src={heroImage.src}
-            alt={heroImage.alt}
-            width={0}
-            height={0}
-            sizes="(max-width: 768px) 90vw, 60vw"
-            priority
-            className="block h-auto w-full"
-          />
-          {heroImage.caption && (
-            <p className="mt-3 text-center text-xs text-neutral-400">{heroImage.caption}</p>
-          )}
-        </div>
+      <div className="mb-14 md:mb-20">
+        <WorkImage image={heroImage} priority />
       </div>
 
-      <div className="mx-auto mb-16 max-w-xl text-center md:mb-24">
+      <div className="mx-auto mb-20 max-w-xl text-center md:mb-28">
         <h1 className="text-xl font-bold text-neutral-900 sm:text-2xl">{seriesTitleKo}</h1>
         <p className="mt-2 text-sm text-neutral-500">
           {period}
@@ -71,23 +78,9 @@ export default function WorkSeriesDetail({
         {intro && <p className="mt-4 text-sm leading-relaxed text-neutral-600">{intro}</p>}
       </div>
 
-      <div className="flex flex-wrap justify-center gap-x-10 gap-y-16 md:gap-x-14 md:gap-y-20">
+      <div className="flex flex-col items-center gap-24 md:gap-32">
         {images.map((img) => (
-          <figure key={img.src} className={SIZE_CLASS[img.size ?? 'md']}>
-            <Image
-              src={img.src}
-              alt={img.alt}
-              width={0}
-              height={0}
-              sizes="(max-width: 768px) 90vw, 40vw"
-              className="block h-auto w-full"
-            />
-            {img.caption && (
-              <figcaption className="mt-3 text-center text-xs text-neutral-400">
-                {img.caption}
-              </figcaption>
-            )}
-          </figure>
+          <WorkImage key={img.src} image={img} />
         ))}
       </div>
 
@@ -96,7 +89,7 @@ export default function WorkSeriesDetail({
           <h2 className="mb-10 text-center text-xs font-semibold text-neutral-500 md:text-sm">
             INSTALLATION VIEWS
           </h2>
-          <div className="flex flex-wrap justify-center gap-x-10 gap-y-14">
+          <div className="flex flex-col items-center gap-16">
             {installationViews.map((view) => (
               <div key={view.src} className="w-full sm:w-[85%] md:w-[70%]">
                 <Image
