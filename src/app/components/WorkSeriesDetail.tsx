@@ -11,6 +11,11 @@ export type EditorialImage = {
   alt: string | Localized;
   orientation: 'landscape' | 'portrait' | 'square';
   caption?: Localized;
+  // Structured alternative to `caption`: renders closer to the image, at a
+  // larger size, with the title in semibold — used where a page wants the
+  // artwork name to read as its own line rather than a single quiet caption.
+  captionTitle?: Localized;
+  captionDetail?: Localized;
 };
 
 export type NextWork = { title: Localized; href: string };
@@ -33,6 +38,8 @@ function WorkImage({
   hero?: boolean;
 }) {
   const caption = useLocalized(image.caption ?? loc(''));
+  const captionTitle = useLocalized(image.captionTitle ?? loc(''));
+  const captionDetail = useLocalized(image.captionDetail ?? loc(''));
   const alt = useLocalized(typeof image.alt === 'string' ? loc(image.alt) : image.alt);
   // `fill` + object-contain scales every work up to the bounding box below,
   // regardless of the source file's own pixel dimensions — a plain
@@ -55,8 +62,19 @@ function WorkImage({
           className="object-contain"
         />
       </div>
-      {caption && (
-        <figcaption className="mt-3 text-center text-xs text-neutral-400">{caption}</figcaption>
+      {(captionTitle || captionDetail) ? (
+        <figcaption className="mt-1.5 text-center">
+          {captionTitle && (
+            <span className="block text-sm font-semibold text-neutral-700">{captionTitle}</span>
+          )}
+          {captionDetail && (
+            <span className="mt-0.5 block text-sm text-neutral-400">{captionDetail}</span>
+          )}
+        </figcaption>
+      ) : (
+        caption && (
+          <figcaption className="mt-3 text-center text-xs text-neutral-400">{caption}</figcaption>
+        )
       )}
     </figure>
   );
