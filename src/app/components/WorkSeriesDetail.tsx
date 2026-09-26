@@ -104,6 +104,7 @@ export default function WorkSeriesDetail({
   images,
   installationViews,
   installationViewsPosition = 'bottom',
+  heroSpacing = 'mb-14 md:mb-20',
   nextWork,
 }: {
   seriesTitle: Localized;
@@ -114,6 +115,7 @@ export default function WorkSeriesDetail({
   images?: EditorialImage[];
   installationViews?: EditorialImage[];
   installationViewsPosition?: 'top' | 'bottom';
+  heroSpacing?: string;
   nextWork?: NextWork;
 }) {
   const { lang } = useLanguage();
@@ -144,7 +146,7 @@ export default function WorkSeriesDetail({
         <span className="text-neutral-600">{title}</span>
       </nav>
 
-      <div className="mb-14 md:mb-20">
+      <div className={heroSpacing}>
         <WorkImage image={heroImage} priority hero />
       </div>
 
