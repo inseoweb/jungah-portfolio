@@ -1,8 +1,8 @@
 'use client';
 
-import { loc, NEEDS_TRANSLATION, useLanguage } from '../../lib/language';
+import { loc, useLanguage } from '../../lib/language';
 
-const LABEL = loc('[ 심상용 평론 ]', NEEDS_TRANSLATION);
+const LABEL = loc('[ 심상용 평론 ]', '[ Critique by Shim Sang-yong ]');
 const TITLE = loc(
   '시와 접속의 회화론 - 갈망으로부터의 호출',
   'A Poetics of Painting through Poetry and Connection — A Call Born of Yearning',
