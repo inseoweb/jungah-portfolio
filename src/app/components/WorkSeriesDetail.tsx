@@ -34,19 +34,27 @@ function WorkImage({
 }) {
   const caption = useLocalized(image.caption ?? loc(''));
   const alt = useLocalized(typeof image.alt === 'string' ? loc(image.alt) : image.alt);
+  // `fill` + object-contain scales every work up to the bounding box below,
+  // regardless of the source file's own pixel dimensions — a plain
+  // width/height="auto" image never renders larger than its natural size,
+  // which is what made smaller-resolution (often square) exports look like
+  // tiny thumbnails even though the box around them was plenty big.
   return (
-    <figure className={`mx-auto flex w-full flex-col items-center ${hero ? 'max-w-6xl' : 'max-w-5xl'}`}>
-      <Image
-        src={image.src}
-        alt={alt}
-        width={0}
-        height={0}
-        sizes="(max-width: 768px) 92vw, 70vw"
-        priority={priority}
-        className={`block h-auto w-auto max-w-full ${
-          hero ? 'max-h-[62vh] md:max-h-[84vh]' : 'max-h-[60vh] md:max-h-[82vh]'
+    <figure className="mx-auto flex w-full max-w-6xl flex-col items-center">
+      <div
+        className={`relative w-full ${
+          hero ? 'h-[62vh] md:h-[84vh]' : 'h-[58vh] md:h-[80vh]'
         }`}
-      />
+      >
+        <Image
+          src={image.src}
+          alt={alt}
+          fill
+          sizes="(max-width: 768px) 92vw, 70vw"
+          priority={priority}
+          className="object-contain"
+        />
+      </div>
       {caption && (
         <figcaption className="mt-3 text-center text-xs text-neutral-400">{caption}</figcaption>
       )}
