@@ -8,7 +8,7 @@ import { loc, useLanguage, useLocalized, type Localized } from '../../lib/langua
 
 export type EditorialImage = {
   src: string;
-  alt: string;
+  alt: string | Localized;
   orientation: 'landscape' | 'portrait' | 'square';
   caption?: Localized;
 };
@@ -25,11 +25,12 @@ function WorkImage({
   hero?: boolean;
 }) {
   const caption = useLocalized(image.caption ?? loc(''));
+  const alt = useLocalized(typeof image.alt === 'string' ? loc(image.alt) : image.alt);
   return (
     <figure className={`mx-auto flex w-full flex-col items-center ${hero ? 'max-w-5xl' : 'max-w-2xl'}`}>
       <Image
         src={image.src}
-        alt={image.alt}
+        alt={alt}
         width={0}
         height={0}
         sizes="(max-width: 768px) 90vw, 60vw"
