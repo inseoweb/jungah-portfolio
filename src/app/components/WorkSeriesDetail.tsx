@@ -128,7 +128,7 @@ export default function WorkSeriesDetail({
   period: string;
   medium?: Localized;
   intro?: Localized<ReactNode>;
-  heroImage: EditorialImage;
+  heroImage?: EditorialImage;
   images?: EditorialImage[];
   installationViews?: EditorialImage[];
   installationViewsPosition?: 'top' | 'bottom';
@@ -167,9 +167,11 @@ export default function WorkSeriesDetail({
         <span className="text-neutral-600">{title}</span>
       </nav>
 
-      <div className={heroSpacing}>
-        <WorkImage image={heroImage} priority hero />
-      </div>
+      {heroImage && (
+        <div className={heroSpacing}>
+          <WorkImage image={heroImage} priority hero />
+        </div>
+      )}
 
       <div className="mx-auto mb-20 max-w-xl text-center md:mb-28">
         <h1 className="text-xl font-bold text-neutral-900 sm:text-2xl">{title}</h1>
