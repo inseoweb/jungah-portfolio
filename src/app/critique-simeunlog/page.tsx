@@ -2,11 +2,17 @@
 
 import Image from 'next/image';
 
-import { loc, NEEDS_TRANSLATION, PENDING_TRANSLATION_NODE, useLanguage } from '../../lib/language';
+import { loc, useLanguage } from '../../lib/language';
 
-const LABEL = loc('[ 심은록 평론 ]', NEEDS_TRANSLATION);
-const TITLE = loc('폐기물이 바라보는 인간 - 김정아의 개인전에 부쳐', NEEDS_TRANSLATION);
-const AUTHOR = loc('심은록 (Sim Eunlog, 미술평론가, AI영화감독)', NEEDS_TRANSLATION);
+const LABEL = loc('[ 심은록 평론 ]', '[ Critique by Sim Eunlog ]');
+const TITLE = loc(
+  '폐기물이 바라보는 인간 - 김정아의 개인전에 부쳐',
+  'Humanity as Seen by Waste — On Jung Ah Kim’s Solo Exhibition',
+);
+const AUTHOR = loc(
+  '심은록 (Sim Eunlog, 미술평론가, AI영화감독)',
+  'Sim Eunlog (Art Critic, AI Film Director)',
+);
 
 const BODY_KO = (
   <>
@@ -258,6 +264,489 @@ const BODY_KO = (
   </>
 );
 
+const BODY_EN = (
+  <>
+    <p className="mb-6 text-gray-700 leading-relaxed">
+      The Medici Prize, hosted by the Medici Association (Chairperson Seo Mi-ok), marks its tenth
+      edition this year. Jung Ah Kim, the artist who received the Grand Prize in this meaningful
+      award, will hold a solo exhibition at Hakgojae from November 11 to 25, 2025. The most
+      urgent and consequential challenge facing humanity today is, without question, the
+      environment. Yet addressing the environment through artistic language is never a simple
+      matter. Art is not a vehicle for propaganda or promotion; it demands its own formal
+      tension, one that elevates the problems of reality to the dimension of aesthetic reflection
+      and the sublime.
+    </p>
+
+    <p className="mb-6 text-gray-700 leading-relaxed">
+      Jung Ah Kim is one of the rare artists who confronts this difficulty head-on. Rather than
+      settling for direct denunciation or simple messaging about the contemporary environmental
+      crisis, she has rigorously transformed the ecological sensibility she has accumulated
+      through years of fieldwork into a structure of formal aesthetics and philosophical
+      reflection. As a result, her work opens a field of artistic contemplation that moves beyond
+      environmental issues to fundamentally reconsider the relationships between humanity and
+      nature, matter and existence, tradition and the present. This exhibition seeks to offer a
+      concentrated view of her singular artistic world, one that has organically fused ecological
+      practice, lived experience, and the symbolic systems of traditional Korean art.
+    </p>
+
+    <div className="h-5" />
+
+    <h3 className="text-lg font-semibold text-left text-[#003247] mb-10">
+      Ten Symbols of Longevity and Ten Symbols of Waste: When the Eternity of Tradition Collides
+      with the Wreckage of Civilization
+    </h3>
+
+    <div className="pb-[40px]">
+      <Image
+        src="/images/critique-simeunlog/1.jpg"
+        alt="빈 자리"
+        className="artwork-img mb-[20px]"
+        width={0}
+        height={0}
+        sizes="100vw"
+      />
+      <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
+        <span className="text-[14px] font-bold text-[#111827]">
+          New Painting of Ten Symbols of Longevity
+        </span>
+        <span className="text-[14px] font-normal text-[#4B5563]">
+          180 × 336 cm, acrylic on folding screen, marine debris, 2022
+        </span>
+      </div>
+    </div>
+
+    <div className="pb-[40px]">
+      <Image
+        src="/images/critique-simeunlog/2.jpg"
+        alt="빈 자리"
+        className="artwork-img mb-[20px]"
+        width={0}
+        height={0}
+        sizes="100vw"
+      />
+      <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
+        <span className="text-[14px] font-bold text-[#111827]">
+          Painting of Ten Symbols of Longevity
+        </span>
+        <span className="text-[14px] font-normal text-[#4B5563]">
+          Late 19th–early 20th century (Korea&apos;s Enlightenment Period), color on silk,
+          Collection of the National Palace Museum of Korea
+        </span>
+      </div>
+    </div>
+
+    <div className="h-5" />
+
+    <p className="mb-6 text-gray-700 leading-relaxed">
+      Across the eight panels of the folding screen unfolds a familiar image of the Ten Symbols of
+      Longevity. At first glance, it appears to be a work steeped in the traditional symbolic
+      system through which the Joseon dynasty prayed for health and long life. Yet the closer one
+      approaches the surface, the more this screen begins to provoke an unfamiliar unease. A
+      considerable number of the longevity motifs — animals, peaches of immortality, the elixir
+      plant — have been left as blank white space. They look at first like traces of an unfinished
+      painting, but on closer reflection, they are closer to traces of extinction. Of the eight
+      deer, six have already lost their color and remain only as empty space; more of the motifs
+      have been erased into blankness than retain their color. This work is precisely Jung Ah
+      Kim&apos;s New Painting of Ten Symbols of Longevity (2022). She borrows the Ten Symbols of
+      Longevity, a symbolic structure representative of Joseon painting, while deploying it as a
+      visual strategy that sharply exposes the problems of our own time.
+    </p>
+
+    <p className="mb-6 text-gray-700 leading-relaxed">
+      In traditional painting, the Ten Symbols of Longevity — the sun, mountains, water, rocks,
+      pine trees, turtles, deer, cranes, peaches, and the fungus of immortality — symbolized the
+      eternity, longevity, and vitality inherent in the natural world. This symbolic system
+      reflected a worldview that celebrated the harmony and cyclical order of nature and the
+      continuity of life. But Jung Ah Kim does not simply reproduce this ancient symbolism as it
+      stands. Instead, she asks:
+    </p>
+
+    <p className="mb-6 text-gray-500 leading-relaxed">
+      &quot;What, in this age, is truly eternal?&quot;
+    </p>
+
+    <p className="mb-6 text-gray-700 leading-relaxed">
+      Before this question, the artist summons the traditional ten symbols one by one and
+      proposes a new list to stand in their place: the &quot;Ten Symbols of Waste (十常廢),&quot;
+      ten forms of debris that never disappear. In an age when nature can no longer occupy the
+      position of &quot;eternity,&quot; it is waste, instead, that refuses to vanish — and the
+      artist foregrounds, across the surface of the work, the paradox that garbage has become the
+      new symbol of immortality.
+    </p>
+
+    <p className="mb-6 text-gray-700 leading-relaxed">
+      If the world of the traditional Ten Symbols spoke of the harmony of nature and the enduring
+      span of life, then the Ten Symbols of Waste produced by human civilization today symbolize a
+      world of pollution and persistence. &quot;Water,&quot; which once signified circulation and
+      life, can no longer circulate, choked by chemical sludge and microplastics; the
+      &quot;mountain,&quot; once a symbol of eternity, proves less permanent than a mountain of
+      e-waste; and the &quot;peach,&quot; once a symbol of immortality, has today been supplanted
+      by food waste and the problem of overproduction. In this way, the artist sets each
+      traditional symbol face to face with today&apos;s tragic reality, revealing an uncomfortable
+      portrait of civilization.
+    </p>
+
+    <p className="mb-6 text-gray-700 leading-relaxed">
+      As a result, New Painting of Ten Symbols of Longevity borrows a traditional form while being
+      thoroughly dismantled from within. The deer, cranes, and turtles that fill the screen have
+      all lost their color, erased into white space — a visual device showing that nature, no
+      longer able to recover, stands before its fate of extinction. Occupying the screen in their
+      place are actual pieces of debris collected from the sea: plastic bottle caps, twine, broken
+      styrofoam, discarded fishing gear. Nature has faded, but the trash remains; life has
+      disappeared, but the wreckage multiplies.
+    </p>
+
+    <p className="mb-6 text-gray-700 leading-relaxed">
+      Jung Ah Kim&apos;s New Painting of Ten Symbols of Longevity is not merely a formal
+      experiment that borrows from tradition; it is a powerful, critical painting that collides
+      traditional aesthetics with contemporary ecological reality. Reexamining the concept of
+      &quot;eternity&quot; once longed for in the past, the artist says:
+    </p>
+
+    <p className="mb-6 text-gray-500 leading-relaxed">
+      &quot;We have always blessed the time of nature, but the new eternity that human
+      civilization has created is, instead, waste.&quot;
+    </p>
+
+    <p className="mb-6 text-gray-700 leading-relaxed">
+      This shocking reversal is summed up in the work in a single sentence: what should have been
+      eternal has disappeared, and what should have disappeared has become eternal.
+    </p>
+
+    <div className="h-8" />
+
+    <h3 className="text-lg font-semibold text-left text-[#003247]">
+      Fragments of Reality Spilling Beyond the Boundaries of Painting
+    </h3>
+    <div className="h-8" />
+    <div className="pb-[40px]">
+      <Image
+        src="/images/critique-simeunlog/3.jpg"
+        alt="Picturesque"
+        className="artwork-img mb-[20px]"
+        width={0}
+        height={0}
+        sizes="100vw"
+      />
+      <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
+        <span className="text-[14px] font-bold text-[#111827]">Picturesque</span>
+        <span className="text-[14px] font-normal text-[#4B5563]">
+          71 × 81 cm, frame, oil on panel, marine debris, 2018
+        </span>
+      </div>
+    </div>
+
+    <p className="mb-6 text-gray-700 leading-relaxed">
+      Jung Ah Kim&apos;s Picturesque (2018) takes the traditional landscape composition of a
+      brilliant sunset rising over the sea. The horizon line crossing the center of the picture,
+      the reflected light, the sensuously captured resonance of color, and the gradation of a
+      rapturous evening sky are all typical pictorial devices that fix the scene before us in
+      sentimental beauty. As the title Picturesque suggests, this landscape summons the aesthetics
+      of the picturesque view once ideally pursued by European modern painting. But this pictorial
+      calm does not last long.
+    </p>
+
+    <p className="mb-6 text-gray-700 leading-relaxed">
+      A mass of material bursts up from the bottom of the frame as if erupting outward — broken
+      styrofoam, fragments of colored plastic, drink bottle caps, tiny particles — and begins to
+      erode the landscape within the painting. As if a pile of debris washed up from the sea had
+      occupied the picture, the painting is transformed from an object of &quot;pure art&quot;
+      appreciation into evidence of environmental destruction. At this point, the work is
+      abruptly overturned. As the artist points out, &quot;The landscape inside the frame is an
+      object of appreciation held at a distance from me, but the moment the trash crosses over
+      the edge of the frame, it is no longer a picture — it becomes reality.&quot; This work
+      visualizes precisely that collapse of the boundary.
+    </p>
+
+    <p className="mb-6 text-gray-700 leading-relaxed">
+      This work leads the viewer&apos;s senses to a strange point of collision. What is seen first
+      is beauty, but that beauty is soon disturbed into discomfort. Visual pleasure is displaced
+      by emotional aversion, and the viewer comes face to face with a reality that seeps into the
+      painting like water. The sea is no longer a romantic landscape but a polluted ecosystem, and
+      the sunset reads like a warning that nature is disappearing.
+    </p>
+
+    <p className="mb-6 text-gray-700 leading-relaxed">
+      Yet Picturesque does not stop at a simple environmental message. It is also a critical
+      experiment on the very form of painting itself. The frame has traditionally been a device
+      that separates the space of art from the real world, but the artist deliberately disables
+      the barrier that once protected art by destroying that boundary. The trash overflowing
+      beyond the frame is not a mere object but a catalyst that triggers an &quot;aesthetic
+      crisis.&quot; It seems to declare that art should not be a genre that escapes from reality,
+      but a site that forces us to confront the ecological catastrophe unfolding here and now.
+    </p>
+
+    <p className="mb-6 text-gray-700 leading-relaxed">
+      Before we can dream of the sea&apos;s beauty, Picturesque makes us see its reality; shedding
+      the artistic ornamentation that once permitted the distance of appreciation, it embraces the
+      environmental crisis as a material of our own time. The landscape still exists, but the work
+      makes the viewer realize that the world within it has already changed irreversibly.
+    </p>
+
+    <div className="h-8" />
+
+    <h3 className="text-lg font-semibold text-left text-[#003247]">
+      Aesthetics of Personal Practice (躬行美學): A Landscape That Calls for Movement
+    </h3>
+
+    <div className="pb-[10px]">
+      <Image
+        src="/images/critique-simeunlog/4.jpg"
+        alt="한 걸음 다가서면 바꿀 수 있어요"
+        className="artwork-img"
+        width={0}
+        height={0}
+        sizes="100vw"
+      />
+      <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
+        <span className="text-[14px] font-bold text-[#111827]">Picturesque</span>
+        <span className="text-[14px] font-normal text-[#4B5563]">
+          60.6 × 72.7 cm, lenticular, 2018, 2025
+        </span>
+      </div>
+    </div>
+
+    <div className="pb-[40px]">
+      <Image
+        src="/images/critique-simeunlog/5.jpg"
+        alt="한 걸음 다가서면 바꿀 수 있어요"
+        className="artwork-img"
+        width={0}
+        height={0}
+        sizes="100vw"
+      />
+      <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
+        <span className="text-[14px] font-bold text-[#111827]">Picturesque</span>
+        <span className="text-[14px] font-normal text-[#4B5563]">
+          60.6 × 72.7 cm, lenticular, 2018, 2025
+        </span>
+      </div>
+    </div>
+
+    <p className="mb-6 text-gray-500 leading-relaxed">
+      &quot;A beach buried in trash — but if you take one step forward, if I translate that into
+      action, the beach can become clean.&quot;
+    </p>
+
+    <p className="mb-6 text-gray-700 leading-relaxed">
+      Jung Ah Kim&apos;s work does not stop at revealing what lies behind a beautiful landscape; it
+      directly raises the question of how the viewer can personally intervene within that
+      landscape. If her 2018 work Picturesque attempted to collapse the boundary between art and
+      reality by dismantling the viewer&apos;s safe distance of appreciation, then the lenticular
+      series One Step Closer, You Can Change It goes a step further, incorporating the
+      viewer&apos;s own movement into the work itself. Jung Ah Kim&apos;s art thus expands into
+      what might be called an aesthetics of personal practice (躬行美學) — an aesthetics enacted
+      through one&apos;s own bodily action.
+    </p>
+
+    <p className="mb-6 text-gray-700 leading-relaxed">
+      Seen from a distance, the One Step Closer, You Can Change It series looks like a painting
+      depicting a peaceful seascape. But the moment the viewer&apos;s position shifts, the image
+      reveals something entirely different. The clean sea immediately changes into a sea polluted
+      with trash and a fragmented undersea landscape, and shifting the angle again brings forth a
+      revived vision of the sea. This transformation is not an accidental effect but a narrative
+      device designed to respond to the viewer&apos;s own action. Through this work, the artist
+      reveals that, prior to any grand structural debate, the core of the environmental problem is
+      a matter of personal practice: &quot;will you act, or will you look away?&quot; A careless
+      step leaves pollution unattended, but a meaningful step makes change possible.
+    </p>
+
+    <p className="mb-6 text-gray-700 leading-relaxed">
+      In Picturesque, the artist overturned the frame, that traditional device of appreciation, by
+      allowing trash to invade the landscape within it, collapsing the safe zone of appreciation
+      that once separated art from reality. One Step Closer, You Can Change It, by contrast, uses
+      the medium of the lenticular image to directly demand a change in the viewer&apos;s physical
+      distance and attitude. What matters here is not the change in the visual image itself, but
+      the structure of the work that calls forth an &quot;acting viewer.&quot; Together, these two
+      works speak to one shared shift: art is no longer an object of contemplation but a field for
+      experimenting with the possibility of change, a change that is completed only through the
+      participation and practice of the audience.
+    </p>
+
+    <div className="h-8" />
+
+    <h3 className="text-lg font-semibold text-left text-[#003247]">
+      The Second Life of Objects and an Aesthetics of Symbiosis
+    </h3>
+    <div className="h-6" />
+
+    <div className="pb-[40px]">
+      <Image
+        src="/images/critique-simeunlog/6.jpg"
+        alt="요정의 초상"
+        className="artwork-img"
+        width={0}
+        height={0}
+        sizes="100vw"
+      />
+      <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
+        <span className="text-[14px] font-bold text-[#111827]">The Portrait of Fairies</span>
+        <span className="text-[14px] font-normal text-[#4B5563]">
+          60.6 × 72.7 cm, oil on canvas, 2025
+        </span>
+      </div>
+    </div>
+
+    <p className="mb-6 text-gray-700 leading-relaxed">
+      In Jung Ah Kim&apos;s work, the sea is not merely a backdrop for a natural landscape. It is
+      an ontological field where creation and extinction, circulation and transformation
+      ceaselessly occur, a vast web of relations in which human beings and objects, life and
+      matter, are entangled with one another. The artist does not regard the objects she finds on
+      the shore as mere waste; rather, she sees them as recorders of time and mediators of
+      ecological relation. The barnacle-covered buoy works featured in this exhibition are the
+      case in which this worldview is most clearly revealed.
+    </p>
+
+    <p className="mb-6 text-gray-700 leading-relaxed">
+      In the painting, the buoy is placed like a still life against a dark background, its formal
+      composition recalling the visual grammar of classical still-life painting. But what covers
+      its surface is not a metallic sheen but a colony of barnacles. The image looks almost like a
+      scene of biological observation, delicately capturing traces of minute living activity. The
+      artist visualizes the layers of time and traces of life imprinted on the surface of a
+      discarded object, revealing the path of life the material has traveled. The tension of light
+      and shadow that governs the entire picture summons the aesthetic tradition of Baroque
+      still-life painting — particularly Dutch vanitas painting — which explored the boundary
+      between existence and nonexistence, life and object. Through this, the artist quietly yet
+      powerfully evokes just how fragile a notion the human-centered worldview is. This flat image
+      extends into the dimension of the real when juxtaposed with the actual barnacle-covered buoy
+      placed beside the work. The artist says:
+    </p>
+
+    <p className="mb-6 text-gray-500 leading-relaxed">
+      &quot;The discarded plastic buoy is not the problem. The problem is the human being who
+      discarded it. Nature does not distinguish the buoy from a rock.&quot;
+    </p>
+
+    <p className="mb-6 text-gray-700 leading-relaxed">
+      This statement is the key perspective that explains her attitude toward her work. Once a
+      fishing tool, the buoy fell into waste the moment it lost its use value, but the sea did not
+      reject it. Instead, barnacles, algae, and microorganisms made the discarded buoy their
+      habitat, forming a new ecological structure. In other words, the buoy was not severed from
+      life the moment it was discarded; rather, it acquired a new mode of existence, one bound in
+      relation to other forms of life.
+    </p>
+
+    <p className="mb-6 text-gray-700 leading-relaxed">
+      This perspective carries within it a fundamental critique of anthropocentric thinking. Human
+      beings define the value of an object by the standard of &quot;usefulness,&quot; but nature
+      does not divide the hierarchy of existence in this way. Objects presumed to have disappeared
+      are absorbed into other webs of relation within nature and take on renewed ecological roles.
+      To the artist, then, the barnacle-covered buoy is not a symbol of pollution but a specimen
+      of symbiosis, an ecological drama in which destruction and recovery coexist.
+    </p>
+
+    <p className="mb-6 text-gray-700 leading-relaxed">
+      Jung Ah Kim translates this understanding of the world into art. She goes beyond simply
+      using waste as material, repositioning it instead as an object of ontological reflection.
+      This is precisely where her work is distinguished from a mere aesthetics of recycling. The
+      point is not the recycling of matter but an attempt to understand the world and its objects
+      anew. As painting and object are configured into an installation form, the viewer moves
+      between two worlds — image and object, representation and the real — and is led to
+      reconsider the boundary between matter and life. Ultimately, this body of work converges on
+      a single, fundamental question.
+    </p>
+
+    <p className="mb-6 text-gray-500 leading-relaxed">&quot;What constitutes life?&quot;</p>
+
+    <p className="mb-6 text-gray-700 leading-relaxed">
+      If life is not a fixed substance but a process that arises within relation, then an object
+      discarded by a human being can also become a new ecological being through its encounter with
+      the other. In this way, Jung Ah Kim&apos;s work triggers a shift in perspective, rewriting
+      the hierarchy of existence and prompting us to see the world anew.
+    </p>
+
+    <div className="h-6" />
+    <h3 className="text-lg font-semibold text-left text-[#003247]">
+      Eternally Remaining Waste (永殘廢圖) · Sublimation of Waste (廢物昇華)
+    </h3>
+
+    <div className="pb-[40px]">
+      <Image
+        src="/images/critique-simeunlog/7.png"
+        alt="꽃꿈"
+        className="artwork-img mb-[20px] max-w-[80%] mx-auto"
+        width={0}
+        height={0}
+        sizes="100vw"
+      />
+      <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
+        <span className="text-[14px] font-bold text-[#111827]">quiet dream</span>
+        <span className="text-[14px] font-normal text-[#4B5563]">
+          72.7 × 60.6 cm, cast in hanji, 2025
+        </span>
+      </div>
+    </div>
+
+    <p className="mb-6 text-gray-700 leading-relaxed">
+      Jung Ah Kim is an artist who has lived in Geoje, South Gyeongsang Province, for twenty-six
+      years, condensing into her work the sensibility and experience she has gained alongside the
+      sea. For sixteen years, she has volunteered with an environmental organization in marine
+      debris monitoring conducted at sixty coastal survey points nationwide, carrying out her
+      artistic practice alongside this fieldwork. This experience demonstrates that her work is an
+      art practice grounded in field-based research and data, extending well beyond a mere formal
+      experiment.
+    </p>
+
+    <p className="mb-6 text-gray-700 leading-relaxed">
+      Drawing on her professional survey experience, she explains that &quot;the survey method
+      involves collecting every piece of debris larger than 2.5 cm and sorting it into sixty
+      categories, with plastics in particular broken down into subcategories such as single-use
+      items, beverage bottles, bottle caps, detergent containers, and lighters.&quot; She adds,
+      however, that &quot;wood and metal are recorded together as a single category, so their
+      actual share appears understated.&quot; She goes on to note that &quot;over sixteen years of
+      surveys, about 87% of marine debris was plastic, with fragments of styrofoam buoys and rope
+      and twine from fishing activity accounting for a particularly large share.&quot; She also
+      emphasizes that &quot;cigarette butts, fishing gear, and firework debris are types that cause
+      very severe ecological damage relative to their quantity,&quot; and reveals that she
+      continues to take part in the &quot;Yeoril Campaign,&quot; which aims to reduce the volume of
+      the top ten types of debris to one-tenth of current levels. Her art thus originates in a
+      distinctive practice that combines environmental sensibility, ecological survey work, and
+      field experience.
+    </p>
+
+    <p className="mb-6 text-gray-700 leading-relaxed">
+      This is precisely why her work carries such conviction. She possesses the artistic
+      sensibility to translate the traces left by trash and waste into the language of aesthetic
+      reflection. Jung Ah Kim does not stop at simply denouncing today&apos;s environmental crisis
+      or making an emotional appeal about it. Instead, she binds together debris retrieved from
+      the sea, fragments worn down by time, and traces of marine life, constructing a formal
+      apparatus that expands into an ontological question.
+    </p>
+
+    <p className="mb-6 text-gray-700 leading-relaxed">
+      Debris covered in barnacles, for instance, appears within the picture as a new biological
+      trace. This form breaks down the distinction between life and object, nature and waste, and
+      asks: &quot;Is what has been discarded truly rendered useless, or is it another being
+      waiting for a new relation?&quot; The More Beautiful than Flowers series likewise leads us to
+      look back at the underside of consumer society, questioning a set of values that measures
+      life by the standard of &quot;usefulness.&quot; New Painting of Ten Symbols of Longevity
+      goes further still, grafting the symbolic system of traditional Korean painting onto an
+      ecological philosophy to construct a narrative that pierces through our present age.
+    </p>
+
+    <p className="mb-6 text-gray-700 leading-relaxed">
+      This body of work unfolds along two crucial axes. The first is the axis of critique, which
+      might be called &quot;eternally remaining waste (永殘廢圖).&quot; It reveals a reality in
+      which debris and wreckage, once discarded, never disappear and have come to occupy the
+      world, indicting an age of &quot;paradoxical immortality&quot; in which waste outlasts
+      nature itself. Jung Ah Kim diagnoses this as an age dominated by an aesthetics of disposal,
+      forcing us to confront what the world we have made is actually composed of. The second is
+      the axis of sublimation, &quot;sublimation of waste (廢物昇華).&quot; She takes debris
+      collected from the sea and admits it as the central formal element of the picture,
+      recombining it into an artistic language. In her hands, discarded matter acquires new
+      meaning and comes back to life within a context of relation.
+    </p>
+
+    <p className="mb-6 text-gray-700 leading-relaxed">
+      Her work quiet dream is not directed toward personal desire but carries within it the will
+      to restore the dignity of existence. It is a will to begin again even after loss, a work
+      that asks after the fundamental reason for being, beyond mere use value. In restoring the
+      dignity of things that have vanished, this body of work ultimately proposes an art beyond
+      anthropocentrism — the possibility of a new ecological aesthetics.
+    </p>
+  </>
+);
+
 export default function SimeunlogReview() {
   const { lang } = useLanguage();
   return (
@@ -269,7 +758,7 @@ export default function SimeunlogReview() {
       </header>
       <div className="h-5" />
 
-      {lang === 'ko' ? BODY_KO : PENDING_TRANSLATION_NODE}
+      {lang === 'ko' ? BODY_KO : BODY_EN}
     </main>
   );
 }
