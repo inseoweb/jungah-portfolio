@@ -1,5 +1,5 @@
 import WorkSeriesDetail from '../components/WorkSeriesDetail';
-import { loc, NEEDS_TRANSLATION, PENDING_TRANSLATION_NODE } from '../../lib/i18n';
+import { loc } from '../../lib/i18n';
 import { getWorkSeries } from '../../lib/works-data';
 
 const series = getWorkSeries('fairy')!;
@@ -10,7 +10,7 @@ export default function PageFairy() {
     <WorkSeriesDetail
       seriesTitle={series.title}
       period={series.period}
-      medium={loc('각 91x73(cm), 2023', NEEDS_TRANSLATION)}
+      medium={loc('각 91 × 73 cm, 2023', '91 × 73 cm each, 2023')}
       intro={loc(
         <>
           바다에서 주운 플라스틱 쓰레기들.
@@ -28,12 +28,28 @@ export default function PageFairy() {
           <br />
           언제부터 돌아다녔을지 모를 시간.
         </>,
-        PENDING_TRANSLATION_NODE,
+        <>
+          Plastic debris collected from the sea.
+          <br />
+          Fairies once brought into being through precious human time and effort.
+          <br />
+          Now, neither the sea nor the land offers them a place to belong.
+          <br />
+          Worn, broken, and faded over time, they are gathered one by one, washed and dried, then
+          carefully tended to through the act of painting their portraits.
+          <br />
+          What is gathered, cleaned, and consoled ultimately reflects the human condition
+          itself—cast aside once its usefulness has been exhausted within our wayward civilization.
+          <br />
+          A space of unknown origin,
+          <br />
+          a time of unknown wandering.
+        </>,
       )}
-      heroImage={{ src: '/images/fairy/1.jpg', alt: '작은 사물의 일기', orientation: 'portrait' }}
+      heroImage={{ src: '/images/fairy/1.jpg', alt: '요정들', orientation: 'portrait' }}
       images={Array.from({ length: 17 }).map((_, i) => ({
         src: `/images/fairy/${i + 2}.jpg`,
-        alt: '작은 사물의 일기',
+        alt: '요정들',
         orientation: 'portrait' as const,
       }))}
       nextWork={{ title: nextSeries.title, href: nextSeries.href }}

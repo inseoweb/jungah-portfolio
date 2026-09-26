@@ -20,7 +20,7 @@ export type WorkSeriesMeta = {
  */
 export const WORKS_SERIES: WorkSeriesMeta[] = [
   { slug: 'baroque', href: '/baroque', title: loc('요정의 초상', 'The Portrait of Fairies'), period: '2025-' },
-  { slug: 'fairy', href: '/fairy', title: loc('작은 사물의 일기', NEEDS_TRANSLATION), period: '2023-' },
+  { slug: 'fairy', href: '/fairy', title: loc('요정들', 'Fairies'), period: '2023-' },
   { slug: 'disposable', href: '/disposable', title: loc('영원을 꿈꾸는 일회용', NEEDS_TRANSLATION), period: '2025-' },
   { slug: 'flower', href: '/flower', title: loc('꽃보다 아름답다', NEEDS_TRANSLATION), period: '2003-' },
   { slug: 'dream', href: '/dream', title: loc('꽃꿈', NEEDS_TRANSLATION), period: '2024-' },
