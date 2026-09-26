@@ -1,9 +1,27 @@
-import WorkSeriesDetail from '../components/WorkSeriesDetail';
+import WorkSeriesDetail, { type EditorialImage } from '../components/WorkSeriesDetail';
 import { loc } from '../../lib/i18n';
 import { getWorkSeries } from '../../lib/works-data';
 
 const series = getWorkSeries('disposable')!;
 const nextSeries = getWorkSeries('flower')!;
+
+const ALT = loc('영원을 꿈꾸는 일회용', 'The Disposable Dreaming of Eternity');
+
+const IMAGES: Omit<EditorialImage, 'alt'>[] = [
+  { src: '/images/disposable/forever_1.jpeg', orientation: 'landscape' },
+  { src: '/images/disposable/forever_2.jpeg', orientation: 'landscape' },
+  { src: '/images/disposable/forever_3.jpeg', orientation: 'portrait' },
+  { src: '/images/disposable/forever_4.jpeg', orientation: 'square' },
+  { src: '/images/disposable/forever_5.jpeg', orientation: 'portrait' },
+  { src: '/images/disposable/forever_6.jpeg', orientation: 'portrait' },
+  { src: '/images/disposable/forever_7.jpeg', orientation: 'portrait' },
+  { src: '/images/disposable/forever_8.jpeg', orientation: 'portrait' },
+  { src: '/images/disposable/forever_9.jpeg', orientation: 'portrait' },
+  { src: '/images/disposable/forever_10.jpeg', orientation: 'landscape' },
+  { src: '/images/disposable/forever_11.jpeg', orientation: 'landscape' },
+  { src: '/images/disposable/forever_12.jpeg', orientation: 'square' },
+  { src: '/images/disposable/forever_13.jpeg', orientation: 'landscape' },
+];
 
 export default function PageDisposable() {
   return (
@@ -33,6 +51,8 @@ export default function PageDisposable() {
           people to be valued beyond their usefulness and treated with lasting care.
         </>,
       )}
+      heroImage={{ ...IMAGES[0], alt: ALT }}
+      images={IMAGES.map((img) => ({ ...img, alt: ALT }))}
       nextWork={{ title: nextSeries.title, href: nextSeries.href }}
     />
   );
