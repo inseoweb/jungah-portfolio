@@ -1,5 +1,5 @@
 import WorkSeriesDetail from '../components/WorkSeriesDetail';
-import { loc, NEEDS_TRANSLATION, PENDING_TRANSLATION_NODE } from '../../lib/i18n';
+import { loc } from '../../lib/i18n';
 import { getWorkSeries } from '../../lib/works-data';
 
 const series = getWorkSeries('dream')!;
@@ -10,14 +10,18 @@ export default function PageDream() {
     <WorkSeriesDetail
       seriesTitle={series.title}
       period={series.period}
-      medium={loc('69x58x4(cm), 한지 캐스팅에 아크릴', NEEDS_TRANSLATION)}
+      medium={loc('69 × 58 × 4 cm, 한지 캐스팅에 아크릴', '69 × 58 × 4 cm, acrylic on cast hanji')}
       intro={loc(
         <>
           환했던 그 시간이 꿈같아
           <br />
           또 다시 꽃이 되는 꿈을 꾸어본다
         </>,
-        PENDING_TRANSLATION_NODE,
+        <>
+          Those radiant days now feel like a dream.
+          <br />
+          I dream once again of becoming a flower.
+        </>,
       )}
       heroImage={{ src: '/images/dream/1.jpg', alt: '꽃꿈', orientation: 'portrait' }}
       images={Array.from({ length: 6 }).map((_, i) => ({
