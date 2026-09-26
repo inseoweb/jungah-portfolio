@@ -1,10 +1,16 @@
 'use client';
 
-import { loc, NEEDS_TRANSLATION, PENDING_TRANSLATION_NODE, useLanguage } from '../../lib/language';
+import { loc, NEEDS_TRANSLATION, useLanguage } from '../../lib/language';
 
 const LABEL = loc('[ 심상용 평론 ]', NEEDS_TRANSLATION);
-const TITLE = loc('시와 접속의 회화론 - 갈망으로부터의 호출', NEEDS_TRANSLATION);
-const AUTHOR = loc('심상용(서울대학교 미술관 관장)', NEEDS_TRANSLATION);
+const TITLE = loc(
+  '시와 접속의 회화론 - 갈망으로부터의 호출',
+  'A Poetics of Painting through Poetry and Connection — A Call Born of Yearning',
+);
+const AUTHOR = loc(
+  '심상용(서울대학교 미술관 관장)',
+  'Shim Sang-yong (Director, Seoul National University Museum of Art)',
+);
 
 const BODY_KO = (
   <>
@@ -62,6 +68,138 @@ const BODY_KO = (
   </>
 );
 
+const BODY_EN = (
+  <>
+    <h4 className=" text-lg text-gray-700 font-semibold mb-3 ">Yearning</h4>
+    <p className="mb-6 text-gray-700 leading-relaxed">
+      For a soul without a yearning to come into genuine contact with reality, conflict does not
+      arise. And without conflict arising from within, it is difficult to enter the path of art.
+      How, then, does the advancement of the spirit begin? Simone Weil offers an answer: &quot;If
+      someone goes to the battlefield, prepared to die because he wishes to fight for his country,
+      he has already taken a step forward.&quot; Contact with reality, and the conflict that
+      follows from it, shakes the spirit from its sleep and opens its eyes. In this sense, it is
+      clear that Kim Jung Ah&apos;s spirit, too, has already taken such a step. This advancement
+      occurred when she began to look at the sea not as a place of leisure and retreat, but as a
+      body gravely afflicted by marine debris.
+    </p>
+    <p className="mb-6 text-gray-700 leading-relaxed">
+      The marine debris that draws Kim&apos;s attention cannot be understood solely in
+      environmental or ecological terms. These objects were once the favored products of
+      technology and industry. They brought convenience and a sense of well-being to everyday life
+      and were at times even worshipped as fetishes. More than the displaced objects deliberately
+      arranged in museums, they are faithful records of this civilization. Once symbols of power
+      and abundance, now wandering anonymous shores, they are also messengers of an apocalyptic
+      revelation. Countless pieces of Styrofoam and microscopic plastic particles invisible to the
+      naked eye are chilling fragments foretelling the end of a petroleum-based civilization. The
+      prognosis presented by microplastics, which have already permeated the planet&apos;s oceans,
+      is particularly bleak. Even in Arctic waters, plastic particles smaller than 50 μm (0.05 mm)
+      have been found at concentrations of as many as 12,000 particles per liter. Through them, a
+      lethal food chain stretches like a highway from the smallest marine organisms all the way to
+      human beings. Time is already on their side. In Kim Jung Ah&apos;s Dinner 2011 (2011),
+      brightly colored fragments of plastic spill from the split belly of a mackerel laid upon a
+      dining table. Its language is strikingly direct, perhaps because the urgency of the situation
+      leaves no time for metaphor or allegory.
+    </p>
+    <p className="mb-6 text-gray-700 leading-relaxed">
+      Would the table of the soul be any different? Human life is a feast lasting a generation,
+      less than a century even by generous measure. Until the shadow of death descends, the table
+      of our frenzied indifference toward what comes next is laden with such dishes as the
+      oblivion called urban redevelopment and the desire embodied in buildings competing endlessly
+      for greater height. What follows is the illusory satisfaction of being full, achievements
+      made in the name of progress and improvement. &quot;Make visible what is invisible.&quot;
+      This was the categorical imperative of art that guided Paul Klee. Today, the variable of
+      time must be added to it: let us see the true identity of this civilization, the reality of
+      this history. Faced with polluted land and seas and living beings falling ill, few courses
+      of action remain open to us. Among them are these: not to lose contact with reality; to
+      recognize the traces this civilization leaves upon the planet; and, in doing so, to remain
+      beings who yearn. This is the aesthetic force that guides Kim Jung Ah, and the proposition
+      she extends to us.
+    </p>
+
+    <h4 className="text-lg text-gray-700 font-semibold mb-3 mt-12">Poetry</h4>
+    <p className="mb-6 text-gray-700 leading-relaxed">
+      Although marine debris washed ashore is currently her principal medium, Kim Jung Ah&apos;s
+      art had established points of contact with reality long before. In her early
+      paintings—more precisely, those of the late 1990s—the principal motif was the familiar
+      urban landscape covered with commercial signs. This concern continued into the Mongyusillimdo
+      series (2013), at times taking the form of a three-panel folding screen. The series offered
+      a satirical approach to landscapes shaped by the logic of so-called redevelopment: places
+      reduced to the bare skeletons of buildings, stripped of their particular character, the
+      atmosphere of their streets, the movement of the wind, and the manner in which passersby
+      dressed. They were landscapes from which the invisible things that become perceptible only
+      when encountered through the heart—and the vital energies stirring beneath the surface—had
+      disappeared.
+    </p>
+    <p className="mb-6 text-gray-700 leading-relaxed">
+      Poetry arises when we listen to the world not with the ear but with the heart; likewise,
+      when we see not with the eye as an organ but with the mind&apos;s eye, what emerges is not
+      merely an image but painting. (Painting is more than an image.) Painting constitutes a mode
+      of knowing fundamentally different from the knowledge constructed through information or
+      mathematical statistics—forms of knowledge that can, on the contrary, obstruct genuine
+      contact with the world. As a mode of knowing, painting is drawn from &quot;the openness that
+      is an attribute of the Good and arises from the yearning within us&quot;: a disposition of
+      expectation, curiosity, responsiveness, and delight. It is also &quot;the form of
+      communication children love most, and the principal form through which God employs
+      revelation.&quot; In this respect, painting exceeds the obsessive fixation on facts
+      associated with the Cartesian or Kantian tradition—a mode of knowing narrowed to the
+      accumulation, analysis, and inference of data entirely through reason. This latter form of
+      knowledge has offered adults the illusion that they properly control the world, yet its
+      results have consistently fallen far short of expectation.
+    </p>
+    <p className="mb-6 text-gray-700 leading-relaxed">
+      Kim Jung Ah&apos;s painting is gradually becoming a space that invites back what was pushed
+      outside the categories of academic knowledge during the process of modernization: a white
+      horse with a gleaming mother-of-pearl saddle, and a balloon that has drifted away. It is
+      becoming a space in which to experiment with escaping soulless knowledge and the desiccated
+      city. To become absorbed in grand narratives such as critiques of civilization is hollow.
+      Judgment and definition are often necessary, but they are also dangerous. The world should
+      remain &quot;a place to travel in order to discover more.&quot; Serendipity (2021) is
+      suggestive in this regard. As its title implies, the world is also an intriguing place
+      where what has been concealed behind a curtain sometimes reveals itself, or allows genuine
+      intelligence to draw near.
+    </p>
+    <p className="mb-6 text-gray-700 leading-relaxed">
+      The forests that begin to appear in Kim&apos;s work after 2020 seem to embody the meaning
+      of this journey. The forest is a wild sanctuary where the pretensions of adults—who like to
+      pose as experts and managers of life—are no longer tolerated. It is also a maternal space
+      capable of embracing, binding, and healing the many harms inflicted by petroleum-based
+      civilization. This journey begins from our present, from our existence itself: from places
+      where we were born and raised and where we experienced profound communion. According to
+      Edward Relph, it is through such a sense of place that the foundations of cultural identity
+      and stability are formed, and that the conditions emerge through which one may orient
+      oneself toward the external world. This is the context in which Kim summons particular
+      places inscribed in her own experience as boundaries between that world and this
+      civilization: the stairways of hillside neighborhoods on the urban periphery, the sliding
+      doors of modest old houses, and other such fragments. These small things also become
+      passages for time travel back toward a primordial world—visual translations of a wormhole.
+      Under the premise of the hypothesis, passage through a wormhole would make travel into the
+      past possible. This is not merely fanciful imagination. We are not unaware that this
+      civilization has taken a wrong turn.
+    </p>
+
+    <h4 className="text-lg text-gray-700 font-semibold mb-3 mt-12">Connection (Plug-and-Play)</h4>
+    <p className="mb-6 text-gray-700 leading-relaxed">
+      Recently, Kim Jung Ah has been experimenting with the &quot;connection&quot; of landscapes.
+      It is a connection between origin and existence, between the past and the past that returns,
+      and between the self and the world. This connection is ascetic, yet highly functional. The
+      forest remains dense and the city remains dry, but the two now seek, in one way or another,
+      a positive coexistence. As in Inside the Blue Alley (2021), there is still not enough light,
+      yet the moon begins to shine a little; the wind begins to blow; a balloon drifts far into the
+      distance. The world is still not a transcendent refuge, but it once again becomes a place
+      worth sensing, feeling, and dreaming about. Something is taking place that allows our
+      disordered and dulled senses to shed their hardened layers and recover their original
+      sensitivity. It is an aesthetic connection through which waves of feeling begin to move and
+      reach the heart.
+    </p>
+    <p className="mb-6 text-gray-700 leading-relaxed">
+      An artist is someone in whose soul yearning exists in high concentration, and who
+      consequently experiences spiritual, psychological, and worldly conflict. Yet it is precisely
+      the intensity of that yearning that determines the purity of painting. This, perhaps, is the
+      direction toward which Kim Jung Ah&apos;s painting is moving.
+    </p>
+  </>
+);
+
 export default function SimSangYongReview() {
   const { lang } = useLanguage();
   return (
@@ -71,7 +209,7 @@ export default function SimSangYongReview() {
       <h3 className="text-m font-medium text-center text-[#4B5563] mb-10">{AUTHOR[lang]}</h3>
 
       <div className="h-5" />
-      {lang === 'ko' ? BODY_KO : PENDING_TRANSLATION_NODE}
+      {lang === 'ko' ? BODY_KO : BODY_EN}
     </div>
   );
 }
