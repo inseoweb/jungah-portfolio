@@ -136,7 +136,7 @@ export default function WorkSeriesDetail({
   nextWork,
 }: {
   seriesTitle: Localized;
-  period: string;
+  period: string | Localized;
   medium?: Localized;
   intro?: Localized<ReactNode>;
   heroImage?: EditorialImage;
@@ -147,6 +147,7 @@ export default function WorkSeriesDetail({
 }) {
   const { lang } = useLanguage();
   const title = useLocalized(seriesTitle);
+  const periodText = useLocalized(typeof period === 'string' ? loc(period) : period);
   const mediumText = useLocalized(medium ?? loc(''));
   const introNode = intro ? intro[lang] : null;
   const appendedTitle = useLocalized(appendedSeries?.title ?? loc(''));
@@ -173,7 +174,7 @@ export default function WorkSeriesDetail({
       <div className="mx-auto mb-20 max-w-xl text-center md:mb-28">
         <h1 className="text-xl font-bold text-neutral-900 sm:text-2xl">{title}</h1>
         <p className="mt-2 text-sm text-neutral-500">
-          {period}
+          {periodText}
           {mediumText ? ` · ${mediumText}` : ''}
         </p>
         {introNode && <p className="mt-4 text-sm leading-relaxed text-neutral-600">{introNode}</p>}

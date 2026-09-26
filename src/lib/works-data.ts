@@ -33,7 +33,7 @@ export const WORKS_SERIES: WorkSeriesMeta[] = [
   {
     slug: '2000-2014',
     href: '/2000-2014',
-    title: loc('도시·숲 2000~2014', NEEDS_TRANSLATION),
+    title: loc('Archive / Earlier Works 1'),
     period: '2000-2014',
   },
   {
