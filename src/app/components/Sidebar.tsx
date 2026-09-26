@@ -36,8 +36,8 @@ const NAV_ITEMS: NavItem[] = [
 ];
 
 const INTRO = loc(
-  '관심 밖으로 밀려난 존재와 그 안에 남겨진 시간을 바라봅니다.',
-  'I look at what has been pushed out of sight, and the time that remains within.',
+  '소비 문명이 남긴 잔해 속에서 인간의 초상을 발견하고,\n쓸모를 다한 자리에서 빛나는 아름다움을 봅니다.',
+  'Amid the remnants of consumer culture, I find traces of the human portrait\nand see beauty shining where usefulness has come to an end.',
 );
 
 export default function Sidebar() {
@@ -64,7 +64,7 @@ export default function Sidebar() {
           <span className="block text-lg font-bold tracking-tight text-neutral-900">JUNG AH KIM</span>
           <span className="block text-[15px] text-neutral-500">김정아</span>
         </Link>
-        <p className="mt-4 text-sm leading-relaxed text-neutral-400">{intro}</p>
+        <p className="mt-4 whitespace-pre-line text-lg leading-relaxed text-[#707070]">{intro}</p>
 
         <nav className="mt-10">
           <ul className="space-y-1.5 text-base">
@@ -100,7 +100,7 @@ export default function Sidebar() {
 
       {mobileOpen && (
         <div className="border-b border-neutral-200 px-6 pb-8 pt-2 md:hidden">
-          <p className="mb-6 text-sm leading-relaxed text-neutral-400">{intro}</p>
+          <p className="mb-6 whitespace-pre-line text-lg leading-relaxed text-[#707070]">{intro}</p>
           <nav>
             <ul className="space-y-1 text-sm">
               {NAV_ITEMS.map((item) => (
