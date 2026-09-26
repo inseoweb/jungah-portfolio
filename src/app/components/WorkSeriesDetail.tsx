@@ -28,15 +28,7 @@ export type AppendedSeries = {
   images: EditorialImage[];
 };
 
-function WorkImage({
-  image,
-  priority,
-  hero,
-}: {
-  image: EditorialImage;
-  priority?: boolean;
-  hero?: boolean;
-}) {
+function WorkImage({ image, priority }: { image: EditorialImage; priority?: boolean }) {
   const caption = useLocalized(image.caption ?? loc(''));
   const captionTitle = useLocalized(image.captionTitle ?? loc(''));
   const captionDetail = useLocalized(image.captionDetail ?? loc(''));
@@ -45,14 +37,13 @@ function WorkImage({
   // regardless of the source file's own pixel dimensions — a plain
   // width/height="auto" image never renders larger than its natural size,
   // which is what made smaller-resolution (often square) exports look like
-  // tiny thumbnails even though the box around them was plenty big.
+  // tiny thumbnails even though the box around them was plenty big. Every
+  // image in the flow (former hero included) shares this one box, so the
+  // page reads as one consistent series rather than one oversized "hero"
+  // followed by smaller work images.
   return (
     <figure className="mx-auto flex w-full max-w-6xl flex-col items-center">
-      <div
-        className={`relative w-full ${
-          hero ? 'h-[62vh] md:h-[84vh]' : 'h-[58vh] md:h-[80vh]'
-        }`}
-      >
+      <div className="relative h-[58vh] w-full md:h-[80vh]">
         <Image
           src={image.src}
           alt={alt}
@@ -84,10 +75,14 @@ function WorkImage({
 // piece never bleeds into view while the current one is being looked
 // at. Mobile ignores all of this and keeps normal document flow.
 //
-// `snap` is disabled on the last section in the flow: with scroll-snap
-// active all the way to the end, proximity snapping keeps pulling the
-// view back to center the final image, which makes it hard to scroll
-// past it to reach INSTALLATION VIEWS / NEXT WORK below.
+// `snap` is disabled on the first and last section in the flow. At the
+// end, with scroll-snap active all the way through, proximity snapping
+// keeps pulling the view back to center the final image, making it
+// hard to scroll past it to reach NEXT WORK below. At the start, the
+// very first section now sits right under the title/info block (the
+// former hero is just this section's image), and proximity snapping
+// was pulling the initial scroll position down onto it before the
+// title was ever seen — same underlying issue, opposite end.
 function WorkSection({ children, snap = true }: { children: ReactNode; snap?: boolean }) {
   const ref = useRef<HTMLElement>(null);
   const [revealed, setRevealed] = useState(false);
@@ -137,8 +132,6 @@ export default function WorkSeriesDetail({
   heroImage,
   images,
   installationViews,
-  installationViewsPosition = 'bottom',
-  heroSpacing = 'mb-14 md:mb-20',
   appendedSeries,
   nextWork,
 }: {
@@ -149,8 +142,6 @@ export default function WorkSeriesDetail({
   heroImage?: EditorialImage;
   images?: EditorialImage[];
   installationViews?: EditorialImage[];
-  installationViewsPosition?: 'top' | 'bottom';
-  heroSpacing?: string;
   appendedSeries?: AppendedSeries;
   nextWork?: NextWork;
 }) {
@@ -162,18 +153,12 @@ export default function WorkSeriesDetail({
   const appendedMediumText = useLocalized(appendedSeries?.medium ?? loc(''));
   const appendedIntroNode = appendedSeries?.intro ? appendedSeries.intro[lang] : null;
 
-  const installationSection = installationViews && installationViews.length > 0 && (
-    <section className={installationViewsPosition === 'top' ? 'mb-20 md:mb-28' : 'mt-28 md:mt-36'}>
-      <h2 className="mb-10 text-center text-xs font-semibold text-neutral-500 md:text-sm">
-        {UI.installationViews[lang]}
-      </h2>
-      <div className="flex flex-col items-center gap-16">
-        {installationViews.map((view) => (
-          <WorkImage key={view.src} image={view} />
-        ))}
-      </div>
-    </section>
-  );
+  // The series' hero image is no longer a separate block above the title —
+  // it's simply the first work image in the flow: right after INSTALLATION
+  // VIEWS if there are any, otherwise the very first thing after the
+  // title/info block. It appears exactly once, never duplicated.
+  const hasInstallationViews = !!installationViews && installationViews.length > 0;
+  const mainImages = heroImage ? [heroImage, ...(images ?? [])] : (images ?? []);
 
   return (
     <main className="px-6 py-10 md:h-screen md:snap-y md:snap-proximity md:overflow-y-auto md:scroll-smooth md:px-16 md:py-16">
@@ -185,12 +170,6 @@ export default function WorkSeriesDetail({
         <span className="text-neutral-600">{title}</span>
       </nav>
 
-      {heroImage && (
-        <div className={heroSpacing}>
-          <WorkImage image={heroImage} priority hero />
-        </div>
-      )}
-
       <div className="mx-auto mb-20 max-w-xl text-center md:mb-28">
         <h1 className="text-xl font-bold text-neutral-900 sm:text-2xl">{title}</h1>
         <p className="mt-2 text-sm text-neutral-500">
@@ -200,13 +179,27 @@ export default function WorkSeriesDetail({
         {introNode && <p className="mt-4 text-sm leading-relaxed text-neutral-600">{introNode}</p>}
       </div>
 
-      {installationViewsPosition === 'top' && installationSection}
+      {hasInstallationViews && (
+        <section className="mb-20 md:mb-28">
+          <h2 className="mb-10 text-center text-xs font-semibold text-neutral-500 md:text-sm">
+            {UI.installationViews[lang]}
+          </h2>
+          <div className="flex flex-col items-center gap-16">
+            {installationViews!.map((view, i) => (
+              <WorkImage key={view.src} image={view} priority={i === 0} />
+            ))}
+          </div>
+        </section>
+      )}
 
-      {images && images.length > 0 && (
+      {mainImages.length > 0 && (
         <div className="flex flex-col items-center md:block">
-          {images.map((img, i) => (
-            <WorkSection key={img.src} snap={i < images.length - 1 || !!appendedSeries}>
-              <WorkImage image={img} />
+          {mainImages.map((img, i) => (
+            <WorkSection
+              key={img.src}
+              snap={i > 0 && (i < mainImages.length - 1 || !!appendedSeries)}
+            >
+              <WorkImage image={img} priority={!hasInstallationViews && i === 0} />
             </WorkSection>
           ))}
         </div>
@@ -233,8 +226,6 @@ export default function WorkSeriesDetail({
           </div>
         </>
       )}
-
-      {installationViewsPosition === 'bottom' && installationSection}
 
       {nextWork && (
         <div className="mt-28 border-t border-neutral-200 pt-8 text-center md:mt-36">

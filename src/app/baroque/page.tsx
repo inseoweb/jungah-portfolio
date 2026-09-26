@@ -33,7 +33,6 @@ export default function PageBaroque() {
           orientation: 'portrait',
         },
       ]}
-      installationViewsPosition="top"
       images={[
         { src: '/images/baroque/1.jpg', alt: loc('요정의 초상', 'The Portrait of Fairies'), orientation: 'landscape' },
         { src: '/images/baroque/2.jpg', alt: loc('요정의 초상', 'The Portrait of Fairies'), orientation: 'landscape' },

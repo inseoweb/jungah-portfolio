@@ -52,7 +52,7 @@ export default function PageDisposable() {
         </>,
       )}
       heroImage={{ ...IMAGES[0], alt: ALT }}
-      images={IMAGES.map((img) => ({ ...img, alt: ALT }))}
+      images={IMAGES.slice(1).map((img) => ({ ...img, alt: ALT }))}
       nextWork={{ title: nextSeries.title, href: nextSeries.href }}
     />
   );

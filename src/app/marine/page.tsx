@@ -37,10 +37,7 @@ const WORKS: MarineWork[] = [
   {
     title: loc('Hug me - 돌아온 탕아', 'Hug me - 돌아온 탕아'),
     caption: loc('가변설치, fdm 출력, 바다쓰레기, 2022', NEEDS_TRANSLATION),
-    images: [
-      { src: '/images/marine/4.jpg', alt: 'Hug me - 돌아온 탕아', orientation: 'landscape' },
-      { src: '/images/marine/3.jpg', alt: 'Hug me - 돌아온 탕아', orientation: 'portrait' },
-    ],
+    images: [{ src: '/images/marine/3.jpg', alt: 'Hug me - 돌아온 탕아', orientation: 'portrait' }],
   },
   {
     title: loc('Under the Sea', 'Under the Sea'),

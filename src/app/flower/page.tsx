@@ -11,7 +11,6 @@ export default function PageFlower() {
       seriesTitle={series.title}
       period={series.period}
       medium={loc('63 × 63 × 4 cm, 한지 캐스팅에 수채', '63 × 63 × 4 cm, watercolor on cast hanji')}
-      heroSpacing="mb-8 md:mb-12"
       heroImage={{ src: '/images/flower/1.jpg', alt: '꽃보다 아름답다', orientation: 'square' }}
       images={Array.from({ length: 25 }).map((_, i) => ({
         src: `/images/flower/${i + 2}.jpg`,
@@ -22,7 +21,6 @@ export default function PageFlower() {
         { src: '/images/flower/exhibition/1.jpg', alt: '꽃보다 아름답다 전시 전경', orientation: 'landscape' },
         { src: '/images/flower/exhibition/2.jpg', alt: '꽃보다 아름답다 전시 전경', orientation: 'landscape' },
       ]}
-      installationViewsPosition="top"
       nextWork={{ title: nextSeries.title, href: nextSeries.href }}
     />
   );
