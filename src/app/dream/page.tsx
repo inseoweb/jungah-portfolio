@@ -3,7 +3,7 @@ import { loc } from '../../lib/i18n';
 import { getWorkSeries } from '../../lib/works-data';
 
 const series = getWorkSeries('dream')!;
-const nextSeries = getWorkSeries('blue-alley')!;
+const nextSeries = getWorkSeries('marine')!;
 
 export default function PageDream() {
   return (

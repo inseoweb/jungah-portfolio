@@ -20,19 +20,15 @@ const WORK_TILES: WorkTileData[] = [
     img:
       s.slug === 'baroque'
         ? '/images/home/daepyo.jpeg'
-        : s.slug === 'fairy'
-          ? '/images/home/fairy-portrait.jpg'
-          : s.slug === 'disposable'
-            ? '/images/posters/0.jpg'
-            : s.slug === 'flower'
-              ? '/images/home/beautiful-than-flower.jpg'
-              : s.slug === 'dream'
-                ? '/images/home/flower-dream.jpg'
-                : s.slug === 'blue-alley'
-                  ? '/images/critique-jung/7.jpg'
-                  : s.slug === 'marine'
-                    ? '/images/home/marine.jpg'
-                    : undefined,
+        : s.slug === 'disposable'
+          ? '/images/posters/0.jpg'
+          : s.slug === 'flower'
+            ? '/images/home/beautiful-than-flower.jpg'
+            : s.slug === 'dream'
+              ? '/images/home/flower-dream.jpg'
+              : s.slug === 'marine'
+                ? '/images/home/marine.jpg'
+                : undefined,
   })),
   { title: loc('WHO WANTS TO LIVE FOREVER?', 'WHO WANTS TO LIVE FOREVER?'), period: '2022–ongoing' },
 ];

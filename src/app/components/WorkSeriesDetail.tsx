@@ -15,6 +15,14 @@ export type EditorialImage = {
 
 export type NextWork = { title: Localized; href: string };
 
+export type AppendedSeries = {
+  title: Localized;
+  period: string;
+  medium?: Localized;
+  intro?: Localized<ReactNode>;
+  images: EditorialImage[];
+};
+
 function WorkImage({
   image,
   priority,
@@ -27,16 +35,16 @@ function WorkImage({
   const caption = useLocalized(image.caption ?? loc(''));
   const alt = useLocalized(typeof image.alt === 'string' ? loc(image.alt) : image.alt);
   return (
-    <figure className={`mx-auto flex w-full flex-col items-center ${hero ? 'max-w-5xl' : 'max-w-2xl'}`}>
+    <figure className={`mx-auto flex w-full flex-col items-center ${hero ? 'max-w-6xl' : 'max-w-5xl'}`}>
       <Image
         src={image.src}
         alt={alt}
         width={0}
         height={0}
-        sizes="(max-width: 768px) 90vw, 60vw"
+        sizes="(max-width: 768px) 92vw, 70vw"
         priority={priority}
         className={`block h-auto w-auto max-w-full ${
-          hero ? 'max-h-[58vh] md:max-h-[76vh]' : 'max-h-[48vh] md:max-h-[56vh]'
+          hero ? 'max-h-[62vh] md:max-h-[84vh]' : 'max-h-[60vh] md:max-h-[82vh]'
         }`}
       />
       {caption && (
@@ -105,6 +113,7 @@ export default function WorkSeriesDetail({
   installationViews,
   installationViewsPosition = 'bottom',
   heroSpacing = 'mb-14 md:mb-20',
+  appendedSeries,
   nextWork,
 }: {
   seriesTitle: Localized;
@@ -116,12 +125,16 @@ export default function WorkSeriesDetail({
   installationViews?: EditorialImage[];
   installationViewsPosition?: 'top' | 'bottom';
   heroSpacing?: string;
+  appendedSeries?: AppendedSeries;
   nextWork?: NextWork;
 }) {
   const { lang } = useLanguage();
   const title = useLocalized(seriesTitle);
   const mediumText = useLocalized(medium ?? loc(''));
   const introNode = intro ? intro[lang] : null;
+  const appendedTitle = useLocalized(appendedSeries?.title ?? loc(''));
+  const appendedMediumText = useLocalized(appendedSeries?.medium ?? loc(''));
+  const appendedIntroNode = appendedSeries?.intro ? appendedSeries.intro[lang] : null;
 
   const installationSection = installationViews && installationViews.length > 0 && (
     <section className={installationViewsPosition === 'top' ? 'mb-20 md:mb-28' : 'mt-28 md:mt-36'}>
@@ -164,11 +177,33 @@ export default function WorkSeriesDetail({
       {images && images.length > 0 && (
         <div className="flex flex-col items-center md:block">
           {images.map((img, i) => (
-            <WorkSection key={img.src} snap={i < images.length - 1}>
+            <WorkSection key={img.src} snap={i < images.length - 1 || !!appendedSeries}>
               <WorkImage image={img} />
             </WorkSection>
           ))}
         </div>
+      )}
+
+      {appendedSeries && (
+        <>
+          <div className="mx-auto mb-20 mt-28 max-w-xl text-center md:mb-28 md:mt-36">
+            <h2 className="text-xl font-bold text-neutral-900 sm:text-2xl">{appendedTitle}</h2>
+            <p className="mt-2 text-sm text-neutral-500">
+              {appendedSeries.period}
+              {appendedMediumText ? ` · ${appendedMediumText}` : ''}
+            </p>
+            {appendedIntroNode && (
+              <p className="mt-4 text-sm leading-relaxed text-neutral-600">{appendedIntroNode}</p>
+            )}
+          </div>
+          <div className="flex flex-col items-center md:block">
+            {appendedSeries.images.map((img, i) => (
+              <WorkSection key={img.src} snap={i < appendedSeries.images.length - 1}>
+                <WorkImage image={img} />
+              </WorkSection>
+            ))}
+          </div>
+        </>
       )}
 
       {installationViewsPosition === 'bottom' && installationSection}
