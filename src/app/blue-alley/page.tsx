@@ -1,13 +1,18 @@
 import WorkSeriesDetail from '../components/WorkSeriesDetail';
+import { loc, NEEDS_TRANSLATION } from '../../lib/i18n';
+import { getWorkSeries } from '../../lib/works-data';
+
+const series = getWorkSeries('blue-alley')!;
+const nextSeries = getWorkSeries('marine')!;
 
 export default function PageBlueAlley() {
   return (
     <WorkSeriesDetail
-      seriesTitleKo="푸른 골목의 안쪽"
-      period="2021-"
-      medium="155x95(cm), 캔버스에 아크릴릭, 2021"
+      seriesTitle={series.title}
+      period={series.period}
+      medium={loc('155x95(cm), 캔버스에 아크릴릭, 2021', NEEDS_TRANSLATION)}
       heroImage={{ src: '/images/critique-jung/7.jpg', alt: '푸른 골목의 안쪽', orientation: 'landscape' }}
-      nextWork={{ titleKo: '해양/해양폐기물 관련 장기 작업군', href: '/marine' }}
+      nextWork={{ title: nextSeries.title, href: nextSeries.href }}
     />
   );
 }

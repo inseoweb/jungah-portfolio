@@ -4,15 +4,16 @@ import type { ReactNode } from 'react';
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { loc, useLanguage, useLocalized, type Localized } from '../../lib/language';
 
 export type EditorialImage = {
   src: string;
   alt: string;
   orientation: 'landscape' | 'portrait' | 'square';
-  caption?: string;
+  caption?: Localized;
 };
 
-export type NextWork = { titleKo: string; href: string };
+export type NextWork = { title: Localized; href: string };
 
 function WorkImage({
   image,
@@ -23,6 +24,7 @@ function WorkImage({
   priority?: boolean;
   hero?: boolean;
 }) {
+  const caption = useLocalized(image.caption ?? loc(''));
   return (
     <figure className={`mx-auto flex w-full flex-col items-center ${hero ? 'max-w-5xl' : 'max-w-2xl'}`}>
       <Image
@@ -36,10 +38,8 @@ function WorkImage({
           hero ? 'max-h-[58vh] md:max-h-[76vh]' : 'max-h-[48vh] md:max-h-[56vh]'
         }`}
       />
-      {image.caption && (
-        <figcaption className="mt-3 text-center text-xs text-neutral-400">
-          {image.caption}
-        </figcaption>
+      {caption && (
+        <figcaption className="mt-3 text-center text-xs text-neutral-400">{caption}</figcaption>
       )}
     </figure>
   );
@@ -87,8 +87,15 @@ function WorkSection({ children, snap = true }: { children: ReactNode; snap?: bo
   );
 }
 
+const UI = {
+  works: loc('WORKS'),
+  installationViews: loc('INSTALLATION VIEWS'),
+  nextWork: loc('NEXT WORK'),
+  breadcrumbLabel: loc('이동 경로', 'breadcrumb'),
+};
+
 export default function WorkSeriesDetail({
-  seriesTitleKo,
+  seriesTitle,
   period,
   medium,
   intro,
@@ -98,20 +105,25 @@ export default function WorkSeriesDetail({
   installationViewsPosition = 'bottom',
   nextWork,
 }: {
-  seriesTitleKo: string;
+  seriesTitle: Localized;
   period: string;
-  medium?: string;
-  intro?: ReactNode;
+  medium?: Localized;
+  intro?: Localized<ReactNode>;
   heroImage: EditorialImage;
   images?: EditorialImage[];
   installationViews?: EditorialImage[];
   installationViewsPosition?: 'top' | 'bottom';
   nextWork?: NextWork;
 }) {
+  const { lang } = useLanguage();
+  const title = useLocalized(seriesTitle);
+  const mediumText = useLocalized(medium ?? loc(''));
+  const introNode = intro ? intro[lang] : null;
+
   const installationSection = installationViews && installationViews.length > 0 && (
     <section className={installationViewsPosition === 'top' ? 'mb-20 md:mb-28' : 'mt-28 md:mt-36'}>
       <h2 className="mb-10 text-center text-xs font-semibold text-neutral-500 md:text-sm">
-        INSTALLATION VIEWS
+        {UI.installationViews[lang]}
       </h2>
       <div className="flex flex-col items-center gap-16">
         {installationViews.map((view) => (
@@ -123,12 +135,12 @@ export default function WorkSeriesDetail({
 
   return (
     <main className="px-6 py-10 md:h-screen md:snap-y md:snap-proximity md:overflow-y-auto md:scroll-smooth md:px-16 md:py-16">
-      <nav className="mb-10 text-xs text-neutral-400 md:mb-14" aria-label="이동 경로">
+      <nav className="mb-10 text-xs text-neutral-400 md:mb-14" aria-label={UI.breadcrumbLabel[lang]}>
         <Link href="/baroque" className="hover:text-neutral-900">
-          WORKS
+          {UI.works[lang]}
         </Link>
         <span className="mx-1.5">→</span>
-        <span className="text-neutral-600">{seriesTitleKo}</span>
+        <span className="text-neutral-600">{title}</span>
       </nav>
 
       <div className="mb-14 md:mb-20">
@@ -136,12 +148,12 @@ export default function WorkSeriesDetail({
       </div>
 
       <div className="mx-auto mb-20 max-w-xl text-center md:mb-28">
-        <h1 className="text-xl font-bold text-neutral-900 sm:text-2xl">{seriesTitleKo}</h1>
+        <h1 className="text-xl font-bold text-neutral-900 sm:text-2xl">{title}</h1>
         <p className="mt-2 text-sm text-neutral-500">
           {period}
-          {medium ? ` · ${medium}` : ''}
+          {mediumText ? ` · ${mediumText}` : ''}
         </p>
-        {intro && <p className="mt-4 text-sm leading-relaxed text-neutral-600">{intro}</p>}
+        {introNode && <p className="mt-4 text-sm leading-relaxed text-neutral-600">{introNode}</p>}
       </div>
 
       {installationViewsPosition === 'top' && installationSection}
@@ -164,7 +176,7 @@ export default function WorkSeriesDetail({
             href={nextWork.href}
             className="text-xs font-semibold tracking-wide text-neutral-500 hover:text-neutral-900"
           >
-            NEXT WORK — {nextWork.titleKo} →
+            {UI.nextWork[lang]} — {nextWork.title[lang]} →
           </Link>
         </div>
       )}

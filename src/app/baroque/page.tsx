@@ -1,11 +1,16 @@
 import WorkSeriesDetail from '../components/WorkSeriesDetail';
+import { loc, NEEDS_TRANSLATION } from '../../lib/i18n';
+import { getWorkSeries } from '../../lib/works-data';
+
+const series = getWorkSeries('baroque')!;
+const nextSeries = getWorkSeries('fairy')!;
 
 export default function PageBaroque() {
   return (
     <WorkSeriesDetail
-      seriesTitleKo="요정의 초상"
-      period="2025-"
-      medium="캔버스에 유화"
+      seriesTitle={series.title}
+      period={series.period}
+      medium={loc('캔버스에 유화', NEEDS_TRANSLATION)}
       heroImage={{ src: '/images/baroque/exhibition/1.jpg', alt: '요정의 초상 전시 전경', orientation: 'landscape' }}
       installationViews={[
         { src: '/images/baroque/exhibition/2.jpg', alt: '요정의 초상 전시 전경', orientation: 'landscape' },
@@ -26,7 +31,7 @@ export default function PageBaroque() {
         { src: '/images/baroque/10.jpg', alt: '요정의 초상', orientation: 'portrait' },
         { src: '/images/baroque/11.jpg', alt: '요정의 초상', orientation: 'landscape' },
       ]}
-      nextWork={{ titleKo: '작은 사물의 일기', href: '/fairy' }}
+      nextWork={{ title: nextSeries.title, href: nextSeries.href }}
     />
   );
 }

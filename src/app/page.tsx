@@ -4,9 +4,10 @@ import { useRef, useState } from 'react';
 import type { MouseEvent, PointerEvent } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { loc, NEEDS_TRANSLATION, useLocalized, type Localized } from '../lib/language';
 
 type Work = {
-  titleKo: string;
+  title: Localized;
   year: string;
   category: string;
   img: string;
@@ -14,14 +15,14 @@ type Work = {
 };
 
 const HOME_WORKS: Work[] = [
-  { titleKo: '요정의 초상', year: '2025-', category: '요정', img: '/images/home/daepyo.jpeg', href: '/baroque' },
-  { titleKo: '컵 (일화용컵 도자기로 만들기)', year: '1999', category: '도시·숲', img: '/images/1990/21.jpeg', href: '/1990-1999' },
-  { titleKo: '꽃보다 아름답다', year: '2003-', category: '요정', img: '/images/home/beautiful-than-flower.jpg', href: '/flower' },
-  { titleKo: '꽃꿈', year: '2024-', category: '요정', img: '/images/home/flower-dream.jpg', href: '/dream' },
-  { titleKo: '신림동', year: '2021', category: '해양환경작품', img: '/images/marine/6.jpg', href: '/marine' },
-  { titleKo: '소리없는', year: '1999', category: '도시·숲', img: '/images/1990/1.jpeg', href: '/1990-1999' },
-  { titleKo: '꿈과 이제 오후', year: '2013', category: '도시·숲', img: '/images/2000/6.jpg', href: '/2000-2014' },
-  { titleKo: '밤의 숲', year: '2020', category: '도시·숲', img: '/images/2015/forest-night.png', href: '/2015' },
+  { title: loc('요정의 초상', NEEDS_TRANSLATION), year: '2025-', category: '요정', img: '/images/home/daepyo.jpeg', href: '/baroque' },
+  { title: loc('컵 (일화용컵 도자기로 만들기)', NEEDS_TRANSLATION), year: '1999', category: '도시·숲', img: '/images/1990/21.jpeg', href: '/1990-1999' },
+  { title: loc('꽃보다 아름답다', NEEDS_TRANSLATION), year: '2003-', category: '요정', img: '/images/home/beautiful-than-flower.jpg', href: '/flower' },
+  { title: loc('꽃꿈', NEEDS_TRANSLATION), year: '2024-', category: '요정', img: '/images/home/flower-dream.jpg', href: '/dream' },
+  { title: loc('신림동', NEEDS_TRANSLATION), year: '2021', category: '해양환경작품', img: '/images/marine/6.jpg', href: '/marine' },
+  { title: loc('소리없는', NEEDS_TRANSLATION), year: '1999', category: '도시·숲', img: '/images/1990/1.jpeg', href: '/1990-1999' },
+  { title: loc('꿈과 이제 오후', NEEDS_TRANSLATION), year: '2013', category: '도시·숲', img: '/images/2000/6.jpg', href: '/2000-2014' },
+  { title: loc('밤의 숲', NEEDS_TRANSLATION), year: '2020', category: '도시·숲', img: '/images/2015/forest-night.png', href: '/2015' },
 ];
 
 const SELECTED_WORKS = HOME_WORKS.slice(0, 6);
@@ -30,6 +31,7 @@ function Hero({ works }: { works: Work[] }) {
   const [index, setIndex] = useState(0);
   const total = works.length;
   const current = works[index];
+  const currentTitle = useLocalized(current.title);
 
   const goPrev = () => setIndex((i) => (i - 1 + total) % total);
   const goNext = () => setIndex((i) => (i + 1) % total);
@@ -42,7 +44,7 @@ function Hero({ works }: { works: Work[] }) {
             <Image
               key={work.img}
               src={work.img}
-              alt={work.titleKo}
+              alt={work.title.ko}
               fill
               priority={i === 0}
               sizes="(max-width: 768px) 90vw, 70vw"
@@ -65,7 +67,7 @@ function Hero({ works }: { works: Work[] }) {
           )}
 
           <Link href={current.href} className="text-center">
-            <p className="text-sm font-medium text-neutral-900 hover:underline">{current.titleKo}</p>
+            <p className="text-sm font-medium text-neutral-900 hover:underline">{currentTitle}</p>
             <p className="text-xs text-neutral-400">
               {current.year}
               {total > 1 && <> · {index + 1} / {total}</>}
@@ -88,19 +90,20 @@ function Hero({ works }: { works: Work[] }) {
 }
 
 function WorkCard({ work, onClick }: { work: Work; onClick?: (e: MouseEvent) => void }) {
+  const title = useLocalized(work.title);
   return (
     <Link href={work.href} onClick={onClick} className="group block">
       <div className="relative aspect-square w-full overflow-hidden bg-neutral-100">
         <Image
           src={work.img}
-          alt={work.titleKo}
+          alt={work.title.ko}
           fill
           sizes="(max-width: 640px) 45vw, (max-width: 1024px) 30vw, 220px"
           className="object-cover transition-transform duration-300 group-hover:scale-105"
         />
       </div>
       <div className="mt-3 space-y-0.5">
-        <p className="text-sm font-semibold text-neutral-900">{work.titleKo}</p>
+        <p className="text-sm font-semibold text-neutral-900">{title}</p>
         <p className="text-xs text-neutral-500">{work.year}</p>
       </div>
     </Link>
@@ -108,18 +111,19 @@ function WorkCard({ work, onClick }: { work: Work; onClick?: (e: MouseEvent) => 
 }
 
 function WorkThumb({ work, onClick }: { work: Work; onClick?: (e: MouseEvent) => void }) {
+  const title = useLocalized(work.title);
   return (
     <Link href={work.href} onClick={onClick} className="group inline-flex shrink-0 flex-col">
       <Image
         src={work.img}
-        alt={work.titleKo}
+        alt={work.title.ko}
         width={0}
         height={0}
         sizes="20vw"
         className="block h-20 w-auto max-w-none md:h-24"
       />
       <p className="mt-1.5 w-full truncate text-xs text-neutral-700 group-hover:text-neutral-900">
-        {work.titleKo}
+        {title}
       </p>
       <p className="text-[11px] text-neutral-400">{work.year}</p>
     </Link>

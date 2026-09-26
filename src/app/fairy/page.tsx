@@ -1,12 +1,17 @@
 import WorkSeriesDetail from '../components/WorkSeriesDetail';
+import { loc, NEEDS_TRANSLATION, PENDING_TRANSLATION_NODE } from '../../lib/i18n';
+import { getWorkSeries } from '../../lib/works-data';
+
+const series = getWorkSeries('fairy')!;
+const nextSeries = getWorkSeries('disposable')!;
 
 export default function PageFairy() {
   return (
     <WorkSeriesDetail
-      seriesTitleKo="작은 사물의 일기"
-      period="2023-"
-      medium="각 91x73(cm), 2023"
-      intro={
+      seriesTitle={series.title}
+      period={series.period}
+      medium={loc('각 91x73(cm), 2023', NEEDS_TRANSLATION)}
+      intro={loc(
         <>
           바다에서 주운 플라스틱 쓰레기들.
           <br />
@@ -22,15 +27,16 @@ export default function PageFairy() {
           어디서 온지 모를 공간,
           <br />
           언제부터 돌아다녔을지 모를 시간.
-        </>
-      }
+        </>,
+        PENDING_TRANSLATION_NODE,
+      )}
       heroImage={{ src: '/images/fairy/1.jpg', alt: '작은 사물의 일기', orientation: 'portrait' }}
       images={Array.from({ length: 17 }).map((_, i) => ({
         src: `/images/fairy/${i + 2}.jpg`,
         alt: '작은 사물의 일기',
         orientation: 'portrait' as const,
       }))}
-      nextWork={{ titleKo: '영원을 꿈꾸는 일회용', href: '/disposable' }}
+      nextWork={{ title: nextSeries.title, href: nextSeries.href }}
     />
   );
 }

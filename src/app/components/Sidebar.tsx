@@ -4,48 +4,47 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { HiMenu, HiX, HiChevronDown } from 'react-icons/hi';
+import { loc, NEEDS_TRANSLATION, useLanguage, useLocalized, type Localized } from '../../lib/language';
+import { WORKS_SERIES } from '../../lib/works-data';
 
-type SubItem = { href: string; label: string };
-type NavItem = { label: string; href?: string; children?: SubItem[] };
+type SubItem = { href: string; label: Localized };
+type NavItem = { label: Localized; href?: string; children?: SubItem[] };
 
 const NAV_ITEMS: NavItem[] = [
-  { label: 'HOME', href: '/' },
+  { label: loc('HOME'), href: '/' },
   {
-    label: 'WORKS',
+    label: loc('WORKS'),
     href: '/baroque',
     children: [
-      { href: '/baroque', label: '요정의 초상' },
-      { href: '/fairy', label: '요정들' },
-      { href: '/flower', label: '꽃보다 아름답다' },
-      { href: '/dream', label: '꽃꿈' },
-      { href: '/marine', label: '해양환경작품' },
-      { href: '/2015', label: '도시·숲 2015~' },
-      { href: '/2000-2014', label: '도시·숲 2000~2014' },
-      { href: '/1990-1999', label: '도시·숲 1990~1999' },
-      { href: '/photos', label: '활동사진' },
+      ...WORKS_SERIES.map((s) => ({ href: s.href, label: s.title })),
+      { href: '/photos', label: loc('활동사진', NEEDS_TRANSLATION) },
     ],
   },
-  { label: 'EXHIBITIONS', href: '/exhibitions' },
-  { label: 'ABOUT', href: '/artist' },
+  { label: loc('EXHIBITIONS'), href: '/exhibitions' },
+  { label: loc('ABOUT'), href: '/artist' },
   {
-    label: 'TEXTS',
+    label: loc('TEXTS'),
     children: [
-      { href: '/critique-simeunlog', label: '심은록 평론' },
-      { href: '/critique-shim', label: '심상용 평론' },
-      { href: '/critique-jung', label: '정석도 평론' },
+      { href: '/critique-simeunlog', label: loc('심은록 평론', NEEDS_TRANSLATION) },
+      { href: '/critique-shim', label: loc('심상용 평론', NEEDS_TRANSLATION) },
+      { href: '/critique-jung', label: loc('정석도 평론', NEEDS_TRANSLATION) },
     ],
   },
-  { label: 'RESEARCH & PRACTICE', href: '/research-practice' },
-  { label: 'CV', href: '/artist' },
-  { label: 'CONTACT', href: '/contact' },
+  { label: loc('RESEARCH & PRACTICE'), href: '/research-practice' },
+  { label: loc('CV'), href: '/artist' },
+  { label: loc('CONTACT'), href: '/contact' },
 ];
 
-const INTRO = '관심 밖으로 밀려난 존재와 그 안에 남겨진 시간을 바라봅니다.';
+const INTRO = loc(
+  '관심 밖으로 밀려난 존재와 그 안에 남겨진 시간을 바라봅니다.',
+  NEEDS_TRANSLATION,
+);
 
 export default function Sidebar() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openGroup, setOpenGroup] = useState<string | null>(null);
+  const intro = useLocalized(INTRO);
 
   useEffect(() => {
     setMobileOpen(false);
@@ -53,11 +52,10 @@ export default function Sidebar() {
 
   useEffect(() => {
     const active = NAV_ITEMS.find((item) => item.children?.some((c) => c.href === pathname));
-    setOpenGroup(active ? active.label : null);
+    setOpenGroup(active ? active.label.ko : null);
   }, [pathname]);
 
-  const toggleGroup = (label: string) =>
-    setOpenGroup((cur) => (cur === label ? null : label));
+  const toggleGroup = (key: string) => setOpenGroup((cur) => (cur === key ? null : key));
 
   return (
     <>
@@ -66,17 +64,17 @@ export default function Sidebar() {
           <span className="block text-lg font-bold tracking-tight text-neutral-900">JUNG AH KIM</span>
           <span className="block text-[15px] text-neutral-500">김정아</span>
         </Link>
-        <p className="mt-4 text-[13px] leading-relaxed text-neutral-400">{INTRO}</p>
+        <p className="mt-4 text-[13px] leading-relaxed text-neutral-400">{intro}</p>
 
         <nav className="mt-10">
           <ul className="space-y-1.5 text-base">
             {NAV_ITEMS.map((item) => (
               <SidebarItem
-                key={item.label}
+                key={item.label.ko}
                 item={item}
                 pathname={pathname}
-                isOpen={openGroup === item.label}
-                onToggle={() => toggleGroup(item.label)}
+                isOpen={openGroup === item.label.ko}
+                onToggle={() => toggleGroup(item.label.ko)}
               />
             ))}
           </ul>
@@ -102,16 +100,16 @@ export default function Sidebar() {
 
       {mobileOpen && (
         <div className="border-b border-neutral-200 px-6 pb-8 pt-2 md:hidden">
-          <p className="mb-6 text-xs leading-relaxed text-neutral-400">{INTRO}</p>
+          <p className="mb-6 text-xs leading-relaxed text-neutral-400">{intro}</p>
           <nav>
             <ul className="space-y-1 text-sm">
               {NAV_ITEMS.map((item) => (
                 <SidebarItem
-                  key={item.label}
+                  key={item.label.ko}
                   item={item}
                   pathname={pathname}
-                  isOpen={openGroup === item.label}
-                  onToggle={() => toggleGroup(item.label)}
+                  isOpen={openGroup === item.label.ko}
+                  onToggle={() => toggleGroup(item.label.ko)}
                   onNavigate={() => setMobileOpen(false)}
                 />
               ))}
@@ -138,8 +136,10 @@ function SidebarItem({
   onToggle: () => void;
   onNavigate?: () => void;
 }) {
+  const { lang } = useLanguage();
   const isActive =
     item.href === pathname || (item.children?.some((c) => c.href === pathname) ?? false);
+  const label = item.label[lang];
 
   if (!item.children) {
     return (
@@ -151,7 +151,7 @@ function SidebarItem({
             isActive ? 'font-semibold text-neutral-900' : 'text-neutral-600 hover:text-neutral-900'
           }`}
         >
-          {item.label}
+          {label}
         </Link>
       </li>
     );
@@ -166,17 +166,17 @@ function SidebarItem({
       <div className="flex w-full items-center justify-between py-1">
         {item.href ? (
           <Link href={item.href} onClick={onNavigate} className={labelClassName}>
-            {item.label}
+            {label}
           </Link>
         ) : (
           <button onClick={onToggle} aria-expanded={isOpen} className={`text-left ${labelClassName}`}>
-            {item.label}
+            {label}
           </button>
         )}
         <button
           onClick={onToggle}
           aria-expanded={isOpen}
-          aria-label={`${item.label} 하위 메뉴 ${isOpen ? '접기' : '펼치기'}`}
+          aria-label={`${label} 하위 메뉴 ${isOpen ? '접기' : '펼치기'}`}
           className="p-1 text-neutral-400 hover:text-neutral-900"
         >
           <HiChevronDown
@@ -195,7 +195,7 @@ function SidebarItem({
                   pathname === c.href ? 'font-medium text-neutral-900' : 'hover:text-neutral-900'
                 }`}
               >
-                {c.label}
+                {c.label[lang]}
               </Link>
             </li>
           ))}
@@ -206,19 +206,19 @@ function SidebarItem({
 }
 
 function LangToggle({ className = '' }: { className?: string }) {
-  const [lang, setLang] = useState<'KR' | 'EN'>('KR');
+  const { lang, setLang } = useLanguage();
   return (
     <div className={`items-center gap-1 text-xs text-neutral-500 ${className}`}>
       <button
-        onClick={() => setLang('KR')}
-        className={lang === 'KR' ? 'font-semibold text-neutral-900' : 'hover:text-neutral-900'}
+        onClick={() => setLang('ko')}
+        className={lang === 'ko' ? 'font-semibold text-neutral-900' : 'hover:text-neutral-900'}
       >
         KR
       </button>
       <span aria-hidden>|</span>
       <button
-        onClick={() => setLang('EN')}
-        className={lang === 'EN' ? 'font-semibold text-neutral-900' : 'hover:text-neutral-900'}
+        onClick={() => setLang('en')}
+        className={lang === 'en' ? 'font-semibold text-neutral-900' : 'hover:text-neutral-900'}
       >
         EN
       </button>
