@@ -1,11 +1,17 @@
 'use client';
 
 import Image from 'next/image';
-import { loc, NEEDS_TRANSLATION, PENDING_TRANSLATION_NODE, useLanguage } from '../../lib/language';
+import { loc, useLanguage } from '../../lib/language';
 
-const LABEL = loc('[ 정석도 평론 ]', NEEDS_TRANSLATION);
-const TITLE = loc('회화적 역설, 이질적 시간의 정경', NEEDS_TRANSLATION);
-const AUTHOR = loc('정석도(철학박사, 남해인문예술연구소장)', NEEDS_TRANSLATION);
+const LABEL = loc('[ 정석도 평론 ]', '[ Critique by Jeong Seokdo ]');
+const TITLE = loc(
+  '회화적 역설, 이질적 시간의 정경',
+  'A Pictorial Paradox, A Scene of Heterogeneous Time',
+);
+const AUTHOR = loc(
+  '정석도(철학박사, 남해인문예술연구소장)',
+  'Jeong Seokdo (Ph.D. in Philosophy; Director, Namhae Institute for Humanities and the Arts)',
+);
 
 const BODY_KO = (
   <>
@@ -238,6 +244,404 @@ const BODY_KO = (
   </>
 );
 
+const BODY_EN = (
+  <>
+    <div className="pb-[40px]">
+      <Image
+        src="/images/critique-jung/1.jpeg"
+        alt="빈 자리"
+        className="artwork-img mb-[20px]"
+        width={0}
+        height={0}
+        sizes="100vw"
+      />
+      <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
+        <span className="text-[14px] font-bold text-[#111827]">Empty Place</span>
+        <span className="text-[14px] font-normal text-[#4B5563]">
+          194 × 130 cm, acrylic on panel, marine debris, mirror, 2011–2021
+        </span>
+      </div>
+    </div>
+    <p className="mb-6 text-gray-700 leading-relaxed">
+      Painting is the most primordial of virtual spaces. The artist, then, is essentially a
+      virtual being — an unreal existence who lives clinging to a virtual world. The
+      artist&apos;s proper task is to render visible the true face of a world never experienced
+      in life: that is, to work upon the ideal, beyond the real. Of course, we all know that this
+      orientation toward an ideal transcending reality is not confined merely to the depiction of
+      some abstract world. A typical form of such idealism can be glimpsed, close at hand, in the
+      working attitude of the East Asian tradition of painting, grounded in a view of painting as
+      self-cultivation and in the humanistic re-cognition of natural things.
+    </p>
+    <p className="mb-6 text-gray-700 leading-relaxed">
+      Within the capitalist structure we all inhabit, contemporary art too cannot deny its status
+      as a commodity. The reality is that an expensive painting is taken to be a fine work, and
+      the artist is conceptualized as a producer of goods with an especially high added value. But
+      the fact that this is the reality does not mean we must unconditionally accede to it, for
+      the artist&apos;s virtue lies not in conformity and obedience but in originality and
+      conviction. The more prevalent this reality becomes, the more urgently we are called to
+      recall the original meaning and essence of artistic work — to remember that, even if not
+      quite grounded in the ancient East Asian view of painting as self-cultivation, the artist is
+      not someone who sells pictures but someone who imagines a new world; that painting is not a
+      work of commodity production wrapped in bravado and pretense, but an existential labor
+      devoted to depicting the ideal.
+    </p>
+    <p className="mb-6 text-gray-700 leading-relaxed">
+      In Jung Ah Kim&apos;s work, what stands out first is not the possibility of commodity value
+      but an occasion for visual reflection. Where the tendency to be absorbed in bravado and
+      self-display through the eyes of others — a characteristic of a Korean society excessively
+      conscious of other people&apos;s gaze — often extends even into the practice of painting,
+      Kim&apos;s pictures instead maintain a candor of depiction and expression together with a
+      point of view genuinely her own, one open to humanistic interpretation. The outward aspect
+      of her work reveals itself in two forms: most notably, object works using plastic debris
+      collected from the sea, and flat paintings whose subjects are forests and the walls of
+      buildings.
+    </p>
+
+    <div className="h-4" />
+    <div className="pb-[40px]">
+      <Image
+        src="/images/critique-jung/2.jpeg"
+        alt="인공파도2"
+        className="artwork-img mb-[20px]"
+        width={0}
+        height={0}
+        sizes="100vw"
+      />
+      <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
+        <span className="text-[14px] font-bold text-[#111827]">Artificial Wave 2</span>
+        <span className="text-[14px] font-normal text-[#4B5563]">
+          365 × 80.3 cm, acrylic on panel, marine debris, 2018
+        </span>
+      </div>
+    </div>
+
+    <p className="mb-6 text-gray-700 leading-relaxed">
+      The intent behind the works made from various plastic debris washed up on the shore is
+      unmistakable. On the surface, they indict environmental pollution and call for the
+      restoration of natural ecology. The artist takes as her point of departure a shoreline
+      overrun with every kind of plastic waste. The sea, in its original sense, approaches us as a
+      space of infinite embrace, both the source and the destination of life. It is a biological
+      universe, an earthly cosmos we can actually experience. Because such a sea is now, through
+      the everyday influx of plastic manufactured goods and household items that have outlived
+      their use, turning into a sea in an irreversible condition, the artist — through whatever
+      visual means of expression are available to her as an artist — raises the problem of the
+      ecological environment and establishes her own distinctive pictorial form to awaken our
+      vigilance. Viewed more deeply, a paradox, or a duality, emerges in this work with plastic
+      marine debris. In cleaning up marine debris while simultaneously securing the material for
+      her work, the artist&apos;s practice holds within it, at once, both an occasion for
+      ecological enlightenment and an occasion for pure, original creation. In other words, the
+      plastic fragments reconstituted into a work are already objects whose very uselessness has
+      become useful — &apos;beautiful garbage.&apos;
+    </p>
+    <p className="mb-6 text-gray-700 leading-relaxed">
+      Since the enlightening occasion embedded in the work reveals itself directly through its
+      content and needs little further elaboration, what we must clarify here is the aesthetic
+      value that accompanies the essential pictorial meaning of the plastic object works as
+      beautiful garbage. As is well known, plastic is the monumental materiality of capitalism.
+      The nature we confront today is natural nature to which artificial nature has been added.
+      Artificial nature may be called unnatural nature — plastic nature, so to speak. Light,
+      durable, and prized for the freedom with which it can be molded and reproduced, plastic
+      originally served as a substitute material meant to prevent the destruction of nature; yet,
+      beyond mass production and consumption, it is precisely plastic&apos;s own inherent
+      constancy that instead becomes the very source of environmental destruction. Unlike natural
+      nature, which is founded on self-propagation and circulation, plastic nature accumulates in
+      its original form and, drifting in the sea, fragments minutely, thereby bringing about an
+      irreducible pollution.
+    </p>
+    <p className="mb-6 text-gray-700 leading-relaxed">
+      But, naturally enough, plastic waste — an indifferent tool whose very grounds for existing
+      lie in the human being — bears no guilt whatsoever. What must ultimately be called into
+      question is human consciousness, not the useless plastic forms laid out before our eyes.
+      From existing interviews we can see that the artist, above all, looks with delight at the
+      shapes and colors of every kind of plastic debris. That delight — that is, the possibility
+      of an unusual formal beauty — arises from nothing other than uselessness itself. Put simply,
+      these are objects that, having lost their practical utility in everyday life, only then came
+      to acquire an artistic use, objects accidentally exposed and discovered as such. Here,
+      practical utility is, in effect, relationality. For plastic objects to no longer possess any
+      use means, in other words, that objects which once secured their function and meaning
+      within a relation to human beings have become detached from the human. Seen metaphorically,
+      garbage — the extinction of utility — is an object whose relational life has ended, a
+      severance of its own time. In the same sense, since a tool dies once it becomes useless,
+      plastic objects that, as instrumental things, have exhausted their utility are &apos;discarded
+      time&apos; or &apos;dead time.&apos;
+    </p>
+    <p className="mb-6 text-gray-700 leading-relaxed">
+      Having, through their growing distance from the human, lost the meaning of their own
+      inherent instrumental time, plastic objects are revived — unintentionally, or perhaps only
+      now for the first time — as free and independent things in themselves, bearing a new
+      temporal meaning. This is, above all, a reincarnation of their own time, born of their
+      distance from utility and relationality. The formal delight the artist captures arises
+      precisely from the independent time carried within plastic debris, and from the time that
+      has resisted and been assimilated by wave, air, and light, and from time that has faded. In
+      the plastic object works, the delight that lies in the formal possibilities inherent in the
+      external material also carries an inner, humanistic meaning. The color of plastic, faded
+      through the weathering of time, in itself awakens feelings such as solitude, alienation, and
+      emptiness, which can be likened to facets of human life. When we seek to interpret the
+      aesthetic value of the artist&apos;s plastic object works, its foundation is precisely
+      &apos;temporality&apos; — the ground of both the visual delight and the humanistic meaning
+      embedded within them.
+    </p>
+
+    <div className="h-4" />
+    <div className="pb-[40px]">
+      <Image
+        src="/images/critique-jung/3.jpg"
+        alt="picturesque"
+        className="artwork-img mb-[20px]"
+        width={0}
+        height={0}
+        sizes="100vw"
+      />
+      <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
+        <span className="text-[14px] font-bold text-[#111827]">Picturesque</span>
+        <span className="text-[14px] font-normal text-[#4B5563]">
+          81 × 71 cm, frame, oil on panel, marine debris, 2018
+        </span>
+      </div>
+    </div>
+    <p className="mb-6 text-gray-700 leading-relaxed">
+      While some of the plastic object works proceed in a conceptual manner, they generally
+      unfold by constructing a forceful image unrelated to mere decoration — whether by
+      metaphorically representing the forms of waves and the like against a painted sea
+      background, or by placing marine debris upon a figurative background with no direct relation
+      to that background. In this way, the artist&apos;s working method, which never neglects
+      pictorial representation, forms an emotional continuity with the flat paintings in which no
+      object appears. Forests and buildings, and the plastic carousel horse that occasionally
+      appears amid their stillness, serve, in themselves, as the formal grounds on which our real
+      world — where natural nature and plastic nature intermingle — is perceived as an unreal
+      space in which tenses are fused together.
+    </p>
+
+    <div className="h-4" />
+    <div className="pb-[40px]">
+      <Image
+        src="/images/critique-jung/4.jpg"
+        alt="밤의 숲"
+        className="artwork-img mb-[20px]"
+        width={0}
+        height={0}
+        sizes="100vw"
+      />
+      <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
+        <span className="text-[14px] font-bold text-[#111827]">Night Forest</span>
+        <span className="text-[14px] font-normal text-[#4B5563]">
+          194 × 72 cm, acrylic on canvas, 2020
+        </span>
+      </div>
+    </div>
+
+    <div className="h-4" />
+    <div className="pb-[40px]">
+      <Image
+        src="/images/critique-jung/5.jpeg"
+        alt="숨어있던 꽃"
+        className="artwork-img mb-[20px]"
+        width={0}
+        height={0}
+        sizes="100vw"
+      />
+      <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
+        <span className="text-[14px] font-bold text-[#111827]">Hidden Flowers</span>
+        <span className="text-[14px] font-normal text-[#4B5563]">
+          90 × 37 cm, acrylic on canvas, 2018
+        </span>
+      </div>
+    </div>
+
+    <p className="mb-6 text-gray-700 leading-relaxed">
+      The forest paintings, carried out alongside the sea works, are, taken as a whole,
+      unmistakably conceptual, even as they do not exclude a realism bound up with ecological
+      meaning as the ground of things&apos; existence. The forest is composed as a flat form that
+      fills the picture plane without gaps, and is thereby positioned as a space of conceptual
+      reality. The stepped passageways that suddenly appear within the forest or between
+      buildings are conceptual breakthroughs that move beyond pictorial illusion toward a world of
+      another dimension. The form of a building looming solitary upon an empty ground is composed
+      as thinly and extremely flatly as if upon a sheet of drawing paper. It reveals a condition,
+      like the stone columns of a long-since-ruined Greek temple site that has lost all spatial
+      meaning, in which spatiality itself has become meaningless and only temporality remains. The
+      realism of the architectural structure as a solid edifice is conceptually re-presented
+      through an extremely thin and flat expression, thereby hinting at that conventional
+      disposability that dreams, all the while, of eternity. At the same time, it is also a
+      suggestion of the texture and dimension of time as reduced pictorially.
+    </p>
+
+    <div className="h-4" />
+    <div className="pb-[40px]">
+      <Image
+        src="/images/critique-jung/6.png"
+        alt="없는 듯 있다"
+        className="artwork-img mb-[20px]"
+        width={0}
+        height={0}
+        sizes="100vw"
+      />
+      <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
+        <span className="text-[14px] font-bold text-[#111827]">Present as if Absent</span>
+        <span className="text-[14px] font-normal text-[#4B5563]">
+          169 × 60 cm, acrylic on canvas, 2018
+        </span>
+      </div>
+    </div>
+
+    <div className="h-4" />
+    <div className="pb-[40px]">
+      <Image
+        src="/images/critique-jung/7.jpg"
+        alt="푸른 골목의 안쪽"
+        className="artwork-img mb-[20px]"
+        width={0}
+        height={0}
+        sizes="100vw"
+      />
+      <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
+        <span className="text-[14px] font-bold text-[#111827]">Present as if Absent</span>
+        <span className="text-[14px] font-normal text-[#4B5563]">
+          155 × 95 cm, acrylic on canvas, 2021
+        </span>
+      </div>
+    </div>
+
+    <p className="mb-6 text-gray-700 leading-relaxed">
+      Among the forest works are some that have been reconstructed after being segmented into
+      several independent images. They show the multidimensionality of a world in which nature and
+      the events surrounding it appear independently before our gaze, and yet are organically
+      unified. What we witness, beyond spatiality — the spatial dimension as the forest&apos;s
+      surface identity — is also temporality, its temporal dimension. The natural forest exists in
+      the present while maintaining a constancy governed by the cycle of time. This temporal
+      dimension in turn extends into the forest&apos;s relational or narrative dimension — that
+      is, its relationality and eventfulness. Implying multidimensionality, the forest, together
+      with the volume and sense of space of its form itself, brings into relief not only a
+      primordial feeling and a deeply verdant, conceptual refuge, but also the importance of
+      perspective and tense as they accompany its temporal dimension. If, for instance, a mountain
+      is grounded in a geometric formality seen from a distance, the forest signifies a viewpoint
+      that is relatively close while still taking in the whole. Further, if the mountain, as a
+      form seen from afar, is oriented toward the future, and the tree, as a form close at hand, is
+      oriented toward the present, then the forest — at once the assembly of trees and a whole
+      that transcends the tree, and in that respect the concreteness of the mountain — implies
+      past, present, and future all at once. Forests of segmentation and reconstruction are
+      landscapes assembled from mutually related aspects of the forest across differing
+      dimensions; even as they compose a realistic nature, an entirely different temporal
+      dimension also intervenes within them. In doing so, the artist reminds us that the forest,
+      as the natural nature presented before us, exists not as a space as hard and impenetrable as
+      rock, but as a cyclical, fluid, and empty space capable of holding a story within it.
+    </p>
+
+    <p className="mb-6 text-gray-700 leading-relaxed">
+      As can be seen, the flat paintings, grounded as they are in the artist&apos;s more
+      primordial pictorial desire, seem to differ in their properties from the plastic object
+      works; yet when we consider the meaning embedded in the formal elements and materials, it
+      becomes clear that the character of the two bodies of work runs along the same line. What
+      proves final, even within this context of sameness, is nothing other than the emotion of
+      color. The overall color emotion of the plastic object works and the color emotion of the
+      flat paintings are no different from one another. If color is, in effect, a metaphor of
+      character, and it is color, among the formal elements, that determines the character of a
+      painting, then the sameness of color emotion means, in the end, that works which might
+      otherwise be divided into separate categories on account of their differing surface formal
+      methods in fact share the same character. The artist&apos;s blue of the sea, rather than
+      expressing that broad, blue space that is simply beautiful and peaceful — the space that
+      everyone wants to see — presents instead, plainly and directly, a realistic color as if
+      reflected in a fisherman&apos;s gaze. This is reproduced in the hue and saturation of the
+      forest as well.
+    </p>
+
+    <p className="mb-6 text-gray-700 leading-relaxed">
+      Whether at sea, in the forest, or upon an empty field, the coloration of the artist&apos;s
+      flat paintings arrives with a somewhat unfamiliar feeling, as a combination of colors
+      reminiscent of the murals of the Dunhuang caves in China, in which tones of ultramarine and
+      Indian red stand out. Far removed from the impressionistic coloration that meets our eyes
+      gently from the very first, it corresponds conceptually with the faded coloration of plastic
+      marine debris. The fading exposed in floating plastic debris is nothing other than the true
+      color of nature — the original color that emerges once the existing bravado and hypocritical
+      adornment have been stripped away by light, air, and water, after the object has been
+      assimilated into natural nature. Through this correspondence of coloration, the useless and
+      heterogeneous temporality of the plastic objects now recovers its own meaning as a
+      homogeneous, true color of nature and as a restored nature. The emotion of color represents
+      the inner sentiments of the human being — alienation, solitude, disposable relation,
+      futility, emptiness — aesthetically reduced by the artist.
+    </p>
+
+    <div className="h-4" />
+    <div className="pb-[40px]">
+      <Image
+        src="/images/critique-jung/8.jpg"
+        alt="꽃보다 아름답다"
+        className="artwork-img mb-[20px]"
+        width={0}
+        height={0}
+        sizes="100vw"
+      />
+      <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
+        <span className="text-[14px] font-bold text-[#111827]">More Beautiful than Flowers</span>
+        <span className="text-[14px] font-normal text-[#4B5563]">
+          63 × 63 × 4 cm, watercolor on hanji casting, 2003
+        </span>
+      </div>
+    </div>
+    <div className="h-4" />
+    <div className="pb-[40px]">
+      <Image
+        src="/images/critique-jung/9.jpeg"
+        alt="시내버스 승차권 판매소"
+        className="artwork-img mb-[20px]"
+        width={0}
+        height={0}
+        sizes="100vw"
+      />
+      <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
+        <span className="text-[14px] font-bold text-[#111827]">City Bus Ticket Office</span>
+        <span className="text-[14px] font-normal text-[#4B5563]">
+          90 × 37 cm, acrylic on paper, 2003
+        </span>
+      </div>
+    </div>
+
+    <p className="mb-6 text-gray-700 leading-relaxed">
+      Beyond the plastic object works and the forest works — including pieces molded from
+      disposable cups and paper plates, drawings or castings of leftover fruit or food waste, and
+      old, conventional street buildings — the artist&apos;s work as a whole, in fact, sustains
+      one and the same context, I believe. That is, moving from &apos;lightness,&apos;
+      &apos;disposability,&apos; &apos;abandonment,&apos; &apos;uselessness,&apos; and
+      &apos;emptiness&apos; — meanings that communicate with plastic nature — it dreams, through
+      an analogical communication extending humanistically to &apos;alienation,&apos;
+      &apos;futility,&apos; and &apos;emptiness,&apos; of restoring natural nature, including an
+      ecology of emotion and sentiment.
+    </p>
+
+    <div className="h-4" />
+    <div className="pb-[40px]">
+      <Image
+        src="/images/critique-jung/10.jpeg"
+        alt="꿈과 이제 오후"
+        className="artwork-img mb-[20px]"
+        width={0}
+        height={0}
+        sizes="100vw"
+      />
+      <div className="flex flex-col items-center space-y-1 sm:flex-row sm:justify-center sm:space-x-[15px] sm:space-y-0">
+        <span className="text-[14px] font-bold text-[#111827]">Dream and Now, Afternoon</span>
+        <span className="text-[14px] font-normal text-[#4B5563]">
+          53 × 40 cm, acrylic on canvas, 2013
+        </span>
+      </div>
+    </div>
+
+    <p className="mb-6 text-gray-700 leading-relaxed">
+      Taken as a whole, what the artist seeks to depict and reveal is not what already occupies
+      the center and basks in the light, but what has lost its light: things discarded, things
+      existing in shadowed places, or things resembling shadows themselves. Within that alienated
+      time, the artist employs, together, both a direct method and a metaphorical, conceptual
+      method in order to capture the truth of an object&apos;s own time. The core logic of the
+      artist&apos;s aesthetic sense is precisely this: that an object achieves independent,
+      self-sufficient beauty only once it has broken free of utility or relationality and become
+      alienated. The plastic object works, the flat works depicting forests, fields, old and
+      silent buildings, and landscapes devoid of human presence, and the works of compassion
+      directed toward what is habitually discarded and turned away from — all of these are the
+      artist&apos;s pictorial reflection on the aesthetic sentiment implicit in a time that is
+      heterogeneous and alienated.
+    </p>
+  </>
+);
+
 export default function SimJungTaekReview() {
   const { lang } = useLanguage();
   return (
@@ -247,7 +651,7 @@ export default function SimJungTaekReview() {
       <h3 className="text-m font-medium text-center text-[#4B5563] mb-10">{AUTHOR[lang]}</h3>
 
       <div className="h-5" />
-      {lang === 'ko' ? BODY_KO : PENDING_TRANSLATION_NODE}
+      {lang === 'ko' ? BODY_KO : BODY_EN}
     </div>
   );
 }

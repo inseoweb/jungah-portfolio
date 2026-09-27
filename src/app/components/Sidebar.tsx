@@ -25,9 +25,9 @@ const NAV_ITEMS: NavItem[] = [
   {
     label: loc('TEXTS'),
     children: [
-      { href: '/critique-simeunlog', label: loc('심은록 평론', NEEDS_TRANSLATION) },
-      { href: '/critique-shim', label: loc('심상용 평론', NEEDS_TRANSLATION) },
-      { href: '/critique-jung', label: loc('정석도 평론', NEEDS_TRANSLATION) },
+      { href: '/critique-simeunlog', label: loc('심은록 평론', 'Critique-Sim Eunlog') },
+      { href: '/critique-shim', label: loc('심상용 평론', 'Critique-Shim Sang-yong') },
+      { href: '/critique-jung', label: loc('정석도 평론', 'Critique-Jeong Seokdo') },
     ],
   },
   { label: loc('RESEARCH & PRACTICE'), href: '/research-practice' },
