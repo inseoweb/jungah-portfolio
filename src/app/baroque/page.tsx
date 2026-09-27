@@ -62,8 +62,8 @@ export default function PageBaroque() {
       images={[
         { src: '/images/baroque/1.jpg', alt: loc('요정의 초상', 'The Portrait of Fairies'), orientation: 'landscape' },
         { src: '/images/baroque/2.jpg', alt: loc('요정의 초상', 'The Portrait of Fairies'), orientation: 'landscape' },
-        { src: '/images/baroque/3.jpg', alt: loc('요정의 초상', 'The Portrait of Fairies'), orientation: 'portrait' },
         { src: '/images/baroque/4.jpg', alt: loc('요정의 초상', 'The Portrait of Fairies'), orientation: 'portrait' },
+        { src: '/images/baroque/3.jpg', alt: loc('요정의 초상', 'The Portrait of Fairies'), orientation: 'portrait' },
         { src: '/images/baroque/5.jpg', alt: loc('요정의 초상', 'The Portrait of Fairies'), orientation: 'landscape' },
         { src: '/images/baroque/6.jpg', alt: loc('요정의 초상', 'The Portrait of Fairies'), orientation: 'landscape' },
         { src: '/images/baroque/7.jpg', alt: loc('요정의 초상', 'The Portrait of Fairies'), orientation: 'portrait' },
