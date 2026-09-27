@@ -1,88 +1,80 @@
 'use client';
 
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 import type { MouseEvent, PointerEvent } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { loc, NEEDS_TRANSLATION, useLocalized, type Localized } from '../lib/language';
+import { loc, useLocalized, type Localized } from '../lib/language';
 
 type Work = {
   title: Localized;
   year: string;
-  category: string;
   img: string;
   href: string;
 };
 
-const HOME_WORKS: Work[] = [
-  { title: loc('요정의 초상', NEEDS_TRANSLATION), year: '2025-', category: '요정', img: '/images/home/daepyo.jpeg', href: '/baroque' },
-  { title: loc('컵 (일화용컵 도자기로 만들기)', NEEDS_TRANSLATION), year: '1999', category: '도시·숲', img: '/images/1990/21.jpeg', href: '/1990-1999' },
-  { title: loc('꽃보다 아름답다', NEEDS_TRANSLATION), year: '2003-', category: '요정', img: '/images/home/beautiful-than-flower.jpg', href: '/flower' },
-  { title: loc('꽃꿈', NEEDS_TRANSLATION), year: '2024-', category: '요정', img: '/images/home/flower-dream.jpg', href: '/dream' },
-  { title: loc('신림동', NEEDS_TRANSLATION), year: '2021', category: '해양환경작품', img: '/images/marine/6.jpg', href: '/marine' },
-  { title: loc('소리없는', NEEDS_TRANSLATION), year: '1999', category: '도시·숲', img: '/images/1990/1.jpeg', href: '/1990-1999' },
-  { title: loc('꿈과 이제 오후', NEEDS_TRANSLATION), year: '2013', category: '도시·숲', img: '/images/2000/6.jpg', href: '/2000-2014' },
-  { title: loc('밤의 숲', NEEDS_TRANSLATION), year: '2020', category: '도시·숲', img: '/images/2015/forest-night.png', href: '/2015' },
+// The single fixed HOME hero image — drop the file in at this exact path
+// (any of these extensions works; next/image resolves it at request time,
+// so nothing here needs to change once the file exists).
+const HOME_HERO_IMAGE = '/images/home/hero.jpg';
+const HERO_ALT = loc('대표 이미지', 'Featured work');
+
+// The 6 PROJECTS thumbnails below the hero. Images and their order are
+// unchanged from before; only title/year/href were updated to name each
+// piece correctly and link to its actual WORKS page.
+const PROJECTS: Work[] = [
+  {
+    title: loc('요정의 초상', 'The Portrait of Fairies'),
+    year: '2023–',
+    img: '/images/home/daepyo.jpeg',
+    href: '/baroque',
+  },
+  {
+    title: loc('영원을 꿈꾸는 일회용', 'The Disposable Dreaming of Eternity'),
+    year: '1999',
+    img: '/images/1990/21.jpeg',
+    href: '/disposable',
+  },
+  {
+    title: loc('꽃보다 아름답다', 'More Beautiful than Flowers'),
+    year: '2003–',
+    img: '/images/home/beautiful-than-flower.jpg',
+    href: '/flower',
+  },
+  {
+    title: loc('꽃꿈', 'Flower Dream'),
+    year: '2024–',
+    img: '/images/home/flower-dream.jpg',
+    href: '/dream',
+  },
+  {
+    title: loc('신십장생도', 'New Painting of Ten Symbols of Longevity'),
+    year: '2021',
+    img: '/images/marine/6.jpg',
+    href: '/marine',
+  },
+  {
+    title: loc('소리없는', 'Silent'),
+    year: '1999',
+    img: '/images/1990/1.jpeg',
+    href: '/1990-1999',
+  },
 ];
 
-const SELECTED_WORKS = HOME_WORKS.slice(0, 6);
-
-function Hero({ works }: { works: Work[] }) {
-  const [index, setIndex] = useState(0);
-  const total = works.length;
-  const current = works[index];
-  const currentTitle = useLocalized(current.title);
-
-  const goPrev = () => setIndex((i) => (i - 1 + total) % total);
-  const goNext = () => setIndex((i) => (i + 1) % total);
-
+function Hero() {
+  const heroAlt = useLocalized(HERO_ALT);
   return (
-    <section className="px-6 py-10 md:px-16 md:py-16" aria-label="대표 작품">
+    <section className="px-6 py-10 md:px-16 md:py-16" aria-label={heroAlt}>
       <div className="mx-auto flex max-w-[1050px] flex-col items-center">
         <div className="relative h-[56svh] w-full md:h-[72vh]">
-          {works.map((work, i) => (
-            <Image
-              key={work.img}
-              src={work.img}
-              alt={work.title.ko}
-              fill
-              priority={i === 0}
-              sizes="(max-width: 768px) 90vw, 70vw"
-              className={`object-contain transition-opacity duration-300 ${
-                i === index ? 'opacity-100' : 'pointer-events-none opacity-0'
-              }`}
-            />
-          ))}
-        </div>
-
-        <div className="mt-2 flex items-center justify-center gap-6">
-          {total > 1 && (
-            <button
-              onClick={goPrev}
-              aria-label="이전 작품"
-              className="text-lg text-neutral-400 hover:text-neutral-900"
-            >
-              ←
-            </button>
-          )}
-
-          <Link href={current.href} className="text-center">
-            <p className="text-sm font-medium text-neutral-900 hover:underline">{currentTitle}</p>
-            <p className="text-xs text-neutral-400">
-              {current.year}
-              {total > 1 && <> · {index + 1} / {total}</>}
-            </p>
-          </Link>
-
-          {total > 1 && (
-            <button
-              onClick={goNext}
-              aria-label="다음 작품"
-              className="text-lg text-neutral-400 hover:text-neutral-900"
-            >
-              →
-            </button>
-          )}
+          <Image
+            src={HOME_HERO_IMAGE}
+            alt={heroAlt}
+            fill
+            priority
+            sizes="(max-width: 768px) 90vw, 70vw"
+            className="object-contain"
+          />
         </div>
       </div>
     </section>
@@ -130,7 +122,7 @@ function WorkThumb({ work, onClick }: { work: Work; onClick?: (e: MouseEvent) =>
   );
 }
 
-function SelectedWorksSection({ works }: { works: Work[] }) {
+function ProjectsSection({ works }: { works: Work[] }) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const drag = useRef({ isDown: false, startX: 0, startScroll: 0, moved: false, pointerId: 0 });
 
@@ -179,7 +171,7 @@ function SelectedWorksSection({ works }: { works: Work[] }) {
       className="mx-auto max-w-[1400px] px-6 py-10 md:px-16 md:pb-14 md:pt-20"
     >
       <div className="mb-6 flex items-center justify-between md:mb-5">
-        <h2 className="text-xs md:text-sm font-semibold text-neutral-500">SELECTED WORKS</h2>
+        <h2 className="text-xs md:text-sm font-semibold text-neutral-500">PROJECTS</h2>
         <div className="hidden items-center gap-3 md:flex">
           <button
             type="button"
@@ -227,8 +219,8 @@ function SelectedWorksSection({ works }: { works: Work[] }) {
 export default function Page() {
   return (
     <main className="min-h-screen">
-      <Hero works={HOME_WORKS} />
-      <SelectedWorksSection works={SELECTED_WORKS} />
+      <Hero />
+      <ProjectsSection works={PROJECTS} />
     </main>
   );
 }
