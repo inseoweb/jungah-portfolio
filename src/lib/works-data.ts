@@ -1,4 +1,4 @@
-import { loc, NEEDS_TRANSLATION, type Localized } from './i18n';
+import { loc, type Localized } from './i18n';
 
 export type WorkSeriesMeta = {
   slug: string;
@@ -12,11 +12,6 @@ export type WorkSeriesMeta = {
  * Sidebar nav, the WORKS index, and each series detail page's own
  * heading/breadcrumb/NEXT WORK link — so there is exactly one place
  * to fix a title rather than several copies drifting out of sync.
- *
- * None of these has a confirmed official English title yet, so `en`
- * is left as NEEDS_TRANSLATION rather than guessed. Update this file
- * once real translations are confirmed; every consumer picks it up
- * automatically.
  */
 export const WORKS_SERIES: WorkSeriesMeta[] = [
   { slug: 'baroque', href: '/baroque', title: loc('요정의 초상', 'The Portrait of Fairies'), period: '2025-' },
@@ -39,7 +34,7 @@ export const WORKS_SERIES: WorkSeriesMeta[] = [
   {
     slug: '1990-1999',
     href: '/1990-1999',
-    title: loc('도시·숲 1990~1999', NEEDS_TRANSLATION),
+    title: loc('Archive / Earlier Works 2'),
     period: '1990-1999',
   },
 ];
