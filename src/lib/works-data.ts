@@ -28,6 +28,7 @@ export const WORKS_SERIES: WorkSeriesMeta[] = [
   },
   { slug: 'flower', href: '/flower', title: loc('꽃보다 아름답다', 'More Beautiful than Flowers'), period: '2003-' },
   { slug: 'dream', href: '/dream', title: loc('꽃꿈', 'Flower Dream'), period: '2024-' },
+  { slug: 'diary', href: '/diary', title: loc('작은 사물의 일기', 'Diary of Small Objects'), period: '2014-' },
   { slug: 'marine', href: '/marine', title: loc('해양환경작품', 'Marine Environment Works'), period: '2011-' },
   { slug: '2015', href: '/2015', title: loc('푸른 골목의 안쪽', 'Inside the Blue Alley'), period: '2015-' },
   {
