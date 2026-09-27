@@ -11,6 +11,10 @@ type Work = {
   year: string;
   img: string;
   href: string;
+  // Most PROJECTS thumbnails intentionally crop to fill their square cell
+  // (object-cover). These two specific images distort under that crop, so
+  // they opt out and show their full original ratio instead (object-contain).
+  preserveRatio?: boolean;
 };
 
 // Desktop/tablet hero: a Figma composition that re-frames the artwork as a
@@ -40,12 +44,14 @@ const PROJECTS: Work[] = [
     year: '1999',
     img: '/images/1990/21.jpeg',
     href: '/disposable',
+    preserveRatio: true,
   },
   {
     title: loc('꽃보다 아름답다', 'More Beautiful than Flowers'),
     year: '2003–',
     img: '/images/home/beautiful-than-flower.jpg',
     href: '/flower',
+    preserveRatio: true,
   },
   {
     title: loc('꽃꿈', 'Flower Dream'),
@@ -76,11 +82,20 @@ function Hero() {
   // getImageProps lets the browser fetch only the one matching source
   // instead of loading both and hiding one with CSS.
   const {
-    props: { srcSet: desktopSrcSet },
+    props: { srcSet: desktopSrcSet, sizes: desktopSizes },
   } = getImageProps({
     ...HERO_DESKTOP_IMAGE,
     alt: heroAlt,
-    sizes: '(min-width: 768px) 60vw, 100vw',
+    // Matches the container's own max-w-[1200px] cap — needs to be generous
+    // (not a tight vw guess) so next/image always fetches a candidate large
+    // enough to fill md:max-h-[66vh]. This `sizes` value MUST also be set on
+    // the <source> below (not just used to pick a srcSet candidate here):
+    // without its own `sizes`, a <source> silently borrows the fallback
+    // <img>'s `sizes` for density-corrected natural-size math, which — since
+    // that belongs to the very differently-sized mobile image — makes the
+    // browser compute a bogus (too small) intrinsic size for this image and
+    // cap `width: auto` well below what max-height alone would allow.
+    sizes: '(min-width: 768px) 1200px, 100vw',
     priority: true,
   });
   const { props: mobileImgProps } = getImageProps({
@@ -91,14 +106,14 @@ function Hero() {
   });
 
   return (
-    <section className="px-6 py-8 md:px-16 md:pb-2 md:pt-8" aria-label={heroAlt}>
+    <section className="px-6 py-8 md:px-16 md:pb-4 md:pt-8" aria-label={heroAlt}>
       <div className="mx-auto max-w-[1200px]">
         <picture>
-          <source media="(min-width: 768px)" srcSet={desktopSrcSet} />
+          <source media="(min-width: 768px)" srcSet={desktopSrcSet} sizes={desktopSizes} />
           <img
             {...mobileImgProps}
             alt={heroAlt}
-            className="mx-auto block h-auto w-full md:max-h-[55vh] md:w-auto md:max-w-full"
+            className="mx-auto block h-auto w-full md:max-h-[66vh] md:w-auto md:max-w-full"
           />
         </picture>
       </div>
@@ -116,7 +131,9 @@ function WorkCard({ work, onClick }: { work: Work; onClick?: (e: MouseEvent) => 
           alt={work.title.ko}
           fill
           sizes="(max-width: 640px) 45vw, (max-width: 1024px) 30vw, 220px"
-          className="object-contain transition-transform duration-300 group-hover:scale-105"
+          className={`transition-transform duration-300 group-hover:scale-105 ${
+            work.preserveRatio ? 'object-contain' : 'object-cover'
+          }`}
         />
       </div>
       <div className="mt-3 space-y-0.5">
@@ -193,7 +210,7 @@ function ProjectsSection({ works }: { works: Work[] }) {
   return (
     <section
       id="selected-works"
-      className="mx-auto max-w-[1400px] px-6 py-10 md:px-16 md:pb-14 md:pt-0"
+      className="mx-auto max-w-[1400px] px-6 py-10 md:px-16 md:pb-14 md:pt-4"
     >
       <div className="mb-6 flex items-center justify-between md:mb-5">
         <h2 className="text-xs md:text-sm font-semibold text-neutral-500">PROJECTS</h2>
