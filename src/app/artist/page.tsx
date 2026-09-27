@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { loc, NEEDS_TRANSLATION, useLocalized, type Localized } from '../../lib/language';
+import { loc, useLocalized, type Localized } from '../../lib/language';
 
 const SOLO_EXHIBITIONS: Localized[] = [
   loc(
@@ -340,7 +340,10 @@ const MARINE_EXHIBITIONS: Localized[] = [
   ),
   loc('2011 "환경과 미술" 전시, 목포박물관', '2011 "Environment and Art," Mokpo Museum'),
   loc('2011 "제11회 국제 연안 정화" 전시', '2011 11th International Coastal Cleanup Exhibition'),
-  loc('2011 "반 프라네커 박사 초청 세미나 - 해양쓰레기 생물피해 연구와 정책적 활용" 전시', NEEDS_TRANSLATION),
+  loc(
+    '2011 "반 프라네커 박사 초청 세미나 - 해양쓰레기 생물피해 연구와 정책적 활용" 전시',
+    '2011 Exhibition for the Seminar with Dr. Jan van Franeker — “Research on the Biological Impacts of Marine Debris and Its Policy Applications”',
+  ),
 ];
 
 const NAME = loc('김정아 Kim JungAh', 'Kim JungAh');
