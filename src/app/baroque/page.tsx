@@ -10,7 +10,33 @@ export default function PageBaroque() {
     <WorkSeriesDetail
       seriesTitle={series.title}
       period={series.period}
-      medium={loc('캔버스에 유화', 'oil on canvas')}
+      medium={loc('캔버스에 유화', 'Oil on canvas')}
+      intro={loc(
+        <>
+          2011년부터 해변의 쓰레기를 수집하고 조사하며 작업해 왔다. 인간에게 버려진 뒤 오랫동안
+          떠돌며 빛바래고 닳은 사물들에 마음이 간다. 쓸모를 다하고 육지에도 바다에도 속하지 못한 채
+          부유하는 모습에서 인간의 모습을 발견한다. 나는 이들을 &apos;요정&apos;이라 부르고, 그들이
+          품은 시간과 흔적을 초상화로 그린다.
+          <br />
+          <br />
+          왕과 귀족의 위엄을 드러내던 바로크 초상화의 형식과 명암법을 빌려, 버려진 사물을 독립적인
+          주인공으로 화면의 중심에 놓는다. 쓸모를 잃은 존재에 존엄을 부여하는 이 초상은, 나의
+          자화상이자 쓸모에 따라 평가되고 소모되는 현대인의 초상으로 겹쳐진다.
+        </>,
+        <>
+          Since 2011, I have collected and studied marine debris. I am drawn to discarded objects
+          faded and worn by long journeys at sea. Drifting between land and sea, belonging to
+          neither, they remind me of human lives. I call them &ldquo;fairies&rdquo; and paint
+          their portraits, attending to the time and traces they carry.
+          <br />
+          <br />
+          Borrowing the forms and dramatic light and shadow of Baroque portraits of royalty and
+          aristocracy, I place each discarded object at the center as an independent subject.
+          Giving dignity to what has lost its usefulness, these portraits become both
+          self-portraits and images of contemporary people valued for their utility, consumed,
+          and cast aside.
+        </>,
+      )}
       heroImage={{
         src: '/images/baroque/exhibition/1.jpg',
         alt: loc('요정의 초상 전시 전경', 'Installation View'),

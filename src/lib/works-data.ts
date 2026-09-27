@@ -14,7 +14,12 @@ export type WorkSeriesMeta = {
  * to fix a title rather than several copies drifting out of sync.
  */
 export const WORKS_SERIES: WorkSeriesMeta[] = [
-  { slug: 'baroque', href: '/baroque', title: loc('요정의 초상', 'The Portrait of Fairies'), period: '2025-' },
+  {
+    slug: 'baroque',
+    href: '/baroque',
+    title: loc('요정의 초상', 'The Portrait of Fairies'),
+    period: '2023–2026',
+  },
   {
     slug: 'disposable',
     href: '/disposable',
