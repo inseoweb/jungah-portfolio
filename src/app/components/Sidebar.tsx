@@ -21,7 +21,7 @@ const NAV_ITEMS: NavItem[] = [
     ],
   },
   { label: loc('EXHIBITIONS'), href: '/exhibitions' },
-  { label: loc('ABOUT'), href: '/artist' },
+  { label: loc('ABOUT'), href: '/about' },
   {
     label: loc('TEXTS'),
     children: [
