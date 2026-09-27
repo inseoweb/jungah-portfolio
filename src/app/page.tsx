@@ -13,10 +13,8 @@ type Work = {
   href: string;
 };
 
-// The single fixed HOME hero image — drop the file in at this exact path
-// (any of these extensions works; next/image resolves it at request time,
-// so nothing here needs to change once the file exists).
-const HOME_HERO_IMAGE = '/images/home/hero.jpg';
+// The single fixed HOME hero image.
+const HOME_HERO_IMAGE = '/images/home/hero.jpeg';
 const HERO_ALT = loc('대표 이미지', 'Featured work');
 
 // The 6 PROJECTS thumbnails below the hero. Images and their order are
