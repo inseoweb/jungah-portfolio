@@ -35,16 +35,38 @@ const NAV_ITEMS: NavItem[] = [
   { label: loc('CONTACT'), href: '/contact' },
 ];
 
-const INTRO = loc(
-  '소비 문명이 남긴 잔해 속에서 인간의 초상을 발견하고,\n쓸모를 다한 자리에서 빛나는 아름다움을 봅니다.',
-  'Amid the remnants of consumer culture, I find traces of the human portrait\nand see beauty shining where usefulness has come to an end.',
+const INTRO_LINE_1 = loc(
+  '소비 문명이 남긴 잔해 속에서\n인간의 초상을 발견하고',
+  'Amid the remnants of consumer culture,\nI find traces of the human portrait,',
 );
+const INTRO_LINE_2 = loc(
+  '쓸모를 다한 자리에서\n빛나는 아름다움을 봅니다.',
+  'and beauty that shines\nwhere usefulness has come to an end.',
+);
+
+// Small visual-statement treatment for the artist intro: a thin rule to its
+// left plus its own (smaller, lighter) typography, with the two halves of
+// the statement given a little breathing room between them. Shared by the
+// desktop sidebar and the mobile menu so the two never drift apart.
+function IntroStatement({ className = '' }: { className?: string }) {
+  const line1 = useLocalized(INTRO_LINE_1);
+  const line2 = useLocalized(INTRO_LINE_2);
+  return (
+    <div className={`border-l border-[#B8B8B8] pl-[14px] ${className}`}>
+      <p className="whitespace-pre-line text-[15px] font-normal leading-[1.75] text-[#666666]">
+        {line1}
+      </p>
+      <p className="mt-3 whitespace-pre-line text-[15px] font-normal leading-[1.75] text-[#666666]">
+        {line2}
+      </p>
+    </div>
+  );
+}
 
 export default function Sidebar() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openGroup, setOpenGroup] = useState<string | null>(null);
-  const intro = useLocalized(INTRO);
 
   useEffect(() => {
     setMobileOpen(false);
@@ -64,9 +86,9 @@ export default function Sidebar() {
           <span className="block text-lg font-bold tracking-tight text-neutral-900">JUNG AH KIM</span>
           <span className="block text-[15px] text-neutral-500">김정아</span>
         </Link>
-        <p className="mt-4 whitespace-pre-line text-lg leading-relaxed text-[#707070]">{intro}</p>
+        <IntroStatement className="mt-4" />
 
-        <nav className="mt-10">
+        <nav className="mt-12">
           <ul className="space-y-1.5 text-base">
             {NAV_ITEMS.map((item) => (
               <SidebarItem
@@ -100,7 +122,7 @@ export default function Sidebar() {
 
       {mobileOpen && (
         <div className="border-b border-neutral-200 px-6 pb-8 pt-2 font-navbar md:hidden">
-          <p className="mb-6 whitespace-pre-line text-lg leading-relaxed text-[#707070]">{intro}</p>
+          <IntroStatement className="mb-12" />
           <nav>
             <ul className="space-y-1 text-sm">
               {NAV_ITEMS.map((item) => (
