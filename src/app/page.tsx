@@ -91,7 +91,7 @@ function Hero() {
   });
 
   return (
-    <section className="px-6 py-8 md:px-16 md:py-8" aria-label={heroAlt}>
+    <section className="px-6 py-8 md:px-16 md:pb-2 md:pt-8" aria-label={heroAlt}>
       <div className="mx-auto max-w-[1200px]">
         <picture>
           <source media="(min-width: 768px)" srcSet={desktopSrcSet} />
@@ -116,7 +116,7 @@ function WorkCard({ work, onClick }: { work: Work; onClick?: (e: MouseEvent) => 
           alt={work.title.ko}
           fill
           sizes="(max-width: 640px) 45vw, (max-width: 1024px) 30vw, 220px"
-          className="object-cover transition-transform duration-300 group-hover:scale-105"
+          className="object-contain transition-transform duration-300 group-hover:scale-105"
         />
       </div>
       <div className="mt-3 space-y-0.5">
@@ -193,7 +193,7 @@ function ProjectsSection({ works }: { works: Work[] }) {
   return (
     <section
       id="selected-works"
-      className="mx-auto max-w-[1400px] px-6 py-10 md:px-16 md:pb-14 md:pt-6"
+      className="mx-auto max-w-[1400px] px-6 py-10 md:px-16 md:pb-14 md:pt-0"
     >
       <div className="mb-6 flex items-center justify-between md:mb-5">
         <h2 className="text-xs md:text-sm font-semibold text-neutral-500">PROJECTS</h2>
