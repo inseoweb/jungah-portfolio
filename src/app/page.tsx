@@ -2,7 +2,7 @@
 
 import { useRef } from 'react';
 import type { MouseEvent, PointerEvent } from 'react';
-import Image, { getImageProps } from 'next/image';
+import Image from 'next/image';
 import Link from 'next/link';
 import { loc, useLocalized, type Localized } from '../lib/language';
 
@@ -17,16 +17,13 @@ type Work = {
   preserveRatio?: boolean;
 };
 
-// Desktop/tablet hero: a Figma composition that re-frames the artwork as a
-// landscape image for the wide layout — this *is* the intended crop, never
-// re-derive it from the artwork's own proportions. Dimensions are the
-// file's actual pixel size (required by next/image, and used to preserve
-// its ratio without distortion).
-const HERO_DESKTOP_IMAGE = { src: '/images/home/hero.jpg', width: 1252, height: 768 };
-// Mobile hero: the original portrait photo — full artwork and frame —
-// swapped in below the `md` breakpoint so the piece reads at a real size
-// instead of shrinking to a sliver of the desktop composition.
-const HERO_MOBILE_IMAGE = { src: '/images/home/hero.jpeg', width: 3362, height: 3870 };
+// One hero image at every breakpoint — the original portrait photo, full
+// artwork and frame, never cropped or re-derived into a separate desktop
+// composition. Only the container/max-height around it changes per
+// breakpoint (see Hero below).
+const HERO_IMAGE_SRC = '/images/home/hero.jpeg';
+const HERO_IMAGE_WIDTH = 3362;
+const HERO_IMAGE_HEIGHT = 3870;
 const HERO_ALT = loc('대표 이미지', 'Featured work');
 
 // The 6 PROJECTS thumbnails below the hero. Images and their order are
@@ -76,46 +73,24 @@ const PROJECTS: Work[] = [
 function Hero() {
   const heroAlt = useLocalized(HERO_ALT);
 
-  // Two genuinely different images (different crops, different ratios), not
-  // two sizes of the same one — that's art direction, which next/image's
-  // own `sizes`/srcset can't express. Building a manual <picture> via
-  // getImageProps lets the browser fetch only the one matching source
-  // instead of loading both and hiding one with CSS.
-  const {
-    props: { srcSet: desktopSrcSet, sizes: desktopSizes },
-  } = getImageProps({
-    ...HERO_DESKTOP_IMAGE,
-    alt: heroAlt,
-    // Matches the container's own max-w-[1200px] cap — needs to be generous
-    // (not a tight vw guess) so next/image always fetches a candidate large
-    // enough to fill md:max-h-[66vh]. This `sizes` value MUST also be set on
-    // the <source> below (not just used to pick a srcSet candidate here):
-    // without its own `sizes`, a <source> silently borrows the fallback
-    // <img>'s `sizes` for density-corrected natural-size math, which — since
-    // that belongs to the very differently-sized mobile image — makes the
-    // browser compute a bogus (too small) intrinsic size for this image and
-    // cap `width: auto` well below what max-height alone would allow.
-    sizes: '(min-width: 768px) 1200px, 100vw',
-    priority: true,
-  });
-  const { props: mobileImgProps } = getImageProps({
-    ...HERO_MOBILE_IMAGE,
-    alt: heroAlt,
-    sizes: '100vw',
-    priority: true,
-  });
-
+  // The portrait artwork is shown at its own true ratio (no crop, no
+  // stretch) inside a wide, centered container. On desktop the container is
+  // far wider than the image's own rendered width (which is driven by the
+  // md:max-h cap below, not by the container), so generous white space
+  // appears on both sides automatically — the "wide gallery wall" feel,
+  // achieved through layout instead of a separately-composed image file.
   return (
-    <section className="px-6 py-8 md:px-16 md:pb-4 md:pt-8" aria-label={heroAlt}>
-      <div className="mx-auto max-w-[1200px]">
-        <picture>
-          <source media="(min-width: 768px)" srcSet={desktopSrcSet} sizes={desktopSizes} />
-          <img
-            {...mobileImgProps}
-            alt={heroAlt}
-            className="mx-auto block h-auto w-full md:max-h-[66vh] md:w-auto md:max-w-full"
-          />
-        </picture>
+    <section className="px-6 py-8 md:px-16 md:pb-6 md:pt-8" aria-label={heroAlt}>
+      <div className="mx-auto flex max-w-[1200px] justify-center">
+        <Image
+          src={HERO_IMAGE_SRC}
+          alt={heroAlt}
+          width={HERO_IMAGE_WIDTH}
+          height={HERO_IMAGE_HEIGHT}
+          priority
+          sizes="100vw"
+          className="block h-auto w-full md:h-auto md:max-h-[58vh] md:w-auto md:max-w-full"
+        />
       </div>
     </section>
   );
