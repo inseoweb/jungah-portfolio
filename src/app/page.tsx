@@ -14,7 +14,7 @@ type Work = {
 };
 
 // The single fixed HOME hero image.
-const HOME_HERO_IMAGE = '/images/home/hero.jpeg';
+const HOME_HERO_IMAGE = '/images/home/hero.jpg';
 const HERO_ALT = loc('대표 이미지', 'Featured work');
 
 // The 6 PROJECTS thumbnails below the hero. Images and their order are
