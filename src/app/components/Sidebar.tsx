@@ -59,7 +59,7 @@ export default function Sidebar() {
 
   return (
     <>
-      <aside className="hidden md:fixed md:inset-y-0 md:left-0 md:z-40 md:flex md:w-[260px] md:flex-col md:overflow-y-auto md:border-r md:border-neutral-200 md:px-8 md:pb-10 md:pt-20">
+      <aside className="hidden font-navbar md:fixed md:inset-y-0 md:left-0 md:z-40 md:flex md:w-[260px] md:flex-col md:overflow-y-auto md:border-r md:border-neutral-200 md:px-8 md:pb-10 md:pt-20">
         <Link href="/" className="block">
           <span className="block text-lg font-bold tracking-tight text-neutral-900">JUNG AH KIM</span>
           <span className="block text-[15px] text-neutral-500">김정아</span>
@@ -81,7 +81,7 @@ export default function Sidebar() {
         </nav>
       </aside>
 
-      <div className="flex items-center justify-between border-b border-neutral-200 px-6 py-4 md:hidden">
+      <div className="flex items-center justify-between border-b border-neutral-200 px-6 py-4 font-navbar md:hidden">
         <Link href="/" className="block">
           <span className="block text-base font-bold tracking-tight text-neutral-900">JUNG AH KIM</span>
           <span className="block text-xs text-neutral-500">김정아</span>
@@ -99,7 +99,7 @@ export default function Sidebar() {
       </div>
 
       {mobileOpen && (
-        <div className="border-b border-neutral-200 px-6 pb-8 pt-2 md:hidden">
+        <div className="border-b border-neutral-200 px-6 pb-8 pt-2 font-navbar md:hidden">
           <p className="mb-6 whitespace-pre-line text-lg leading-relaxed text-[#707070]">{intro}</p>
           <nav>
             <ul className="space-y-1 text-sm">
