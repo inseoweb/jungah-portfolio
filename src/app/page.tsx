@@ -2,7 +2,7 @@
 
 import { useRef } from 'react';
 import type { MouseEvent, PointerEvent } from 'react';
-import Image from 'next/image';
+import Image, { getImageProps } from 'next/image';
 import Link from 'next/link';
 import { loc, useLocalized, type Localized } from '../lib/language';
 
@@ -13,8 +13,16 @@ type Work = {
   href: string;
 };
 
-// The single fixed HOME hero image.
-const HOME_HERO_IMAGE = '/images/home/hero.jpg';
+// Desktop/tablet hero: a Figma composition that re-frames the artwork as a
+// landscape image for the wide layout — this *is* the intended crop, never
+// re-derive it from the artwork's own proportions. Dimensions are the
+// file's actual pixel size (required by next/image, and used to preserve
+// its ratio without distortion).
+const HERO_DESKTOP_IMAGE = { src: '/images/home/hero.jpg', width: 1252, height: 768 };
+// Mobile hero: the original portrait photo — full artwork and frame —
+// swapped in below the `md` breakpoint so the piece reads at a real size
+// instead of shrinking to a sliver of the desktop composition.
+const HERO_MOBILE_IMAGE = { src: '/images/home/hero.jpeg', width: 3362, height: 3870 };
 const HERO_ALT = loc('대표 이미지', 'Featured work');
 
 // The 6 PROJECTS thumbnails below the hero. Images and their order are
@@ -61,19 +69,38 @@ const PROJECTS: Work[] = [
 
 function Hero() {
   const heroAlt = useLocalized(HERO_ALT);
+
+  // Two genuinely different images (different crops, different ratios), not
+  // two sizes of the same one — that's art direction, which next/image's
+  // own `sizes`/srcset can't express. Building a manual <picture> via
+  // getImageProps lets the browser fetch only the one matching source
+  // instead of loading both and hiding one with CSS.
+  const {
+    props: { srcSet: desktopSrcSet },
+  } = getImageProps({
+    ...HERO_DESKTOP_IMAGE,
+    alt: heroAlt,
+    sizes: '(min-width: 768px) 60vw, 100vw',
+    priority: true,
+  });
+  const { props: mobileImgProps } = getImageProps({
+    ...HERO_MOBILE_IMAGE,
+    alt: heroAlt,
+    sizes: '100vw',
+    priority: true,
+  });
+
   return (
-    <section className="px-6 py-10 md:px-16 md:py-16" aria-label={heroAlt}>
-      <div className="mx-auto flex max-w-[1050px] flex-col items-center">
-        <div className="relative h-[56svh] w-full md:h-[72vh]">
-          <Image
-            src={HOME_HERO_IMAGE}
+    <section className="px-6 py-8 md:px-16 md:py-8" aria-label={heroAlt}>
+      <div className="mx-auto max-w-[1200px]">
+        <picture>
+          <source media="(min-width: 768px)" srcSet={desktopSrcSet} />
+          <img
+            {...mobileImgProps}
             alt={heroAlt}
-            fill
-            priority
-            sizes="(max-width: 768px) 90vw, 70vw"
-            className="object-contain"
+            className="mx-auto block h-auto w-full md:max-h-[55vh] md:w-auto md:max-w-full"
           />
-        </div>
+        </picture>
       </div>
     </section>
   );
@@ -166,7 +193,7 @@ function ProjectsSection({ works }: { works: Work[] }) {
   return (
     <section
       id="selected-works"
-      className="mx-auto max-w-[1400px] px-6 py-10 md:px-16 md:pb-14 md:pt-20"
+      className="mx-auto max-w-[1400px] px-6 py-10 md:px-16 md:pb-14 md:pt-6"
     >
       <div className="mb-6 flex items-center justify-between md:mb-5">
         <h2 className="text-xs md:text-sm font-semibold text-neutral-500">PROJECTS</h2>
