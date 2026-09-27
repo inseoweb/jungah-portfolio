@@ -37,11 +37,6 @@ export default function PageBaroque() {
           and cast aside.
         </>,
       )}
-      heroImage={{
-        src: '/images/baroque/exhibition/1.jpg',
-        alt: loc('요정의 초상 전시 전경', 'Installation View'),
-        orientation: 'landscape',
-      }}
       installationViews={[
         {
           src: '/images/baroque/exhibition/2.jpg',
@@ -54,9 +49,40 @@ export default function PageBaroque() {
           orientation: 'landscape',
         },
         {
+          src: '/images/baroque/exhibition/1.jpg',
+          alt: loc('요정의 초상 전시 전경', 'Installation View'),
+          orientation: 'landscape',
+        },
+        {
           src: '/images/baroque/12.jpg',
           alt: loc('요정의 초상 전시 전경', 'Installation View'),
           orientation: 'portrait',
+          captionTitle: loc('요정의 초상 - 따개비 부표', 'The Portrait of Fairies - Barnacle Buoy'),
+          captionDetail: loc('2025', '2025'),
+          description: loc(
+            <>
+              처음 이 부표를 만났을 때, 바위 대신 쓰레기에 집을 짓고 살아야 했던 따개비에게 미안함을
+              느꼈다. 그러나 10년 넘게 곁에 두고 바라보며 생각이 달라졌다. 떠돌던 부표와 따개비는
+              어디서 만나 얼마나 오래 함께했을까. 자연은 쓰레기와 바위를 구분하지 않았다. 인간이 버린
+              뒤에도 그 위에서는 삶이 이어지고 있었다.
+              <br />
+              <br />
+              나는 이들이 함께한 시간을 한 사람의 얼굴처럼 바라보며 부표의 초상화를 그렸다. 낡은 표면과
+              따개비의 흔적을 빛으로 드러내어, 인간의 쓸모를 떠난 뒤에도 이어지는 존재와 관계를
+              담았다.
+            </>,
+            <>
+              When I first found this buoy, I felt sorry for the barnacles living on waste instead
+              of rock. After keeping it beside me for over ten years, my perspective changed. Where
+              had they met, and how long had they traveled together? Nature made no distinction
+              between waste and rock. Life continued on what humans had discarded.
+              <br />
+              <br />
+              I painted the buoy&apos;s portrait as though studying a human face. Light reveals its
+              worn surface and the traces of barnacles, bearing witness to their shared time and to
+              relationships that endure beyond human usefulness.
+            </>,
+          ),
         },
       ]}
       images={[

@@ -16,6 +16,11 @@ export type EditorialImage = {
   // artwork name to read as its own line rather than a single quiet caption.
   captionTitle?: Localized;
   captionDetail?: Localized;
+  // Longer-form explanatory text below the caption, styled like the page's
+  // own intro paragraph rather than the (smaller, quieter) caption style —
+  // used sparingly, e.g. a single installation-view image with its own
+  // artwork description.
+  description?: Localized<ReactNode>;
 };
 
 export type NextWork = { title: Localized; href: string };
@@ -32,6 +37,7 @@ function WorkImage({ image, priority }: { image: EditorialImage; priority?: bool
   const caption = useLocalized(image.caption ?? loc(''));
   const captionTitle = useLocalized(image.captionTitle ?? loc(''));
   const captionDetail = useLocalized(image.captionDetail ?? loc(''));
+  const description = useLocalized(image.description ?? loc<ReactNode>(null));
   const alt = useLocalized(typeof image.alt === 'string' ? loc(image.alt) : image.alt);
   // `fill` + object-contain scales every work up to the bounding box below,
   // regardless of the source file's own pixel dimensions — a plain
@@ -66,6 +72,11 @@ function WorkImage({ image, priority }: { image: EditorialImage; priority?: bool
         caption && (
           <figcaption className="mt-3 text-center text-xs text-neutral-400">{caption}</figcaption>
         )
+      )}
+      {description != null && (
+        <p className="mt-4 max-w-xl text-center text-sm leading-relaxed text-neutral-600">
+          {description}
+        </p>
       )}
     </figure>
   );
