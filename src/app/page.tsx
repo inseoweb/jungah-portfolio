@@ -122,19 +122,27 @@ function WorkCard({ work, onClick }: { work: Work; onClick?: (e: MouseEvent) => 
 function WorkThumb({ work, onClick }: { work: Work; onClick?: (e: MouseEvent) => void }) {
   const title = useLocalized(work.title);
   return (
-    <Link href={work.href} onClick={onClick} className="group inline-flex shrink-0 flex-col">
-      <Image
-        src={work.img}
-        alt={work.title.ko}
-        width={0}
-        height={0}
-        sizes="20vw"
-        className="block h-20 w-auto max-w-none md:h-24"
-      />
-      <p className="mt-1.5 w-full truncate text-xs text-neutral-700 group-hover:text-neutral-900">
+    <Link href={work.href} onClick={onClick} className="group flex w-[135px] shrink-0 flex-col">
+      {/* Fixed box + object-contain, same principle as the mobile grid: every
+          card gets the same width regardless of the source image's own
+          ratio or the title's length. Previously the image's own aspect
+          ratio (via height-only sizing, width auto) directly set each
+          card's width — 신십장생도's wide 1.9:1 photo rendered at 182px,
+          꽃꿈's tall 0.86:1 one at just 83px — so cards visibly varied in
+          width card to card. */}
+      <div className="relative h-[115px] w-[135px] overflow-hidden bg-neutral-100">
+        <Image
+          src={work.img}
+          alt={work.title.ko}
+          fill
+          sizes="135px"
+          className="object-contain transition-transform duration-300 group-hover:scale-105"
+        />
+      </div>
+      <p className="mt-2 line-clamp-2 min-h-[2.5rem] text-sm leading-tight text-neutral-700 group-hover:text-neutral-900">
         {title}
       </p>
-      <p className="text-[11px] text-neutral-400">{work.year}</p>
+      <p className="text-xs text-neutral-400">{work.year}</p>
     </Link>
   );
 }
