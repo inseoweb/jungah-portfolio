@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { HiMenu, HiX, HiChevronDown } from 'react-icons/hi';
-import { loc, NEEDS_TRANSLATION, useLanguage, useLocalized, type Localized } from '../../lib/language';
+import { loc, useLanguage, useLocalized, type Localized } from '../../lib/language';
 import { WORKS_SERIES } from '../../lib/works-data';
 
 type SubItem = { href: string; label: Localized };
@@ -17,7 +17,7 @@ const NAV_ITEMS: NavItem[] = [
     href: '/baroque',
     children: [
       ...WORKS_SERIES.map((s) => ({ href: s.href, label: s.title })),
-      { href: '/photos', label: loc('활동사진', NEEDS_TRANSLATION) },
+      { href: '/photos', label: loc('활동사진', 'Activity Photos') },
     ],
   },
   { label: loc('EXHIBITIONS'), href: '/exhibitions' },
