@@ -27,6 +27,10 @@ const NAV_ITEMS: NavItem[] = [
     children: [
       { href: '/critique-simeunlog', label: loc('심은록 평론', 'Critique-Sim Eunlog') },
       { href: '/critique-shim', label: loc('심상용 평론', 'Critique-Shim Sang-yong') },
+      {
+        href: '/critique-shim-sublime',
+        label: loc('심상용 평론 - 소멸의 숭고', 'Critique-Shim Sang-yong - The Sublime of Disappearance'),
+      },
       { href: '/critique-jung', label: loc('정석도 평론', 'Critique-Jeong Seokdo') },
     ],
   },
