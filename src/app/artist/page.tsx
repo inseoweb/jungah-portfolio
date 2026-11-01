@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import { loc, useLocalized, type Localized } from '../../lib/language';
 
 const SOLO_EXHIBITIONS: Localized[] = [
@@ -347,7 +346,7 @@ const MARINE_EXHIBITIONS: Localized[] = [
 ];
 
 const NAME = loc('김정아 Kim JungAh', 'Kim JungAh');
-const INTRO_LABEL = loc('[ 작가 소개 ]', '[ About the Artist ]');
+const INTRO_LABEL = loc('[ CV ]');
 const ROLE = loc('서양화가', 'Visual Artist');
 const BIO_1 = loc(
   '서울대학교 대학원 서양화과 판화전공 졸업',
@@ -388,18 +387,7 @@ export default function ArtistPage() {
       <h1 className="text-2xl font-bold text-center mb-2">{name}</h1>
       <h3 className="text-base font-medium text-center text-[#4B5563] mb-10">{role}</h3>
 
-      <div className="h-6" />
-
-      <div className="flex justify-center mb-10">
-        <Image
-          src="/images/artist/1.jpeg"
-          alt="김정아 작가"
-          className="w-[60%] h-auto object-contain"
-          width={0}
-          height={0}
-          sizes="100vw"
-        />
-      </div>
+      <div className="h-5" />
 
       <section className="mb-2">
         <h4 className="text-lg font-semibold text-[#111827] mb-3">{sectionBio}</h4>
