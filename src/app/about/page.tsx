@@ -308,7 +308,7 @@ export default function AboutPage() {
 
       <div className="flex justify-center mb-10">
         <Image
-          src="/images/about/1.jpg"
+          src="/images/about/1.jpeg"
           alt="김정아 작가"
           className="w-[60%] h-auto object-contain"
           width={0}
