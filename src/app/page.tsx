@@ -1,152 +1,240 @@
 'use client';
 
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useRef } from 'react';
+import type { MouseEvent, PointerEvent } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { loc, useLocalized, type Localized } from '../lib/language';
 
-type Project = {
-  titleKo: string;
+type Work = {
+  title: Localized;
   year: string;
-  category: string;
   img: string;
   href: string;
+  // Most PROJECTS thumbnails intentionally crop to fill their square cell
+  // (object-cover). These two specific images distort under that crop, so
+  // they opt out and show their full original ratio instead (object-contain).
+  preserveRatio?: boolean;
 };
 
-const PROJECTS: Project[] = [
-  { titleKo: '요정의 초상', year: '2025-', category: '요정', img: '/images/home/daepyo.jpeg', href: '/baroque' },
-  { titleKo: '컵 (일화용컵 도자기로 만들기)', year: '1999', category: '도시·숲', img: '/images/1990/21.jpeg', href: '/1990-1999' },
-  { titleKo: '꽃보다 아름답다', year: '2003-', category: '요정', img: '/images/home/beautiful-than-flower.jpg', href: '/flower' },
-  { titleKo: '꽃꿈', year: '2024-', category: '요정', img: '/images/home/flower-dream.jpg', href: '/dream' },
-  { titleKo: '신림동', year: '2021', category: '해양환경작품', img: '/images/marine/6.jpg', href: '/marine' },
-  { titleKo: '소리없는', year: '1999', category: '도시·숲', img: '/images/1990/1.jpeg', href: '/1990-1999' },
-  { titleKo: '꿈과 이제 오후', year: '2013', category: '도시·숲', img: '/images/2000/6.jpg', href: '/2000-2014' },
-  { titleKo: '밤의 숲', year: '2020', category: '도시·숲', img: '/images/2015/forest-night.png', href: '/2015' },
+// One hero image at every breakpoint — the original portrait photo, full
+// artwork and frame, never cropped or re-derived into a separate desktop
+// composition. Only the container/max-height around it changes per
+// breakpoint (see Hero below).
+const HERO_IMAGE_SRC = '/images/home/hero.jpeg';
+const HERO_IMAGE_WIDTH = 3362;
+const HERO_IMAGE_HEIGHT = 3870;
+const HERO_ALT = loc('대표 이미지', 'Featured work');
+
+// The 6 PROJECTS thumbnails below the hero. Images and their order are
+// unchanged from before; only title/year/href were updated to name each
+// piece correctly and link to its actual WORKS page.
+const PROJECTS: Work[] = [
+  {
+    title: loc('요정의 초상', 'The Portrait of Fairies'),
+    year: '2023–',
+    img: '/images/home/daepyo.jpeg',
+    href: '/baroque',
+  },
+  {
+    title: loc('영원을 꿈꾸는 일회용', 'The Disposable Dreaming of Eternity'),
+    year: '1999',
+    img: '/images/1990/21.jpeg',
+    href: '/disposable',
+    preserveRatio: true,
+  },
+  {
+    title: loc('꽃보다 아름답다', 'More Beautiful than Flowers'),
+    year: '2003–',
+    img: '/images/home/beautiful-than-flower.jpg',
+    href: '/flower',
+    preserveRatio: true,
+  },
+  {
+    title: loc('꽃꿈', 'Flower Dream'),
+    year: '2024–',
+    img: '/images/home/flower-dream.jpg',
+    href: '/dream',
+  },
+  {
+    title: loc('신십장생도', 'New Painting of Ten Symbols of Longevity'),
+    year: '2021',
+    img: '/images/marine/6.jpg',
+    href: '/marine',
+  },
+  {
+    title: loc('소리없는', 'Silent'),
+    year: '1999',
+    img: '/images/1990/1.jpeg',
+    href: '/1990-1999',
+  },
 ];
 
-function Hero({ projects }: { projects: Project[] }) {
-  const [index, setIndex] = useState(0);
-  const total = projects.length;
-  const containerRef = useRef<HTMLDivElement>(null);
+function Hero() {
+  const heroAlt = useLocalized(HERO_ALT);
 
-  const paginate = useCallback(
-    (dir: 1 | -1) => {
-      setIndex((i) => ((i + dir) % total + total) % total);
-    },
-    [total]
-  );
-
-  useEffect(() => {
-    const el = containerRef.current;
-    let paused = false;
-    const onEnter = () => (paused = true);
-    const onLeave = () => (paused = false);
-    el?.addEventListener('mouseenter', onEnter);
-    el?.addEventListener('mouseleave', onLeave);
-    const id = setInterval(() => !paused && paginate(1), 4000);
-    return () => {
-      clearInterval(id);
-      el?.removeEventListener('mouseenter', onEnter);
-      el?.removeEventListener('mouseleave', onLeave);
-    };
-  }, [paginate]);
-
-  const current = projects[index];
-
+  // The portrait artwork is shown at its own true ratio (no crop, no
+  // stretch) inside a wide, centered container. On desktop the container is
+  // far wider than the image's own rendered width (which is driven by the
+  // md:max-h cap below, not by the container), so generous white space
+  // appears on both sides automatically — the "wide gallery wall" feel,
+  // achieved through layout instead of a separately-composed image file.
   return (
-    <section
-      ref={containerRef}
-      aria-roledescription="carousel"
-      aria-label="작가 소개"
-      className="relative -mx-6 -mt-6 h-[44svh] md:h-[52vh] min-h-[320px] max-h-[540px] overflow-hidden bg-white"
-    >
-      <Link
-        href={current.href}
-        aria-label={`${current.titleKo} 작품 보기`}
-        className="group absolute inset-0 block"
-      >
-        {projects.map((project, i) => (
-          <Image
-            key={project.img}
-            src={project.img}
-            alt={project.titleKo}
-            fill
-            priority={i === 0}
-            sizes="100vw"
-            className={`object-contain transition-[opacity,transform] duration-[900ms] ease-in-out group-hover:scale-[1.02] ${
-              i === index ? 'opacity-100' : 'opacity-0'
-            }`}
-          />
-        ))}
-      </Link>
-
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-white/85 via-white/35 to-transparent" />
-
-      <div className="pointer-events-none relative z-10 flex h-full items-center px-6 md:px-16">
-        <div className="max-w-md">
-          <p className="mb-4 text-xl md:text-2xl font-bold leading-snug text-[#282828]">
-            관심 밖으로 밀려난
-            <br />
-            존재와 그 안에 남겨진
-            <br />
-            시간을 바라봅니다.
-          </p>
-          <a
-            href="#projects"
-            className="pointer-events-auto inline-flex items-center gap-2 border-b border-neutral-900 pb-1 text-xs md:text-sm font-semibold tracking-widest text-neutral-900"
-          >
-            VIEW WORKS
-            <span aria-hidden>→</span>
-          </a>
-        </div>
+    <section className="px-6 py-8 md:px-16 md:pb-6 md:pt-8" aria-label={heroAlt}>
+      <div className="mx-auto flex max-w-[1200px] justify-center">
+        <Image
+          src={HERO_IMAGE_SRC}
+          alt={heroAlt}
+          width={HERO_IMAGE_WIDTH}
+          height={HERO_IMAGE_HEIGHT}
+          priority
+          sizes="100vw"
+          className="block h-auto w-full md:h-auto md:max-h-[58vh] md:w-auto md:max-w-full"
+        />
       </div>
-
-      <nav className="absolute right-4 top-1/2 z-10 -translate-y-1/2 md:right-8">
-        <ol className="flex flex-col gap-2" aria-label="배경 이미지 인디케이터">
-          {projects.map((_, i) => (
-            <li key={i}>
-              <button
-                aria-label={`${i + 1}번 이미지로 이동`}
-                onClick={() => setIndex(i)}
-                className={`block h-2 w-2 rounded-full transition ${
-                  i === index ? 'bg-neutral-900' : 'bg-neutral-400/60 hover:bg-neutral-600'
-                }`}
-              />
-            </li>
-          ))}
-        </ol>
-      </nav>
     </section>
   );
 }
 
-function ProjectsSection({ projects }: { projects: Project[] }) {
+function WorkCard({ work, onClick }: { work: Work; onClick?: (e: MouseEvent) => void }) {
+  const title = useLocalized(work.title);
   return (
-    <section id="projects" className="mx-auto max-w-[1400px] px-0 py-10 md:py-14">
-      <h2 className="mb-6 text-xs md:text-sm font-semibold text-neutral-500">
-        PROJECTS
-      </h2>
-      <div className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-4 md:gap-6">
-        {projects.map((project) => (
-          <Link
-            key={project.img}
-            href={project.href}
-            className="group block w-[42vw] shrink-0 snap-start sm:w-[200px]"
+    <Link href={work.href} onClick={onClick} className="group block">
+      <div className="relative aspect-square w-full overflow-hidden bg-neutral-100">
+        <Image
+          src={work.img}
+          alt={work.title.ko}
+          fill
+          sizes="(max-width: 640px) 45vw, (max-width: 1024px) 30vw, 220px"
+          className={`transition-transform duration-300 group-hover:scale-105 ${
+            work.preserveRatio ? 'object-contain' : 'object-cover'
+          }`}
+        />
+      </div>
+      <div className="mt-3 space-y-0.5">
+        <p className="text-sm font-semibold text-neutral-900">{title}</p>
+        <p className="text-xs text-neutral-500">{work.year}</p>
+      </div>
+    </Link>
+  );
+}
+
+function WorkThumb({ work, onClick }: { work: Work; onClick?: (e: MouseEvent) => void }) {
+  const title = useLocalized(work.title);
+  return (
+    <Link href={work.href} onClick={onClick} className="group flex w-[135px] shrink-0 flex-col">
+      {/* Fixed box + object-contain, same principle as the mobile grid: every
+          card gets the same width regardless of the source image's own
+          ratio or the title's length. Previously the image's own aspect
+          ratio (via height-only sizing, width auto) directly set each
+          card's width — 신십장생도's wide 1.9:1 photo rendered at 182px,
+          꽃꿈's tall 0.86:1 one at just 83px — so cards visibly varied in
+          width card to card. */}
+      <div className="relative h-[115px] w-[135px] overflow-hidden bg-neutral-100">
+        <Image
+          src={work.img}
+          alt={work.title.ko}
+          fill
+          sizes="135px"
+          className="object-contain transition-transform duration-300 group-hover:scale-105"
+        />
+      </div>
+      <p className="mt-2 line-clamp-2 min-h-[2.5rem] text-sm leading-tight text-neutral-700 group-hover:text-neutral-900">
+        {title}
+      </p>
+      <p className="text-xs text-neutral-400">{work.year}</p>
+    </Link>
+  );
+}
+
+function ProjectsSection({ works }: { works: Work[] }) {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const drag = useRef({ isDown: false, startX: 0, startScroll: 0, moved: false, pointerId: 0 });
+
+  const scrollByCard = (dir: 1 | -1) => {
+    const el = scrollRef.current;
+    if (!el) return;
+    el.scrollBy({ left: dir * el.clientWidth * 0.45, behavior: 'smooth' });
+  };
+
+  const onPointerDown = (e: PointerEvent<HTMLDivElement>) => {
+    const el = scrollRef.current;
+    if (!el) return;
+    drag.current = { isDown: true, startX: e.clientX, startScroll: el.scrollLeft, moved: false, pointerId: e.pointerId };
+  };
+
+  const onPointerMove = (e: PointerEvent<HTMLDivElement>) => {
+    const el = scrollRef.current;
+    if (!drag.current.isDown || !el) return;
+    const dx = e.clientX - drag.current.startX;
+    if (!drag.current.moved && Math.abs(dx) > 3) {
+      drag.current.moved = true;
+      // Only capture once real dragging starts — capturing on pointerdown
+      // reroutes the resulting click's target to this element, which
+      // silently breaks navigation on plain (non-drag) clicks.
+      el.setPointerCapture(e.pointerId);
+    }
+    if (drag.current.moved) el.scrollLeft = drag.current.startScroll - dx;
+  };
+
+  const onPointerUp = (e: PointerEvent<HTMLDivElement>) => {
+    const el = scrollRef.current;
+    drag.current.isDown = false;
+    if (el && el.hasPointerCapture(e.pointerId)) el.releasePointerCapture(e.pointerId);
+  };
+
+  const onCardClick = (e: MouseEvent) => {
+    if (drag.current.moved) {
+      e.preventDefault();
+      drag.current.moved = false;
+    }
+  };
+
+  return (
+    <section
+      id="selected-works"
+      className="mx-auto max-w-[1400px] px-6 py-10 md:px-16 md:pb-14 md:pt-4"
+    >
+      <div className="mb-6 flex items-center justify-between md:mb-5">
+        <h2 className="text-xs md:text-sm font-semibold text-neutral-500">PROJECTS</h2>
+        <div className="hidden items-center gap-3 md:flex">
+          <button
+            type="button"
+            onClick={() => scrollByCard(-1)}
+            aria-label="이전 작품"
+            className="text-xs text-neutral-400 transition-colors hover:text-neutral-900"
           >
-            <div className="relative aspect-square w-full overflow-hidden bg-neutral-100">
-              <Image
-                src={project.img}
-                alt={project.titleKo}
-                fill
-                sizes="(max-width: 640px) 42vw, 200px"
-                className="object-cover transition-transform duration-300 group-hover:scale-105"
-              />
-            </div>
-            <div className="mt-3 space-y-0.5">
-              <p className="text-sm font-semibold text-neutral-900">{project.titleKo}</p>
-              <p className="text-xs text-neutral-500">{project.year}</p>
-              <p className="text-xs text-neutral-400">{project.category}</p>
-            </div>
-          </Link>
+            ←
+          </button>
+          <button
+            type="button"
+            onClick={() => scrollByCard(1)}
+            aria-label="다음 작품"
+            className="text-xs text-neutral-400 transition-colors hover:text-neutral-900"
+          >
+            →
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile: unchanged grid layout */}
+      <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:hidden">
+        {works.map((work) => (
+          <WorkCard key={work.img} work={work} />
+        ))}
+      </div>
+
+      {/* Desktop: small thumbnail navigation strip */}
+      <div
+        ref={scrollRef}
+        onPointerDown={onPointerDown}
+        onPointerMove={onPointerMove}
+        onPointerUp={onPointerUp}
+        onPointerLeave={onPointerUp}
+        className="hidden cursor-grab gap-6 overflow-x-auto [-ms-overflow-style:none] [scrollbar-width:none] active:cursor-grabbing md:flex [&::-webkit-scrollbar]:hidden"
+      >
+        {works.map((work) => (
+          <WorkThumb key={work.img} work={work} onClick={onCardClick} />
         ))}
       </div>
     </section>
@@ -156,8 +244,8 @@ function ProjectsSection({ projects }: { projects: Project[] }) {
 export default function Page() {
   return (
     <main className="min-h-screen">
-      <Hero projects={PROJECTS} />
-      <ProjectsSection projects={PROJECTS} />
+      <Hero />
+      <ProjectsSection works={PROJECTS} />
     </main>
   );
 }

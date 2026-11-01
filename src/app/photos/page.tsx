@@ -1,12 +1,18 @@
 'use client';
 
 import Image from 'next/image';
+import { loc, useLocalized } from '../../lib/language';
 
-export default function photos() {
+const LABEL = loc('[ 2011~ ]', '[ 2011– ]');
+const TITLE = loc('활동사진', 'Activity Photos');
+
+export default function PhotosPage() {
+  const label = useLocalized(LABEL);
+  const title = useLocalized(TITLE);
   return (
     <div className="px-4 py-8 max-w-4xl mx-auto">
-      <h2 className="text-[14px] font-semibold text-center text-[#666666] mb-2">[ 2011~ ]</h2>
-      <h1 className="text-2xl font-bold text-center mb-2">활동사진</h1>
+      <h2 className="text-[14px] font-semibold text-center text-[#666666] mb-2">{label}</h2>
+      <h1 className="text-2xl font-bold text-center mb-2">{title}</h1>
 
       <div className="h-5" />
       <div className="pb-[40px]">
