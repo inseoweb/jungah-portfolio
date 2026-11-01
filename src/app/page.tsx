@@ -26,9 +26,7 @@ const HERO_IMAGE_WIDTH = 3362;
 const HERO_IMAGE_HEIGHT = 3870;
 const HERO_ALT = loc('대표 이미지', 'Featured work');
 
-// The 6 PROJECTS thumbnails below the hero. Images and their order are
-// unchanged from before; only title/year/href were updated to name each
-// piece correctly and link to its actual WORKS page.
+// The PROJECTS thumbnails below the hero.
 const PROJECTS: Work[] = [
   {
     title: loc('요정의 초상', 'The Portrait of Fairies'),
@@ -67,6 +65,12 @@ const PROJECTS: Work[] = [
     year: '1999',
     img: '/images/1990/1.jpeg',
     href: '/1990-1999',
+  },
+  {
+    title: loc('푸른 골목의 안쪽', 'Inside the Blue Alley'),
+    year: '2021',
+    img: '/images/2015/inside-the-blue-alley.jpg',
+    href: '/2015',
   },
 ];
 
