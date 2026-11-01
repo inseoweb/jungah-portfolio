@@ -26,7 +26,7 @@ const BODY_KO = (
 
     <div className="h-5" />
 
-    <h3 className="text-lg font-semibold text-left text-[#003247] mb-10">십장생과 십상폐 : 전통의 영원과 문명의 잔해가 충돌할 때</h3>
+    <h3 className="text-lg font-semibold text-left text-gray-700 mb-10">십장생과 십상폐 : 전통의 영원과 문명의 잔해가 충돌할 때</h3>
 
     <div className="pb-[40px]">
       <Image
@@ -93,7 +93,7 @@ const BODY_KO = (
 
     <div className="h-8" />
 
-    <h3 className="text-lg font-semibold text-left text-[#003247]">회화의 경계 밖으로 밀려온 현실의 파편들</h3>
+    <h3 className="text-lg font-semibold text-left text-gray-700">회화의 경계 밖으로 밀려온 현실의 파편들</h3>
     <div className="h-8" />
     <div className="pb-[40px]">
       <Image
@@ -129,7 +129,7 @@ const BODY_KO = (
 
     <div className="h-8" />
 
-    <h3 className="text-lg font-semibold text-left text-[#003247]">궁행미학(躬行美學), 움직임을 요청하는 풍경</h3>
+    <h3 className="text-lg font-semibold text-left text-gray-700">궁행미학(躬行美學), 움직임을 요청하는 풍경</h3>
 
     <div className="pb-[10px]">
       <Image
@@ -179,7 +179,7 @@ const BODY_KO = (
 
     <div className="h-8" />
 
-    <h3 className="text-lg font-semibold text-left text-[#003247]">사물의 두 번째 생명과 공생의 미학</h3>
+    <h3 className="text-lg font-semibold text-left text-gray-700">사물의 두 번째 생명과 공생의 미학</h3>
     <div className="h-6" />
 
     <div className="pb-[40px]">
@@ -224,7 +224,7 @@ const BODY_KO = (
     만약 생명이 고정된 실체가 아니라 관계 속에서 발생하는 과정이라면, 인간이 버린 사물 또한 타자와의 만남을 통해 새로운 생태적 존재로 변할 수 있다. 이처럼 김정아의 작업은 존재의 위계를 다시 쓰고 세계를 새롭게 바라보게 만드는 관점의 전환을 촉발한다. </p>
 
     <div className="h-6" />
-    <h3 className="text-lg font-semibold text-left text-[#003247]">영잔폐도(永殘廢圖) · 폐물승화(廢物昇華)</h3>
+    <h3 className="text-lg font-semibold text-left text-gray-700">영잔폐도(永殘廢圖) · 폐물승화(廢物昇華)</h3>
 
     <div className="pb-[40px]">
       <Image
@@ -291,7 +291,7 @@ const BODY_EN = (
 
     <div className="h-5" />
 
-    <h3 className="text-lg font-semibold text-left text-[#003247] mb-10">
+    <h3 className="text-lg font-semibold text-left text-gray-700 mb-10">
       Ten Symbols of Longevity and Ten Symbols of Waste: When the Eternity of Tradition Collides
       with the Wreckage of Civilization
     </h3>
@@ -415,7 +415,7 @@ const BODY_EN = (
 
     <div className="h-8" />
 
-    <h3 className="text-lg font-semibold text-left text-[#003247]">
+    <h3 className="text-lg font-semibold text-left text-gray-700">
       Fragments of Reality Spilling Beyond the Boundaries of Painting
     </h3>
     <div className="h-8" />
@@ -485,7 +485,7 @@ const BODY_EN = (
 
     <div className="h-8" />
 
-    <h3 className="text-lg font-semibold text-left text-[#003247]">
+    <h3 className="text-lg font-semibold text-left text-gray-700">
       Aesthetics of Personal Practice (躬行美學): A Landscape That Calls for Movement
     </h3>
 
@@ -565,7 +565,7 @@ const BODY_EN = (
 
     <div className="h-8" />
 
-    <h3 className="text-lg font-semibold text-left text-[#003247]">
+    <h3 className="text-lg font-semibold text-left text-gray-700">
       The Second Life of Objects and an Aesthetics of Symbiosis
     </h3>
     <div className="h-6" />
@@ -656,7 +656,7 @@ const BODY_EN = (
     </p>
 
     <div className="h-6" />
-    <h3 className="text-lg font-semibold text-left text-[#003247]">
+    <h3 className="text-lg font-semibold text-left text-gray-700">
       Eternally Remaining Waste (永殘廢圖) · Sublimation of Waste (廢物昇華)
     </h3>
 
