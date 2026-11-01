@@ -55,6 +55,12 @@ export default function PageFlower() {
       installationViews={[
         { src: '/images/flower/exhibition/1.jpg', alt: '꽃보다 아름답다 전시 전경', orientation: 'landscape' },
         { src: '/images/flower/exhibition/2.jpg', alt: '꽃보다 아름답다 전시 전경', orientation: 'landscape' },
+        { src: '/images/flower/exhibition/inst1.jpeg', alt: '꽃보다 아름답다 전시 전경', orientation: 'portrait' },
+        { src: '/images/flower/exhibition/inst2.jpeg', alt: '꽃보다 아름답다 전시 전경', orientation: 'portrait' },
+        { src: '/images/flower/exhibition/inst3.jpeg', alt: '꽃보다 아름답다 전시 전경', orientation: 'landscape' },
+        { src: '/images/flower/exhibition/inst4.jpeg', alt: '꽃보다 아름답다 전시 전경', orientation: 'landscape' },
+        { src: '/images/flower/exhibition/inst5.jpeg', alt: '꽃보다 아름답다 전시 전경', orientation: 'portrait' },
+        { src: '/images/flower/exhibition/inst6.jpeg', alt: '꽃보다 아름답다 전시 전경', orientation: 'portrait' },
       ]}
       nextWork={{ title: nextSeries.title, href: nextSeries.href }}
     />
