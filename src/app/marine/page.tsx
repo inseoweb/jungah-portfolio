@@ -167,6 +167,14 @@ const WORKS: MarineWork[] = [
     ),
     images: [{ src: '/images/marine/29.jpg', alt: '즐거운 추억', orientation: 'portrait' }],
   },
+  {
+    title: loc('신십장생도', 'New Painting of Ten Symbols of Longevity'),
+    detail: loc(
+      '180 × 336 cm, 병풍에 아크릴릭, 바다쓰레기, 2022',
+      '180 × 336 cm, acrylic on folding screen, marine debris, 2022',
+    ),
+    images: [{ src: '/images/marine/6.jpg', alt: '신십장생도', orientation: 'landscape' }],
+  },
 ];
 
 const [heroWork, ...restWorks] = WORKS;
