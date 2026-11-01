@@ -1,6 +1,11 @@
 'use client';
 
+import Image from 'next/image';
 import { loc, useLanguage } from '../../lib/language';
+
+const INTRO_LABEL = loc('[ 작가 소개 ]', '[ About the Artist ]');
+const NAME = loc('김정아 Kim JungAh', 'Kim JungAh');
+const ROLE = loc('서양화가', 'Visual Artist');
 
 const NOTE_2026_TITLE = loc(
   '남겨진 것들로부터의 회복: 시간의 신전과 밤의 숲',
@@ -285,6 +290,9 @@ const NOTE_2025_BODY_EN = (
 
 export default function AboutPage() {
   const { lang } = useLanguage();
+  const introLabel = INTRO_LABEL[lang];
+  const name = NAME[lang];
+  const role = ROLE[lang];
   const note2026Title = NOTE_2026_TITLE[lang];
   const note2026Subtitle = NOTE_2026_SUBTITLE[lang];
   const note2025Title = NOTE_2025_TITLE[lang];
@@ -292,8 +300,25 @@ export default function AboutPage() {
 
   return (
     <div className="px-4 py-10 max-w-4xl mx-auto">
+      <h2 className="text-[14px] font-semibold text-center text-[#666666] mb-2">{introLabel}</h2>
+      <h1 className="text-2xl font-bold text-center mb-2">{name}</h1>
+      <h3 className="text-base font-medium text-center text-[#4B5563] mb-10">{role}</h3>
+
+      <div className="h-6" />
+
+      <div className="flex justify-center mb-10">
+        <Image
+          src="/images/about/1.jpg"
+          alt="김정아 작가"
+          className="w-[60%] h-auto object-contain"
+          width={0}
+          height={0}
+          sizes="100vw"
+        />
+      </div>
+
       <section>
-        <h1 className="text-2xl font-bold text-center mb-2">{note2026Title}</h1>
+        <h2 className="text-[23px] leading-8 font-bold text-center mb-2">{note2026Title}</h2>
         <h3 className="text-base font-medium text-center text-[#4B5563] mb-10">
           {note2026Subtitle}
         </h3>
@@ -302,7 +327,7 @@ export default function AboutPage() {
 
       <div className="mt-28 border-t border-neutral-200 pt-16 md:mt-36 md:pt-20">
         <section>
-          <h2 className="text-2xl font-bold text-center mb-2">{note2025Title}</h2>
+          <h2 className="text-[23px] leading-8 font-bold text-center mb-2">{note2025Title}</h2>
           <h3 className="text-base font-medium text-center text-[#4B5563] mb-10">
             {note2025Subtitle}
           </h3>
